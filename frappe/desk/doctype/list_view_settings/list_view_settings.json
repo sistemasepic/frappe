@@ -17,7 +17,8 @@
   "allow_edit",
   "section_break_evqq",
   "fields_html",
-  "fields"
+  "fields",
+  "column_widths"
  ],
  "fields": [
   {
@@ -88,11 +89,18 @@
    "fieldname": "show_tags",
    "fieldtype": "Check",
    "label": "Show Tags"
+  },
+  {
+   "fieldname": "column_widths",
+   "fieldtype": "Code",
+   "hidden": 1,
+   "label": "Column Widths",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "links": [],
- "modified": "2025-12-12 14:26:20.920434",
+ "modified": "2026-03-21 10:00:00.000000",
  "modified_by": "Administrator",
  "module": "Desk",
  "name": "List View Settings",

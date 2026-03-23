@@ -251,6 +251,10 @@
 .list-row-col {
 	flex: 1;
 	margin-right: 15px;
+	position: relative;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 
 	a {
 		color: var(--text-muted);
@@ -260,6 +264,37 @@
 		cursor: pointer;
 		text-decoration: underline;
 	}
+}
+
+.resizer {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 8px;
+	background: rgba(0, 0, 0, 0.05);
+	cursor: col-resize;
+	user-select: none;
+	touch-action: none;
+	pointer-events: auto;
+	z-index: 1;
+	opacity: 0;
+	transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.list-row-head .list-row-col:hover .resizer,
+.list-row-head .list-row-col.resizing .resizer {
+	opacity: 1;
+}
+
+.resizer:hover {
+	background: var(--primary);
+}
+
+.column-resize-in-progress,
+.column-resize-in-progress * {
+	cursor: col-resize !important;
+	user-select: none !important;
 }
 
 .list-row-col .indicator-pill {
@@ -371,27 +406,6 @@ input.list-header-checkbox {
 .list-item-table {
 	border: 1px solid $border-color;
 	border-radius: 3px;
-
-	.list-row-head {
-		border-radius: unset;
-	}
-
-	.list-row-container {
-		border-bottom: 1px solid $border-color;
-		border-radius: unset;
-
-		&:last-child {
-			border-bottom: none;
-		}
-	}
-
-	.list-row-container:hover {
-		border-radius: unset;
-	}
-
-	.list-row-container .list-row {
-		border-bottom: none;
-	}
 }
 
 .list-item {
@@ -546,8 +560,8 @@ input.list-header-checkbox {
 }
 
 .restricted-button {
-	margin: var(--margin-xs) 0 0 var(--margin-sm);
-	height: 29px;
+	margin-top: var(--margin-xs);
+	height: var(--margin-xl);
 
 	.icon {
 		width: 14px;
@@ -560,6 +574,13 @@ input.list-header-checkbox {
 	&.btn {
 		@include button-variant($background: $light-yellow, $border: darken($light-yellow, 5%));
 		box-shadow: none;
+	}
+}
+
+.frappe-rtl {
+	.restricted-button {
+		margin: auto auto auto 5px;
+		direction: ltr;
 	}
 }
 

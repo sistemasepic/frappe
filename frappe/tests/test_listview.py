@@ -1,9 +1,11 @@
 # Copyright (c) 2019, Frappe Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 import json
+from unittest.mock import patch
 
 import frappe
 from frappe.desk.listview import get_group_by_count, get_list_settings, set_list_settings
+from frappe.desk.doctype.list_view_settings.list_view_settings import save_listview_column_width
 from frappe.desk.reportview import get
 from frappe.tests import IntegrationTestCase
 
@@ -12,6 +14,18 @@ class TestListView(IntegrationTestCase):
 	def setUp(self):
 		if frappe.db.exists("List View Settings", "DocType"):
 			frappe.delete_doc("List View Settings", "DocType")
+		frappe.db.delete(
+			"Property Setter",
+			{"doc_type": "ToDo", "field_name": "description", "property": "width"},
+		)
+		frappe.clear_cache(doctype="ToDo")
+
+	def tearDown(self):
+		frappe.db.delete(
+			"Property Setter",
+			{"doc_type": "ToDo", "field_name": "description", "property": "width"},
+		)
+		frappe.clear_cache(doctype="ToDo")
 
 	def test_get_list_settings_without_settings(self):
 		self.assertIsNone(get_list_settings("DocType"), None)
@@ -54,6 +68,53 @@ class TestListView(IntegrationTestCase):
 		self.assertEqual(settings.disable_count, 0)
 		self.assertEqual(settings.disable_comment_count, 0)
 		self.assertEqual(settings.disable_sidebar_stats, 0)
+
+	def test_save_listview_column_width_creates_property_setter(self):
+		result = save_listview_column_width("ToDo", "description", 180)
+
+		self.assertEqual(result, {"fieldname": "description", "width": "180px"})
+		self.assertEqual(
+			frappe.db.get_value(
+				"Property Setter",
+				{"doc_type": "ToDo", "field_name": "description", "property": "width"},
+				"value",
+			),
+			"180px",
+		)
+
+	def test_save_listview_column_width_updates_property_setter(self):
+		frappe.make_property_setter(
+			{
+				"doctype": "ToDo",
+				"doctype_or_field": "DocField",
+				"fieldname": "description",
+				"property": "width",
+				"value": "120px",
+				"property_type": "Data",
+			},
+			ignore_validate=True,
+		)
+
+		result = save_listview_column_width("ToDo", "description", 240)
+
+		self.assertEqual(result, {"fieldname": "description", "width": "240px"})
+		self.assertEqual(
+			frappe.db.get_value(
+				"Property Setter",
+				{"doc_type": "ToDo", "field_name": "description", "property": "width"},
+				"value",
+			),
+			"240px",
+		)
+
+	def test_save_listview_column_width_rejects_invalid_field(self):
+		self.assertRaises(frappe.ValidationError, save_listview_column_width, "ToDo", "invalid_field", 180)
+
+	def test_save_listview_column_width_clears_cache(self):
+		with patch("frappe.clear_cache") as clear_cache:
+			save_listview_column_width("ToDo", "description", 150)
+
+		clear_cache.assert_called_once_with(doctype="ToDo")
 
 	def test_list_view_child_table_filter_with_created_by_filter(self):
 		if frappe.db.exists("Note", "Test created by filter with child table filter"):
