@@ -1,1322 +1,1548 @@
-New Name,Novo Nome,
-Name,Nome,
-No,Não,
-Automation,Automação,
-Build,Desenvolvimento,
-Printing,Impressão,
-Print Format,Formato de impressão,
-Standard,Padrão,
-Notification,Notificação,
-Print Heading,Cabeçalho de impressão,
-Print Format Builder,Construtor de formato de impressão,
-Print Settings,Configurações de impressão,
-You haven't created a {0} yet,Você ainda não criou um {0}
+Previous Document,Documento Anterior
+Go,Procurar
+Next Document,Próximo Documento
+No further records,Não há mais registros
+Like,Contém
+Not Like,Não contém
+In,Está em
+Not In, Não está em
+use % as wildcard,usar % como curinga
+"""0 - Draft; 1 - Submitted; 2 - Cancelled","0 - Rascunho; 1 - Enviado; 2 - Cancelado,"""
+"""All possible Workflow States and roles of the workflow. Docstatus Options: 0 is """"Saved""""","1 is """"Submitted"""" and 2 is """"Cancelled"""",""""Todos os estados de fluxo de trabalho possíveis e funções do fluxo de trabalho. Opções de status do documento: 0 é """"""""Salvo"""""""", 1 é """"""""Enviado"""""""" e 2 é """"""""Cancelado"""""""""""","""
+Add / Update,Adicionar / Atualizar
+Add New,Adicionar Novo
+After Cancel,Após Cancelar
+After Delete,Após Excluir
+After Save,Após salvar
+After Save (Submitted Document),Após salvar (documento enviado)
+After Submit,Após o envio
+Allow Bulk Edit,Permitir edição em massa
+Allow Bulk Editing,Permitir edição em massa
+Allow Print for Cancelled,Permitir impressão para cancelado
+Allow editing even if the doctype has a workflow set up. Does nothing if a workflow isn't set up.,Permitir edição mesmo que o tipo de documento tenha um fluxo de trabalho configurado. Não tem efeito se não houver fluxo de trabalho configurado.
+Allow on Submit,Permitir ao Enviar
+Before Cancel,Antes de Cancelar
+Before Delete,Antes de excluir
+Before Save,Antes de salvar
+Before Save (Submitted Document),Antes de salvar (documento enviado)
+Before Submit,Antes de enviar
+Bulk Update,Atualização em Massa
+Cancel,Cancelar
+Cancelled,Cancelado
+Create,Criar
+Create Entry,Criar entrada
+Create New,Criar Novo
+Create User Email,Criar e-mail do usuário
+Create a new {0},Criar um novo {0}
 Create your first {0},Criar o primeiro registro em {0}
-Print Format For,Formato de impressão para,
-Margin Top,Margem superior,
-Not Saved,Não salvo,
-Edit Sidebar,Editar barra lateral,
-Session Defaults,Padrões da sessão,
-Toogle Full Width,Alternar largura total,
-Toogle Theme,Alternar tema,
-Google Font,Fonte do Google,
-Margin Bottom,Margem inferior,
-Margin Left,Margem esquerda,
-Margin Right,Margem direita,
-Page Number,Número da página,
-New {0},Novo {0},
-Users,Usuários,
-Collapse,Recolher,
-Reload List,Recarregar lista,
-Assignment Rule,Regra de atribuição,
-Document Type,Tipo de documento,
-Milestone,Marco,
-Auto Email Report,Relatório automático por e-mail,
-Reminder,Lembrete,
-Automatically Assign Documents to Users,Atribuir documentos automaticamente aos usuários,
-Clear all filters,Limpar todos os filtros,
-Enable System Notification,Habilitar notificação do sistema,
-Email Settings,Configurações de e-mail,
-Enable Email Notifications,Habilitar notificações por e-mail,
-Assignments,Atribuições,
-Tools,Ferramentas,
-Health Report,Relatório de integridade,
-Background Job,Tarefa em segundo plano,
-RQ Job,Tarefa RQ,
-RQ Worker,Worker RQ,
-Scheduled Job Type,Tipo de tarefa agendada,
-Scheduled Job Log,Log de tarefas agendadas,
-Scheduled Event,Evento agendado,
-System Console,Console do sistema,
-Recorder,Gravador,
-Api Request Log,Log de requisições da API,
-Patch Log,Log de patches,
-Log Settings,Configurações de logs,
-Email Threads on Assigned Document,Conversas de e-mail em documentos atribuídos,
-Get notified when an email is received on any of the documents assigned to you.,Receber notificação quando um e-mail for recebido em qualquer documento atribuído a você.,
-Event Reminders,Lembretes de eventos,
-Merge with existing,Mesclar com existente,
-Set User Permissions,Definir permissões do usuário,
-View Permitted Documents,Ver documentos permitidos,
-View Doctype Permissions,Ver permissões,
-Create User Email,Criar e-mail do usuário,
-Module,Módulo,
-Saved Filters,Filtros salvos,
-Add {0},Novo {0},
-Events,Eventos,
-What's New,Novidades,
-Notification Settings,Configurações de notificações,
-Mark all as read,Marcar todas como lidas,
-No New notifications,Nenhuma nova notificação,
-Looks like you haven’t received any notifications.,Parece que você não recebeu nenhuma notificação.,
-List View Settings,Configurações da visualização em lista,
-Disable Automatic Recency Filters,Desativar filtros automáticos de recência,
-Show Tags,Mostrar etiquetas,
-Disable Comment Count,Desativar contagem de comentários,
-Disable Scrolling,Desativar rolagem,
-Allow Bulk Editing,Permitir edição em massa,
-Allow editing even if the doctype has a workflow set up. Does nothing if a workflow isn't set up.,Permitir edição mesmo que o tipo de documento tenha um fluxo de trabalho configurado. Não tem efeito se não houver fluxo de trabalho configurado.,
-Created On,Criado em,
-Most Used,Mais utilizados,
-Fields,Campos,
-Save Current Filter,Salvar filtro atual,
-Last Updated On,Última atualização em,
-Add a Filter,Adicionar filtro,
-Clear Filters,Limpar filtros,
-Apply Filters,Aplicar filtros,
-Report View,Visualização de relatório,
-Dashboard View,Visualização de painel,
-Kanban View,Visualização Kanban,
-User Permissions,Permissões de usuário,
-Role Permissions Manager,Gerenciador de permissões por perfil,
-Edit DocType,Editar tipo de documento,
-Customize Quick Filters,Personalizar filtros rápidos,
-List Settings,Configurações da lista,
-"""Parent"" signifies the parent table in which this row must be added","""Principal"" diz respeito à tabela principal na qual deve ser acrescentada esta linha",
-#{0},#{0},
-${values.doctype_name} has been added to queue for optimization,${values.doctype_name} foi adicionado à fila para otimização,
-'Recipients' not specified,'Destinatários' não especificados,
-'{0}' is not a valid IBAN,'{0}' não é um IBAN válido,
-'{0}' is not a valid URL,'{0}' não é um URL válido,
-'{0}' not allowed for type {1} in row {2},'{0}' não permitido para o tipo {1} na linha {2},
-(Mandatory),(Obrigatório),
-+ Add / Remove Fields,+ Adicionar / Remover Campos,
-0 - Draft; 1 - Submitted; 2 - Cancelled,0 - Rascunho; 1 - Enviado; 2 - Cancelado,
-0 is highest,0 é o mais alto,
-1 = True & 0 = False,1 = Verdadeiro & 0 = Falso,
-1 Day,1 Dia,
-1 Google Calendar Event synced.,1 evento do Google Calendar sincronizado.,
-1 Report,1 Relatório,
-1 day ago,há 1 dia,
-1 hour,1 hora,
-1 hour ago,há 1 hora atrás,
-1 minute ago,há 1 minuto atrás,
-1 month ago,1 mês atrás,
-1 of 2,1 de 2,
-1 record will be exported,será exportado 1 registo,
-1 second ago,há 1 segundo,
-1 week ago,há 1 semana,
-1 year ago,1 ano atrás,
-2 hours ago,há 2 horas,
-2 months ago,há 2 meses,
-2 weeks ago,há 2 semanas,
-2 years ago,há 2 anos,
-3 minutes ago,há 3 minutos,
-30 minutes,30 minutos,
-4 hours,4 horas,
-5 Records,5 registos,
-5 days ago,há 5 dias,
-; not allowed in condition,; não é permitido na condição,
-"<a href=""https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication"" target=""_blank"">
-  Click here to learn about token-based authentication
-</a>","<a href=""https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication"" target=""_blank"">
-  Clique aqui para saber mais sobre a autenticação baseada em token
-</a>",
-<b>{0}</b> is not a valid URL,<b>{0}</b> não é um URL válido,
-A list of resources which the Client App will have access to after the user allows it.<br> e.g. project,"Uma lista de recursos que o aplicativo cliente terá acesso a depois que o usuário permita. <br> por exemplo, do projeto",
-A symbol for this currency. For e.g. $,Um símbolo para esta moeda. Por exemplo: R$,
-ALL,Tudo,
-API,API,
-API Access,Acesso API,
-API Endpoint,Endpoin da API,
-API Endpoint Args,Argumentos de endpoint da API,
-API Key,Chave da API,
-API Key and Secret to interact with the relay server. These will be auto-generated when the first push notification is sent from any of the apps installed on this site.,Chave de API e segredo para interagir com o servidor de retransmissão. Eles serão gerados automaticamente quando a primeira notificação push for enviada de qualquer um dos aplicativos instalados neste site.,
-API Key cannot be regenerated,A chave de API não pode ser regenerada,
-API Keys,Chaves de API,
-API Logging,Logs de API,
-API Method,Método API,
-API Secret,Segredo da API,
-ASC,CRESC,
-About,Sobre,
-About Us,Sobre Nós,
-Accept Invitation,Aceitar Convite,
-Accepted,Aceitado,
-Accepted At,Aceitado a,
-Access Control,Controle de Acesso,
-Access Log,Log de Acesso,
-Access Token,Token de Acesso,
-Account,Conta,
-Account Deletion Settings,Configurações de exclusão de conta,
-Accounts Manager,Gerente de Contas,
-Accounts User,Usuário de Contas,
-Action,Ação,
-Action / Route,Ação / Rota,
-Action Complete,Ação Concluída,
-Action Failed,Ação Falhou,
-Action Label,Etiqueta de ação,
-Action Timeout (Seconds),Tempo Limite de Ação (Segundos),
-Actions,Ações,
-Activate,Ativar,
-Active,Ativo,
-Active Directory,Diretório Ativo,
-Active Domains,Domínios ativos,
-Active Sessions,Sessões Ativas,
-Activity,Atividade,
-Activity Log,Log de Atividades,
-Add / Remove Columns,Adicionar / Remover Colunas,
-Add / Update,Adicionar / Atualizar,
-Add Attachment,Adicionar Anexo,
-Add Background Image,Adicionar Imagem de Fundo,
-Add Border at Bottom,Adicionar borda na parte inferior,
-Add Border at Top,Adicionar borda na parte superior,
-Add CSS,Adicionar CSS,
-Add Column,Adicionar Coluna,
-Add Contact,Adicionar Contato,
-Add Container,Adicionar recipiente,
-Add Filters,Adicionar Filtros,
-Add Gray Background,Adicionar fundo cinza,
-Add New,Adicionar Novo,
-Add Query Parameters,Adicionar Parâmetros de Consulta,
-Add Space at Top,Adicionar Espaço no Topo,
-Add Total Row,Adicionar Linha de Total,
-Add Translate Data,Adicionar Dados Traduzidos,
-Add Unsubscribe Link,Adicionar link para cancelar inscrição,
-Additional Permissions,Permissões Adicionais,
-Address,Endereço,
-Address Line 1,Endereço Linha 1,
-Address Line 2,Endereço Linha 2,
-Address Template,Modelo de Endereço,
-Address Title,Título do Endereço,
-Address Type,Tipo de Endereço,
-Address and other legal information you may want to put in the footer.,Endereço e outras informações legais que você pode querer colocar no rodapé.,
-Administration,Administração,
-Administrator,Administrador,
-Advanced Search,Busca Avançada,
-Advanced Settings,Configurações avançadas,
-After Cancel,Após Cancelar,
-After Delete,Após Excluir,
-After Insert,Após a Inserção,
-After Rename,Depois de Renomear,
-After Save,Após salvar,
-After Save (Submitted Document),Após salvar (documento enviado),
-After Submission,Após Enviar,
-After Submit,Após o envio,
-Aggregate Function Based On,Função agregada com base em,
-Alert,Alerta,
-Align,Alinhar,
-Align Labels to the Right,Alinhar etiquetas à direita,
-Align Right,Alinhar à direita,
-All Records,Todos os Registros,
-"All possible Workflow States and roles of the workflow. Docstatus Options: 0 is ""Saved"", 1 is ""Submitted"" and 2 is ""Cancelled""","Todos os estados de fluxo de trabalho possíveis e funções do fluxo de trabalho. Opções de status do documento: 0 é ""Salvo"", 1 é ""Enviado"" e 2 é ""Cancelado""",
-Allocated To,Atribuído a,
-Allow Auto Repeat,Permitir repetição automática,
-Allow Bulk Edit,Permitir edição em massa,
-Allow Consecutive Login Attempts,Permitir Tentativas Consecutivas de Login,
-Allow Guest,Permitir convidado,
-Allow Guest to View,Permitir visualização de convidado,
-Allow Login using User Name,Permitir Login usando o nome de usuário,
-Allow Modules,Permitir Módulos,
-Allow Print for Cancelled,Permitir impressão para cancelado,
-Allow Print for Draft,Permitir Impressão de Rascunho,
-Allow Read On All Link Options,Permitir leitura em todas as opções de link,
-Allow Rename,Permitir Renomear,
-Allow Roles,Permitir Funções,
-Allow Self Approval,Permitir auto-aprovação,
-Allow approval for creator of the document,Permitir aprovação para o criador do documento,
-Allow events in timeline,Permitir eventos na linha do tempo,
-Allow in Quick Entry,Permitir na entrada rápida,
-Allow on Submit,Permitir ao Enviar,
-Allow only one session per user,Permitir apenas uma sessão por usuário,
-Allow saving if mandatory fields are not filled,Permitir salvar se os campos obrigatórios não são preenchidas,
-Allowed,Permitido,
-Allowed In Mentions,Permitido nas menções,
-"Always add ""Draft"" Heading for printing draft documents","Sempre adicionar ""Rascunho"" no cabeçalho para impressão de documentos não enviados",
-Amend,Corrigir,
-Analytics,Análise,
-App,Aplicativo,
-Append To,Acrescente Para,
-Application Logo,Logo do aplicativo,
-Application Name,Nome da Aplicação,
-Application Version,Versão do aplicativo,
-Applied On,Aplicado em,
-Apply,Aplicar,
-Apply Strict User Permissions,Aplicar permissões de usuário estrito,
-Apply this rule if the User is the Owner,Aplicar esta regra se o usuário é o proprietário,
-Archive,Arquivar,
-Archived,Arquivado,
-Assign Condition,Atribuir condição,
-Assign To,Atribuir a,
-Assign To Users,Atribuir aos usuários,
-Assign to me,Atribuir a mim,
-Assigned,Atribuído,
-Assigned By,Atribuído por,
-Assigned By Full Name,Atribuído por Nome completo,
-Assigned To,Atribuído a,
-Assignment,Atribuição,
-Assignment Completed,Atribuição Concluída,
-Assignment Days,Dias de atribuição,
-Assignment Rules,Regras de Atribuição,
-Attach,Anexar,
-Attach Image,Anexar Imagem,
-Attach Print,Anexar cópia,
-Attached File,Arquivo anexo,
-Attached To Field,Relacionado ao campo,
-Attached To Name,Anexado Para Nome,
-Attachment,Anexo,
-Attachment Limit (MB),Limite de Anexo (MB),
-Attachment Limit Reached,Limite de Anexos Atingido,
-Attachment Link,Link de Anexo,
-Attachment Removed,Anexo Removido,
-Attachments,Anexos,
-Audit Trail,Trilha de Auditoria,
-Auth URL Data,Dados de URL de autenticação,
-Authentication,Autenticação,
-Authentication Apps you can use are:,Os aplicativos de autenticação que você pode usar são:,
-Author,Autor,
-Authorization,Autorização,
-Authorization Code,Código de autorização,
-Authorize API Indexing  Access,Autorizar acesso de indexação de API,
-Authorize Google Calendar Access,Autorizar acesso ao Google Agenda,
-Authorize Google Contacts Access,Autorizar o acesso dos Contatos do Google,
-Authorize URL,Autorizar URL,
-Authorized,Autorizado,
-Auto Name,Nome Automático,
-Auto Repeat,Repetição Automática,
-Auto Reply Message,Resposta Automática,
-Awaiting Password,Aguardando Senha,
-Awaiting password,Aguardando Senha,
-Back,Voltar,
-Background Color,Cor de Fundo,
-Background Jobs,Processos em Segundo Plano,
-Background Workers,Trabalhadores em Segundo Plano,
-Backups,Backups,
-Banner,Faixa,
-Banner HTML,Faixa HTML,
-Bar,Barra,
-Barcode,Código de Barras,
-Base Distinguished Name (DN),Base de dados de nome distinto (DN),
-Base URL,URL Base,
-Based on Field,Com base no campo,
-Based on Permissions For User,Com base em permissões para o usuário,
-Basic,Básico,
-Before Cancel,Antes de Cancelar,
-Before Delete,Antes de excluir,
-Before Insert,Antes da inserção,
-Before Save,Antes de salvar,
-Before Save (Submitted Document),Antes de salvar (documento enviado),
-Before Submit,Antes de enviar,
-Between,Entre,
-Billing,Faturamento,
-Billing Contact,Contato de Faturamento,
-Birth Date,Data de nascimento,
-Block Modules,Bloquear Módulos,
-Bold,Negrito,
-Bottom,Inferior,
-Brand HTML,Marca HTML,
-Brand Image,Imagem da Marca,
-Browser Version,Versão do navegador,
-Brute Force Security,Segurança da força bruta,
-Bulk Update,Atualização em Massa,
-Button,Botão,
-Button Gradients,Gradientes de botão,
-Button Rounded Corners,Botão Cantos Arredondados,
-Button Shadows,Sombras de botão,
-Bypass Restricted IP Address Check If Two Factor Auth Enabled,"Ignorar endereço IP restrito, verificar se a autenticação de dois fatores estiver habilitada",
-Bypass restricted IP Address check If Two Factor Auth Enabled,Ignorar verificação de endereço IP restrito se dois fatores de autenticação habilitados,
-CSS Class,Classe CSS,
-Calendar,Calendário,
-Calendar Name,Nome do calendário,
-Call To Action,Apelo à ação,
-Call To Action URL,URL de apelo à ação,
-Callback Message,Mensagem de retorno,
-Callback Title,Título de retorno,
-Camera,Câmera,
-Cancel,Cancelar,
-Cancelled,Cancelado,
-Card,Cartão,
-Cards,Postais,
-Category Description,Descrição da Categoria,
-Category Name,Nome da Categoria,
-Center,Centro,
-Change Label (via Custom Translation),Alterar etiqueta (via tradução personalizada),
-Change Password,Alterar Senha,
-"Change the starting / current sequence number of an existing series. <br>
-
-Warning: Incorrectly updating counters can prevent documents from getting created.",Altere o número de sequência inicial/atual de uma série existente. <br>Aviso: A atualização incorreta de contadores pode impedir que os documentos sejam criados.,
-Channel,Canal,
-Chart,Gráfico,
-Chart Configuration,Configuração de Gráfico,
-Chart Name,Nome do gráfico,
-Chart Options,Opções de gráfico,
-Chart Source,Fonte do gráfico,
-Charts,Gráficos,
-Check,Verifica,
-Check the Error Log for more information: {0},Verifique o Log de Erros para mais informações: {0},
-Check this if you want to force the user to select a series before saving. There will be no default if you check this.,Marque esta opção se você deseja forçar o usuário a selecionar uma série antes de salvar. Não haverá nenhum padrão se você marcar isso.,
-Choose authentication method to be used by all users,Escolha o método de autenticação a ser usado por todos os usuários,
-City,Cidade,
-City/Town,Cidade/Município,
-Clear,Claro,
-Clear All,Limpar Tudo,
-Clicked,Clicado,
-Client,Cliente,
-Client Code,Código do cliente,
-Client Credentials,Credenciais no cliente,
-Client ID,ID do Cliente,
-Client Information,Informação ao cliente,
-Client Secret,Segredo do cliente,
-Close,Fechar,
-Close Condition,Fechar Condição,
-Closed,Fechado,
-Code,Código,
-Collapsible,Desmontável,
-Collapsible Depends On,Depende dobrável,
-Color,Cor,
-Column,Coluna,
-Column Break,Quebra de coluna,
-Columns,Colunas,
-Columns / Fields,Colunas / Campos,
-Comment,Comentário,
-Comment By,Comentário por,
-Comments and Communications will be associated with this linked document,Comentários e comunicações serão associados com este documento relacionado,
-Commit,Comprometer,
-Company History,Histórico da Empresa,
-Company Introduction,Introdução da Empresa,
-Company Name,Nome da Empresa,
-Completed,Concluído,
-Condition,Condição,
-Configuration,Configuração,
-Confirm,Confirmar,
-Confirm Password,Confirmar Senha,
-Connections,Conexões,
-Contact,Contacto,
-Contact Details,Detalhes do Contato,
-Contact Email,E-mail de Contato,
-Contact Numbers,Números de contato,
-Contact Phone,Telefone de Contato,
-Contact Us,Fale Conosco,
-Contacts,Contactos,
-Content,Conteúdo,
-Content Type,Tipo de Conteúdo,
-Context,Contexto,
-Contributed,Contribuído,
-Contribution Document Name,Nome do documento de contribuição,
-Copyright,Direitos autorais,
-Core,Núcleo,
-Could not start up:,Não foi possível iniciar:,
-Counter,Contador,
-Country,País,
-Country Name,Nome do País,
-County,Distrito,
-Create,Criar,
-Create Entry,Criar entrada,
-Create New,Criar Novo,
-Cron Format,Formato Cron,
-Currency,Moeda,
-Currency Name,Nome da Moeda,
-Currency Precision,Precisão de moeda,
-Custom CSS,CSS Personalizado,
-Custom Configuration,Configuração Personalizada,
-Custom Field,Campo Personalizado,
-Custom Format,Formato Personalizado,
-Custom HTML Help,Ajuda HTML Personalizado,
-Custom Options,Opções Personalizadas,
-Custom Overrides,Substituições personalizadas,
-Custom Report,Relatório Personalizado,
-Custom SCSS,SCSS personalizado,
-Customize Form,Customizar Formulário,
-Daily Long,Diário Longo,
-Danger,Perigo,
-Dark Color,Cor Escura,
-Dashboard,Painel,
-Data,Dados,
-Data Export,Exportação de Dados,
-Data Import,Importação de Dados,
-Date,Data,
-Date Format,Formato de Data,
-Date and Number Format,Data e Formato de número,
-Datetime,Data e Hora,
-Day of Week,Dia da Semana,
-Days After,Dias Após,
-Days Before,Dias Antes,
-Days Before or After,Dias Antes ou Após,
-Default,Padrão,
-Default Letter Head,Cabeçalho de Carta Padrão,
-Default Portal Home,Página inicial do portal padrão,
-Default Print Format,Formato de impressão padrão,
-Default Print Language,Idioma de impressão padrão,
-Default Redirect URI,Padrão de redirecionamento URI,
-Default Role at Time of Signup,Função padrão no momento da inscrição,
-Default Sort Field,Campo de classificação padrão,
-Default Sort Order,Ordem de classificação padrão,
-Default Value,Valor padrão,
-"Default: ""Contact Us""","Padrão: ""Fale Conosco""",
-Defaults,Padrões,
-Delete,Excluir,
-Deleted Name,Nome Excluído,
-Deleted!,Excluído!,
-Deletion Steps,Etapas de exclusão,
-Depends On,Depende de,
-Description,Descrição,
-Desk Access,Acesso ao Ambiente de Trabalho,
-Desktop,Área de Trabalho,
-Details,Detalhes,
-Digits,Dígitos,
-Disable Auto Refresh,Desativar atualização automática,
-Disable Count,Desativar Contagem,
-Disable SMTP server authentication,Desativar autenticação do servidor SMTP,
-Disable Sidebar Stats,Desativar Estatísticas da Barra Lateral,
-Disabled,Desativado,
-Discard,Descartar,
-Display Depends On,Visualização depende,
-Do Not Create New User,Não criar novo usuário,
-DocType,Tipo de Documento (DocType),
-Document,Documento,
-Document Actions,Ações do Documento,
-Document Link,Link do Documento,
-Document Links,Links de documentos,
-Document Naming Settings,Configurações de Nomenclatura,
-Document Share,Partilha de Documentos,
-Document States,Documento Unidos,
-Document Tag,Etiqueta de Documento,
-Document Title,Título do documento,
-Documentation Link,Link da documentação,
-Documentation URL,URL de documentação,
-Domains HTML,Domínios HTML,
-Done,Feito,
-Donut,Rosquinha,
-Download,Baixar,
-Draft,Rascunho,
-Due Date,Data de Vencimento,
-Due Date Based On,Data de vencimento baseada em,
-Duplicate,Duplicar,
-Duration,Duração,
-Dynamic Filters,Filtros Dinâmicos,
-Dynamic Filters JSON,Filtros dinâmicos JSON,
-Dynamic Filters Section,Seção de Filtros Dinâmicos,
-Dynamic Report Filters,Filtros dinâmicos de relatórios,
-Dynamic Route,Rota Dinâmica,
-Dynamic Template,Modelo dinâmico,
-Edit,Editar,
-Email Account,Conta de E-mail,
-Email Inbox,Caixa de Entrada,
-Email Signature,Assinatura de E-mail,
-Email Template,Modelo de E-mail,
-Enable,Permitir,
-Enable Auto Reply,Ativar resposta automática,
-Enable Automatic Linking in Documents,Ativar Vinculação Automática em Documentos,
-Enable Comments,Ativação de comentários,
-Enable Password Policy,Ativar política de senha,
-Enable Print Server,Ativar servidor de impressão,
-Enable Raw Printing,Ativar impressão bruta,
-Enable Scheduled Jobs,Ativar Tarefas Agendadas,
-Enable Security,Ativar segurança,
-Enable Social Login,Ativar Login Social,
-Enabled,Ativado,
-End Date Field,Campo de data final,
-Ends on,Termina em,
-Energy Point,Ponto de energia,
-Equals,Iguais,
-Error Log,Log de Erros,
-Event,Evento,
-Event Category,Categoria do Evento,
-Example,Exemplo,
-Example: #Tree/Account,Exemplo: # árvore / conta,
-Example: 00001,Exemplo: 00001,
-Exception,Exceção,
-Expand,Expandir,
-Expert,Especialista,
-Expiration time,Data de validade,
-Expired,Expirado,
-Expires In,Expira em,
-Expiry time of QR Code Image Page,Tempo de expiração da página de imagem de código QR,
-Export,Exportar,
-Export From,Exportar de,
-Export Type,Tipo de exportação,
-Expose Recipients,Mostrar Destinatários,
-"Expression, Optional","Expressão, Opcional",
-Failed,Falhou,
-Female,Feminino,
-Fetch From,Buscar de,
-Field,Campo,
-Field Description,Descrição do Campo,
-Field to Track,Campo para rastrear,
-File Information,Informações do arquivo,
-File Manager,Gerenciador de Arquivos,
-File Name,Nome do arquivo,
-File Size,Tamanho do arquivo,
-File URL,URL do arquivo,
-Filter,Filtro,
-Filter Data,Filtrar dados,
-Filter Meta,Filtrar Meta,
-Filter Values,Valores de filtro,
-Filters,Filtros,
-Filters Configuration,Configuração de Filtros,
-Filters Display,Exibição dos Filtros,
-Filters JSON,Filtros JSON,
-Filters Section,Seção de Filtros,
-Finished,Acabado,
-First Success Message,Primeira mensagem de sucesso,
-Flag,Bandeira,
-Float Precision,Precisão de Casas Decimais,
-Fold,Dobrar,
-Folder,Pasta,
-Font Properties,Propriedades da fonte,
-Font Size,Tamanho da Fonte,
-Fonts,Fontes,
-Footer,Rodapé,
-Footer HTML,HTML de rodapé,
-Footer Items,Itens do Rodapé,
-Footer Logo,Logotipo do rodapé,
-Footer Template,Modelo de rodapé,
-Footer Template Values,Valores de modelo de rodapé,
-Footer will display correctly only in PDF,Rodapé será exibido corretamente somente em PDF,
-For Value,Por valor,
-For example: {} Open,Por exemplo: {} Abra,
-Force,Força,
-Force User to Reset Password,Forçar usuário a redefinir a senha,
-Form Settings,Configurações de formulário,
-Form URL-Encoded,Codificado em URL do formulário,
-Format Data,Formato de dados,
-Fraction,Fração,
-Fraction Units,Unidades Fracionadas,
-From Date Field,Do campo de data,
-From Full Name,De nome completo,
-Full,Cheio,
-Full Name,Nome Completo,
-Full Width,Largura completa,
-GMail,Gmail,
-Gender,Gênero,
-Generate Keys,Gerar Chaves,
-Geolocation,Geolocalização,
-Get Contacts,Obter contatos,
-Get your globally recognized avatar from Gravatar.com,Obtenha seu avatar globalmente reconhecido de Gravatar.com,
-Global Unsubscribe,Cancelar Inscrição Global,
-Go to Page,Vá para página,
-Google Analytics ID,ID do Google Analytics,
-"Google Calendar - Could not find Calendar for {0}, error code {1}.","Google Agenda - Não foi possível encontrar o Agenda para {0}, código de erro {1}.",
-Google Calendar Event ID,ID do evento do Google Agenda,
-Google Calendar ID,ID da Agenda do Google,
-Group By Based On,Agrupar por Com base em,
-Group By Type,Agrupar por tipo,
-HH:mm,HH: mm,
-HTML Editor,Editor de HTML,
-HTML Page,Página HTML,
-HTML for header section. Optional,HTML para a seção de cabeçalho. opcional,
-Half,Metade,
-Header,Cabeçalho,
-Header HTML,HTML de cabeçalho,
-Headers,Cabeçalhos,
-Heatmap,Mapa de calor,
-"Hello,","Olá,",
-Help,Ajuda,
-Help HTML,Ajuda HTML,
-Hide Block,Esconder o Bloco,
-Hide Border,Ocultar borda,
-Hide Copy,Ocultar Cópia,
-Hide Days,Ocultar dias,
-Hide Seconds,Ocultar segundos,
-Higher priority rule will be applied first,Regra de prioridade mais alta será aplicada primeiro,
-Highlight,Realçar,
-Home,Início,
-Home Page,Pagina inicial,
-Home Settings,Configurações iniciais,
-Hourly,De hora em hora,
-Hourly Long,Por hora,
-Hourly rate limit for generating password reset links,Limite de taxa por hora para gerar links de redefinição de senha,
-"How should this currency be formatted? If not set, will use system defaults","Como essa moeda deve ser formatada? Se não for definido, serão usados os padrões do sistema",
-ID,ID,
-IP Address,Endereço de IP,
-Icon,Ícone,
-Icon will appear on the button,O ícone aparecerá no botão,
-Identity Details,Detalhes da identidade,
-"If checked, all other workflows become inactive.","Se marcada, todos os outros fluxos de trabalho tornam-se inativos.",
-"If disabled, this role will be removed from all users.",Se esta função for desativada será removida em todos os usuários.,
-"If enabled, changes to the document are tracked and shown in timeline","Se ativado, as alterações no documento são rastreadas e mostradas na linha do tempo",
-"If enabled, document views are tracked, this can happen multiple times","Se ativado, as visualizações de documentos são rastreadas, isso pode acontecer várias vezes",
-"If enabled, the document is marked as seen, the first time a user opens it","Se ativado, o documento é marcado como visto, a primeira vez que um usuário o abre",
-"If enabled, the notification will show up in the notifications dropdown on the top right corner of the navigation bar.","Se ativada, a notificação aparecerá na lista suspensa de notificações no canto superior direito da barra de navegação.",
-"If enabled, users will be notified every time they login. If not enabled, users will only be notified once.","Se ativado, os usuários serão notificados sempre que iniciarem sessão. Se não estiver ativado, os usuários só serão notificados uma vez.",
-If non standard port (e.g. 587),"Se não for a porta padrão (por exemplo, 587)",
-"If not set, the currency precision will depend on number format","Se não for definido, a precisão da moeda dependerá do formato de número",
-If user is the owner,Se o usuário é o proprietário,
-Ignore XSS Filter,Ignorar Filtro XSS,
-Ignore attachments over this size,Ignorar anexos maiores que este tamanho,
-Ignored Apps,Aplicativos ignorados,
-Image,Imagem,
-Image Field,Campo de Imagem,
-Image Link,Link da Imagem,
-Implicit,Implícito,
-Import,Importar,
-Import File,Importar arquivo,
-Import File Errors and Warnings,Erros e avisos de importação de arquivos,
-Import Log Preview,Visualização do registro de importação,
-Import Preview,Visualização de importação,
-Import Warnings,Avisos de importação,
-Import from Google Sheets,Importar do Planilhas Google,
-In Days,Em dias,
-In Filter,No Filtro da Lista,
-In Global Search,Na Busca Global,
-In Preview,Na pré-visualização,
-In Progress,Em Andamento,
-In Reply To,Em resposta a,
-In Standard Filter,Em Filtro Padrão,
-In points. Default is 9.,Em pontos. O padrão é 9.,
-In seconds,Em segundos,
-Inactive,Inativo,
-Include Search in Top Bar,Incluem a busca no Top Bar,
-Incoming,Entrada,
-Indicator,Indicador,
-Info,Informações,
-Initial Sync Count,Contagem de sincronização inicial,
-Insert New Records,Inserir novos registros,
-Insert Style,Inserir Estilo,
-Int,Inteiro,
-Integrations,Integrações,
-Introduce your company to the website visitor.,Apresente sua empresa para o visitante do site.,
-Introductory information for the Contact Us Page,Informação introdutória para a página Fale Conosco,
-Inverse,Inverso,
-Invited By,Convidado por,
-Is,É,
-Is Attachments Folder,É Pasta de Anexos,
-Is Complete,Está completo,
-Is Completed,Está completo,
-Is Custom Field,É campo personalizado,
-Is Default,É Padrão,
-Is Folder,É Pasta,
-Is Group,É grupo,
-Is Mandatory Field,É campo obrigatório,
-Is Optional State,É estado opcional,
-Is Primary,É primário,
-Is Primary Contact,É o contato principal,
-Is Primary Mobile,É o celular principal,
-Is Primary Phone,É o telefone principal,
-Is Private,É privada,
-Is Public,É público,
-Is Published Field,É Publicado campo,
-Is Skipped,É pulado,
-Is Standard,É Padrão,
-Is Table,É Tabela,
-Is Tree,É árvore,
-Is Unique,É único,
-Items,Itens,
-JSON Request Body,Corpo da solicitação JSON,
-Key,Chave,
-LDAP First Name Field,Campo Primeiro Nome do LDAP,
-LDAP Group,Grupo LDAP,
-LDAP Group Field,Campo do Grupo LDAP,
-LDAP Group Mappings,Mapeamentos de grupo LDAP,
-LDAP Last Name Field,Campo Sobrenome LDAP,
-LDAP Middle Name Field,Campo de nome do meio LDAP,
-LDAP Mobile Field,Campo Móvel LDAP,
-LDAP Phone Field,Campo de telefone LDAP,
-LDAP Search String,Palavra de Busca do LDAP,
-LDAP Security,Segurança LDAP,
-LDAP User Creation and Mapping,Criação e Mapeamento de Usuários LDAP,
-LDAP Username Field,Campo Nome de Usuário do LDAP,
-Label,Rótulo,
-Label Help,Ajuda sobre Etiquetas,
-Label and Type,Etiqueta e Tipo,
-Landing Page,Página de chegada,
-Language,Idioma,
-Language Code,Código do Idioma,
-Language Name,Nome do Idioma,
-Last 6 Months,Últimos 6 meses,
-Last Active,Ativo pela última vez,
-Last Execution,Última Execução,
-Last IP,Último IP,
-Last Known Versions,Últimas versões conhecidas,
-Last Login,Último Login,
-Last Month,Mês passado,
-Last Name,Sobrenome,
-Last Password Reset Date,Data da última redefinição de senha,
-Last Quarter,Ultimo quarto,
-Last Sync On,Última sincronização em,
-Last Synced On,Última sincronização em,
-Last User,Último usuário,
-Last Week,Semana passada,
-Last Year,Ano passado,
-Leave blank to repeat always,Deixe em branco para repetir sempre,
-Left,Esquerda,
-Letter,Carta,
-Letter Head,Papel Timbrado,
-Letter Head Based On,Carta de cabeça com base em,
-Letter Head Image,Carta cabeça imagem,
-Letter Head Name,Nome do timbrado,
-Letter Head in HTML,Cabeça Carta em HTML,
-Light Color,Cor clara,
-Like,Gostar,
-Limit,Limite,
-Line,Linha,
-Link Cards,Cartões de ligação,
-Link Fieldname,Nome do campo do link,
-Link Name,Nome do Link,
-Link Title,Título do Link,
-Link To,Link para,
-Link to the page you want to open. Leave blank if you want to make it a group parent.,Link para a página que você deseja abrir. Deixe em branco se você quiser torná-lo um pai grupo.,
-Linked,Relacionado,
-List,Lista,
-List View,Visualização em Lista,
-Load Balancing,Balanceamento de carga,
-Load More,Carregue mais,
-Log,Registo,
-Login,Entrar,
-Logout,Sair,
-Logout All Sessions on Password Reset,Sair de todas as sessões ao redefinir a senha,
-Logout From All Devices After Changing Password,Saia de todos os dispositivos após alterar a senha,
-Long Text,Texto Longo,
-Madam,Senhora,
-Main Section,Seção Principal,
-Main Section (HTML),Seção Principal (HTML),
-Main Section (Markdown),Seção Principal (Remarcação),
-Make {0},Faça {0},
-Male,Masculino,
-Mandatory,Obrigatório,
-Mandatory Depends On,Obrigatório Depende,
-Map route parameters into form variables. Example <code>/project/&lt;name&gt;</code>,Mapeie os parâmetros da rota em variáveis de formulário. Exemplo <code>/project/&lt;name&gt;</code>,
-Markdown Editor,Editor de Markdown,
-Max Attachments,Máx. de Anexos,
-Max Length,Comprimento máximo,
-Max Value,Max Valor,
-Maximum,Máximo,
-Mention,Menção,
-Mentions,Menções,
-Message Examples,Exemplos de Mensagens,
-Message ID,ID da Mensagem,
-Message Parameter,Parâmetro da mensagem,
-Method,Método,
-Middle Name,Nome do Meio,
-Minimum,Mínimo,
-Miss,Senhorita,
-Mobile No,Telefone Celular,
-Module Name,Nome do Módulo,
-Modules,Módulos,
-Modules HTML,Módulos HTML,
-Monthly Long,Mensalmente Longo,
-More Information,Mais Informações,
-More content for the bottom of the page.,Mais conteúdo na parte de baixo da página.,
-Must be a publicly accessible Google Sheets URL,Deve ser um URL de planilhas do Google acessível publicamente,
-Mute Sounds,Desativar Sons,
-Naming,Nomeação,
-New,Novo,
-New value to be set,Novo valor a ser definido,
-Next 6 Months,Próximos 6 meses,
-Next Month,Próximo mês,
-Next Quarter,Próximo trimestre,
-Next Schedule Date,Próxima data programada,
-Next Week,Próxima semana,
-Next Year,Próximo ano,
-No Copy,Nenhuma Cópia,
-No comments yet.,Ainda não há comentários.,
-Non Negative,Não Negativo,
-Non-Conforming,Não conforme,
-None,Nenhum,
-"Note: For best results,  images must be of the same size and width must be greater than height.","Nota: Para obter melhores resultados, as imagens devem ter o mesmo tamanho e a largura deve ser maior que a altura.",
-Note: Multiple sessions will be allowed in case of mobile device,Observação: Serão permitidas múltiplas sessões no caso de dispositivo móvel,
-Notifications,Notificações,
-Notify if unreplied,Informar se não for respondido,
-Notify if unreplied for (in mins),Informar se não for respondido em (minutos),
-Number,Número,
-Number Format,Formato de número,
-Number of Backups,Número de Backups,
-Number of Groups,Número de Grupos,
-OTP App,Aplicação OTP,
-OTP Issuer Name,Nome da Emissora OTP,
-Off,Desligado,
-Office,Escritório,
-Only Allow Edit For,Somente permite edição para,
-Only Send Records Updated in Last X Hours,Somente Enviar Registros Atualizados em Últimas X Horas,
-Only one {0} can be set as primary.,Somente um {0} pode ser definido como primário.,
-Open,Aberto,
-Open Documents,Documentos abertos,
-Open Reference Document,Documento de Referência Aberto,
-Open URL in a New Tab,Abrir URL em uma nova guia,
-Opened,Inaugurado,
-Optional: The alert will be sent if this expression is true,Opcional: O alerta será enviado se essa expressão é verdadeira,
-Options Help,Ajuda sobre Opções,
-Order,Pedido,
-Org History,História da Organização,
-Org History Heading,Cabeçalho da História da Organização,
-Other,Outro,
-Outgoing,Saída,
-Output,Saída,
-PDF Page Size,Tamanho da página PDF,
-PDF Settings,Configurações do PDF,
-Page Building Blocks,Blocos de construção de página,
-Page HTML,Página HTML,
-Page Name,Nome da Página,
-Page Settings,Configurações da página,
-Parent Label,Etiqueta Pai,
-Passive,Passivo,
-Password,Senha,
-Password Reset Link Generation Limit,Limite de geração de link de redefinição de senha,
-Password for Base DN,Senha para DN de base,
-Patch,Remendo,
-Path to Server Certificate,Caminho para o certificado do servidor,
-Path to private Key File,Caminho para o arquivo de chaves privado,
-Pending,Pendente,
-Pending Approval,Aprovação pendente,
-Percentage,Percentagem,
-Perm Level,Nível Permanente,
-Permanent,Permanente,
-Permission Rules,Regras de Permissão,
-Permissions,Permissões,
-Personal,Pessoal,
-Phone,Telefone,
-Pie,Torta,
-Plant,Fábrica,
-Port,Porta,
-Position,Posição,
-Precision,Precisão,
-Prefer not to say,Prefiro não dizer,
-Preferred Billing Address,Endereço preferido de faturamento,
-Preferred Shipping Address,Endereço preferido para entrega,
-Prefix,Prefixo,
-Preview HTML,Pré-visualização de HTML,
-Preview Message,Visualizar mensagem,
-Primary,Primário,
-Primary Color,Cor primária,
-Print,Imprimir,
-Print Format Help,Ajuda sobre Formatos de Impressão,
-Print Format Type,Tipo do Formato de Impressão,
-Print Hide,Ocultar Impressão,
-Print Hide If No Value,Ocultar Impressão se não Preenchido,
-Print Server,Servidor de impressão,
-Print Style Name,Nome do estilo de impressão,
-Print Style Preview,Estilo de visualização de impressão,
-Print Width,Largura de impressão,
-"Print Width of the field, if the field is a column in a table","Largura de impressão do campo, se o campo é uma coluna na tabela",
-Print with letterhead,Imprimir com o timbre,
-Printer Name,Nome da impressora,
-Priority,Prioridade,
-Private,Privado,
-Property Depends On,Propriedade depende,
-Provider,Fornecedor,
-Provider Name,Nome do provedor,
-Public,Público,
-Pull from Google Calendar,Puxe do Google Agenda,
-Pulled from Google Calendar,Extraído do Google Agenda,
-Pulled from Google Contacts,Extraído dos Contatos do Google,
-Push to Google Calendar,Enviar para o Google Agenda,
-Push to Google Contacts,Enviar para os Contatos do Google,
-QZ Tray Failed:,Falha na bandeja QZ:,
-Query,Consulta,
-Query Options,Opções de Consulta,
-Queued,Em Fila,
-Quick Entry,Registo Rápido,
-RAW Information Log,Registro de informações RAW,
-Read,Ler,
-Read Only Depends On,Somente leitura depende,
-Read by Recipient,Lido por destinatário,
-Read by Recipient On,Lido por destinatário ativado,
-Receiver By Document Field,Receptor por campo de documento,
-Receiver By Role,Receptor por função,
-Receiver Parameter,Parâmetro do recebedor,
-Recipient,Destinatário,
-Recipient Unsubscribed,Destinatário com inscrição cancelada,
-Recipients,Destinatários,
-Redirect URL,Redirecionar URL,
-Reference DocName,Nome do Documento de Referência,
-Reference Docname,Nome do Documento de Referência,
-Reference Doctype,DocType de Referência,
-Reference Owner,Proprietário de Referência,
-Reference Report,Relatório de referência,
-Reference name,Nome de Referência,
-Refresh Google Sheet,Atualizar planilha do Google,
-Relinked,Religado,
-Reload,Recarregar,
-Remember Last Selected Value,Lembrar última seleção,
-Repeat On,Repetir em,
-Repeat Till,Repita até que,
-Repeat on Day,Repetir no dia,
-Repeat on Last Day of the Month,Repetir no último dia do mês,
-Repeat this Event,Repita este evento,
-Reply,Responder,
-Report,Relatório,
-Report Description,Descrição do relatório,
-Report Filters,Filtros de relatório,
-Report Hide,Ocultar Relatório,
-Report Information,Informações do Relatório,
-Request Data,Solicitar Dados,
-Request Structure,Estrutura da solicitação,
-Request URL,URL do pedido,
-Require Trusted Certificate,Exigir certificado confiável,
-Reset Password Key,Redefinição de senha chave,
-Response,Resposta,
-Restore,Restaurar,
-Restored,Restaurado,
-Restrict IP,Restringir IP,
-Restrict To Domain,Restringir ao domínio,
-Restrict to Domain,Restringir ao domínio,
-Revoked,Revogado,
-Right,Direita,
-Role,Papel/Função,
-Role Name,Nome da Função,
-Role Profiles,Regra de Perfis,
-Role and Level,Função e Nível,
-Roles,Regras,
-Roles & Permissions,Regras e Permissões,
-Roles Assigned,Funções Atribuídas,
-Roles HTML,Funções HTML,
-Sessions,Sessões,
-Time Zone,Fuso Horário,
-Comments,Comentários
-First Name,Primeiro Nome,
+Created By You,Criado por você
+Created On,Criado em
+Version,Versão
+Username,Nome de Usuário
+Delete,Excluir
+Delete row,Excluir linha
+Delete {0} item permanently?,Excluir {0} item permanentemente?
+Deleted Name,Nome Excluído
+Deleted all documents successfully,Todos os documentos foram excluídos com sucesso
+Deleted!,Excluído!
+Do Not Create New User,Não criar novo usuário
+Edit,Editar
+Edit,Editar
+Edit DocType,Editar tipo de documento
+Edit Sidebar,Editar barra lateral
+Editing Row,Editando linha
+HTML Editor,Editor de HTML
+Insert New Records,Inserir novos registros
+Last Edited by You,Última edição por você
+Last Updated On,Última atualização em
+Markdown Editor,Editor de Markdown
+New {0},Novo {0}
+New,Novo
+Select Field,Informe o campo
+New Email,Novo Email
+New Name,Novo Nome
+New Value,Novo Valor
+New value to be set,Novo valor a ser definido
+No New notifications,Nenhuma nova notificação
+Not Saved,Não salvo
+Only Allow Edit For,Somente permite edição para
+Only Send Records Updated in Last X Hours,Somente Enviar Registros Atualizados em Últimas X Horas
+Open URL in a New Tab,Abrir URL em uma nova guia
+Save,Salvar
+Select the label after which you want to insert new field.,Selecione a etiqueta após a qual você deseja inserir um novo campo.
+Set New Password,Definir nova senha
+Submit,Enviar
+Submit After Import,Enviar após importação
+Text Editor,Editor de Texto
+These values will be automatically updated in transactions and also will be useful to restrict permissions for this user on transactions containing these values.,Esses valores serão atualizados automaticamente em transações e também serão úteis para restringir as permissões para este usuário em operações que contenham esses valores.
+This is the number of the last created transaction with this prefix,Este é o número da última transação criada com este prefixo
+Update,Atualizar
+Update Existing Records,Atualizar registros existentes
+Update Field,Atualizar Campo
+Update Series Number,Atualizar Números de Séries
+Update Settings,Atualizar configurações
+Update Value,Atualizar Valor
+User Cannot Create,O Usuário não pode criar
+Warning: Incorrectly updating counters can prevent documents from getting created.,"Altere o número de sequência inicial/atual de uma série existente. <br>Aviso: A atualização incorreta de contadores pode impedir que os documentos sejam criados.,"""
+What's New,Novidades
+Workflow Action is not created for optional states,A ação do fluxo de trabalho não é criada para estados opcionais
+You created this,Criado por você
+You have a new message from:,Você tem uma nova mensagem de:
+You haven't created a {0} yet,Você ainda não adicionou {0}
+You last edited this,Última edição realizada por você
+You need to create these first:,Você precisa criar estes primeiro:
+Zero means send records updated at anytime,Zero significa enviar registros atualizados a qualquer momento
+new,novo
+{0} created successfully,{0} criado com sucesso
+{0} is not a valid Workflow State. Please update your Workflow and try again.,{0} não é um estado válido do fluxo de trabalho. Atualize o seu fluxo de trabalho e tente novamente.
+{0} record deleted,{0} registro eliminado
+{0} records deleted,{0} registros eliminados
+{0} saved successfully,{0} salvo com sucesso
+{0} {1}: Submitted Record cannot be deleted. You must {2} Cancel {3} it first.,{0} {1}: O registro enviado não pode ser eliminado. Tem de {2} Cancelar {3} primeiro.
+{0}: Cannot set Amend without Cancel,{0}: Não é possível retificar sem Cancelar
+{0}: Cannot set Cancel without Submit,{0}: Não é possível Cancelar sem enviar
+"""Default: """"Contact Us""""","""""Padrão: """"""""Fale Conosco"""""""""""","""
+API Key and Secret to interact with the relay server. These will be auto-generated when the first push notification is sent from any of the apps installed on this site.,Chave de API e segredo para interagir com o servidor de retransmissão. Eles serão gerados automaticamente quando a primeira notificação push for enviada de qualquer um dos aplicativos instalados neste site.
+Add Contact,Adicionar Contato
+Alert,Alerta
+Authorize Google Contacts Access,Autorizar o acesso dos Contatos do Google
+Auto Email Report,Relatório automático por e-mail
+Billing Contact,Contato de Faturamento
+Contact,Contato
+Contact Details,Detalhes do Contato
+Contact Email,E-mail de Contato
+Contact Numbers,Números de contato
+Contact Phone,Telefone de Contato
+Contact Us,Fale Conosco
+Contacts,Contatos
+Email Account,Conta de E-mail
+Email Inbox,Caixa de Entrada
+Email Settings,Configurações de e-mail
+Email Signature,Assinatura de E-mail
+Email Template,Modelo de E-mail
+Email Threads on Assigned Document,Conversas de e-mail em documentos atribuídos
+Enable Email Notifications,Habilitar notificações por e-mail
+Enable System Notification,Habilitar notificação do sistema
+Get Contacts,Obter contatos
+Get notified when an email is received on any of the documents assigned to you.,Receber notificação quando um e-mail for recebido em qualquer documento atribuído a você.
+Google Contacts,Contatos do Google
+Is Primary Contact,É o contato principal
+Looks like you haven’t received any notifications.,Parece que você não recebeu nenhuma notificação.
+Notification,Notificação
+Notification Settings,Configurações de notificações
+Notifications,Notificações
+Optional: The alert will be sent if this expression is true,Opcional: O alerta será enviado se essa expressão é verdadeira
+Pulled from Google Contacts,Extraído dos Contatos do Google
+Push Notification,Notificação push
+Push to Google Calendar,Enviar para o Google Agenda
+Push to Google Contacts,Enviar para os Contatos do Google
+Send Alert On,Enviar Alerta
+Send Notification to,Enviar Notificação para
+Send Notifications For Documents Followed By Me,Enviar notificações para documentos seguidos por mim
+Send System Notification,Enviar Notificação do Sistema
+Send Welcome Email,Enviar e-mail de boas-vindas
+Send alert if this field's value changes,Enviar alerta se muda o valor desse campo
+Set Property After Alert,Definir propriedade após o alerta
+Sync with Google Contacts,Sincronizar com os contatos do Google
+System Notification,Notificação do sistema
+Total number of emails to sync in initial sync process,Número total de e-mails a serem sincronizados no processo de sincronização inicial
+Unread Notification Sent,Notificação de mensagem não lida enviada
+Add Filters,Adicionar Filtros
+Filters {0},Filtros {0}
+{0} Filter Applied,{0} Filtro Aplicado
+{0} Filters Applied,{0} Filtros Aplicados
+Add Query Parameters,Adicionar Parâmetros de Consulta
+Add a Filter,Adicionar filtro
+Advanced Search,Busca Avançada
+Apply Filters,Aplicar filtros
+Clear Filters,Limpar filtros
+Clear all filters,Limpar todos os filtros
+Customize Quick Filters,Personalizar filtros rápidos
+Disable Automatic Recency Filters,Desativar filtros automáticos de recência
+Dynamic Filters,Filtros Dinâmicos
+Dynamic Filters JSON,Filtros dinâmicos JSON
+Dynamic Filters Section,Seção de Filtros Dinâmicos
+Dynamic Report Filters,Filtros dinâmicos de relatórios
+Filter,Filtro
+Filter Applied,filtro aplicado
+Filter Data,Filtrar dados
+Filter Meta,Filtrar Meta
+Filter Values,Valores de filtro
+Filters,Filtros
+Filters Configuration,Configuração de Filtros
+Filters Display,Exibição dos Filtros
+Filters JSON,Filtros JSON
+Filters Section,Seção de Filtros
+Filters{0},Filtros{0}
+Ignore XSS Filter,Ignorar Filtro XSS
+In Filter,No Filtro da Lista
+In Global Search,Na Busca Global
+In Standard Filter,Em Filtro Padrão
+Include Search in Top Bar,Incluem a busca no Top Bar
+LDAP Search String,Palavra de Busca do LDAP
+No {0} found with matching filters. Clear filters to see all {0}.,Nenhum {0} encontrado com os filtros aplicados. Limpe os filtros para ver todos os {0}.
+Query,Consulta
+Query Options,Opções de Consulta
+Report Filters,Filtros de relatório
+Save Current Filter,Salvar filtro atual
+Saved Filters,Filtros salvos
+Search,Buscar
+Search Fields,Campos de Pesquisa
+Search Priorities,Prioridades de pesquisa
+Search or type a command,Pesquisar ou digitar um comando
+Show in filter,Mostrar no filtro
+User Cannot Search,O Usuário não pode pesquisar
+{0} Filters Applied,{0} Filtros Aplicados
+"""""""Parent"""" signifies the parent table in which this row must be added","""""""""""""Principal"""""""" diz respeito à tabela principal na qual deve ser acrescentada esta linha"""","""
+"""; not allowed in condition","; não é permitido na condição,"""
+"""</a>""""",""""
+"""Bypass Restricted IP Address Check If Two Factor Auth Enabled","""""Ignorar endereço IP restrito, verificar se a autenticação de dois fatores estiver habilitada"""","""
+"""Expression","Optional,""""Expressão, Opcional"""","""
+"""Google Calendar - Could not find Calendar for {0}","error code {1}.,""""Google Agenda - Não foi possível encontrar o Agenda para {0}, código de erro {1}."""","""
+"""Hello",",""""Olá,"""","""
+"""If checked","all other workflows become inactive.,""""Se marcada, todos os outros fluxos de trabalho tornam-se inativos."""","""
+"""If enabled","changes to the document are tracked and shown in timeline,""""Se ativado, as alterações no documento são rastreadas e mostradas na linha do tempo"""","""
+"""If enabled","document views are tracked, this can happen multiple times,""""Se ativado, as visualizações de documentos são rastreadas, isso pode acontecer várias vezes"""","""
+"""If enabled","the document is marked as seen, the first time a user opens it,""""Se ativado, o documento é marcado como visto, a primeira vez que um usuário o abre"""","""
+"""If enabled","the notification will show up in the notifications dropdown on the top right corner of the navigation bar.,""""Se ativada, a notificação aparecerá na lista suspensa de notificações no canto superior direito da barra de navegação."""","""
+"""If enabled","users will be notified every time they login. If not enabled, users will only be notified once.,""""Se ativado, os usuários serão notificados sempre que iniciarem sessão. Se não estiver ativado, os usuários só serão notificados uma vez."""","""
+"""If non standard port (e.g. 587)","""""Se não for a porta padrão (por exemplo, 587)"""","""
+"""If not set","the currency precision will depend on number format,""""Se não for definido, a precisão da moeda dependerá do formato de número"""","""
+"""Map route parameters into form variables. Example <code>/project/&lt;name&gt;</code>","Mapeie os parâmetros da rota em variáveis de formulário. Exemplo <code>/project/&lt;name&gt;</code>,"""
+"""Note: For best results","images must be of the same size and width must be greater than height.,""""Nota: Para obter melhores resultados, as imagens devem ter o mesmo tamanho e a largura deve ser maior que a altura."""","""
+"""This will terminate the job immediately and might be dangerous","are you sure?,""""Isso encerrará o trabalho imediatamente e pode ser perigoso, tem certeza?"""","""
+"""To use Google Indexing","enable <a href=""""/desk/google-settings"""">Google Settings</a>.,""""Para usar a indexação do Google, ative <a href=""""""""/desk/google-settings"""""""">as Configurações do Google</a>."""","""
+"""Translations can be viewed by guests","avoid storing private details in translations.,As traduções podem ser visualizadas por visitantes; evite armazenar informações privadas nas traduções.,"""
+"""{0}: Field '{1}' cannot be set as Unique as it has non-unique values","""""{0}: O campo '{1}' não pode ser definido como Único, uma vez que possui valores não exclusivos"""","""
+#{0},#{0}
+${0} has been added to queue for optimization,{0} foi adicionado à fila para otimização
+'Recipients' not specified,'Destinatários' não especificados
+'{0}' is not a valid IBAN,'{0}' não é um IBAN válido
+'{0}' is not a valid URL,'{0}' não é um URL válido
+'{0}' not allowed for type {1} in row {2},'{0}' não permitido para o tipo {1} na linha {2}
+(Mandatory),(Obrigatório)
++ Add / Remove Fields,+ Adicionar / Remover Campos
+0 is highest,0 é o mais alto
+1 = True & 0 = False,1 = Verdadeiro & 0 = Falso
+1 Google Calendar Event synced.,1 evento do Google Calendar sincronizado.
+1 Report,1 Relatório
+1 of 2,1 de 2
+1 record will be exported,será exportado 1 registro
+5 Records,5 registros
+</a>,"""""<a href=""""""""https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication"""""""" target=""""""""_blank"""""""">"""
+<b>{0}</b> is not a valid URL,<b>{0}</b> não é um URL válido
+A symbol for this currency. For e.g. $,Um símbolo para esta moeda. Por exemplo: R$
+ALL,Tudo
+ASC,CRESC
+About,Sobre
+About Us,Sobre Nós
+Accept Invitation,Aceitar Convite
+Accepted,Aceitado
+Accepted At,Aceitado a
+Access Control,Controle de Acesso
+Access Token,Token de Acesso
+Account,Conta
+Accounts Manager,Gerente de Contas
+Action,Ação
+Action / Route,Ação / Rota
+Action Complete,Ação Concluída
+Action Failed,Ação Falhou
+Action Label,Etiqueta de ação
+Actions,Ações
+Activate,Ativar
+Active,Ativo
+Active Directory,Diretório Ativo
+Active Domains,Domínios ativos
+Active Sessions,Sessões Ativas
+Activity,Atividade
+Add / Remove Columns,Adicionar / Remover Colunas
+Add Attachment,Adicionar Anexo
+Add Background Image,Adicionar Imagem de Fundo
+Add Border at Bottom,Adicionar borda na parte inferior
+Add Border at Top,Adicionar borda na parte superior
+Add CSS,Adicionar CSS
+Add Column,Adicionar Coluna
+Add Container,Adicionar recipiente
+Add Gray Background,Adicionar fundo cinza
+Add Space at Top,Adicionar Espaço no Topo
+Add Total Row,Adicionar Linha de Total
+Add Translate Data,Adicionar Dados Traduzidos
+Add Unsubscribe Link,Adicionar link para cancelar inscrição
+Add row,Adicionar linha
+Add {0},Adicionar {0}
+Address,Endereço
+Address Line 1,Endereço Linha 1
+Address Line 2,Endereço Linha 2
+Address Template,Modelo de Endereço
+Address Title,Título do Endereço
+Address Type,Tipo de Endereço
+Administration,Administração
+Administrator,Administrador
+After Insert,Após a Inserção
+After Rename,Depois de Renomear
+After Submission,Após Enviar
+Aggregate Function Based On,Função agregada com base em
+Align,Alinhar
+Align Labels to the Right,Alinhar etiquetas à direita
+Align Right,Alinhar à direita
+All Records,Todos os Registros
+Allocated To,Atribuído a
+Allow Auto Repeat,Permitir repetição automática
+Allow Guest,Permitir convidado
+Allow Guest to View,Permitir visualização de convidado
+Allow Modules,Permitir Módulos
+Allow Read On All Link Options,Permitir leitura em todas as opções de link
+Allow Rename,Permitir Renomear
+Allow Self Approval,Permitir auto-aprovação
+Allow approval for creator of the document,Permitir aprovação para o criador do documento
+Allow in Quick Entry,Permitir na entrada rápida
+Allow saving if mandatory fields are not filled,Permitir salvar se os campos obrigatórios não são preenchidas
+Allowed,Permitido
+Allowed In Mentions,Permitido nas menções
+Amend,retificar
+Analytics,Análise
+App,Aplicativo
+Append To,Vincular a
+Application Name,Nome da Aplicação
+Application Version,Versão do aplicativo
+Applied On,Aplicado em
+Apply,Aplicar
+Archive,Arquivar
+Archived,Arquivado
+Assign,Atribuir
+Assign Condition,Atribuir condição
+Assign To,Atribuir a
+Assign to me,Atribuir a mim
+Assigned,Atribuído
+Assigned By,Atribuído por
+Assigned By Full Name,Atribuído por Nome completo
+Assigned To,Atribuído a
+Assignment,Atribuição
+Assignment Completed,Atribuição Concluída
+Assignment Rule,Regra de atribuição
+Assignment Rules,Regras de Atribuição
+Assignments,Atribuições
+Attach,Anexar
+Attach Image,Anexar Imagem
+Attached File,Arquivo anexo
+Attached To Field,Relacionado ao campo
+Attached To Name,Anexado Para Nome
+Attachment,Anexo
+Attachment Limit (MB),Limite de Anexo (MB)
+Attachment Limit Reached,Limite de Anexos Atingido
+Attachment Link,Link de Anexo
+Attachment Removed,Anexo Removido
+Attachments,Anexos
+Audit Trail,Trilha de Auditoria
+Auth URL Data,Dados de URL de autenticação
+Authentication,Autenticação
+Authentication Apps you can use are:,Os aplicativos de autenticação que você pode usar são:
+Author,Autor
+Authorization,Autorização
+Authorization Code,Código de autorização
+Authorize Google Calendar Access,Autorizar acesso ao Google Agenda
+Authorize URL,Autorizar URL
+Authorized,Autorizado
+Auto Name,Nome Automático
+Auto Repeat,Repetição Automática
+Auto Reply Message,Resposta Automática
+Automation,Automação
+Back,Voltar
+Background Color,Cor de Fundo
+Background Job,Tarefa em segundo plano
+Background Jobs,Processos em Segundo Plano
+Background Workers,Trabalhadores em Segundo Plano
+Backups,Backups
+Banner,Faixa
+Banner HTML,Faixa HTML
+Bar,Barra
+Barcode,Código de Barras
+Base Distinguished Name (DN),Base de dados de nome distinto (DN)
+Base URL,URL Base
+Based on Field,Com base no campo
+Basic,Básico
 Basic Info,Informações Básicas
-Round Robin,Robin Redondo,
-Route Redirects,Redirecionamentos de rota,
-Row Name,Nome da Linha,
-Rule,Regra,
-Rule Conditions,Condições da regra,
-Rules with higher priority number will be applied first.,Regras com número de prioridade mais alta serão aplicadas primeiro.,
-Run Jobs only Daily if Inactive For (Days),Executar trabalhos apenas diariamente se inativo por (dias),
-Run scheduled jobs only if checked,As tarefas agendadas somente serão executadas se a opção estiver marcada,
-SSL/TLS Mode,Modo SSL / TLS,
-Salutation,Saudação,
-Sample,Amostra,
-Save,Salvar,
-Scheduled Job,Trabalho agendado,
-Search,Buscar,
-Search Fields,Campos de Pesquisa,
-Search Priorities,Prioridades de pesquisa,
-Section,Seção,
-Section Break,Quebra de seção,
-Security Settings,Configurações de Segurança,
-Seen By,Visto por,
-Seen By Table,Visto por tabela,
-Select All,Selecionar Todos,
-Select Date Range,Selecionar período,
-Select Transaction,Selecione a Transação,
-Select the label after which you want to insert new field.,Selecione a etiqueta após a qual você deseja inserir um novo campo.,
-Select {0},Selecione {0},
-Send After,Envie Depois,
-Send Alert On,Enviar Alerta,
-Send Notification to,Enviar Notificação para,
-Send Notifications For Documents Followed By Me,Enviar notificações para documentos seguidos por mim,
-Send Print as PDF,Enviar impressão como PDF,
-Send System Notification,Enviar Notificação do Sistema,
-Send To All Assignees,Enviar para todos os cessionários,
-Send alert if date matches this field's value,Enviar alerta se a data corresponde valor deste campo,
-Send alert if this field's value changes,Enviar alerta se muda o valor desse campo,
-Send days before or after the reference date,Enviar dias antes ou depois da data de referência,
-Send only if there is any data,Envie somente se houver quaisquer dados,
-Sent Read Receipt,Enviar Confirmação de Leitura,
-Sent or Received,Enviados ou recebidos,
-Separator,Separador,
-Series List for this Transaction,Lista de séries para esta transação,
-Server Action,Ação do Servidor,
-Server IP,IP do servidor,
-Set New Password,Definir nova senha,
-Set Property After Alert,Definir propriedade após o alerta,
-Set Role For,Definir papel para,
-Set Value,Definir valor,
-Settings,Configurações,
-Settings Dropdown,Lista suspensa de configurações,
-Setup,Configurar,
-Shared,Compartilhado,
-Shipping,Expedição,
-Shop,Loja,
-Show Full Error and Allow Reporting of Issues to the Developer,Mostrar erro completo e permitir relatórios de problemas para o desenvolvedor,
-Show Full Form?,Mostrar formulário completo?,
-Show Line Breaks after Sections,Mostrar quebras de linha após seções,
-Show Percentage Stats,Mostrar estatísticas percentuais,
-Show Section Headings,Mostrar Seção Títulos,
-Show Title,Mostrar Título,
-Show full form instead of a quick entry modal,Mostrar o formulário completo em vez de um modal de entrada rápida,
-Show in Module Section,Mostrar na Seção Módulo,
-Show in filter,Mostrar no filtro,
-Show percentage difference according to this time interval,Mostra a diferença percentual de acordo com este intervalo de tempo,
-Sidebar,Barra Lateral,
-Sidebar Items,Itens da barra lateral,
-Sidebar Settings,Configurações da barra lateral,
-Signature,Assinatura,
-Simultaneous Sessions,Sessões simultâneas,
-Skip Authorization,Ignorar autorização,
-Slack,Folga,
-Slack Channel,Canal de folga,
-Small Text,Texto Pequeno,
-Smallest Currency Fraction Value,Menor valor fracionado de moeda,
-Social Login Provider,Provedor de acesso social,
-Sort Field,Ordenar por campo,
-Sort Order,Ordem de classificação,
-Start Date Field,Campo de Data de Início,
-Started,Começado,
-Starts on,Inicia em,
-State,Estado,
-State/Province,Estado / Província,
-States,Estados,
-Static Parameters,Parâmetros estáticos,
-Stats Time Interval,Intervalo de tempo das estatísticas,
-Status,Status,
-Step,Degrau,
-Steps,Passos,
-Stores the JSON of last known versions of various installed apps. It is used to show release notes.,Armazena o JSON das últimas versões conhecidas de vários aplicativos instalados. Ele é usado para mostrar notas de lançamento.,
-Style,Estilo,
-Style Settings,Configurações de Estilo,
-Stylesheet,Folha de estilo,
-Sub-domain provided by erpnext.com,Sub-domínio fornecido pelo erpnext.com,
-Subdomain,Subdomínio,
-Submit,Enviar,
-Submit After Import,Enviar após importação,
-Subsidiary,Subsidiário,
-Success,Sucesso,
-Success URL,URL de Confirmação,
-Sunday,Domingo,
-Symbol,Símbolo,
-Sync,Sincronizar,
-Sync with Google Calendar,Sincronize com o Google Agenda,
-Sync with Google Contacts,Sincronizar com os contatos do Google,
-System,Sistema,
-System Notification,Notificação do sistema,
-System Page,Página do sistema,
-System Settings,Configurações do Sistema,
-System managers are allowed by default,Gerentes de sistema são permitidos por padrão,
-Table Break,Pausa para a mesa,
-Table HTML,Tabela HTML,
-Tags,Tags,
-Tasks,Tarefas,
-Team Members,Membros da Equipe,
-Team Members Heading,Título da página Membros da Equipe,
-Template,Modelo,
-Template Options,Opções de modelo,
-Template Warnings,Avisos do modelo,
-Text,Texto,
-Text Align,Alinhar Texto,
-Text Color,Cor do texto,
-Text Editor,Editor de Texto,
-The name that will appear in Google Calendar,O nome que aparecerá no Google Agenda,
-Theme,Tema,
-Theme Configuration,Configuração do Tema,
-Theme URL,URL do tema,
-These values will be automatically updated in transactions and also will be useful to restrict permissions for this user on transactions containing these values.,Esses valores serão atualizados automaticamente em transações e também serão úteis para restringir as permissões para este usuário em operações que contenham esses valores.,
-Third Party Authentication,Autenticação de Terceiros,
-This Month,Este mês,
-This Quarter,Este trimestre,
-This Week,Esta semana,
-This Year,Este ano,
-This card will be available to all Users if this is set,Este cartão estará disponível para todos os usuários se estiver definido,
-This chart will be available to all Users if this is set,Este gráfico estará disponível para todos os usuários se estiver definido,
-This format is used if country specific format is not found,Este formato é usado se o formato específico país não é encontrado,
-This is the number of the last created transaction with this prefix,Este é o número da última transação criada com este prefixo,
-This value specifies the max number of rows that can be rendered in report view.,Esse valor especifica o número máximo de linhas que podem ser renderizadas no modo de exibição de relatório.,
-This will be shown in a modal after routing,Isso será mostrado em um modal após o roteamento,
-This will be shown to the user in a dialog after routing to the report,Isso será mostrado ao usuário em uma caixa de diálogo após o roteamento para o relatório,
-"This will terminate the job immediately and might be dangerous, are you sure?","Isso encerrará o trabalho imediatamente e pode ser perigoso, tem certeza?",
-Time Format,Formato da hora,
-Time Series,Séries Temporais,
-Time Series Based On,Séries Temporais Baseadas em,
-Time Zones,Fusos horários,
-Time format,Formato da hora,
-Time in seconds to retain QR code image on server. Min:<strong>240</strong>,Tempo em segundos para manter a imagem do código QR no servidor. Min: <strong>240</strong>,
-Timeline Links,Links da linha do tempo,
-Title Field,Campo Título,
-Title Prefix,Prefixo do Título,
-To Date Field,Até o momento do campo,
-To Do,Lista de Tarefas,
-To and CC,Para e CC,
-"To use Google Indexing, enable <a href=""/desk/google-settings"">Google Settings</a>.","Para usar a indexação do Google, ative <a href=""/desk/google-settings"">as Configurações do Google</a>.",
-Today,Hoje,
-Token,Símbolo,
-Tomorrow,Amanhã,
-Top,Topo,
-Top Bar Items,Itens da barra superior,
-Topic,Tópico,
-Total Subscribers,Total de Assinantes,
-Total number of emails to sync in initial sync process,Número total de e-mails a serem sincronizados no processo de sincronização inicial,
-Track Changes,Rastrear Alterações,
-Track Field,Trilha de corrida,
-Track Seen,Marcar como visto,
-Track Views,Acompanhar vistas,
-Transgender,Transgênero,
-Transition Rules,Regras de transição,
-Transitions,Transições,
-Translatable,Traduzível,
-Translated Text,Texto Traduzido,
-Tree,Árvore,
-Tree structures are implemented using Nested Set,As estruturas de árvore são implementadas usando o Conjunto Aninhado,
-Trigger Method,Método gatilho,
-Tuesday,Terça-feira,
-Two Factor Authentication,Autenticação de dois fatores,
-Two Factor Authentication method,Método de autenticação de dois fatores,
-Type,Tipo,
-UNSEEN,Por Ler,
-URL for documentation or help,URL para documentação ou ajuda,
-Unassign Condition,Desatribuir condição,
-Unique,Único,
-Unknown,Desconhecido,
-Unread,Não lida,
-Unread Notification Sent,Notificação de mensagem não lida enviada,
-Unselect All,Remover Todos,
-Unshared,Não Compartilhado,
-Unsubscribe Method,Método de Cancelamento de Inscrição,
-Update,Atualizar,
-Update Existing Records,Atualizar registros existentes,
-Update Field,Atualizar Campo,
-Update Series Number,Atualizar Números de Séries,
-Update Settings,Atualizar configurações,
-Update Value,Atualizar Valor,
-Uploaded To Dropbox,Enviado para o Dropbox,
-Uploaded To Google Drive,Carregado no Google Drive,
-Use ASCII encoding for password,Use codificação ASCII para senha,
-Use IMAP,Usar IMAP,
-Use Report Chart,Usar gráfico de relatório,
-Use SSL,Usar SSL,
-Use TLS,Usar TLS,
-Use this fieldname to generate title,Utilize este campo para gerar o título,
-User,Usuário,
-User Agent,Agente de usuário,
-User Cannot Create,O Usuário não pode criar,
-User Cannot Search,O Usuário não pode pesquisar,
-User Defaults,Padrões de Perfil,
-User Details,Detalhes do Usuário,
-User ID,ID de Usuário,
-User ID Property,Propriedade de ID do usuário,
-User Image,Imagem do Usuário,
-User Name,Nome de usuário,
-User Tags,Etiquetas de Usuários,
-User must always select,O Usuário deve sempre selecionar,
-Valid,Válido,
-Validate Field,Validar Campo,
-Validity,Validade,
-Value Based On,Valor Baseado em,
-Value Changed,Valor Alterado,
-Value To Be Set,Valor a ser definido,
-Value to Validate,Valor para Validar,
-Verified,Verificado,
-Video URL,URL do vídeo,
-View Properties (via Customize Form),Exibir Propriedades (via Personalizar Formulário),
-View Report,Ver relatório,
-View Settings,Ver Definições,
-Viewed By,Visto por,
-Visit,Visita,
-Web Form Fields,Campos de formulário Web,
-Website,Site,
-Website Theme Image,Imagem do Tema do Site,
-Weekdays,Dias da Semana,
-Weekly Long,Semanalmente Longo,
-Workflow,Fluxo de Trabalho,
-Workflow Action Name,Nome da Ação do Fluxo de Trabalho,
-Workflow Action is not created for optional states,A ação do fluxo de trabalho não é criada para estados opcionais,
-Workflow Name,Nome do Fluxo de Trabalho,
-Workspace,Espaço de Trabalho,
-Write,Escrever,
-X Field,Campo X,
-Y Axis,Eixo Y,
-Year,Ano,
-Yes,Sim,
-Yesterday,Ontem,
-You can also copy-paste this,Você também pode copiar e colar isso,
-You have a new message from:,Você tem uma nova mensagem de:,
-You need to create these first:,Você precisa criar estes primeiro:,
-Your assignment on {0} {1} has been removed by {2},A sua tarefa em {0} {1} foi removida por {2},
-Zero means send records updated at anytime,Zero significa enviar registros atualizados a qualquer momento,
-blue,azul,
-dd/mm/yyyy,dd/mm/aaaa,
-e.g. pop.gmail.com / imap.gmail.com,ex: pop.gmail.com / imap.gmail.com,
-e.g. smtp.gmail.com,ex: smtp.gmail.com,
-green,verde,
-icon,ícone,
-mm/dd/yyyy,mm/dd/aaaa,
-new,novo,
-no failed attempts,tentativas não falharam,
-now,agora,
-on_change,em mudança,
-or,ou,
-orange,laranja,
-print,imprimir,
-purple,roxo,
-red,vermelho,
-renamed from {0} to {1},renomeado de {0} para {1},
-response,resposta,
-share,ação,
-since yesterday,desde ontem,
-to your browser,para o seu navegador,
-values separated by commas,valores separados por vírgulas,
-yellow,amarelo,
-yesterday,ontem,
-yyyy-mm-dd,dd/mm/yyyy,
-{0} Calendar,{0} Calendário,
-{0} Fields,{0} Campos,
-{0} M,{0} M,
-{0} and {1},{0} e {1},
-{0} created successfully,{0} criado com sucesso,
-{0} days ago,há {0} dias,
-{0} hours ago,há {0} horas,
-{0} is a mandatory field,{0} é um campo obrigatório,
-{0} is mandatory,{0} é obrigatório,
-{0} is not a valid Phone Number,{0} não é um número de telefone válido,
-{0} is not a valid Workflow State. Please update your Workflow and try again.,{0} não é um estado válido do fluxo de trabalho. Atualize o seu fluxo de trabalho e tente novamente.,
-{0} is not a valid report format. Report format should one of the following {1},{0} não é um formato de relatório válido. O formato do relatório deve ser um dos seguintes {1},
-{0} is required,{0} é obrigatório,
-{0} items selected,{0} itens selecionados,
-{0} mentioned you in a comment in {1} {2},{0} mencionou-o num comentário em {1} {2},
-{0} minutes ago,há {0} minutos,
-{0} months ago,há {0} meses,
-{0} must be after {1},{0} deve ser posterior a {1},
-{0} must be one of {1},{0} deve ser um dos {1},
-{0} must be set first,{0} deve ser definido primeiro,
-{0} must be unique,{0} deve ser único,
-{0} not a valid State,{0} não é um estado válido,
-{0} not allowed to be renamed,Não é permitido alterar o nome de {0},
-{0} of {1},{0} de {1},
-{0} or {1},{0} ou {1},
-{0} record deleted,{0} registo eliminado,
-{0} records deleted,{0} registos eliminados,
-{0} records will be exported,Vão ser exportados {0} registos,
-{0} row #{1}:,{0} linha #{1}:,
-{0} saved successfully,{0} guardado com sucesso,
-{0} shared this document with {1},{0} partilhou este documento com {1},
-{0} weeks ago,há {0} semanas,
-{0} years ago,há {0} anos,
-{0} {1} added,{0} {1} adicionado,
-{0} {1} already exists,{0} {1} já existe,
-{0} {1} not found,{0} {1} não foi encontrado,
-{0} {1}: Submitted Record cannot be deleted. You must {2} Cancel {3} it first.,{0} {1}: O registo submetido não pode ser eliminado. Tem de {2} Cancelar {3} primeiro.,
-{0}: Cannot set Amend without Cancel,{0}: Não é possível Corrigir sem Cancelar,
-{0}: Cannot set Cancel without Submit,{0}: Não é possível Cancelar sem Submeter,
-{0}: Field '{1}' cannot be set as Unique as it has non-unique values,"{0}: O campo '{1}' não pode ser definido como Único, uma vez que possui valores não exclusivos",
-{} Complete,{} Concluído,
-You created this,Criado por você,
-Values Changed,Valores Alterados,
-Document Name,Nome do Documento,
-Rows Removed,Linhas Removidas,
-Roles Assigned,Perfis atribuídos,
-Property,Propriedade,
-Original Value,Valor Original,
-New Value,Novo Valor,
-Document Name,Nome do Documento,
-You last edited this,Última edição realizada por você,
-New Email,Novo Email,
-Created By You,Criado por você,
-Last Edited by You,Última edição por você,
-Assign,Atribuir,
-Share,Compartilhar,
-Type a replay / comment,Digite uma resposta ou comentário,
-To,Para,
-Subject,Assunto,
-Message,Mensagem,
-Send,Enviar,
-Rename,Renomear,
-New,Novo,
-Schedule Send At,Agendar envio para,
-Show all Versions,Mostrar todas as versões,
-Toggle Sidebar,Mostrar/ocultar barra lateral,
-Jump to field,Ir para o campo,
-Show Links,Mostrar vínculos,
-Copy to Clipboard,Copiar para a área de transferência,
-Remind Me,Criar lembrete,
-Undo,Desfazer,
-Redo,Refazer,
-Customize,Personalizar,
-Edit,Editar,
+Before Insert,Antes da inserção
+Between,Entre
+Billing,Faturamento
+Block Modules,Bloquear Módulos
+Bold,Negrito
+Bottom,Inferior
+Brand HTML,Marca HTML
+Brand Image,Imagem da Marca
+Browser Version,Versão do navegador
+Brute Force Security,Segurança da força bruta
+Build,Desenvolvimento
+Bulk Operation Successful,Operação realizada com sucesso
+Button,Botão
+Button Gradients,Gradientes de botão
+Button Rounded Corners,Botão Cantos Arredondados
+Button Shadows,Sombras de botão
+Bypass restricted IP Address check If Two Factor Auth Enabled,Ignorar verificação de endereço IP restrito se dois fatores de autenticação habilitados
+CSS Class,Classe CSS
+Calendar,Calendário
+Calendar Name,Nome do calendário
+Call To Action,Apelo à ação
+Call To Action URL,URL de apelo à ação
+Callback Message,Mensagem de retorno
+Callback Title,Título de retorno
+Camera,Câmera
+Card,Cartão
+Cards,Postais
+Category Description,Descrição da Categoria
+Category Name,Nome da Categoria
+Center,Centro
+Change Label (via Custom Translation),Alterar etiqueta (via tradução personalizada)
+Channel,Canal
+Chart,Gráfico
+Chart Name,Nome do gráfico
+Chart Options,Opções de gráfico
+Chart Source,Fonte do gráfico
+Charts,Gráficos
+Check,Verifica
+City,Cidade
+City/Town,Cidade/Município
+Clear,Claro
+Clear All,Limpar Tudo
+Click here,Clique aqui
+Clicked,Clicado
+Client,Cliente
+Client Code,Código do cliente
+Client Credentials,Credenciais no cliente
+Client ID,ID do Cliente
+Client Secret,Segredo do cliente
+Close,Fechar
+Close Condition,Fechar Condição
+Closed,Fechado
+Code,Código
+Collapse,Recolher
+Collapsible,Desmontável
+Collapsible Depends On,Depende dobrável
+Color,Cor
+Column,Coluna
+Column Break,Quebra de coluna
+Column Width,Largura da coluna
+Columns,Colunas
+Columns / Fields,Colunas / Campos
+Comment,Comentário
+Comment By,Comentário por
+Comments,Comentários
+Comments and Communications will be associated with this linked document,Comentários e comunicações serão associados com este documento relacionado
+Commit,Comprometer
+Company History,Histórico da Empresa
+Company Introduction,Introdução da Empresa
+Company Name,Nome da Empresa
+Completed,Concluído
+Condition,Condição
+Confirm,Confirmar
+Connected App,Aplicativo conectado
+Connections,Conexões
+Content,Conteúdo
+Content Type,Tipo de Conteúdo
+Context,Contexto
+Contributed,Contribuído
+Contribution Document Name,Nome do documento de contribuição
+Copy error to clipboard,Copiar erro para a área de transferência
+Copy to Clipboard,Copiar para a área de transferência
+Copyright,Direitos autorais
+Core,Núcleo
+Could not start up:,Não foi possível iniciar:
+Counter,Contador
+Country,País
+Country Name,Nome do País
+County,Distrito
+Currency,Moeda
+Currency Name,Nome da Moeda
+Currency Precision,Precisão de moeda
+Custom CSS,CSS Personalizado
+Custom Field,Campo Personalizado
+Custom HTML Help,Ajuda HTML Personalizado
+Custom Options,Opções Personalizadas
+Custom Overrides,Substituições personalizadas
+Custom Report,Relatório Personalizado
+Custom SCSS,SCSS personalizado
+Customize,Personalizar
+Customize Form,Customizar Formulário
+Daily,Diário
+Daily Long,Diário Longo
+Danger,Perigo
+Dark Color,Cor Escura
+Dashboard,Painel
+Dashboard View,Visualização de Painel
+Kanban View,Visualização Kanban
+Report View,Visualização de Relatório
+Data,Dados
+Data Export,Exportação de Dados
+Data Import,Importação de Dados
+Default,Padrão
+Default Portal Home,Página inicial do portal padrão
+Default Redirect URI,Padrão de redirecionamento URI
+Default Sort Field,Campo de classificação padrão
+Default Sort Order,Ordem de classificação padrão
+Default Value,Valor padrão
+Defaults,Padrões
+Deletion Steps,Etapas de exclusão
+Depends On,Depende de
+Description,Descrição
+Desk Access,Acesso ao Ambiente de Trabalho
+Desktop,Área de Trabalho
+Details,Detalhes
+Digits,Dígitos
+Disable Auto Refresh,Desativar atualização automática
+Disable Comment Count,Desativar contagem de comentários
+Disable Count,Desativar Contagem
+Disable SMTP server authentication,Desativar autenticação do servidor SMTP
+Disable Scrolling,Desativar rolagem
+Disable Sidebar Stats,Desativar Estatísticas da Barra Lateral
+Disabled,Desativado
+Discard,Descartar
+Display Depends On,Visualização depende
+DocType,Tipo de Documento (DocType)
+Document,Documento
+Document Actions,Ações do Documento
+Document Link,Link do Documento
+Document Links,Links de documentos
+Document Name,Nome do Documento
+Document Name,Nome do Documento
+Document Share,compartilhamento de Documentos
+Document States,Documento Unidos
+Document Tag,Etiqueta de Documento
+Document Title,Título do documento
+Document Type,Tipo de documento
+Documentation Link,Link da documentação
+Documentation URL,URL de documentação
+Domains HTML,Domínios HTML
+Done,Feito
+Donut,Rosquinha
+Download,Baixar
+Draft,Rascunho
+Duplicate,Duplicar
+Duplicate row,Duplicar linha
+Duration,Duração
+Dynamic Route,Rota Dinâmica
+Dynamic Template,Modelo dinâmico
+Enable,Permitir
+Enable Auto Reply,Ativar resposta automática
+Enable Automatic Linking in Documents,Ativar Vinculação Automática em Documentos
+Enable Comments,Ativação de comentários
+Enable Scheduled Jobs,Ativar Tarefas Agendadas
+Enable Security,Ativar segurança
+Enabled,Ativado
+Ends on,Termina em
+Energy Point,Ponto de energia
+Equals,Igual
+Not Equals, Diferente
+Beginning with,Iniciando com
+You can use wildcard %,Você pode usar o curinga %
+Event,Evento
+Event Category,Categoria do Evento
+Event Reminders,Lembretes de eventos
+Events,Eventos
+Example,Exemplo
+Example: #Tree/Account,Exemplo: # árvore / conta
+Example: 00001,Exemplo: 00001
+Exception,Exceção
+Expand,Expandir
+Expert,Especialista
+Expired,Expirado
+Expires In,Expira em
+Export,Exportar
+Export From,Exportar de
+Export Type,Tipo de exportação
+Expose Recipients,Mostrar Destinatários
+Failed,Falhou
+Female,Feminino
+Fetch From,Buscar de
+Field,Campo
+Field Description,Descrição do Campo
+Field to Track,Campo para rastrear
+Fieldname,Nome do campo
+Fields,Campos
+File Manager,Gerenciador de Arquivos
+File Name,Nome do arquivo
+File Size,Tamanho do arquivo
+File URL,URL do arquivo
+Finished,Acabado
+First Name,Primeiro Nome
+First Success Message,Primeira mensagem de sucesso
+Flag,Bandeira
+Float Precision,Precisão de Casas Decimais
+Fold,Dobrar
+Folder,Pasta
+Font Properties,Propriedades da fonte
+Font Size,Tamanho da Fonte
+Fonts,Fontes
+Footer,Rodapé
+Footer HTML,HTML de rodapé
+Footer Items,Itens do Rodapé
+Footer Template,Modelo de rodapé
+Footer Template Values,Valores de modelo de rodapé
+For Value,Por valor
+For example: {} Open,Por exemplo: {} Abra
+Force,Força
+Form URL-Encoded,Codificado em URL do formulário
+Fraction,Fração
+Fraction Units,Unidades Fracionadas
+From Full Name,De nome completo
+Full,Cheio
+Full Name,Nome Completo
+Full Width,Largura completa
+GMail,Gmail
+Gender,Gênero
+Generate Keys,Gerar Chaves
+Geolocation,Geolocalização
+Get your globally recognized avatar from Gravatar.com,Obtenha seu avatar globalmente reconhecido de Gravatar.com
+Global Unsubscribe,Cancelar Inscrição Global
+Go to Page,Vá para página
+Google Analytics ID,ID do Google Analytics
+Google Calendar Event ID,ID do evento do Google Agenda
+Google Calendar ID,ID da Agenda do Google
+Google Calender,Google Agenda
+Google Font,Fonte do Google
+Group By Based On,Agrupar por Com base em
+Group By Type,Agrupar por tipo
+HH:mm,HH: mm
+HTML Page,Página HTML
+HTML for header section. Optional,HTML para a seção de cabeçalho. opcional
+Half,Metade
+Header,Cabeçalho
+Header HTML,HTML de cabeçalho
+Headers,Cabeçalhos
+Health Report,Relatório de integridade
+Heatmap,Mapa de calor
+Help,Ajuda
+Help HTML,Ajuda HTML
+Hide Block,Esconder o Bloco
+Hide Border,Ocultar borda
+Hide Copy,Ocultar Cópia
+Higher priority rule will be applied first,Regra de prioridade mais alta será aplicada primeiro
+Highlight,Realçar
+Home,Início
+Home Page,Pagina inicial
+ID,ID
+IP Address,Endereço de IP
+Icon,Ícone
+Icon will appear on the button,O ícone aparecerá no botão
+Identity Details,Detalhes da identidade
+If disabled,"this role will be removed from all users.,Se esta função for desativada será removida em todos os usuários."
+Ignore attachments over this size,Ignorar anexos maiores que este tamanho
+Ignored Apps,Aplicativos ignorados
+Image,Imagem
+Image Field,Campo de Imagem
+Image Link,Link da Imagem
+Implicit,Implícito
+Import,Importar
+Import File,Importar arquivo
+Import File Errors and Warnings,Erros e avisos de importação de arquivos
+Import Preview,Visualização de importação
+Import Warnings,Avisos de importação
+Import from Google Sheets,Importar do Planilhas Google
+In Preview,Na pré-visualização
+In Progress,Em Andamento
+In Reply To,Em resposta a
+In points. Default is 9.,Em pontos. O padrão é 9.
+Inactive,Inativo
+Incoming,Entrada
+Indicator,Indicador
+Info,Informações
+Initial Sync Count,Contagem de sincronização inicial
+Insert Above,Inserir acima
+Insert Below,Inserir abaixo
+Insert Style,Inserir Estilo
+Int,Inteiro
+Introduce your company to the website visitor.,Apresente sua empresa para o visitante do site.
+Inverse,Inverso
+Invited By,Convidado por
+Is,É
+Is Attachments Folder,É Pasta de Anexos
+Is Complete,Está completo
+Is Completed,Está completo
+Is Custom Field,É campo personalizado
+Is Default,É Padrão
+Is Folder,É Pasta
+Is Group,É grupo
+Is Mandatory Field,É campo obrigatório
+Is Optional State,É estado opcional
+Is Primary,É primário
+Is Primary Mobile,É o celular principal
+Is Primary Phone,É o telefone principal
+Is Private,É privada
+Is Public,É público
+Is Published Field,É Publicado campo
+Is Skipped,É pulado
+Is Standard,É Padrão
+Is Table,É Tabela
+Is Tree,É árvore
+Is Unique,É único
+Items,Itens
+JSON Request Body,Corpo da solicitação JSON
+Jump to field,Ir para o campo
+Key,Chave
+LDAP First Name Field,Campo Primeiro Nome do LDAP
+LDAP Group,Grupo LDAP
+LDAP Group Field,Campo do Grupo LDAP
+LDAP Group Mappings,Mapeamentos de grupo LDAP
+LDAP Last Name Field,Campo Sobrenome LDAP
+LDAP Middle Name Field,Campo de nome do meio LDAP
+LDAP Mobile Field,Campo Móvel LDAP
+LDAP Phone Field,Campo de telefone LDAP
+LDAP Security,Segurança LDAP
+Label,Rótulo
+Label Help,Ajuda sobre Etiquetas
+Label and Type,Etiqueta e Tipo
+Landing Page,Página de chegada
+Language,Idioma
+Language Code,Código do Idioma
+Language Name,Nome do Idioma
+Last Active,Ativo pela última vez
+Last Execution,Última Execução
+Last IP,Último IP
+Last Name,Sobrenome
+Last Quarter,Ultimo quarto
+Last Sync On,Última sincronização em
+Last Synced On,Última sincronização em
+Leave blank to repeat always,Deixe em branco para repetir sempre
+Left,Esquerda
+Letter,Carta
+Light Color,Cor clara
+Limit,Limite
+Line,Linha
+Link Cards,Cartões de ligação
+Link Fieldname,Nome do campo do link
+Link Name,Nome do Link
+Link Title,Título do Link
+Link To,Link para
+Link to the page you want to open. Leave blank if you want to make it a group parent.,Link para a página que você deseja abrir. Deixe em branco se você quiser torná-lo um pai grupo.
+Linked,Relacionado
+List,Lista
+List View,Visualização em Lista
+Load Balancing,Balanceamento de carga
+Load More,Carregue mais
+Long Text,Texto Longo
+Madam,Senhora
+Main Section,Seção Principal
+Main Section (HTML),Seção Principal (HTML)
+Main Section (Markdown),Seção Principal (Remarcação)
+Make {0},Faça {0}
+Male,Masculino
+Mandatory,Obrigatório
+Mandatory Depends On,Obrigatório Depende
+Margin Bottom,Margem inferior
+Margin Left,Margem esquerda
+Margin Right,Margem direita
+Margin Top,Margem superior
+Mark all as read,Marcar todas como lidas
+Max Attachments,Máx. de Anexos
+Max Length,Comprimento máximo
+Max Value,Max Valor
+Maximum,Máximo
+Mention,Menção
+Mentions,Menções
+Merge with existing,Mesclar com existente
+Message,Mensagem
+Message Examples,Exemplos de Mensagens
+Message ID,ID da Mensagem
+Message Parameter,Parâmetro da mensagem
+Method,Método
+Middle Name,Nome do Meio
+Milestone,Marco
+Minimum,Mínimo
+Miss,Senhorita
+Mobile No,Telefone Celular
+Module,Módulo
+Module Name,Nome do Módulo
+Modules,Módulos
+Modules HTML,Módulos HTML
+More content for the bottom of the page.,Mais conteúdo na parte de baixo da página.
+Most Used,Mais utilizados
+Move,Mover
+Must be a publicly accessible Google Sheets URL,Deve ser um URL de planilhas do Google acessível publicamente
+Mute Sounds,Desativar Sons
+Name,Nome
+Naming,Nomeação
+Next Quarter,Próximo trimestre
+No,Não
+No Copy,Nenhuma Cópia
+No comments yet.,Ainda não há comentários.
+No rows,Nenhuma linha
+Non Negative,Não Negativo
+Non-Conforming,Não conforme
+None,Nenhum
+Note: Multiple sessions will be allowed in case of mobile device,Observação: Serão permitidas múltiplas sessões no caso de dispositivo móvel
+Notify if unreplied,Informar se não for respondido
+Notify if unreplied for (in mins),Informar se não for respondido em (minutos)
+Number,Número
+Number of Backups,Número de Backups
+Number of Groups,Número de Grupos
+OAuth Client,Cliente OAuth
+OAuth Provider,Provedor OAuth
+OTP App,Aplicação OTP
+OTP Issuer Name,Nome da Emissora OTP
+Off,Desligado
+Office,Escritório
+Only one {0} can be set as primary.,Somente um {0} pode ser definido como primário.
+Open,Aberto
+Open Documents,Documentos abertos
+Open Reference Document,Documento de Referência Aberto
+Opened,Inaugurado
+Options Help,Ajuda sobre Opções
+Order,Pedido
+Org History,História da Organização
+Org History Heading,Cabeçalho da História da Organização
+Original Value,Valor Original
+Other,Outro
+Outgoing,Saída
+Output,Saída
+Page Building Blocks,Blocos de construção de página
+Page HTML,Página HTML
+Page Name,Nome da Página
+Page Number,Número da página
+Parent Label,Etiqueta Pai
+Passive,Passivo
+Patch,Remendo
+Path to Server Certificate,Caminho para o certificado do servidor
+Path to private Key File,Caminho para o arquivo de chaves privado
+Pending,Pendente
+Pending Approval,Aprovação pendente
+Percentage,Percentagem
+Perm Level,Nível Permanente
+Permanent,Permanente
+Personal,Pessoal
+Phone,Telefone
+Pie,Torta
+Plant,Fábrica
+Port,Porta
+Position,Posição
+Precision,Precisão
+Prefer not to say,Prefiro não dizer
+Preferred Billing Address,Endereço preferido de faturamento
+Preferred Shipping Address,Endereço preferido para entrega
+Prefix,Prefixo
+Preview HTML,Pré-visualização de HTML
+Preview Message,Visualizar mensagem
+Primary,Primário
+Primary Color,Cor primária
+Priority,Prioridade
+Private,Privado
+Property,Propriedade
+Property Depends On,Propriedade depende
+Provider,Fornecedor
+Provider Name,Nome do provedor
+Public,Público
+Pull from Google Calendar,Puxe do Google Agenda
+Pulled from Google Calendar,Extraído do Google Agenda
+QZ Tray Failed:,Falha na bandeja QZ:
+Quarterly,Trimestral
+Queued,Em Fila
+Quick Entry,registro Rápido
+RQ Job,Tarefa RQ
+RQ Worker,Worker RQ
+Read,Ler
+Read Only Depends On,Somente leitura depende
+Read by Recipient,Lido por destinatário
+Read by Recipient On,Lido por destinatário ativado
+Receiver By Document Field,Receptor por campo de documento
+Receiver Parameter,Parâmetro do recebedor
+Recipient,Destinatário
+Recipient Unsubscribed,Destinatário com inscrição cancelada
+Recipients,Destinatários
+Recorder,Gravador
+Redirect URL,Redirecionar URL
+Redo,Refazer
+Reference DocName,Nome do Documento de Referência
+Reference Docname,Nome do Documento de Referência
+Reference Doctype,DocType de Referência
+Reference Owner,Proprietário de Referência
+Reference Report,Relatório de referência
+Reference name,Nome de Referência
+Refresh Google Sheet,Atualizar planilha do Google
+Refreshing,Atualizando
+Relinked,Religado
+Reload,Recarregar
+Reload List,Recarregar lista
+Remember Last Selected Value,Lembrar última seleção
+Remind Me,Criar lembrete
+Reminder,Lembrete
+Rename,Renomear
+Repeat On,Repetir em
+Repeat Till,Repita até que
+Repeat this Event,Repita este evento
+Reply,Responder
+Report,Relatório
+Report Description,Descrição do relatório
+Report Hide,Ocultar Relatório
+Request Data,Solicitar Dados
+Request Structure,Estrutura da solicitação
+Request URL,URL do pedido
+Require Trusted Certificate,Exigir certificado confiável
+Reset to default,Restaurar padrão
+Response,Resposta
+Restore,Restaurar
+Restored,Restaurado
+Restrict IP,Restringir IP
+Restrict To Domain,Restringir ao domínio
+Restrict to Domain,Restringir ao domínio
+Revoked,Revogado
+Right,Direita
+Round Robin,Robin Redondo
+Route Redirects,Redirecionamentos de rota
+Row Name,Nome da Linha
+Rows Removed,Linhas Removidas
+Rule,Regra
+Rule Conditions,Condições da regra
+Rules with higher priority number will be applied first.,Regras com número de prioridade mais alta serão aplicadas primeiro.
+Run scheduled jobs only if checked,As tarefas agendadas somente serão executadas se a opção estiver marcada
+SSL/TLS Mode,Modo SSL / TLS
+Salutation,Saudação
+Sample,Amostra
+Schedule Send At,Agendar envio para
+Scheduled Event,Evento agendado
+Scheduled Job,Trabalho agendado
+Scheduled Job Type,Tipo de tarefa agendada
+Section,Seção
+Section Break,Quebra de seção
+Seen By,Visto por
+Seen By Table,Visto por tabela
+Select All,Selecionar Todos
+Select Transaction,Selecione a Transação
+Select {0},Selecione {0}
+Send,Enviar
+Send After,Envie Depois
+Send To All Assignees,Enviar para todos os cessionários
+Send only if there is any data,Envie somente se houver quaisquer dados
+Sent Read Receipt,Enviar Confirmação de Leitura
+Sent or Received,Enviados ou recebidos
+Separator,Separador
+Series List for this Transaction,Lista de séries para esta transação
+Server Action,Ação do Servidor
+Server Error,Erro do servidor
+Server IP,IP do servidor
+Session Defaults,Padrões da sessão
+Sessions,Sessões
+Set Value,Definir valor
+Setup,Configurar
+Share,Compartilhar
+Shared,Compartilhado
+Shipping,Expedição
+Shop,Loja
+Shortcuts,Atalhos
+Show Full Error and Allow Reporting of Issues to the Developer,Mostrar erro completo e permitir relatórios de problemas para o desenvolvedor
+Show Full Form?,Mostrar formulário completo?
+Show Line Breaks after Sections,Mostrar quebras de linha após seções
+Show Links,Mostrar vínculos
+Show Percentage Stats,Mostrar estatísticas percentuais
+Show Section Headings,Mostrar Seção Títulos
+Show Tags,Mostrar etiquetas
+Show Title,Mostrar Título
+Show all Versions,Mostrar todas as versões
+Show full form instead of a quick entry modal,Mostrar o formulário completo em vez de um modal de entrada rápida
+Show in Module Section,Mostrar na Seção Módulo
+Sidebar,Barra Lateral
+Sidebar Items,Itens da barra lateral
+Signature,Assinatura
+Simultaneous Sessions,Sessões simultâneas
+Skip Authorization,Ignorar autorização
+Slack,Folga
+Slack Channel,Canal de folga
+Small Text,Texto Pequeno
+Smallest Currency Fraction Value,Menor valor fracionado de moeda
+Sort Field,Ordenar por campo
+Sort Order,Ordem de classificação
+Standard,Padrão
+Started,Começado
+Starts on,Inicia em
+State,Estado
+State/Province,Estado / Província
+States,Estados
+Static Parameters,Parâmetros estáticos
+Status,Status
+Step,Degrau
+Steps,Passos
+Sticky,Fixo
+Style,Estilo
+Stylesheet,Folha de estilo
+Sub-domain provided by erpnext.com,Sub-domínio fornecido pelo erpnext.com
+Subdomain,Subdomínio
+Subject,Assunto
+Subsidiary,Subsidiário
+Success,Sucesso
+Success URL,URL de Confirmação
+Symbol,Símbolo
+Sync,Sincronizar
+Sync with Google Calendar,Sincronize com o Google Agenda
+Table Break,Pausa para a mesa
+Table HTML,Tabela HTML
+Tags,Tags
+Tasks,Tarefas
+Team Members,Membros da Equipe
+Team Members Heading,Título da página Membros da Equipe
+Template,Modelo
+Template Options,Opções de modelo
+Template Warnings,Avisos do modelo
+Text,Texto
+Text Align,Alinhar Texto
+Text Color,Cor do texto
+The name that will appear in Google Calendar,O nome que aparecerá no Google Agenda
+Theme,Tema
+Theme URL,URL do tema
+Third Party Authentication,Autenticação de Terceiros
+This Quarter,Este trimestre
+This value specifies the max number of rows that can be rendered in report view.,Esse valor especifica o número máximo de linhas que podem ser renderizadas no modo de exibição de relatório.
+This will be shown in a modal after routing,Isso será mostrado em um modal após o roteamento
+Title Field,Campo Título
+Title Prefix,Prefixo do Título
+To,Para
+To Do,Lista de Tarefas
+To and CC,Para e CC
+Toggle Full Width,Alternar largura total
+Toggle Sidebar,Mostrar/ocultar barra lateral
+Toggle Theme,Alternar tema
+Token,Símbolo
+Tomorrow,Amanhã
+Tools,Ferramentas
+Top,Topo
+Top Bar Items,Itens da barra superior
+Topic,Tópico
+Total Subscribers,Total de Assinantes
+Track Changes,Rastrear Alterações
+Track Field,Trilha de corrida
+Track Seen,Marcar como visto
+Track Views,Acompanhar vistas
+Transgender,Transgênero
+Transition Rules,Regras de transição
+Transitions,Transições
+Translatable,Traduzível
+Translated Text,Texto Traduzido
+Tree,Árvore
+Tree structures are implemented using Nested Set,As estruturas de árvore são implementadas usando o Conjunto Aninhado
+Trigger Method,Método gatilho
+Two Factor Authentication,Autenticação de dois fatores
+Two Factor Authentication method,Método de autenticação de dois fatores
+Type,Tipo
+Type a reply / comment,Digite uma resposta ou comentário
+UNSEEN,Por Ler
+URL for documentation or help,URL para documentação ou ajuda
+Unassign Condition,Desatribuir condição
+Undo,Desfazer
+Unique,Único
+Unread,Não lida
+Unselect All,Remover Todos
+Unshared,Não Compartilhado
+Unsubscribe Method,Método de Cancelamento de Inscrição
+Uploaded To Dropbox,Enviado para o Dropbox
+Uploaded To Google Drive,Carregado no Google Drive
+Use IMAP,Usar IMAP
+Use Report Chart,Usar gráfico de relatório
+Use SSL,Usar SSL
+Use TLS,Usar TLS
+Use this fieldname to generate title,Utilize este campo para gerar o título
+Valid,Válido
+Validity,Validade
+Value,Valor
+Value Based On,Valor Baseado em
+Value Changed,Valor Alterado
+Value To Be Set,Valor a ser definido
+Values Changed,Valores Alterados
+Verified,Verificado
+Video URL,URL do vídeo
+View Permitted Documents,Ver documentos permitidos
+View Properties (via Customize Form),Exibir Propriedades (via Personalizar Formulário)
+View Report,Ver relatório
+Viewed By,Visto por
+Visit,Visita
+Web Form Fields,Campos de formulário Web
+Website,Site
+Website Theme Image,Imagem do Tema do Site
+Workflow,Fluxo de Trabalho
+Workflow Action Name,Nome da Ação do Fluxo de Trabalho
+Workflow Name,Nome do Fluxo de Trabalho
+Workspace,Espaço de Trabalho
+Write,Escrever
+X Field,Campo X
+Y Axis,Eixo Y
+Yes,Sim
+You can also copy-paste this,Você também pode copiar e colar isso
+Your assignment on {0} {1} has been removed by {2},A sua tarefa em {0} {1} foi removida por {2}
+blue,azul
+dd/mm/yyyy,dd/mm/aaaa
+e.g. pop.gmail.com / imap.gmail.com,ex: pop.gmail.com / imap.gmail.com
+e.g. smtp.gmail.com,ex: smtp.gmail.com
+green,verde
+icon,ícone
+mm/dd/yyyy,mm/dd/aaaa
+no failed attempts,tentativas não falharam
+on_change,em mudança
+or,ou
+orange,laranja
+purple,roxo
+red,vermelho
+renamed from {0} to {1},renomeado de {0} para {1}
+response,resposta
+share,ação
+to close,para fechar
+to navigate,para navegar
+to select,para selecionar
+to your browser,para o seu navegador
+values separated by commas,valores separados por vírgulas
+yellow,amarelo
+yyyy-mm-dd,dd/mm/yyyy
+{0} Calendar,{0} Calendário
+{0} Fields,{0} Campos
+{0} M,{0} M
+{0} and {1},{0} e {1}
+{0} is a mandatory field,{0} é um campo obrigatório
+{0} is mandatory,{0} é obrigatório
+{0} is not a valid Phone Number,{0} não é um número de telefone válido
+{0} is required,{0} é obrigatório
+{0} items selected,{0} itens selecionados
+{0} mentioned you in a comment in {1} {2},{0} mencionou-o num comentário em {1} {2}
+{0} must be after {1},{0} deve ser posterior a {1}
+{0} must be one of {1},{0} deve ser um dos {1}
+{0} must be set first,{0} deve ser definido primeiro
+{0} must be unique,{0} deve ser único
+{0} not a valid State,{0} não é um estado válido
+{0} not allowed to be renamed,Não é permitido alterar o nome de {0}
+{0} of {1},{0} de {1}
+{0} or {1},{0} ou {1}
+{0} records will be exported,Vão ser exportados {0} registros
+{0} row #{1}:,{0} linha #{1}:
+{0} shared this document with {1},{0} partilhou este documento com {1}
+{0} {1} added,{0} {1} adicionado
+{0} {1} already exists,{0} {1} já existe
+{0} {1} not found,{0} {1} não foi encontrado
+{} Complete,{} Concluído
+"""Always add """"Draft"""" Heading for printing draft documents","""""Sempre adicionar """"""""Rascunho"""""""" no cabeçalho para impressão de documentos não enviados"""","""
+"""How should this currency be formatted? If not set","will use system defaults,""""Como essa moeda deve ser formatada? Se não for definido, serão usados os padrões do sistema"""","""
+"""Print Width of the field","if the field is a column in a table,""""Largura de impressão do campo, se o campo é uma coluna na tabela"""","""
+Address and other legal information you may want to put in the footer.,Endereço e outras informações legais que você pode querer colocar no rodapé.
+Allow Print for Draft,Permitir Impressão de Rascunho
+Attach Print,Anexar cópia
+Check the Error Log for more information: {0},Verifique o Log de Erros para mais informações: {0}
+Client Information,Informação ao cliente
+Cron Format,Formato Cron
+Custom Format,Formato Personalizado
+Date Format,Formato de Data
+Date and Number Format,Data e Formato de número
+Default Letter Head,Cabeçalho de Carta Padrão
+Default Print Format,Formato de impressão padrão
+Default Print Language,Idioma de impressão padrão
+Enable Print Server,Ativar servidor de impressão
+Enable Raw Printing,Ativar impressão bruta
+File Information,Informações do arquivo
+Footer will display correctly only in PDF,Rodapé será exibido corretamente somente em PDF
+For more information,Para mais informações
+Format Data,Formato de dados
+Introductory information for the Contact Us Page,Informação introdutória para a página Fale Conosco
+Letter Head,função Timbrado
+Letter Head Based On,Carta de cabeça com base em
+Letter Head Image,função timbrado imagem
+Letter Head Name,Nome do timbrado
+Letter Head in HTML,Cabeça Carta em HTML
+More Information,Mais Informações
+Number Format,Formato de número
+PDF Page Size,Tamanho da página PDF
+PDF Settings,Configurações do PDF
+Print,Imprimir
+Print Format,Formato de impressão
+Print Format Builder,Construtor de formato de impressão
+Print Format For,Formato de impressão para
+Print Format Help,Ajuda sobre Formatos de Impressão
+Print Format Type,Tipo do Formato de Impressão
+Print Heading,Cabeçalho de impressão
+Print Hide,Ocultar Impressão
+Print Hide If No Value,Ocultar Impressão se não Preenchido
+Print Server,Servidor de impressão
+Print Settings,Configurações de impressão
+Print Style Name,Nome do estilo de impressão
+Print Style Preview,Estilo de visualização de impressão
+Print Width,Largura de impressão
+Print with letterhead,Imprimir com o timbre
+Printer Name,Nome da impressora
+Printing,Impressão
+RAW Information Log,Registro de informações RAW
+Report Information,Informações do Relatório
+Send Print as PDF,Enviar impressão como PDF
+This format is used if country specific format is not found,Este formato é usado se o formato específico país não é encontrado
+Time Format,Formato da hora
+Time format,Formato da hora
+print,imprimir
+{0} is not a valid report format. Report format should one of the following {1},{0} não é um formato de relatório válido. O formato do relatório deve ser um dos seguintes {1}
+API,API
+API Access,Acesso API
+API Endpoint,Endpoin da API
+API Endpoint Args,Argumentos de endpoint da API
+API Key,Chave da API
+API Key cannot be regenerated,A chave de API não pode ser regenerada
+API Keys,Chaves de API
+API Logging,Logs de API
+API Method,Método API
+API Secret,Segredo da API
+Access Log,Log de Acesso
+Account Deletion Settings,Configurações de exclusão de conta
+Activity Log,Log de Atividades
+Advanced Settings,Configurações avançadas
+Api Request Log,Log de requisições da API
+Application Logo,Logo do aplicativo
+Authorize API Indexing  Access,Autorizar acesso de indexação de API
+Chart Configuration,Configuração de Gráfico
+Configuration,Configuração
+Configure Columns,Configurar colunas
+Custom Configuration,Configuração Personalizada
+Document Naming Settings,Configurações de Nomenclatura
+Error Log,Log de Erros
+Footer Logo,Logotipo do rodapé
+Form Settings,Configurações de formulário
+Google Settings,Configurações do Google
+Home Settings,Configurações iniciais
+Import Log Preview,Visualização do registro de importação
+Integrations,Integrações
+LDAP Settings,Configurações de LDAP
+List Settings,Configurações da lista
+List View Settings,Configurações da visualização em lista
+Log,registro
+Log Settings,Configurações de logs
+Page Settings,Configurações da página
+Patch Log,Log de patches
+Scheduled Job Log,Log de tarefas agendadas
+Security Settings,Configurações de Segurança
+Settings,Configurações
+Settings Dropdown,Lista suspensa de configurações
+Sidebar Settings,Configurações da barra lateral
+Style Settings,Configurações de Estilo
+System,Sistema
+System Console,Console do sistema
+System Page,Página do sistema
+System Settings,Configurações do Sistema
+System managers are allowed by default,Gerentes de sistema são permitidos por padrão
+Theme Configuration,Configuração do Tema
+View Settings,Ver Definições
+1 Day,1 Dia
+1 day ago,há 1 dia
+1 hour,1 hora
+1 hour ago,há 1 hora atrás
+1 minute ago,há 1 minuto atrás
+1 month ago,1 mês atrás
+1 second ago,há 1 segundo
+1 week ago,há 1 semana
+1 year ago,1 ano atrás
+2 hours ago,há 2 horas
+2 months ago,há 2 meses
+2 weeks ago,há 2 semanas
+2 years ago,há 2 anos
+3 minutes ago,há 3 minutos
+30 minutes,30 minutos
+4 hours,4 horas
+5 days ago,há 5 dias
+Action Timeout (Seconds),Tempo Limite de Ação (Segundos)
+Allow events in timeline,Permitir eventos na linha do tempo
+Assignment Days,Dias de atribuição
+Birth Date,Data de nascimento
+Date,Data
+Datetime,Data e Hora
+Day of Week,Dia da Semana
+Days After,Dias Após
+Days Before,Dias Antes
+Days Before or After,Dias Antes ou Após
+Due Date,Data de Vencimento
+Due Date Based On,Data de vencimento baseada em
+End Date Field,Campo de data final
+Expiration time,Data de validade
+Expiry time of QR Code Image Page,Tempo de expiração da página de imagem de código QR
+From Date Field,Do campo de data
+Hide Days,Ocultar dias
+Hide Seconds,Ocultar segundos
+Hourly,De hora em hora
+Hourly Long,Por hora
+In Days,Em dias
+In seconds,Em segundos
+Last 6 Months,Últimos 6 meses
+Last Known Versions,Últimas versões conhecidas
+Last Month,Mês passado
+Last Week,Semana passada
+Last Year,Ano passado
+Last synced just now,Sincronizado agora mesmo
+Monthly,Mensal
+Monthly Long,Mensalmente Longo
+Next 6 Months,Próximos 6 meses
+Next Month,Próximo mês
+Next Schedule Date,Próxima data programada
+Next Week,Próxima semana
+Next Year,Próximo ano
+Repeat on Day,Repetir no dia
+Repeat on Last Day of the Month,Repetir no último dia do mês
+Run Jobs only Daily if Inactive For (Days),Executar trabalhos apenas diariamente se inativo por (dias)
+Select Date Range,Selecionar período
+Send alert if date matches this field's value,Enviar alerta se a data corresponde valor deste campo
+Send days before or after the reference date,Enviar dias antes ou depois da data de referência
+Show percentage difference according to this time interval,Mostra a diferença percentual de acordo com este intervalo de tempo
+Start Date Field,Campo de Data de Início
+Stats Time Interval,Intervalo de tempo das estatísticas
+Stores the JSON of last known versions of various installed apps. It is used to show release notes.,Armazena o JSON das últimas versões conhecidas de vários aplicativos instalados. Ele é usado para mostrar notas de lançamento.
+Sunday,Domingo
+This Month,Este mês
+This Week,Esta semana
+This Year,Este ano
+Time Series,Séries Temporais
+Time Series Based On,Séries Temporais Baseadas em
+Time Zone,Fuso Horário
+Time Zones,Fusos horários
+Time in seconds to retain QR code image on server. Min:<strong>240</strong>,Tempo em segundos para manter a imagem do código QR no servidor. Min: <strong>240</strong>
+Timeline Links,Links da linha do tempo
+To Date Field,Até o momento do campo
+Today,Hoje
+Tuesday,Terça-feira
+Unknown,Desconhecido
+Validate Field,Validar Campo
+Value to Validate,Valor para Validar
+Weekdays,Dias da Semana
+Weekly,Semanal
+Weekly Long,Semanalmente Longo
+Year,Ano
+Yearly,Anual
+Yesterday,Ontem
+now,agora
+since yesterday,desde ontem
+yesterday,ontem
+{0} days ago,há {0} dias
+{0} hours ago,há {0} horas
+{0} minutes ago,há {0} minutos
+{0} months ago,há {0} meses
+{0} weeks ago,há {0} semanas
+{0} years ago,há {0} anos
+"""A list of resources which the Client App will have access to after the user allows it.<br> e.g. project","""""Uma lista de recursos que o aplicativo cliente terá acesso a depois que o usuário permita. <br> por exemplo, do projeto"""","""
+Accounts User,Usuário de Contas
+Additional Permissions,Permissões Adicionais
+Allow Consecutive Login Attempts,Permitir Tentativas Consecutivas de Login
+Allow Login using User Name,Permitir Login usando o nome de usuário
+Allow Roles,Permitir Funções
+Allow only one session per user,Permitir apenas uma sessão por usuário
+Apply Strict User Permissions,Aplicar permissões de usuário estrito
+Apply this rule if the User is the Owner,Aplicar esta regra se o usuário é o proprietário
+Assign To Users,Atribuir aos usuários
+Automatically Assign Documents to Users,Atribuir documentos automaticamente aos usuários
+Awaiting Password,Aguardando Senha
+Awaiting password,Aguardando Senha
+Based on Permissions For User,Com base em permissões para o usuário
+Change Password,Alterar Senha
+Check this if you want to force the user to select a series before saving. There will be no default if you check this.,Marque esta opção se você deseja forçar o usuário a selecionar uma série antes de salvar. Não haverá nenhum padrão se você marcar isso.
+Choose authentication method to be used by all users,Escolha o método de autenticação a ser usado por todos os usuários
+Confirm Password,Confirmar Senha
+Default Role at Time of Signup,Função padrão no momento da inscrição
+Enable Password Policy,Ativar política de senha
+Enable Social Login,Ativar Login Social
+Failed Login Attempts,Tentativas de login malsucedidas
+Force User to Reset Password,Forçar usuário a redefinir a senha
+Hourly rate limit for generating password reset links,Limite de taxa por hora para gerar links de redefinição de senha
+If user is the owner,Se o usuário é o proprietário
+LDAP User Creation and Mapping,Criação e Mapeamento de Usuários LDAP
+LDAP Username Field,Campo Nome de Usuário do LDAP
+Last Login,Último Login
+Last Password Reset Date,Data da última redefinição de senha
+Last User,Último usuário
+Login,Entrar
+Login Activity,Atividade de login
+Logout,Sair
+Logout All Sessions on Password Reset,Sair de todas as sessões ao redefinir a senha
+Logout From All Devices After Changing Password,Saia de todos os dispositivos após alterar a senha
+Password,Senha
+Password Reset Link Generation Limit,Limite de geração de link de redefinição de senha
+Password for Base DN,Senha para DN de base
+Permission Rules,Regras de Permissão
+Permissions,Permissões
+Receiver By Role,Receptor por função
+Reset Password Key,Redefinição de senha chave
+Role,Função
+Role Name,Nome da Função
+Role Permissions Manager,Gerenciador de permissões por perfil
+Role Profiles,Regra de Perfis
+Role and Level,Função e Nível
+Roles,Regras
+Roles & Permissions,Regras e Permissões
+Roles Assigned,Funções Atribuídas
+Roles Assigned,Perfis atribuídos
+Roles HTML,Funções HTML
+Set Role For,Definir função para
+Set User Permissions,Definir permissões do usuário
+Social Login Key,Chave de login social
+Social Login Provider,Provedor de acesso social
+System Users,Usuários do sistema
+This card will be available to all Users if this is set,Este cartão estará disponível para todos os usuários se estiver definido
+This chart will be available to all Users if this is set,Este gráfico estará disponível para todos os usuários se estiver definido
+This will be shown to the user in a dialog after routing to the report,Isso será mostrado ao usuário em uma caixa de diálogo após o roteamento para o relatório
+Use ASCII encoding for password,Use codificação ASCII para senha
+User,Usuário
+User Agent,Agente de usuário
+User Defaults,Padrões de perfil
+User Details,Detalhes do Usuário
+User ID,ID de Usuário
+User ID Property,Propriedade de ID do usuário
+User Image,Imagem do Usuário
+User Name,Nome de usuário
+User Permission,Permissão de usuário
+Permission Manager,Gerenciador de Permissões
+Permission Inspector,Inspetor de Permissões
+Audits,Auditoria
+Permission Log,Log de Permissões
+User Tags,Etiquetas de Usuários
+User Type,Tipo de usuário
+Is Custom,Personalizado
+Edit Full Form,Editar formulário completo,
+User must always select,O Usuário deve sempre selecionar
+Users,Usuários
+Route: Example "/desk",Rota: Exemplo "/desk"
+View Doctype Permissions,Ver permissões
+Show Users,Mostrar usuários
+Bulk Delete,Exclusão em massa
+Website Users,Usuários do site
+Select Fields (Up to 50),Selecionar campos (até 50)
+Reset Fields,Redefinir campos
+descending,decrescente
+ascending,crescente
+Page,Página
+Property Setter,Definidor de Propriedade
+Customization,Personalização
+Module Def,Definição de Módulo
+Communication,Comunicação
+Email Domain,Domínio de Email
+Email Queue,Fila de Emails
+Unhandled Email,Email não Tratado
+Email Queue records,Registros da fila de Emails
+Theme Changed,Tema Alterado
+Are you sure you want to log out?,Tem certeza de que deseja sair?
+Edit Profile,Editar Perfil
+Frappe Light,Claro
+Timeless Night,Escuro
+Automatic,Automático
+Search Help,Ajuda de pesquisa
+Create a new record,Criar um novo registro
+List a document type,Listar um tipo de documento
+Search in a document type,Pesquisar em um tipo de documento
+Tags,Etiquetas
+Open a module or tool,Abrir um módulo ou ferramenta
+Open in new tab,Abrir em nova aba
+Calculate,Calcular
+text in document type,texto no tipo de documento
+module name...,nome do módulo...
+Ctrl + Enter,Ctrl + Enter
+e.g. (55 + 434) / 4,ex.: (55 + 434) / 4
+"tag name..., e.g. #tag","nome da etiqueta..., ex.: #etiqueta"
+"document type..., e.g. customer","tipo de documento..., ex.: cliente"
+new type of document,novo tipo de documento
+Create User Email,Criar e-mail do usuário
+No Upcoming Events,Nenhum evento próximo
+There are no upcoming events for you.,Não há eventos próximos para você.
+Nothing New,Nada novo
+There is nothing new to show you right now.,Não há nada novo para mostrar a você no momento.
+Reset Desktop Layout,Redefinir layout da área de trabalho
+Frappe Support, Suporte Frappe
+just now,agora mesmo
+Termo,Tradução
+Module Profile,Perfil de Módulo
+Contacts,Contatos
+Desk,Área de Trabalho
+Location,Localização
+Interests,Interesses
+Desk Settings,Configurações da Área de Trabalho
+Desk Theme,Tema da Área de Trabalho
+Light,Claro
+Dark,Escuro
+Code Editor Type,Tipo de Editor de Código
+Banner Image,Imagem do Banner
+Navigation Settings,Configurações de Navegação
+Search Bar,Barra de Busca
+View Switcher,Alternador de Visualização
+Bulk Actions,Ações em Massa
+Termo,Tradução
+View Switcher,Alternador de Visualização
+Navigation Buttons,Botões de Navegação
+Timeline,Linha do Tempo
+Show Absolute Datetime in Timeline,Mostrar Data e Hora Absolutas na Linha do Tempo
+Document Follow,Seguir Documento
+Send Notifications For Email Threads,Enviar Notificações para Discussões por E-mail
+Send Me A Copy of Outgoing Emails,Enviar-me uma Cópia dos E-mails Enviados
+User Emails,E-mails do Usuário
+Default Workspace,Espaço de Trabalho Padrão
+"If left empty, the default workspace will be the last visited workspace","Se deixado vazio, o espaço de trabalho padrão será o último visitado."
+Default App,Aplicativo Padrão
+Redirect to the selected app after login,Redirecionar para o aplicativo selecionado após o login
+Login After,Login Após
+Login Before,Login Antes
+"Allow user to login only after this hour (0-24)","Permitir o login do usuário apenas após esta hora (0-24)"
+"Allow user to login only before this hour (0-24)","Permitir o login do usuário apenas antes desta hora (0-24)"
+"If the user has any role checked, then the user becomes a ""System User"". ""System User"" has access to the desktop","Se o usuário tiver qualquer papel selecionado, ele se torna um ""Usuário do Sistema"". Um ""Usuário do Sistema"" tem acesso à área de trabalho."
+"Restrict user from this IP address only. Multiple IP addresses can be added by separating with commas. Also accepts partial IP addresses like (111.111.111)","Restringir o acesso do usuário apenas a partir deste endereço IP. Múltiplos endereços IP podem ser adicionados separados por vírgulas. Também aceita endereços IP parciais como (111.111.111)."
+Social Logins,Logins Sociais
+Termo,Tradução
+Route History,Histórico de Navegação
+Session Created,Sessão Criada
+Is Current,É o Atual
+Last Updated,Última Atualização
+Impersonate,Personificar
+Impersonate as {0},Personificar como {0}
+Reason for impersonating,Motivo da personificação
+Note: This will be shared with user.,Nota: Isso será compartilhado com o usuário.
+Email Address,Endereço de E-mail
+Service,Serviço
+Email Account Name,Nome da Conta de E-mail
+"e.g. ""Support"", ""Sales"", ""Jerry Yang""","ex: ""Suporte"", ""Vendas"", ""João Silva"""
+Enable Incoming,Habilitar Recebimento (Entrada)
+Enable Outgoing,Habilitar Envio (Saída)
+Use different Email ID,Usar um endereço de e-mail diferente
+Default Incoming,Conta de Entrada Padrão
+"e.g. replies@yourcomany.com. All replies will come to this inbox.","ex: respostas@suaempresa.com.br. Todas as respostas chegarão nesta caixa de entrada."
+Incoming (POP/IMAP) Settings,Configurações de Entrada (POP/IMAP)
+Incoming Server,Servidor de Entrada
+"If non-standard port (e.g. POP3: 995/110, IMAP: 993/143)","Se a porta não for padrão (ex: POP3: 995/110; IMAP: 993/143)"
+Document Linking,Vínculo de Documentos
+"Append as communication against this DocType (must have fields: ""Sender"" and ""Subject""). These fields can be defined in the email settings section of the appended doctype.","Anexar como comunicação vinculada a este DocType (deve possuir os campos: ""Remetente"" e ""Assunto""). Estes campos podem ser definidos na seção de configurações de e-mail do DocType vinculado."
+Create Contacts from Incoming Emails,Criar Contatos a partir de E-mails Recebidos
+Default Outgoing,Conta de Saída Padrão
+Notifications and bulk mails will be sent from this outgoing server.,Notificações e e-mails em massa serão enviados a partir deste servidor de saída.
+Always use this email address as sender address,Sempre usar este endereço de e-mail como remetente
+Always use this name as sender name,Sempre usar este nome como remetente
+Send unsubscribe message in email,Enviar link de cancelamento de inscrição no e-mail
+Track Email Status,Rastrear Status de Leitura do E-mail
+Delivery Status Notification Type,Tipo de Notificação de Status de Entrega (DSN)
+Select which delivery events should trigger a delivery status notification (DSN) from the SMTP server.,Selecione quais eventos de entrega devem acionar uma notificação de status (DSN) do servidor SMTP.
+Always BCC Address,Endereço de Cópia Oculta (Cco) Permanente
+"Use this, for example, if all sent emails should also be send to an archive.","Use isto, por exemplo, se todos os e-mails enviados também devem ser encaminhados para uma conta de arquivo/auditoria."
+"If non standard port (e.g. 587). If on Google Cloud, try port 2525.","Se a porta não for padrão (ex: 587). No Google Cloud, tente a porta 2525."
+Outgoing Server,Servidor de Saída (SMTP)
+Add Signature,Adicionar Assinatura
+Footer Content,Conteúdo do Rodapé
+Auto Reply,Resposta Automática
+Brand Logo,Logotipo da Marca
+"List of email addresses, separated by comma or new line.","Lista de endereços de e-mail, separados por vírgula ou nova linha."
+Email Sync Option,Opção de Sincronização de E-mail
+Validate SSL Certificate,Validar Certificado SSL
+"Track if your email has been opened by the recipient. Note: If you're sending to multiple recipients, even if 1 recipient reads the email, it'll be considered ""Opened""","Rastrear se o seu e-mail foi aberto pelo destinatário. Nota: Se você estiver enviando para múltiplos destinatários, mesmo que apenas 1 destinatário leia o e-mail, ele será considerado como ""Aberto"""
+"Enabling auto reply on an incoming email account will send automated replies to all the synchronized emails. Do you wish to continue?","Ativar a resposta automática em uma conta de e-mail de entrada enviará respostas automáticas para todos os e-mails sincronizados. Deseja continuar?"
+Disabled Auto Reply,Resposta Automática Desativada
+Table,Tabela
+insert-table,Tabela
+Insert Table,Inserir Tabela
+Insert Row Above,Inserir Linha Acima
+Insert Row Below,Inserir Linha Abaixo
+Insert Column Right,Inserir Coluna à Direita
+Insert Column Left,Inserir Coluna à Esquerda
+Delete Row,Excluir Linha
+Delete Column,Excluir Coluna
+Delete Table,Excluir Tabela
+Send Read Receipt,Enviar Confirmação de Leitura
+Send me a copy,Enviar-me uma cópia
+Select Attachments,Selecionar Anexos
+Drag and drop files here or upload from,Arraste e solte arquivos aqui ou carregue de
+My Device,Meu Dispositivo
+Library,Biblioteca
+Set all private,Marcar todos como privados
+Upload,Carregar
+Set all public,Marcar todos como públicos
+No Images,Nenhuma imagem
+Switch Camera,Alternar câmera
+Take Photo,Tirar foto
+Total Images: {0},Total de imagens: {0}
+Capture,Capturar
+Attachments,Anexos
+Back to upload files,Voltar para o upload de arquivos
+Keeps track of all communications,Mantém o registro de todas as comunicações
+Session Default Settings,Configuração Padrão da Sessão
