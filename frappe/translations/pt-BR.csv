@@ -562,7 +562,7 @@ File Manager,Gerenciador de Arquivos
 File Name,Nome do arquivo
 File Size,Tamanho do arquivo
 File URL,URL do arquivo
-Finished,Acabado
+Finished,Finalizado
 First Name,Primeiro Nome
 First Success Message,Primeira mensagem de sucesso
 Flag,Bandeira
@@ -1546,3 +1546,73 @@ Attachments,Anexos
 Back to upload files,Voltar para o upload de arquivos
 Keeps track of all communications,Mantém o registro de todas as comunicações
 Session Default Settings,Configuração Padrão da Sessão
+Login to Frappe,Acessar EPIC 360
+"jane@example.com","colaborador@epicepis.com.br"
+Hide,Esconder
+Show,Mostrar
+Login with Email Link,Entrar com link por email
+Forgot Password?,Esqueceu a senha?
+Reset Password,Redefinir senha
+Back to Login,Voltar para o Login
+Send login link,Enviar link de acesso
+Invalid Login. Try again.,Login inválido. Tente novamente.
+Total Background Workers,Total de workers em segundo plano
+Background Jobs Check,Verificação de tarefas em segundo plano
+finished,finalizado
+Queue Status,Status da fila
+Scheduler,Agendador
+Scheduler Status,Status do agendador
+Active,Ativo
+Database,Banco de dados
+Storage Usage By Table,Uso de armazenamento por tabela
+Storage Usage (MB),Uso de armazenamento (MB)
+Database Storage Usage By Tables,Uso de armazenamento do banco por tabelas
+Size (MB),Tamanho (MB)
+Number of keys,Número de chaves
+Memory Usage,Uso de memória
+Realtime (SocketIO),Tempo real (SocketIO)
+SocketIO Transport Mode,Modo de transporte do SocketIO
+Pass,Aprovado
+File Storage,Armazenamento de arquivos
+Public Files (MB),Arquivos públicos (MB)
+Private Files (MB),Arquivos privados (MB)
+Number of onsite backups,Número de backups locais
+Backups,Backups
+Backups (MB),Backups (MB)
+Total Users,Total de usuários
+Last 10 active users,Últimos 10 usuários ativos
+New Users (Last 30 days),Novos usuários (últimos 30 dias)
+Failed Logins (Last 30 days),Logins com falha (últimos 30 dias)
+Outgoing Emails (Last 7 days),E-mails enviados (últimos 7 dias)
+Incoming Emails (Last 7 days),E-mails recebidos (últimos 7 dias)
+Total Outgoing Emails,Total de e-mails enviados
+Handled Emails,E-mails tratados
+Unhandled Emails,E-mails não tratados
+Failed Emails,E-mails com falha
+Errors,Erros
+Total Errors (last 1 day),Total de erros (último 1 dia)
+Top Errors,Principais erros
+Occurrences,Ocorrências
+Title,Título
+Queue,Fila
+Pending Jobs,Tarefas pendentes
+Count,Quantidade
+Utilization,Utilização
+Failed Jobs,Tarefas com falha
+Database Version,Versão do banco de dados
+short,curto
+default,padrão
+long,longo
+Show Processlist,Mostrar lista de processos
+Comprometer,Confirmar
+To print output use ,Para exibir a saída use 
+Database Processes,Processos do banco de dados
+Shedule Event,Evento Agendado
+API Request Log,Log de requisições da API
+View Log,Visualizar log
+System Health Report,Relatório de Integridade do Sistema
+Start,Iniciar
+Frequency,Frequência
+Queue Type(s),Tipo(s) de fila
+Failed Job Count,Quantidade de tarefas com falha
+Utilization %,Utilização %
