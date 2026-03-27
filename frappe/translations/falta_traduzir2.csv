@@ -1,0 +1,695 @@
+"Company History",Histórico da Empresa
+"Team Members" or "Management",Membros da Equipe ou Gestão
+"amended_from" field must be present to do an amendment.,O campo "amended_from" deve estar presente para fazer uma alteração.
+"{0}" is not a valid Google Sheets URL,"{0}" não é uma URL válida do Google Sheets
+1 row to {0},1 linha para {0}
+<strong>Warning:</strong> This field is system generated and may be overwritten by a future update. Modify it using {0} instead.,<strong>Aviso:</strong> Este campo é gerado pelo sistema e pode ser sobrescrito em uma atualização futura. Modifique-o usando {0}.
+"A DocType's name should start with a letter and can only consist of letters, numbers, spaces, underscores and hyphens","O nome do DocType deve começar com uma letra e pode conter apenas letras, números, espaços, sublinhados e hífens"
+A field with the name {0} already exists in {1},Já existe um campo com o nome {0} em {1}
+A file with same name {} already exists,Já existe um arquivo com o mesmo nome {}
+A new account has been created for you at {0},Uma nova conta foi criada para você em {0}
+A recurring {0} {1} has been created for you via Auto Repeat {2}.,Um(a) {0} {1} recorrente foi criado(a) para você via Repetição Automática {2}.
+A template already exists for field {0} of {1},Já existe um modelo para o campo {0} de {1}
+A word by itself is easy to guess.,Uma palavra isolada é fácil de adivinhar.
+API Endpoint Args should be valid JSON,Os argumentos do endpoint da API devem ser um JSON válido
+About Us Settings,Configurações de Sobre Nós
+About Us Team Member,Membro da Equipe Sobre Nós
+About {0} minute remaining,Falta cerca de {0} minuto
+About {0} minutes remaining,Faltam cerca de {0} minutos
+About {0} seconds remaining,Faltam cerca de {0} segundos
+Access Token URL,URL do Token de Acesso
+Access not allowed from this IP Address,Acesso não permitido a partir deste endereço IP
+"Accurate count can not be fetched, click here to view all documents","Não foi possível obter a contagem exata; clique aqui para ver todos os documentos"
+Action Type,Tipo de ação
+Action {0} completed successfully on {1} {2}. View it {3},A ação {0} foi concluída com sucesso em {1} {2}. Veja em {3}
+Action {0} failed on {1} {2}. View it {3},A ação {0} falhou em {1} {2}. Veja em {3}
+Add,Adicionar
+Add A New Rule,Adicionar nova regra
+Add Card to Dashboard,Adicionar cartão ao painel
+Add Chart to Dashboard,Adicionar gráfico ao painel
+Add Child,Adicionar filho
+Add Contacts,Adicionar contatos
+Add Custom Tags,Adicionar tags personalizadas
+Add Group,Adicionar grupo
+Add Indexes,Adicionar índices
+Add New Permission Rule,Adicionar nova regra de permissão
+Add Participants,Adicionar participantes
+Add Reply-To header,Adicionar cabeçalho Reply-To
+Add Roles,Adicionar perfis
+Add Space at Bottom,Adicionar espaço na parte inferior
+Add Subscribers,Adicionar inscritos
+Add Tags,Adicionar tags
+Add Template,Adicionar modelo
+Add User Permissions,Adicionar permissões de usuário
+Add Video Conferencing,Adicionar videoconferência
+Add X-Original-From header,Adicionar cabeçalho X-Original-From
+Add a New Role,Adicionar novo perfil
+Add a Row,Adicionar linha
+Add a comment,Adicionar comentário
+Add a new section,Adicionar nova seção
+Add a row above the current row,Adicionar uma linha acima da linha atual
+Add a row at the bottom,Adicionar uma linha ao final
+Add a row at the top,Adicionar uma linha no início
+Add a row below the current row,Adicionar uma linha abaixo da linha atual
+Add a {0} Chart,Adicionar gráfico de {0}
+Add column,Adicionar coluna
+Add field,Adicionar campo
+Add multiple,Adicionar vários
+Add new tab,Adicionar nova aba
+Add numbers or special characters.,Adicione números ou caracteres especiais.
+Add page break,Adicionar quebra de página
+Add section above,Adicionar seção acima
+Add section below,Adicionar seção abaixo
+Add tab,Adicionar aba
+Add to Dashboard,Adicionar ao painel
+Add to Desktop,Adicionar à área de trabalho
+Add to ToDo,Adicionar ao ToDo
+Add to table,Adicionar à tabela
+Add to this activity by mailing to {0},Adicione a esta atividade enviando e-mail para {0}
+Add/Update Filter,Adicionar/atualizar filtro
+Added,Adicionado
+"Added HTML in the &lt;head&gt; section of the web page, primarily used for website verification and SEO","HTML adicionado à seção &lt;head&gt; da página, usado principalmente para verificação do site e SEO"
+Added default log doctypes: {},DocTypes de log padrão adicionados: {}
+Added {0} ({1}),Adicionado {0} ({1})
+Address Title is mandatory.,O Título do Endereço é obrigatório.
+Addresses,Endereços
+Addresses And Contacts,Endereços e contatos
+Addresses added here will be used as the Reply-To header for outgoing emails sent from this account.,Os endereços adicionados aqui serão usados como cabeçalho Reply-To nos e-mails enviados desta conta.
+Adds a custom client script to a DocType,Adiciona um script de cliente personalizado a um DocType
+Adds a custom field to a DocType,Adiciona um campo personalizado a um DocType
+Administrator Logged In,Administrador conectado
+Administrator accessed {0} on {1} via IP Address {2}.,O administrador acessou {0} em {1} via endereço IP {2}.
+Administrator can't follow,O Administrador não pode seguir
+Advanced,Avançado
+Advanced Control,Controle avançado
+After,Depois
+After Discard,Após descartar
+Aggregate Field is required to create a number card,O campo de agregação é obrigatório para criar um cartão numérico
+Aggregate Function field is required to create a dashboard chart,O campo de função de agregação é obrigatório para criar um gráfico de painel
+Alias must be a string,O alias deve ser uma string
+Align Value,Alinhar valor
+Alignment,Alinhamento
+All,Todos
+All Day,Dia inteiro
+All Images attached to Website Slideshow should be public,Todas as imagens anexadas à apresentação de slides do site devem ser públicas
+All Results,Todos os resultados
+All Submissions,Todos os envios
+All customizations will be removed. Please confirm.,Todas as personalizações serão removidas. Confirme.
+All fields are necessary to submit the comment.,Todos os campos são necessários para enviar o comentário.
+All-uppercase is almost as easy to guess as all-lowercase.,Tudo em maiúsculas é quase tão fácil de adivinhar quanto tudo em minúsculas.
+Allow,Permitir
+Allow API Indexing Access,Permitir acesso à indexação da API
+Allow Google Calendar Access,Permitir acesso ao Google Agenda
+Allow Google Contacts Access,Permitir acesso aos Contatos do Google
+Allow Guests to Upload Files,Permitir que convidados enviem arquivos
+Allow Import (via Data Import Tool),Permitir importação (via ferramenta de importação de dados)
+Allow Login After Fail,Permitir login após falha
+Allow Login using Mobile Number,Permitir login usando número de celular
+Allow Sending Usage Data for Improving Applications,Permitir envio de dados de uso para melhorar os aplicativos
+Allow comments,Permitir comentários
+Allow delete,Permitir exclusão
+Allow document creation via Email,Permitir criação de documentos por e-mail
+Allow editing after submit,Permitir edição após o envio
+Allow incomplete forms,Permitir formulários incompletos
+Allow multiple responses,Permitir múltiplas respostas
+Allow page break inside tables,Permitir quebra de página dentro de tabelas
+Allow print,Permitir impressão
+Allow recording my first session to improve user experience,Permitir gravar minha primeira sessão para melhorar a experiência do usuário
+Allow sending usage data for improving applications,Permitir envio de dados de uso para melhorar os aplicativos
+"Allow users to log in without a password, using a login link sent to their email",Permitir que usuários façam login sem senha usando um link enviado por e-mail
+Allowed File Extensions,Extensões de arquivo permitidas
+Allowed Modules,Módulos permitidos
+Allowed Public Client Origins,Origens públicas de cliente permitidas
+Allowed Roles,Perfis permitidos
+Allowed embedding domains,Domínios permitidos para incorporação
+"Allowing DocType, DocType. Be careful!","Permitindo DocType, DocType. Cuidado!"
+Allows printing or PDF download of documents.,Permite imprimir ou baixar documentos em PDF.
+Allows sharing document access with other users.,Permite compartilhar o acesso ao documento com outros usuários.
+Allows skipping authorization if a user has active tokens.,Permite pular a autorização se o usuário tiver tokens ativos.
+Allows the user to access reports related to the document.,Permite ao usuário acessar relatórios relacionados ao documento.
+Allows the user to create new documents.,Permite ao usuário criar novos documentos.
+Allows the user to delete documents.,Permite ao usuário excluir documentos.
+Allows the user to edit existing records they have access to.,Permite ao usuário editar registros existentes aos quais tem acesso.
+Allows the user to email from the document.,Permite ao usuário enviar e-mail a partir do documento.
+Allows the user to export data from the Report view.,Permite ao usuário exportar dados da visualização de relatório.
+Allows the user to search and see records.,Permite ao usuário pesquisar e ver registros.
+Allows the user to use Data Import tool to create / update records.,Permite ao usuário usar a ferramenta de Importação de Dados para criar/atualizar registros.
+Allows the user to view the document.,Permite ao usuário visualizar o documento.
+Allows users to enable the mask property for any field of the respective doctype.,Permite aos usuários habilitar a propriedade de máscara para qualquer campo do respectivo doctype.
+Already Registered,Já cadastrado
+Already in the following Users ToDo list:{0},Já está na seguinte lista de ToDo dos usuários:{0}
+Also adding the dependent currency field {0},Adicionando também o campo de moeda dependente {0}
+Also adding the status dependency field {0},Adicionando também o campo de dependência de status {0}
+Alternative Email ID,E-mail alternativo
+Always,Sempre
+Amend Counter,Contador de alterações
+Amended Document Naming Settings,Configurações de nomenclatura de documentos alterados
+Amended Documents,Documentos alterados
+Amended From,Alterado a partir de
+Amending,Alterando
+Amendment Naming Override,Sobrescrever nomenclatura da alteração
+Amendment Not Allowed,Alteração não permitida
+Amendment naming rules updated.,Regras de nomenclatura de alteração atualizadas.
+An error occurred while setting Session Defaults,Ocorreu um erro ao definir os padrões da sessão
+An icon file with .ico extension. Should be 16 x 16 px. Generated using a favicon generator. [favicon-generator.org],Um arquivo de ícone com extensão .ico. Deve ter 16 x 16 px. Gere usando um criador de favicon. [favicon-generator.org]
+An unexpected error occurred while authorizing {}.,Ocorreu um erro inesperado ao autorizar {}.
+Ancestors Of,Ancestrais de
+Announcement Widget,Widget de anúncio
+Announcements,Anúncios
+Annual,Anual
+Anonymization Matrix,Matriz de anonimização
+Anonymous responses,Respostas anônimas
+Another transaction is blocking this one. Please try again in a few seconds.,Outra transação está bloqueando esta. Tente novamente em alguns segundos.
+"Another {0} with name {1} exists, select another name",Já existe outro {0} com o nome {1}; selecione outro nome
+App ID,ID do aplicativo
+App Logo,Logo do aplicativo
+App Name,Nome do aplicativo
+App Name (Client Name),Nome do aplicativo (nome do cliente)
+App not found for module: {0},Aplicativo não encontrado para o módulo: {0}
+App {0} is not installed,O aplicativo {0} não está instalado
+Append Emails to Sent Folder,Adicionar e-mails à pasta Enviados
+Append To can be one of {0},Append To pode ser um entre {0}
+Applicable Document Types,Tipos de documento aplicáveis
+Applicable For,Aplicável para
+Application is not installed,O aplicativo não está instalado
+Applies To (DocType),Aplica-se a (DocType)
+Apply Assignment Rule,Aplicar regra de atribuição
+Apply Module Export Filter,Aplicar filtro de exportação do módulo
+Apply To,Aplicar a
+Apply To All Document Types,Aplicar a todos os tipos de documento
+Apply User Permission On,Aplicar permissão de usuário em
+Apply document permissions,Aplicar permissões do documento
+Apply to all Documents Types,Aplicar a todos os tipos de documento
+Applying: {0},Aplicando: {0}
+Approval Required,Aprovação obrigatória
+Apps,Aplicativos
+Archived Columns,Colunas arquivadas
+Are you sure you want to cancel the invitation?,Tem certeza de que deseja cancelar o convite?
+Are you sure you want to clear the assignments?,Tem certeza de que deseja limpar as atribuições?
+Are you sure you want to delete all {0} rows?,Tem certeza de que deseja excluir todas as {0} linhas?
+Are you sure you want to delete the attachment?,Tem certeza de que deseja excluir o anexo?
+Are you sure you want to delete the column? All the fields in the column will be moved to the previous column.,Tem certeza de que deseja excluir a coluna? Todos os campos da coluna serão movidos para a coluna anterior.
+Are you sure you want to delete the section? All the columns along with fields in the section will be moved to the previous section.,Tem certeza de que deseja excluir a seção? Todas as colunas e campos da seção serão movidos para a seção anterior.
+Are you sure you want to delete the tab? All the sections along with fields in the tab will be moved to the previous tab.,Tem certeza de que deseja excluir a aba? Todas as seções e campos da aba serão movidos para a aba anterior.
+Are you sure you want to delete this record?,Tem certeza de que deseja excluir este registro?
+Are you sure you want to discard the changes?,Tem certeza de que deseja descartar as alterações?
+Are you sure you want to generate a new report?,Tem certeza de que deseja gerar um novo relatório?
+Are you sure you want to merge {0} with {1}?,Tem certeza de que deseja mesclar {0} com {1}?
+Are you sure you want to proceed?,Tem certeza de que deseja continuar?
+Are you sure you want to re-enable scheduler?,Tem certeza de que deseja reativar o agendador?
+Are you sure you want to relink this communication to {0}?,Tem certeza de que deseja revincular esta comunicação a {0}?
+Are you sure you want to remove all failed jobs?,Tem certeza de que deseja remover todas as tarefas com falha?
+Are you sure you want to remove the {0} filter?,Tem certeza de que deseja remover o filtro {0}?
+Are you sure you want to reset all customizations?,Tem certeza de que deseja redefinir todas as personalizações?
+Are you sure you want to save this document?,Tem certeza de que deseja salvar este documento?
+Are you sure you want to {0}?,Tem certeza de que deseja {0}?
+Are you sure?,Tem certeza?
+Arguments,Argumentos
+"As document sharing is disabled, please give them the required permissions before assigning.","Como o compartilhamento de documentos está desativado, conceda as permissões necessárias antes de atribuir."
+"As per your request, your account and data on {0} associated with email {1} has been permanently deleted","Conforme sua solicitação, sua conta e seus dados em {0} associados ao e-mail {1} foram excluídos permanentemente"
+Ask,Perguntar
+Assign To User Group,Atribuir ao grupo de usuários
+Assign a user,Atribuir um usuário
+"Assign one by one, in sequence","Atribuir um a um, em sequência"
+Assign to the one who has the least assignments,Atribuir a quem tem menos atribuições
+Assign to the user set in this field,Atribuir ao usuário definido neste campo
+Assigned To/Owner,Atribuído a/Proprietário
+Assignee,Responsável
+Assigning...,Atribuindo...
+Assignment Rule Day,Dia da regra de atribuição
+Assignment Rule User,Usuário da regra de atribuição
+Assignment Rule is not allowed on document type {0},A regra de atribuição não é permitida no tipo de documento {0}
+Assignment Update on {0},Atualização de atribuição em {0}
+Assignment for {0} {1},Atribuição para {0} {1}
+Assignment of {0} removed by {1},A atribuição de {0} foi removida por {1}
+Asynchronous,Assíncrono
+At least one column is required to show in the grid.,É necessário pelo menos uma coluna para exibir na grade.
+At least one field is required in Web Form Fields Table,É necessário pelo menos um campo na tabela de campos do formulário web
+At least one field of Parent Document Type is mandatory,Pelo menos um campo do Tipo de Documento Pai é obrigatório
+Attach Document Print,Anexar impressão do documento
+Attach Files,Anexar arquivos
+Attach Package,Anexar pacote
+Attach a web link,Anexar um link web
+Attach files / urls and add in table.,Anexe arquivos/URLs e adicione na tabela.
+Attached To DocType,Anexado ao DocType
+Attached To Name must be a string or an integer,Attached To Name deve ser uma string ou um inteiro
+Attachment Settings,Configurações de anexos
+Attempting Connection to QZ Tray...,Tentando conexão com o QZ Tray...
+Attempting to launch QZ Tray...,Tentando iniciar o QZ Tray...
+Attending,Participando
+Attribution,Atribuição
+Auth URL data should be valid JSON,Os dados da URL de autenticação devem ser um JSON válido
+Authenticate as Service Principal,Autenticar como entidade de serviço
+Authentication failed while receiving emails from Email Account: {0}.,A autenticação falhou ao receber e-mails da Conta de E-mail: {0}.
+Authorization URI,URI de autorização
+Authorization error for {}.,Erro de autorização para {}.
+Authorize API Access,Autorizar acesso à API
+Authors,Autores
+Authors / Maintainers,Autores / Mantenedores
+Auto,Automático
+Auto Repeat Day,Dia da Repetição Automática
+Auto Repeat Day{0} {1} has been repeated.,O Dia da Repetição Automática {0} {1} foi repetido.
+Auto Repeat Document Creation Failed,Falha na criação do documento de Repetição Automática
+Auto Repeat Schedule,Agenda de Repetição Automática
+Auto Repeat User,Usuário da Repetição Automática
+Auto Repeat created for this document,A Repetição Automática foi criada para este documento
+Auto Repeat failed for {0},A Repetição Automática falhou para {0}
+Auto assignment failed: {0},A atribuição automática falhou: {0}
+Auto follow documents that are assigned to you,Acompanhar automaticamente documentos atribuídos a você
+Auto follow documents that are shared with you,Acompanhar automaticamente documentos compartilhados com você
+Auto follow documents that you Like,Acompanhar automaticamente documentos que você curte
+Auto follow documents that you comment on,Acompanhar automaticamente documentos em que você comenta
+Auto follow documents that you create,Acompanhar automaticamente documentos que você cria
+Auto repeat failed. Please enable auto repeat after fixing the issues.,A repetição automática falhou. Habilite-a novamente após corrigir os problemas.
+Autocomplete,Autocompletar
+Autoincrement,Autoincremento
+Automated Message,Mensagem automática
+Automatic Linking can be activated only for one Email Account.,A vinculação automática pode ser ativada apenas para uma Conta de E-mail.
+Automatic Linking can be activated only if Incoming is enabled.,A vinculação automática só pode ser ativada se Recebimento estiver habilitado.
+Automatic sending of emails is disabled via site config.,O envio automático de e-mails está desativado na configuração do site.
+Automatically applied a filter for recent data. You can disable this behavior from the list view settings.,Um filtro para dados recentes foi aplicado automaticamente. Você pode desativar esse comportamento nas configurações da visualização em lista.
+Automatically delete account within (hours),Excluir conta automaticamente em (horas)
+Average,Média
+Average of {0},Média de {0}
+Avoid dates and years that are associated with you.,Evite datas e anos associados a você.
+Avoid recent years.,Evite anos recentes.
+"Avoid sequences like abc or 6543 as they are easy to guess","Evite sequências como abc ou 6543, pois são fáceis de adivinhar"
+Avoid years that are associated with you.,Evite anos associados a você.
+Awesome Work,Ótimo trabalho
+"Awesome, now try making an entry yourself","Ótimo, agora tente criar um registro você mesmo"
+Back to Desk,Voltar para o Desk
+Back to Home,Voltar para o início
+Background Image,Imagem de fundo
+Background Jobs Queue,Fila de tarefas em segundo plano
+Background Print (required for >25 documents),Impressão em segundo plano (obrigatória para mais de 25 documentos)
+Backup Encryption Key,Chave de criptografia do backup
+Backup job is already queued. You will receive an email with the download link,A tarefa de backup já está na fila. Você receberá um e-mail com o link para download
+Bad Cron Expression,Expressão Cron inválida
+Banker's Rounding,Arredondamento bancário
+Banker's Rounding (legacy),Arredondamento bancário (legado)
+Banner is above the Top Menu Bar.,O banner fica acima da barra de menu superior.
+Based On,Baseado em
+Before,Antes
+Before Discard,Antes de descartar
+Before Print,Antes de imprimir
+Before Rename,Antes de renomear
+Before Validate,Antes de validar
+Beginner,Iniciante
+Beta,Beta
+Binary Logging,Log binário
+Bio,Bio
+Blank Template,Modelo em branco
+Block Module,Bloquear módulo
+Blue,Azul
+Bot,Bot
+Both DocType and Name required,DocType e Nome são obrigatórios
+Both login and password required,Login e senha são obrigatórios
+Bottom Center,Centro inferior
+Bottom Left,Inferior esquerdo
+Bottom Right,Inferior direito
+Bounced,Rejeitado
+Brand,Marca
+Breadcrumbs,Breadcrumbs
+Browser,Navegador
+Browser not supported,Navegador não suportado
+Build {0},Compilar {0}
+Built on {0},Criado em {0}
+Bulk Edit,Edição em massa
+Bulk Edit {0},Edição em massa de {0}
+Bulk Operation Failed,Falha na operação em massa
+Bulk PDF Export,Exportação de PDF em massa
+Bulk approval only support up to 500 documents.,A aprovação em massa suporta apenas até 500 documentos.
+Bulk operation is enqueued in background.,A operação em massa foi enfileirada em segundo plano.
+Bulk operations only support up to 500 documents.,As operações em massa suportam apenas até 500 documentos.
+Bulk {0} is enqueued in background.,{0} em massa foi enfileirado em segundo plano.
+Button Color,Cor do botão
+By "Naming Series" field,Pelo campo "Naming Series"
+"By default the title is used as meta title, adding a value here will override it.","Por padrão, o título é usado como meta title; adicionar um valor aqui irá sobrescrevê-lo."
+By fieldname,Pelo nome do campo
+By script,Por script
+Bypass Two Factor Auth for users who login from restricted IP Address,Ignorar autenticação em dois fatores para usuários que fazem login a partir de endereço IP restrito
+CSS,CSS
+CSV,CSV
+Cache,Cache
+Cache Cleared,Cache limpo
+Calendar View,Visualização de calendário
+Call,Chamada
+Campaign,Campanha
+Campaign Description (Optional),Descrição da campanha (opcional)
+"Can not rename as column {0} is already present on DocType.","Não é possível renomear, pois a coluna {0} já existe no DocType."
+Can only change to/from Autoincrement naming rule when there is no data in the doctype,Só é possível alterar para/de a regra de nomenclatura Autoincremento quando não houver dados no doctype
+Can only list down the document types which has been linked to the User document type.,Só é possível listar os tipos de documento vinculados ao tipo de documento Usuário.
+"Can't follow since changes are not tracked.","Não é possível seguir, pois as alterações não são rastreadas."
+Can't rename {0} to {1} because {0} doesn't exist.,Não é possível renomear {0} para {1} porque {0} não existe.
+Cancel All,Cancelar tudo
+Cancel All Documents,Cancelar todos os documentos
+Cancel Import,Cancelar importação
+Cancel Prepared Report,Cancelar relatório preparado
+Cancel {0} documents?,Cancelar {0} documentos?
+Cancelled Document restored as Draft,Documento cancelado restaurado como Rascunho
+Cancelling,Cancelando
+Cancelling documents,Cancelando documentos
+Cancelling {0},Cancelando {0}
+Cannot delete Desktop Icon '{0}' as it is restricted,Não é possível excluir o ícone da área de trabalho '{0}' porque ele é restrito
+"Cannot edit Standard Notification. To edit, please disable this and duplicate it","Não é possível editar a Notificação Padrão. Para editar, desative-a e duplique-a"
+"Cannot share {0} with submit permission as the doctype {1} is not submittable","Não é possível compartilhar {0} com permissão de envio, pois o doctype {1} não é enviável"
+"Check columns to select, drag to set order.",Selecione as colunas e arraste para definir a ordem.
+"Check to display the full numeric value (e.g., 1,234,567 instead of 1.2M).","Marque para exibir o valor numérico completo (ex.: 1.234.567 em vez de 1,2M)."
+"Checking this will enable tracking page views for blogs, web pages, etc.","Marcar esta opção habilitará o rastreamento de visualizações de página para blogs, páginas web etc."
+Clear & Add template,Limpar e adicionar modelo
+"Clearing end date, as it cannot be in the past for published pages.","Limpando a data final, pois ela não pode estar no passado para páginas publicadas."
+Client Id,ID do cliente
+Client script,Script do cliente
+Delete,Excluir
+Delete column,Excluir coluna
+Delete row,Excluir linha
+Delete section,Excluir seção
+Delete tab,Excluir aba
+DocType,DocType
+Doctype required,Doctype obrigatório
+Draft,Rascunho
+Email Id,ID de e-mail
+Enable if on click|||opens modal.,Habilitar se ao clicar|||abre modal.
+"Ex: ""colors"": [""#d1d8dd"", ""#ff5858""]","Ex.: ""colors"": [""#d1d8dd"", ""#ff5858""]"
+"Expected 'and' or 'or' operator, found: {0}","Operador 'and' ou 'or' esperado; encontrado: {0}"
+"Failed to decode token, please provide a valid base64-encoded token.",Falha ao decodificar o token; informe um token válido codificado em base64.
+Failure,Falha
+"Header, Robots","Cabeçalho, Robots"
+"Hide Previous, Next and Close button on highlight dialog.","Ocultar os botões Anterior, Próximo e Fechar no diálogo de destaque."
+"Hide Sidebar, Menu, and Comments","Ocultar barra lateral, menu e comentários"
+"IDs must contain only alphanumeric characters, not contain spaces, and should be unique.","IDs devem conter apenas caracteres alfanuméricos, não conter espaços e devem ser únicos."
+"If checked, a confirmation will be required before performing workflow actions.","Se marcado, será necessária uma confirmação antes de executar ações de fluxo de trabalho."
+"If checked, users will not see the Confirm Access dialog.","Se marcado, os usuários não verão o diálogo Confirmar Acesso."
+"If enabled, all responses on the web form will be submitted anonymously","Se habilitado, todas as respostas do formulário web serão enviadas anonimamente"
+"If left empty, the default workspace will be the last visited workspace","Se ficar em branco, a área de trabalho padrão será a última visitada"
+"If this was a mistake or you need access again, please reach out to your team.","Se isso foi um engano ou você precisar de acesso novamente, entre em contato com sua equipe."
+"If unchecked, the value will always be re-fetched on save.","Se desmarcado, o valor sempre será buscado novamente ao salvar."
+"If you are updating, please select ""Overwrite"" else existing rows will not be deleted.","Se estiver atualizando, selecione ""Overwrite""; caso contrário, as linhas existentes não serão excluídas."
+"If you are uploading new records, ""Naming Series"" becomes mandatory, if present.","Se estiver enviando novos registros, ""Naming Series"" se torna obrigatório, se estiver presente."
+"If you are uploading new records, leave the ""name"" (ID) column blank.","Se estiver enviando novos registros, deixe a coluna ""name"" (ID) em branco."
+"If you have any questions, reach out to your system administrator.","Se tiver alguma dúvida, entre em contato com o administrador do sistema."
+"Import template should be of type .csv, .xlsx or .xls","O modelo de importação deve ser do tipo .csv, .xlsx ou .xls"
+"Import timed out, please re-try.",A importação expirou; tente novamente.
+"Importing {0} of {1}, {2}","Importando {0} de {1}, {2}"
+Indicator color,Cor do indicador
+Invalid Doctype,Doctype inválido
+Is standard,É padrão
+Javascript,JavaScript
+Job Id,ID da tarefa
+Job stopped successfully,Tarefa interrompida com sucesso
+"Layout will be reset to standard layout, are you sure you want to do this?",O layout será redefinido para o padrão. Tem certeza de que deseja fazer isso?
+"List of email addresses, separated by comma or new line.",Lista de endereços de e-mail separados por vírgula ou quebra de linha.
+"Login session expired, refresh page to retry",A sessão de login expirou; atualize a página para tentar novamente
+Login to {0},Entrar em {0}
+Login with email link,Entrar com link por e-mail
+Logs to Clear,Logs a limpar
+Meta description,Meta descrição
+Meta image,Meta imagem
+Meta title,Meta title
+Never,Nunca
+Next actions,Próximas ações
+"No need for symbols, digits, or uppercase letters.","Não há necessidade de símbolos, dígitos ou letras maiúsculas."
+Not found,Não encontrado
+Not permitted,Não permitido
+Notify by email,Notificar por e-mail
+"Once submitted, submittable documents cannot be changed. They can only be Cancelled and Amended.","Depois de enviados, documentos enviáveis não podem ser alterados. Eles só podem ser Cancelados e Alterados."
+"On {0}, {1} wrote:","Em {0}, {1} escreveu:"
+Proceed,Prosseguir
+Proceed Anyway,Prosseguir assim mesmo
+Processing,Processando
+Processing...,Processando...
+Progress,Progresso
+Project,Projeto
+Publish,Publicar
+Published,Publicado
+Publishing Dates,Datas de publicação
+Pull Emails,Buscar e-mails
+Pull from Google Contacts,Buscar dos Contatos do Google
+Pulling emails...,Buscando e-mails...
+Purchase Manager,Gerente de compras
+Purchase Master Manager,Gerente mestre de compras
+Purchase User,Usuário de compras
+Push Notification Settings,Configurações de notificação push
+Put on Hold,Colocar em espera
+Python,Python
+QR Code,Código QR
+QR Code for Login Verification,Código QR para verificação de login
+QZ Tray Connection Active!,Conexão com QZ Tray ativa!
+Query Parameters,Parâmetros da consulta
+Query Report,Relatório de consulta
+Queue Overloaded,Fila sobrecarregada
+Queued At,Enfileirado em
+Queued By,Enfileirado por
+Queued for Submission. You can track the progress over {0}.,Enfileirado para envio. Você pode acompanhar o progresso em {0}.
+Queued for backup. You will receive an email with the download link,Enfileirado para backup. Você receberá um e-mail com o link para download
+Queues,Filas
+Quick List Filter,Filtro de lista rápida
+Quick Lists,Listas rápidas
+Random,Aleatório
+Range,Intervalo
+Rate Limiting,Limitação de taxa
+Rating,Classificação
+Raw Email,E-mail bruto
+Raw Printing,Impressão bruta
+Read Only,Somente leitura
+Read Only Depends On (JS),Somente leitura depende de (JS)
+Read Only Mode,Modo somente leitura
+Read mode,Modo de leitura
+Read the documentation to know more,Leia a documentação para saber mais
+Reason,Motivo
+Received,Recebido
+Recents,Recentes
+Redirect to this URL after successful confirmation.,Redirecionar para esta URL após a confirmação bem-sucedida.
+Redirects,Redirecionamentos
+Redo last action,Refazer última ação
+Reference,Referência
+Reference Date,Data de referência
+Reference Datetime,Data e hora de referência
+Reference Doc,Documento de referência
+Reference DocType,DocType de referência
+Reference Document,Documento de referência
+Reference Document Name,Nome do documento de referência
+Reference Document Type,Tipo de documento de referência
+Reference Name,Nome de referência
+Reference Type,Tipo de referência
+Reference: {0} {1},Referência: {0} {1}
+Referrer,Origem
+Refresh,Atualizar
+Refresh All,Atualizar tudo
+Refresh List,Atualizar lista
+Refresh Print Preview,Atualizar visualização de impressão
+Refresh Token,Token de atualização
+Refreshing...,Atualizando...
+"Registered but disabled","Cadastrado, mas desativado"
+Rejected,Rejeitado
+Release Notes,Notas da versão
+Relink,Revincular
+Relink Communication,Revincular comunicação
+Reload File,Recarregar arquivo
+Reload Report,Recarregar relatório
+Remind At,Lembrar em
+Remind Me In,Lembrar-me em
+Reminder cannot be created in past.,Não é possível criar lembrete no passado.
+Reminder set at {0},Lembrete definido para {0}
+Remove,Remover
+Remove Failed Jobs,Remover tarefas com falha
+Remove Field,Remover campo
+Remove Filter,Remover filtro
+Remove Section,Remover seção
+Remove all customizations?,Remover todas as personalizações?
+Remove all fields in the column,Remover todos os campos da coluna
+Remove column,Remover coluna
+Remove field,Remover campo
+Remove last column,Remover última coluna
+Remove page break,Remover quebra de página
+Remove section,Remover seção
+Remove tab,Remover aba
+Removed,Removido
+Rename Fieldname,Renomear nome do campo
+Rename {0},Renomear {0}
+Reopen,Reabrir
+Repeat,Repetir
+Repeat Header and Footer,Repetir cabeçalho e rodapé
+Repeat on Days,Repetir em dias
+"Repeats like ""aaa"" are easy to guess",Repetições como ""aaa"" são fáceis de adivinhar
+"Repeats like ""abcabcabc"" are only slightly harder to guess than ""abc""","Repetições como ""abcabcabc"" são só um pouco mais difíceis de adivinhar do que ""abc"""
+Repeats {0},Repete {0}
+Replicate,Replicar
+Replicating...,Replicando...
+Replication completed.,Replicação concluída.
+Replied,Respondido
+Reply All,Responder a todos
+Reply To Address,Endereço Reply-To
+Reply To email is required,O e-mail Reply-To é obrigatório
+Reply-To Addresses,Endereços Reply-To
+Report Builder,Construtor de Relatórios
+Report Column,Coluna do relatório
+Report Document Error,Erro de documento do relatório
+Report Filter,Filtro de relatório
+Report Manager,Gerente de relatórios
+Report Ref DocType,DocType de referência do relatório
+Report Reference Doctype,Doctype de referência do relatório
+Report Type,Tipo de relatório
+Report bug,Reportar erro
+Report cannot be set for Single types,O relatório não pode ser definido para tipos Single
+"Report has no data, please modify the filters or change the Report Name",O relatório não tem dados; modifique os filtros ou altere o nome do relatório
+"Report has no numeric fields, please change the Report Name",O relatório não possui campos numéricos; altere o nome do relatório
+"Report initiated, click to view status",Relatório iniciado; clique para ver o status
+Report limit reached,Limite de relatórios atingido
+Report timed out.,O relatório expirou.
+Report updated successfully,Relatório atualizado com sucesso
+Report was not saved (there were errors),O relatório não foi salvo (houve erros)
+Report with more than 10 columns looks better in Landscape mode.,Relatórios com mais de 10 colunas ficam melhores em modo paisagem.
+Report {0},Relatório {0}
+Report {0} deleted,Relatório {0} excluído
+Report {0} is disabled,O relatório {0} está desativado
+Report {0} saved,Relatório {0} salvo
+Report:,Relatório:
+Reports,Relatórios
+Reports & Masters,Relatórios e cadastros
+Reports already in Queue,Relatórios já na fila
+Represents a User in the system.,Representa um Usuário no sistema.
+Represents the states allowed in one document and role assigned to change the state.,Representa os estados permitidos em um documento e o perfil atribuído para alterar o estado.
+Request Body,Corpo da requisição
+Request Description,Descrição da requisição
+Request Headers,Cabeçalhos da requisição
+Request ID,ID da requisição
+Request Limit,Limite de requisição
+Request Method,Método da requisição
+Request Timed Out,Tempo da requisição esgotado
+Request Timeout,Tempo limite da requisição
+Requested Numbers,Números solicitados
+Res: {0},Res: {0}
+Reset,Redefinir
+Reset All,Redefinir tudo
+Reset All Customizations,Redefinir todas as personalizações
+Reset Changes,Redefinir alterações
+Reset Chart,Redefinir gráfico
+Reset Dashboard Customizations,Redefinir personalizações do painel
+Reset LDAP Password,Redefinir senha LDAP
+Reset Layout,Redefinir layout
+Reset OTP Secret,Redefinir segredo OTP
+Reset Password Link Expiry Duration,Duração de expiração do link de redefinição de senha
+Reset Password Template,Modelo de redefinição de senha
+Reset Permissions for {0}?,Redefinir permissões de {0}?
+Reset To Default,Redefinir para o padrão
+Reset sorting,Redefinir ordenação
+Reset to defaults,Redefinir para os padrões
+Reset your password,Redefina sua senha
+Resource,Recurso
+Resource Documentation,Documentação do recurso
+Resource Name,Nome do recurso
+Response Headers,Cabeçalhos da resposta
+Response Type,Tipo de resposta
+Rest of the day,Restante do dia
+Restore Original Permissions,Restaurar permissões originais
+Restore to default settings?,Restaurar para as configurações padrão?
+Restoring Deleted Document,Restaurando documento excluído
+Restrictions,Restrições
+Result,Resultado
+Resume Sending,Retomar envio
+Retry,Tentar novamente
+Retry Sending,Tentar envio novamente
+Revoke,Revogar
+Rich Text,Rich Text
+Right Bottom,Inferior direito
+Right Center,Centro direito
+Robots.txt,Robots.txt
+Role Permission for Page and Report,Permissão de perfil para página e relatório
+Role Permissions,Permissões de perfil
+Role Profile,Perfil de função
+Route,Rota
+Route Options,Opções de rota
+Row,Linha
+Row #,Linha #
+Row #{0}:,Linha #{0}:
+Row Format,Formato da linha
+Row Number,Número da linha
+Row Values Changed,Valores da linha alterados
+Row {0},Linha {0}
+Rows Added,Linhas adicionadas
+Runtime in Minutes,Tempo de execução em minutos
+Runtime in Seconds,Tempo de execução em segundos
+SMS,SMS
+SMS Gateway URL,URL do gateway SMS
+SMS Log,Log de SMS
+SMS Parameter,Parâmetro de SMS
+SMS Settings,Configurações de SMS
+SMS sent successfully,SMS enviado com sucesso
+SMS was not sent. Please contact Administrator.,O SMS não foi enviado. Entre em contato com o Administrador.
+SMTP Server is required,O servidor SMTP é obrigatório
+SQL,SQL
+SQL Explain,SQL Explain
+SQL Output,Saída SQL
+SQL Queries,Consultas SQL
+Sales Manager,Gerente de vendas
+Sales Master Manager,Gerente mestre de vendas
+Sales User,Usuário de vendas
+"Sales without complexity, lock-in and per-user costs. Try it for free!","Vendas sem complexidade, dependência e custos por usuário. Experimente grátis!"
+Save Anyway,Salvar assim mesmo
+Save As,Salvar como
+Save Customizations,Salvar personalizações
+Save Report,Salvar relatório
+Save filters,Salvar filtros
+Save on Completion,Salvar ao concluir
+Save the document.,Salve o documento.
+Saved,Salvo
+Saving,Salvando
+Saving Changes...,Salvando alterações...
+Saving Customization...,Salvando personalização...
+Saving Sidebar,Salvando barra lateral
+Saving...,Salvando...
+Scan,Escanear
+Scan QRCode,Escanear QR Code
+Scan the QR Code and enter the resulting code displayed.,Escaneie o QR Code e informe o código exibido.
+Schedule,Agendar
+Scheduled,Agendado
+Scheduled Against,Agendado para
+Scheduled to send,Agendado para envio
+Scheduler Event,Evento do agendador
+Scheduler Inactive,Agendador inativo
+Scheduler can not be re-enabled when maintenance mode is active.,O agendador não pode ser reativado enquanto o modo de manutenção estiver ativo.
+Scheduler is inactive. Cannot import data.,O agendador está inativo. Não é possível importar dados.
+Scheduler: Active,Agendador: ativo
+Scheduler: Inactive,Agendador: inativo
+Scope,Escopo
+Scopes,Escopos
+Scopes Supported,Escopos suportados
+Script,Script
+Script Manager,Gerente de scripts
+Script Report,Relatório de script
+Script Type,Tipo de script
+Scripting,Script
+Scripts,Scripts
+Search Results,Resultados da pesquisa
+Search by filename or extension,Pesquisar por nome de arquivo ou extensão
+Search field {0} is not valid,O campo de pesquisa {0} não é válido
+Search fields,Campos de pesquisa
+Search for anything,Pesquisar qualquer coisa
+Search for countries...,Pesquisar países...
+Search for icons...,Pesquisar ícones...
+Search for {0},Pesquisar por {0}
+Search results for,Resultados da pesquisa por
+Search...,Pesquisar...
+Searching ...,Pesquisando ...
+Seconds,Segundos
+Section Heading,Cabeçalho da seção
+Section ID,ID da seção
+Section Title,Título da seção
+Section must have at least one column,A seção deve ter pelo menos uma coluna
+Security Alert: Your account is being impersonated,Alerta de segurança: sua conta está sendo personificada
+See all Activity,Ver toda a atividade
+See on Website,Ver no site
+See previous responses,Ver respostas anteriores
+See the document at {0},Veja o documento em {0}
+Seen,Visto
+Select,Selecionar
+Select Child Table,Selecionar tabela filha
+Select Column,Selecionar coluna
+Select Columns,Selecionar colunas
+Select Country,Selecionar país
+Select Currency,Selecionar moeda
+Select Dashboard,Selecionar painel
+Select DocType,Selecionar DocType
+Select Doctype,Selecionar Doctype
+Show sidebar,Mostrar barra lateral

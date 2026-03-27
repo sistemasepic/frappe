@@ -1,0 +1,999 @@
+Select Document Type,Selecione o tipo de documento
+Select Document Type or Role to start.,Selecione o tipo de documento ou função para começar.
+Select Document Types to set which User Permissions are used to limit access.,Selecione Tipos de documentos para definir quais permissões de usuário serão usadas para limitar o acesso.
+Select Field...,Selecione campo...
+Select Fields,Selecione os campos
+Select Fields (Up to {0}),Selecione campos (até {0})
+Select Fields To Insert,Selecione os campos para inserir
+Select Fields To Update,Selecione os campos para atualizar
+Select Filters,Selecione Filtros
+Select Google Calendar to which event should be synced.,Selecione o Google Calendar com o qual o evento deve ser sincronizado.
+Select Google Contacts to which contact should be synced.,Selecione os Contatos do Google com os quais o contato deve ser sincronizado.
+Select Group By...,Selecione Agrupar por...
+Select Kanban,Selecione Kanban
+Select Language,Selecione o idioma
+Select List View,Selecione Visualização de lista
+Select Mandatory,Selecione Obrigatório
+Select Module,Selecione Módulo
+Select Network Printer,Selecione impressora de rede
+Select Page,Selecione a página
+Select Print Format,Selecione o formato de impressão
+Select Print Format to Edit,Selecione o formato de impressão para editar
+Select Report,Selecione Relatório
+Select Table Columns for {0},Selecione colunas da tabela para {0}
+Select Time Zone,Selecione o fuso horário
+Select Workflow,Selecione Fluxo de Trabalho
+Select Workspace,Selecione o espaço de trabalho
+Select a Brand Image first.,Selecione primeiro uma imagem de marca.
+Select a DocType to make a new format,Selecione um DocType para criar um novo formato
+Select a field to edit its properties.,Selecione um campo para editar suas propriedades.
+Select a group {0} first.,Selecione um grupo {0} primeiro.
+Select a valid Sender Field for creating documents from Email,Selecione um campo de remetente válido para criar documentos de e-mail
+Select a valid Subject field for creating documents from Email,Selecione um campo Assunto válido para criar documentos de e-mail
+Select an Image,Selecione uma imagem
+Select an existing format to edit or start a new format.,Selecione um formato existente para editar ou iniciar um novo formato.
+Select an image of approx width 150px with a transparent background for best results.,Selecione uma imagem de aproximadamente 150px de largura com fundo transparente para obter melhores resultados.
+Select atleast 1 record for printing,Selecione pelo menos 1 registro para impressão
+Select atleast 2 actions,Selecione pelo menos duas ações
+Select list item,Selecione o item da lista
+Select multiple list items,Selecione vários itens da lista
+Select or drag across time slots to create a new event.,Selecione ou arraste os intervalos de tempo para criar um novo evento.
+Select records for assignment,Selecione registros para atribuição
+Select records for removing assignment,Selecione registros para remover atribuição
+Select two versions to view the diff.,Selecione duas versões para ver a diferença.
+Self approval is not allowed,Aprovação própria não é permitida
+Send <b>at the earliest</b> this number of minutes before or after the reference datetime. The actual sending may be delayed by up to 5 minutes due to the scheduler's trigger cadence.,Envie <b>no mínimo</b> este número de minutos antes ou depois da data e hora de referência. O envio real pode ser atrasado em até 5 minutos devido à cadência de disparo do agendador.
+Send As Raw HTML,Enviar como HTML bruto
+Send Email Alert,Enviar alerta por e-mail
+Send Email On State,Enviar e-mail no estado
+Send Email Print Attachments as PDF (Recommended),Enviar anexos de impressão por e-mail como PDF (recomendado)
+Send Email To Creator,Enviar e-mail para o criador
+Send Now,Enviar agora
+Send alert if datetime matches this field's value,Enviar alerta se a data e hora corresponder ao valor deste campo
+Send an email reminder in the morning,Enviar um lembrete por e-mail pela manhã
+Send email when document transitions to the state.,Enviar e-mail quando o documento for transferido para o estado.
+Send enquiries to this email address,Envie perguntas para este endereço de e-mail
+Sender,Remetente
+Sender Email,E-mail do remetente
+Sender Email Field,Campo de e-mail do remetente
+Sender Field should have Email in options,O campo Remetente deve ter Email nas opções
+Sender Name,Nome do remetente
+Sender Name Field,Campo Nome do Remetente
+Sendgrid,Sendgrid
+Sending,Enviando
+Sent,Enviado
+Sent Folder Name,Nome da pasta enviada
+Sent On,Enviado em
+Sent To,Enviado para
+Sent/Received Email,E-mail enviado/recebido
+Sequence Id,ID de sequência
+Series Updated for {},Série atualizada para {}
+Series counter for {} updated to {} successfully,Contador de série para {} atualizado para {} com sucesso
+Series {0} already used in {1},Série {0} já usada em {1}
+Server Script,Script do Servidor
+Server Scripts are disabled. Please enable server scripts from bench configuration.,Os scripts do servidor estão desabilitados. Habilite os scripts do servidor na configuração do bench.
+Server Scripts feature is not available on this site.,O recurso Server Scripts não está disponível neste site.
+Server error during upload. The file might be corrupted.,Erro no servidor durante o upload. O arquivo pode estar corrompido.
+Server failed to process this request because of a concurrent conflicting request. Please try again.,"O servidor não conseguiu processar esta solicitação devido a uma solicitação conflitante simultânea. Por favor, tente novamente."
+Server was too busy to process this request. Please try again.,"O servidor estava muito ocupado para processar esta solicitação. Por favor, tente novamente."
+Session Default,Padrão de sessão
+Session Defaults Saved,Padrões de sessão salvos
+Session Expired,Sessão expirada
+Session Expiry (idle timeout),Expiração da sessão (tempo limite de inatividade)
+Session Expiry must be in format {0},A expiração da sessão deve estar no formato {0}
+Set,Definir
+Set Banner from Image,Definir banner da imagem
+Set Chart,Definir gráfico
+"Set Default Options for all charts on this Dashboard (Ex: ""colors"": [""#d1d8dd"", ""#ff5858""])","Definir opções padrão para todos os gráficos neste painel (Ex: ""colors"": [""#d1d8dd"", ""#ff5858""])"
+Set Dynamic Filters,Definir filtros dinâmicos
+Set Filters,Definir filtros
+Set Filters for {0},Definir filtros para {0}
+Set Level,Definir nível
+Set Limit,Definir limite
+Set Naming Series options on your transactions.,Defina opções de série de nomes em suas transações.
+Set Number of Backups,Definir número de backups
+Set Permissions,Definir permissões
+Set Properties,Definir propriedades
+Set Quantity,Definir quantidade
+Set as Default,Definir como padrão
+Set as Default Theme,Definir como tema padrão
+Set by user,Definido pelo usuário
+Set dynamic filter values in JavaScript for the required fields here.,Defina valores de filtro dinâmico em JavaScript para os campos obrigatórios aqui.
+Set non-standard precision for a Float or Currency field,Definir precisão fora do padrão para um campo flutuante ou de moeda
+"Set non-standard precision for a Float, Currency or Percent field","Definir precisão fora do padrão para campos flutuantes, de moeda ou de porcentagem"
+Set only once,Definir apenas uma vez
+Set size in MB,Definir tamanho em MB
+"Set the filters here. For example:|||<pre class=""small text-muted""><code>|||[{|||	fieldname: ""company"",|||	label: __(""Company""),|||	fieldtype: ""Link"",|||	options: ""Company"",|||	default: frappe.defaults.get_user_default(""Company""),|||	reqd: 1|||},|||{|||	fieldname: ""account"",|||	label: __(""Account""),|||	fieldtype: ""Link"",|||	options: ""Account"",|||	reqd: 1|||}]|||</code></pre>","Defina os filtros aqui. Por exemplo:|||<pre class=""small text-muted""><code>|||[{||| nome do campo: ""empresa"",||| rótulo: __(""Empresa""),||| tipo de campo: ""Link"",||| opções: ""Empresa"",||| padrão: frappe.defaults.get_user_default(""Empresa""),||| reqd: 1|||},|||{||| nome do campo: ""conta"",||| rótulo: __(""Conta""),||| tipo de campo: ""Link"",||| opções: ""Conta"",||| reqd: 1|||}]|||</code></pre>"
+"Set the path to a whitelisted function that will return the data for the number card in the format:||||||<pre class=""small text-muted""><code>|||{|||	""value"": value,|||	""fieldtype"": ""Currency"",|||	""route_options"": {""from_date"": ""2023-05-23""},|||	""route"": [""query-report"", ""Permitted Documents For User""]|||}</code></pre>","Defina o caminho para uma função na lista de permissões que retornará os dados do cartão numérico no formato:||||||<pre class=""small text-muted""><code>|||{||| ""value"": value,||| ""fieldtype"": ""Currency"",||| ""route_options"": {""from_date"": ""2023-05-23""},||| ""route"": [""query-report"", ""Documentos permitidos para o usuário""]|||}</code></pre>"
+Setting,Contexto
+Setting this Address Template as default as there is no other default,"Definir este modelo de endereço como padrão, pois não há outro padrão"
+Setting up Global Search documents.,Configurando documentos de Pesquisa Global.
+Setting up your system,Configurando seu sistema
+Settings for Contact Us Page,Configurações da página Fale conosco
+Settings for the About Us Page,Configurações para a página Sobre nós
+Setup > Customize Form,Configuração > Personalizar formulário
+Setup > User,Configuração > Usuário
+Setup > User Permissions,Configuração > Permissões do usuário
+Setup Auto Email,Configurar e-mail automático
+Setup Complete,Configuração concluída
+Setup Series for transactions,Série de configuração para transações
+Setup Wizard,Assistente de configuração
+Setup failed,Falha na configuração
+Share With,Compartilhar com
+Share this document with,Compartilhe este documento com
+Share {0} with,Compartilhar {0} com
+Shared with the following Users with Read access:{0},Compartilhado com os seguintes usuários com acesso de leitura:{0}
+Shipping Address,Endereço para envio
+Short keyboard patterns are easy to guess,Padrões curtos de teclado são fáceis de adivinhar
+Show Absolute Values,Mostrar valores absolutos
+Show All,Mostrar tudo
+Show Arrow,Mostrar seta
+Show Auth Server Metadata,Mostrar metadados do servidor de autenticação
+Show Calendar,Mostrar calendário
+Show Currency Symbol on Right Side,Mostrar símbolo de moeda no lado direito
+Show Dashboard,Mostrar painel
+Show Description on Click,Mostrar descrição ao clicar
+Show Document,Mostrar documento
+Show Error,Mostrar erro
+Show External Link Warning,Mostrar aviso de link externo
+Show Fieldname (click to copy on clipboard),Mostrar nome do campo (clique para copiar na área de transferência)
+Show First Document Tour,Mostrar primeiro tour de documentos
+Show Form Tour,Mostrar tour pelo formulário
+Show Full Number,Mostrar número completo
+Show Keyboard Shortcuts,Mostrar atalhos de teclado
+Show Labels,Mostrar rótulos
+Show Language Picker,Mostrar seletor de idioma
+Show Only Failed Logs,Mostrar apenas registros com falha
+Show Permissions,Mostrar permissões
+Show Preview,Mostrar visualização
+Show Preview Popup,Mostrar pop-up de visualização
+Show Protected Resource Metadata,Mostrar metadados de recursos protegidos
+Show Related Errors,Mostrar erros relacionados
+Show Report,Mostrar relatório
+Show Sidebar,Mostrar barra lateral
+Show Social Login Key as Authorization Server,Mostrar chave de login social como servidor de autorização
+Show Title in Link Fields,Mostrar título em campos de link
+Show Totals,Mostrar totais
+Show Tour,Mostrar tour
+Show Traceback,Mostrar rastreamento
+Show Values over Chart,Mostrar valores no gráfico
+Show Warnings,Mostrar avisos
+Show Weekends,Mostrar fins de semana
+Show account deletion link in My Account page,Mostrar link de exclusão de conta na página Minha conta
+Show all activity,Mostrar todas as atividades
+Show as cc,Mostrar como cc
+Show attachments,Mostrar anexos
+Show footer on login,Mostrar rodapé no login
+Show in Resource Metadata,Mostrar nos metadados do recurso
+Show link to document,Mostrar link para documento
+Show list,Mostrar lista
+Show more details,Mostrar mais detalhes
+Show on Timeline,Mostrar na linha do tempo
+Show sidebar,Mostrar barra lateral
+"Show title in browser window as ""Prefix - title""","Mostrar o título na janela do navegador como ""Prefixo - título"""
+Show {0} List,Mostrar lista {0}
+Showing only Numeric fields from Report,Mostrando apenas campos numéricos do relatório
+Showing only first {0} rows out of {1},Mostrando apenas as primeiras {0} linhas de {1}
+Sidebar Item Group,Grupo de itens da barra lateral
+Sidebar Item Group Link,Link do grupo de itens da barra lateral
+Sidebar and Comments,Barra lateral e comentários
+Sign Out,Sair
+Sign Up and Confirmation,Inscrição e confirmação
+Sign Up is disabled,A inscrição está desativada
+Sign up,Inscrever-se
+Sign ups,Inscrições
+Signup Disabled,Inscrição desativada
+Signups have been disabled for this website.,As inscrições foram desativadas para este site.
+"Simple Python Expression, Example: <code class=""language-python"">status == ""Invalid""</code>","Expressão Python simples, exemplo: <code class=""language-python"">status == ""Inválido""</code>"
+"Simple Python Expression, Example: <code class=""language-python"">status == 'Open' and issue_type == 'Bug'</code>","Expressão Python simples, exemplo: <code class=""language-python"">status == 'Open' e issue_type == 'Bug'</code>"
+"Simple Python Expression, Example: <code class=""language-python"">status in (""Closed"", ""Cancelled"")</code>","Expressão Python simples, exemplo: <code class=""language-python"">status in (""Fechado"", ""Cancelado"")</code>"
+Single DocTypes cannot be customized.,DocTypes únicos não podem ser personalizados.
+Single Types have only one record no tables associated. Values are stored in tabSingles,Os tipos únicos possuem apenas um registro e nenhuma tabela associada. Os valores são armazenados em tabSingles
+"Site is running in read only mode for maintenance or site update, this action can not be performed right now. Please try again later.","O site está sendo executado em modo somente leitura para manutenção ou atualização do site. Esta ação não pode ser executada no momento. Por favor, tente novamente mais tarde."
+Size,Tamanho
+Size exceeds the maximum allowed file size.,O tamanho excede o tamanho máximo de arquivo permitido.
+Skip,Pular
+Skip All,Pular tudo
+Skip Step,Pular etapa
+Skipped,Ignorado
+Skipping Duplicate Column {0},Ignorando coluna duplicada {0}
+Skipping Untitled Column,Ignorando coluna sem título
+Skipping column {0},Ignorando coluna {0}
+Skipping fixture syncing for doctype {0} from file {1},Ignorando a sincronização do fixture para o tipo de documento {0} do arquivo {1}
+"Skipping {0} of {1}, {2}","Ignorando {0} de {1}, {2}"
+Skype,Skype
+Slack Webhook Error,Erro de webhook do Slack
+Slack Webhook URL,URL do webhook do Slack
+Slideshow,Apresentação de slides
+Slideshow Items,Itens da apresentação de slides
+Slideshow Name,Nome da apresentação de slides
+Slideshow like display for the website,Apresentação de slides como exibição para o site
+Slug,Slug
+Smallest circulating fraction unit (coin). For e.g. 1 cent for USD and it should be entered as 0.01,"Menor unidade de fração circulante (moeda). Por exemplo 1 centavo para USD e deve ser inserido como 0,01"
+Snippet and more variables:  {0},Snippet e mais variáveis: {0}
+Social Link Settings,Configurações de links sociais
+Social Link Type,Tipo de link social
+SocketIO Ping Check,Verificação de ping do SocketIO
+Soft-Bounced,Soft-Bounce
+Software ID,ID do software
+Software Version,Versão do software
+Solid,Sólido
+Some columns might get cut off when printing to PDF. Try to keep number of columns under 10.,Algumas colunas podem ser cortadas durante a impressão em PDF. Tente manter o número de colunas abaixo de 10.
+"Some mailboxes require a different Sent Folder Name e.g. ""INBOX.Sent""","Algumas caixas de correio exigem um Nome da Pasta de Enviados diferente, por exemplo, ""INBOX.Sent"""
+Some of the features might not work in your browser. Please update your browser to the latest version.,Alguns dos recursos podem não funcionar no seu navegador. Atualize seu navegador para a versão mais recente.
+Something went wrong,Algo deu errado
+Something went wrong during the token generation. Click on {0} to generate a new one.,Algo deu errado durante a geração do token. Clique em {0} para gerar um novo.
+Something went wrong.,Algo deu errado.
+Sorry! I could not find what you were looking for.,Desculpe! Não consegui encontrar o que você procurava.
+Sorry! You are not permitted to view this page.,Desculpe! Você não tem permissão para visualizar esta página.
+Sort Ascending,Classificar em ordem crescente
+Sort Descending,Classificar em ordem decrescente
+Sort Options,Opções de classificação
+Sort field {0} must be a valid fieldname,O campo de classificação {0} deve ser um nome de campo válido
+Source,Fonte
+Source Code,Código Fonte
+Source Name,Nome da fonte
+Source Text,Texto Fonte
+Spacer,Espaçador
+Spam,Spam
+SparkPost,SparkPost
+Spawns actions in a background job,Gera ações em um trabalho em segundo plano
+Special Characters are not allowed,Caracteres especiais não são permitidos
+"Special Characters except '-', '#', '.', '/', '{{' and '}}' not allowed in naming series {0}","Caracteres especiais, exceto '-', '#', '.', '/', '{{' e '}}' não permitidos na nomenclatura da série {0}"
+"Specify a custom timeout, default timeout is 1500 seconds","Especifique um tempo limite personalizado, o tempo limite padrão é 1.500 segundos"
+"Specify the domains or origins that are permitted to embed this form. Enter one domain per line (e.g., https://example.com). If no domains are specified, the form can only be embedded on the same origin.","Especifique os domínios ou origens que têm permissão para incorporar este formulário. Insira um domínio por linha (por exemplo, https://example.com). Se nenhum domínio for especificado, o formulário só poderá ser incorporado na mesma origem."
+Splash Image,Imagem inicial
+Sr,Sr.
+Sr No.,Sr. Não.
+Stack Trace,Rastreamento de pilha
+Standard DocType can not be deleted.,DocType padrão não pode ser excluído.
+"Standard DocType cannot have default print format, use Customize Form","DocType padrão não pode ter formato de impressão padrão, use Personalizar formulário"
+Standard Not Set,Padrão não definido
+Standard Permissions,Permissões padrão
+Standard Print Format cannot be updated,O formato de impressão padrão não pode ser atualizado
+Standard Print Style cannot be changed. Please duplicate to edit.,O estilo de impressão padrão não pode ser alterado. Duplique para editar.
+Standard Reports cannot be deleted,Os relatórios padrão não podem ser excluídos
+Standard Reports cannot be edited,Os relatórios padrão não podem ser editados
+Standard Sidebar Menu,Menu da barra lateral padrão
+"Standard Web Forms can not be modified, duplicate the Web Form instead.","Os formulários da Web padrão não podem ser modificados; em vez disso, duplique o formulário da Web."
+Standard rich text editor with controls,Editor de rich text padrão com controles
+Standard roles cannot be disabled,As funções padrão não podem ser desativadas
+Standard roles cannot be renamed,As funções padrão não podem ser renomeadas
+Standard user type {0} can not be deleted.,O tipo de usuário padrão {0} não pode ser excluído.
+Start Date,Data de início
+Start Import,Iniciar importação
+Start Recording,Comece a gravar
+Start Time,Hora de início
+Start a new discussion,Iniciar uma nova discussão
+Start entering data below this line,Comece a inserir dados abaixo desta linha
+Start new Format,Iniciar novo formato
+StartTLS,IniciarTLS
+Started At,Começou em
+Starting Frappe ...,Iniciando o Frappé...
+State Properties,Propriedades do Estado
+Statistics,Estatísticas
+Stats,Estatísticas
+Status Updated,Status atualizado
+Status Updated. The email will be picked up in the next scheduled run.,Status atualizado. O e-mail será coletado na próxima execução agendada.
+Status: {0},Estado: {0}
+Steps to verify your login,Etapas para verificar seu login
+Stop,Parar
+Stopped,Parou
+Store Attached PDF Document,Armazenar documento PDF anexado
+Store the API secret securely. It won't be displayed again.,Armazene o segredo da API com segurança. Não será exibido novamente.
+Stores the datetime when the last reset password key was generated.,Armazena a data e hora em que a última chave de redefinição de senha foi gerada.
+Straight rows of keys are easy to guess,Linhas retas de teclas são fáceis de adivinhar
+Strip EXIF tags from uploaded images,Remova as tags EXIF ​​das imagens enviadas
+Strong,Forte
+"Style represents the button color: Success - Green, Danger - Red, Inverse - Black, Primary - Dark Blue, Info - Light Blue, Warning - Orange","O estilo representa a cor do botão: Sucesso - Verde, Perigo - Vermelho, Inverso - Preto, Primário - Azul Escuro, Informação - Azul Claro, Aviso - Laranja"
+"Sub-currency. For e.g. ""Cent""","Submoeda. Por exemplo ""Centão"""
+Subject Field,Campo Assunto
+"Subject Field type should be Data, Text, Long Text, Small Text, Text Editor","O tipo de campo de assunto deve ser Dados, Texto, Texto Longo, Texto Pequeno, Editor de Texto"
+Submission Queue,Fila de envio
+Submit an Issue,Envie um problema
+Submit another response,Enviar outra resposta
+Submit button label,Enviar rótulo do botão
+Submit on Creation,Enviar na criação
+Submit this document to complete this step.,Envie este documento para concluir esta etapa.
+Submit this document to confirm,Envie este documento para confirmar
+Submit {0} documents?,Enviar documentos {0}?
+Submitted,Enviado
+Submitted Document cannot be converted back to draft. Transition row {0},O documento enviado não pode ser convertido novamente em rascunho. Linha de transição {0}
+Submitted document cannot be converted back to draft while transitioning from <b>{0} State</b> to <b>{1} State</b>,O documento enviado não pode ser convertido novamente em rascunho durante a transição de <b>{0} Estado</b> para <b>{1} Estado</b>
+Submitting,Enviando
+Submitting {0},Enviando {0}
+Subtle,Sutil
+Success Action,Ação de sucesso
+Success URI,URI de sucesso
+Success message,Mensagem de sucesso
+Success title,Título de sucesso
+Successful Job Count,Contagem de trabalhos bem-sucedidos
+Successful Transactions,Transações bem-sucedidas
+Successful: {0} to {1},Bem-sucedido: {0} a {1}
+Successfully Updated,Atualizado com sucesso
+Successfully imported {0},{0} importado com sucesso
+Successfully imported {0} out of {1} records.,{0} importado com sucesso dos registros {1}.
+Successfully reset onboarding status for all users.,Redefinição do status de integração para todos os usuários.
+Successfully signed out,Desconectado com sucesso
+Successfully updated translations,Traduções atualizadas com sucesso
+Successfully updated {0},{0} atualizado com sucesso
+Successfully updated {0} out of {1} records.,{0} atualizado com sucesso dos registros {1}.
+Suggest Optimizations,Sugerir otimizações
+Suggested Indexes,Índices sugeridos
+Suggested Username: {0},Nome de usuário sugerido: {0}
+Sum,Soma
+Sum of {0},Soma de {0}
+Summary,Resumo
+"Support without complexity, lock-in and per-user costs. Try it for free!","Suporte sem complexidade, dependência e custos por usuário. Experimente gratuitamente!"
+Suspend Sending,Suspender envio
+Switch Theme,Mudar tema
+Switch To Desk,Ir para o Desk
+Switch to Frappe CRM,Ir para o Frappe CRM
+Switch to Helpdesk,Mudar para o suporte técnico
+Switching Camera,Trocando de câmera
+Sync Calendar,Sincronizar calendário
+Sync Contacts,Sincronizar contatos
+Sync events from Google as public,Sincronizar eventos do Google como públicos
+Sync on Migrate,Sincronizar na migração
+"Sync token was invalid and has been reset, Retry syncing.",O token de sincronização era inválido e foi redefinido. Tente sincronizar novamente.
+Sync {0} Fields,Sincronizar campos {0}
+Synced Fields,Campos sincronizados
+Syncing,Sincronizando
+Syncing {0} of {1},Sincronizando {0} de {1}
+Syntax Error,Erro de sintaxe
+System Generated Fields can not be renamed,Os campos gerados pelo sistema não podem ser renomeados
+System Health,Saúde do sistema
+System Health Report Errors,Erros do relatório de integridade do sistema
+System Health Report Failing Jobs,Trabalhos com falha no relatório de integridade do sistema
+System Health Report Queue,Fila de relatórios de integridade do sistema
+System Health Report Tables,Tabelas de relatório de integridade do sistema
+System Health Report Workers,Trabalhadores do Relatório de Saúde do Sistema
+System Manager,Gerente do Sistema
+System Manager privileges required.,São necessários privilégios de gerente do sistema.
+TOS URI,URI dos Termos de Serviço
+Tab,Guia
+Tab Break,Quebra de tabulação
+Tab Label,Etiqueta da guia
+Table Field,Campo da tabela
+Table Fieldname,Nome do campo da tabela
+Table Fieldname Missing,Nome do campo da tabela ausente
+Table MultiSelect,Seleção múltipla de tabela
+"Table MultiSelect requires a table with at least one Link field, but none was found in {0}","Table MultiSelect requer uma tabela com pelo menos um campo Link, mas nenhum foi encontrado em {0}"
+Table Trimmed,Tabela aparada
+Table updated,Tabela atualizada
+Table {0} cannot be empty,A tabela {0} não pode ficar vazia
+Tabloid,Tablóide
+Tag,Marcação
+Tag Link,Link da etiqueta
+Target,Alvo
+Task,Tarefa
+Team Members Subtitle,Legenda dos membros da equipe
+Telemetry,Telemetria
+Template Error,Erro de modelo
+Template File,Arquivo de modelo
+Templates,Modelos
+Temporarily Disabled,Temporariamente desativado
+Test Data,Dados de teste
+Test Job ID,ID do trabalho de teste
+Test Spanish,Teste espanhol
+Test_Folder,Pasta_teste
+Text Content,Conteúdo de texto
+Thank you,Obrigado
+Thank you for reaching out to us. We will get back to you at the earliest.|||||||||Your query:||||||{0},Obrigado por entrar em contato conosco. Entraremos em contato com você o mais breve possível.|||||||||Sua consulta:||||||{0}
+Thank you for spending your valuable time to fill this form,Obrigado por gastar seu valioso tempo preenchendo este formulário
+Thank you for your email,Obrigado pelo seu e-mail
+Thank you for your feedback!,Obrigado pelo seu feedback!
+Thank you for your message,Obrigado pela sua mensagem
+Thanks,Obrigado
+The Auto Repeat for this document has been disabled.,A repetição automática deste documento foi desativada.
+The CSV format is case sensitive,O formato CSV diferencia maiúsculas de minúsculas
+"The Client ID obtained from the Google Cloud Console under <a href=""https://console.cloud.google.com/apis/credentials"">|||""APIs &amp; Services"" &gt; ""Credentials""|||</a>","O ID do cliente obtido no Console do Google Cloud em <a href=""https://console.cloud.google.com/apis/credentials"">|||""APIs e serviços"" &gt; ""Credenciais""|||</a>"
+The Condition '{0}' is invalid,A condição '{0}' é inválida
+The File URL you've entered is incorrect,O URL do arquivo que você inseriu está incorreto
+The Next Scheduled Date cannot be later than the End Date.,A Próxima Data Agendada não pode ser posterior à Data Final.
+The Push Relay Server URL key (`push_relay_server_url`) is missing in your site config,A chave de URL do Push Relay Server (`push_relay_server_url`) está faltando na configuração do seu site
+The User record for this request has been auto-deleted due to inactivity by system admins.,O registro do usuário para esta solicitação foi excluído automaticamente devido à inatividade dos administradores do sistema.
+"The application has been updated to a new version, please refresh this page","O aplicativo foi atualizado para uma nova versão, atualize esta página"
+The application name will be used in the Login page.,O nome do aplicativo será usado na página de Login.
+The attachments could not be correctly linked to the new document,Os anexos não puderam ser vinculados corretamente ao novo documento
+"The browser API key obtained from the Google Cloud Console under <a href=""https://console.cloud.google.com/apis/credentials"">|||""APIs &amp; Services"" &gt; ""Credentials""|||</a>","A chave de API do navegador obtida no Console do Google Cloud em <a href=""https://console.cloud.google.com/apis/credentials"">|||""APIs &amp; Serviços"" &gt; ""Credenciais""|||</a>"
+The changes have been reverted.,As alterações foram revertidas.
+The column {0} has {1} different date formats. Automatically setting {2} as the default format as it is the most common. Please change other values in this column to this format.,"A coluna {0} possui {1} diferentes formatos de data. Definir automaticamente {2} como formato padrão, pois é o mais comum. Altere outros valores nesta coluna para este formato."
+The comment cannot be empty,O comentário não pode ficar vazio
+The configured SMTP server does not support DSN (Delivery Status Notification).,O servidor SMTP configurado não suporta DSN (Delivery Status Notification).
+The contents of this email are strictly confidential. Please do not forward this email to anyone.,"O conteúdo deste e-mail é estritamente confidencial. Por favor, não encaminhe este e-mail para ninguém."
+The count shown is an estimated count. Click here to see the accurate count.,A contagem mostrada é uma contagem estimada. Clique aqui para ver a contagem precisa.
+The country's ISO 3166 ALPHA-2 code.,O código ISO 3166 ALPHA-2 do país.
+The document could not be correctly assigned,O documento não pôde ser atribuído corretamente
+The document has been assigned to {0},O documento foi atribuído a {0}
+"The document type selected is a child table, so the parent document type is required.","O tipo de documento selecionado é uma tabela filha, portanto o tipo de documento pai é obrigatório."
+The email button is enabled for the user in the document.,O botão de e-mail está habilitado para o usuário no documento.
+The field {0} in {1} does not allow ignoring user permissions,O campo {0} em {1} não permite ignorar as permissões do usuário
+The field {0} in {1} links to {2} and not {3},O campo {0} em {1} está vinculado a {2} e não a {3}
+The field {0} is mandatory,O campo {0} é obrigatório
+The fieldname you've specified in Attached To Field is invalid,O nome do campo que você especificou em Anexado ao campo é inválido
+The following Assignment Days have been repeated: {0},Os seguintes Dias de Atribuição foram repetidos: {0}
+The following Header Script will add the current date to an element in 'Header HTML' with class 'header-content',O seguinte script de cabeçalho adicionará a data atual a um elemento em 'Header HTML' com a classe 'header-content'
+The following configured IMAP folder(s) were not found or are not accessible on the server:<br><ul>{0}</ul>Please verify the folder names exactly as they appear on the server and ensure the account has access to them.,As seguintes pastas IMAP configuradas não foram encontradas ou não estão acessíveis no servidor:<br><ul>{0}</ul>Verifique os nomes das pastas exatamente como aparecem no servidor e certifique-se de que a conta tenha acesso a eles.
+The following values are invalid: {0}. Values must be one of {1},Os seguintes valores são inválidos: {0}. Os valores devem ser um de {1}
+The following values do not exist for {0}: {1},Os seguintes valores não existem para {0}: {1}
+The limit has not set for the user type {0} in the site config file.,O limite não foi definido para o tipo de usuário {0} no arquivo de configuração do site.
+The link will expire in {0} minutes,O link expirará em {0} minutos
+The link you trying to login is invalid or expired.,O link que você está tentando fazer login é inválido ou expirou.
+"The meta description is an HTML attribute that provides a brief summary of a web page. Search engines such as Google often display the meta description in search results, which can influence click-through rates.","A meta descrição é um atributo HTML que fornece um breve resumo de uma página web. Mecanismos de pesquisa como o Google geralmente exibem a meta descrição nos resultados da pesquisa, o que pode influenciar as taxas de cliques."
+"The meta image is unique image representing the content of the page. Images for this Card should be at least 280px in width, and at least 150px in height.",A metaimagem é uma imagem única que representa o conteúdo da página. As imagens deste cartão devem ter pelo menos 280px de largura e pelo menos 150px de altura.
+The next tour will start from where the user left off.,O próximo tour começará de onde o usuário parou.
+The number of seconds until the request expires,O número de segundos até que a solicitação expire
+The password of your account has expired.,A senha da sua conta expirou.
+The print button is enabled for the user in the document.,O botão imprimir está habilitado para o usuário no documento.
+The process for deletion of {0} data associated with {1} has been initiated.,O processo de exclusão dos dados {0} associados a {1} foi iniciado.
+"The project number obtained from Google Cloud Console under <a href=""https://console.cloud.google.com/iam-admin/settings"">|||""IAM &amp; Admin"" &gt; ""Settings""|||</a>","O número do projeto obtido no Console do Google Cloud em <a href=""https://console.cloud.google.com/iam-admin/settings"">|||""IAM &amp; Admin"" &gt; ""Configurações""|||</a>"
+The report you requested has been generated.<br><br>Click here to download:<br><a href='{0}'>{0}</a><br><br>This link will expire in {1} hours.,O relatório solicitado foi gerado.<br><br>Clique aqui para baixar:<br><a href='{0}'>{0}</a><br><br>Este link expirará em {1} horas.
+The reset password link has been expired,O link de redefinição de senha expirou
+The resource you are looking for is not available,O recurso que você procura não está disponível
+The role {0} should be a custom role.,A função {0} deve ser uma função personalizada.
+The selected document {0} is not a {1}.,O documento selecionado {0} não é um {1}.
+The system is being updated. Please refresh again after a few moments.,O sistema está sendo atualizado. Atualize novamente após alguns instantes.
+The system provides many pre-defined roles. You can add new roles to set finer permissions.,O sistema fornece muitas funções predefinidas. Você pode adicionar novas funções para definir permissões mais refinadas.
+The total number of user document types limit has been crossed.,O limite do número total de tipos de documentos do usuário foi ultrapassado.
+The user can create a new Item but cannot edit existing items.,"O usuário pode criar um novo item, mas não pode editar itens existentes."
+The user can delete Draft / Cancelled documents.,O usuário pode excluir documentos Rascunhos/Cancelados.
+The user can export report data.,O usuário pode exportar dados do relatório.
+The user can import new records or update existing data for the document.,O usuário pode importar novos registros ou atualizar dados existentes para o documento.
+The user can select a Customer in Sales Order but cannot open the Customer master.,"O usuário pode selecionar um Cliente no Pedido de Venda, mas não pode abrir o cadastro de Clientes."
+The user can share document access with another user.,O usuário pode compartilhar o acesso ao documento com outro usuário.
+The user can update a customer or any other fields in an existing Sales Order but cannot create a new Sales Order.,"O usuário pode atualizar um cliente ou qualquer outro campo em um pedido de vendas existente, mas não pode criar um novo pedido de vendas."
+The user can view Sales Invoices but cannot modify any field values in them.,"O usuário pode visualizar faturas de vendas, mas não pode modificar nenhum valor de campo nelas."
+"The value of the field {0} is too long in the {1} document. To resolve this issue, please reduce the value length or change the {0} field Type to Long Text using customize form, and then try again.","O valor do campo {0} é muito longo no documento {1}. Para resolver esse problema, reduza o comprimento do valor ou altere o tipo do campo {0} para texto longo usando o formulário personalizado e tente novamente."
+The value you pasted was {0} characters long. Max allowed characters is {1}.,O valor que você colou tinha {0} caracteres. O máximo de caracteres permitidos é {1}.
+The webhook will be triggered if this expression is true,O webhook será acionado se esta expressão for verdadeira
+The {0} is already on auto repeat {1},O {0} já está em repetição automática {1}
+There are documents which have workflow states that do not exist in this Workflow. It is recommended that you add these states to the Workflow and change their states before removing these states.,Existem documentos que possuem estados de fluxo de trabalho que não existem neste fluxo de trabalho. É recomendável adicionar esses estados ao fluxo de trabalho e alterar seus estados antes de removê-los.
+"There are no {0} for this {1}, why don't you start one!","Não há {0} para este {1}, por que você não inicia um!"
+There are {0} with the same filters already in the queue:,Já existem {0} com os mesmos filtros na fila:
+There can be only 9 Page Break fields in a Web Form,Pode haver apenas 9 campos de quebra de página em um formulário da Web
+There can be only one Fold in a form,Só pode haver uma dobra em um formulário
+There is an error in your Address Template {0},Há um erro no seu modelo de endereço {0}
+There is no data to be exported,Não há dados a serem exportados
+"There is no task called ""{}""","Não há nenhuma tarefa chamada ""{}"""
+There is some problem with the file url: {0},Há algum problema com o URL do arquivo: {0}
+There is {0} with the same filters already in the queue:,Existe {0} com os mesmos filtros já na fila:
+There must be atleast one permission rule.,Deve haver pelo menos uma regra de permissão.
+There was an error building this page,Ocorreu um erro ao criar esta página
+There was an error saving filters,Ocorreu um erro ao salvar os filtros
+There were errors,Houve erros
+There were errors while creating the document. Please try again.,"Ocorreram erros durante a criação do documento. Por favor, tente novamente."
+There were errors while sending email. Please try again.,"Ocorreram erros ao enviar e-mail. Por favor, tente novamente."
+"There were some errors setting the name, please contact the administrator","Ocorreram alguns erros ao definir o nome, entre em contato com o administrador"
+These announcements will appear inside a dismissible alert below the Navbar.,Esses anúncios aparecerão em um alerta descartável abaixo da barra de navegação.
+"These fields are used to provide resource server metadata to clients querying the ""well known protected resource"" end point.","Esses campos são usados ​​para fornecer metadados do servidor de recursos aos clientes que consultam o ponto final do ""recurso protegido bem conhecido""."
+These settings are required if 'Custom' LDAP Directory is used,Essas configurações são necessárias se o diretório LDAP 'Personalizado' for usado
+Third Party Apps,Aplicativos de terceiros
+This Currency is disabled. Enable to use in transactions,Esta moeda está desativada. Habilitar para usar em transações
+This Kanban Board will be private,Este quadro Kanban será privado
+This PDF cannot be uploaded as it contains unsafe content.,Este PDF não pode ser carregado porque contém conteúdo inseguro.
+This action is irreversible. Do you wish to continue?,Esta ação é irreversível. Você deseja continuar?
+This action is only allowed for {},Esta ação só é permitida para {}
+This cannot be undone,Isso não pode ser desfeito
+This card is visible only to Administrator and System Managers by default. Set a DocType to share with users who have read access.,Este cartão é visível apenas para administradores e gerentes de sistema por padrão. Defina um DocType para compartilhar com usuários que tenham acesso de leitura.
+This doctype has no orphan fields to trim,Este tipo de documento não possui campos órfãos para cortar
+"This doctype has pending migrations, run 'bench migrate' before modifying the doctype to avoid losing changes.","Este tipo de documento tem migrações pendentes, execute 'bench Migrate' antes de modificar o tipo de documento para evitar a perda de alterações."
+This document can not be deleted right now as it's being modified by another user. Please try again after some time.,"Este documento não pode ser excluído agora porque está sendo modificado por outro usuário. Por favor, tente novamente depois de algum tempo."
+This document has already been queued for submission. You can track the progress over {0}.,Este documento já está na fila para envio. Você pode acompanhar o progresso em {0}.
+This document has been modified after the email was sent.,Este documento foi modificado após o envio do e-mail.
+This document has unsaved changes which might not appear in final PDF. <br> Consider saving the document before printing.,Este documento contém alterações não salvas que podem não aparecer no PDF final. <br> Considere salvar o documento antes de imprimir.
+"This document is already amended, you cannot ammend it again","Este documento já foi alterado, você não pode alterá-lo novamente"
+This document is currently locked and queued for execution. Please try again after some time.,"Este documento está atualmente bloqueado e na fila para execução. Por favor, tente novamente depois de algum tempo."
+This email is autogenerated,Este e-mail é gerado automaticamente
+This feature can not be used as dependencies are missing.|||				Please contact your system manager to enable this by installing pycups!,Este recurso não pode ser usado porque faltam dependências.||| Entre em contato com o gerente do sistema para habilitar isso instalando pycups!
+This feature is brand new and still experimental,Este recurso é totalmente novo e ainda experimental
+This field will appear only if the fieldname defined here has value OR the rules are true (examples):|||myfield|||eval:doc.myfield=='My Value'|||eval:doc.age&gt;18,Este campo aparecerá apenas se o nome do campo definido aqui tiver valor OU as regras forem verdadeiras (exemplos):|||myfield|||eval:doc.myfield=='My Value'|||eval:doc.age&gt;18
+This file is attached to a protected document and cannot be deleted.,Este arquivo está anexado a um documento protegido e não pode ser excluído.
+"This file is public and can be accessed by anyone, even without logging in. Mark it private to limit access.","Este arquivo é público e pode ser acessado por qualquer pessoa, mesmo sem fazer login. Marque-o como privado para limitar o acesso."
+This file is public. It can be accessed without authentication.,Este arquivo é público. Ele pode ser acessado sem autenticação.
+This form has been modified after you have loaded it,Este formulário foi modificado após você carregá-lo
+This form is not editable due to a Workflow.,Este formulário não é editável devido a um fluxo de trabalho.
+This geolocation provider is not supported yet.,Este provedor de geolocalização ainda não é compatível.
+This goes above the slideshow.,Isso vai acima da apresentação de slides.
+This is a background report. Please set the appropriate filters and then generate a new one.,Este é um relatório de antecedentes. Defina os filtros apropriados e gere um novo.
+This is a top-10 common password.,Esta é uma das 10 senhas mais comuns.
+This is a top-100 common password.,Esta é uma das 100 senhas mais comuns.
+This is a very common password.,Esta é uma senha muito comum.
+This is a virtual doctype and data is cleared periodically.,Este é um tipo de documento virtual e os dados são limpos periodicamente.
+This is an automatically generated reply,Esta é uma resposta gerada automaticamente
+This is similar to a commonly used password.,Isso é semelhante a uma senha comumente usada.
+This link has already been activated for verification.,Este link já foi ativado para verificação.
+This link is invalid or expired. Please make sure you have pasted correctly.,"Este link é inválido ou expirou. Por favor, certifique-se de ter colado corretamente."
+This may get printed on multiple pages,Isso pode ser impresso em várias páginas
+This month,Este mês
+"This report contains {0} rows and is too big to display in browser, you can {1} this report instead.","Este relatório contém {0} linhas e é muito grande para ser exibido no navegador. Em vez disso, você pode {1} este relatório."
+This report was generated on {0},Este relatório foi gerado em {0}
+This report was generated {0}.,Este relatório foi gerado {0}.
+This request has not yet been approved by the user.,Esta solicitação ainda não foi aprovada pelo usuário.
+"This site is in read only mode, full functionality will be restored soon.","Este site está em modo somente leitura, todas as funcionalidades serão restauradas em breve."
+This site is running in developer mode. Any change made here will be updated in code.,Este site está sendo executado em modo de desenvolvedor. Qualquer alteração feita aqui será atualizada no código.
+This software is built on top of many open source packages.,Este software é construído sobre muitos pacotes de código aberto.
+This title will be used as the title of the webpage as well as in meta tags,"Este título será usado como título da página da web, bem como em meta tags"
+This value is fetched from {0}'s {1} field,Este valor é obtido do campo {1} de {0}
+"This will be automatically generated when you publish the page, you can also enter a route yourself if you wish","Isso será gerado automaticamente quando você publicar a página, você também pode inserir uma rota se desejar"
+This will log out {0} from all other devices,Isso desconectará {0} de todos os outros dispositivos
+This will permanently remove your data.,Isso removerá permanentemente seus dados.
+This will reset this tour and show it to all users. Are you sure?,Isso redefinirá este tour e o mostrará a todos os usuários. Tem certeza?
+Throttled,Estrangulado
+Thumbnail URL,URL da miniatura
+Thursday,Quinta-feira
+Time,Tempo
+Time Interval,Intervalo de tempo
+Time Taken,Tempo gasto
+Time Window (Seconds),Janela de tempo (segundos)
+Time in Queries,Tempo em consultas
+Time series based on is required to create a dashboard chart,Série temporal baseada em é necessária para criar um gráfico de painel
+Time {0} must be in format: {1},A hora {0} deve estar no formato: {1}
+Timed Out,Tempo limite esgotado
+Timeline DocType,Tipo de Documento da linha do tempo
+Timeline Field,Campo da linha do tempo
+Timeline Name,Nome da linha do tempo
+Timeline field must be a Link or Dynamic Link,O campo Linha do tempo deve ser um Link ou Link Dinâmico
+Timeline field must be a valid fieldname,O campo da linha do tempo deve ser um nome de campo válido
+Timeout,Tempo esgotado
+Timeout (In Seconds),Tempo limite (em segundos)
+Timeseries,Série temporal
+Timespan,Intervalo de tempo
+Timestamp,Carimbo de data e hora
+Tip: Try the new dropdown console using,Dica: experimente o novo console suspenso usando
+Title field must be a valid fieldname,O campo de título deve ser um nome de campo válido
+Title of the page,Título da página
+To Date,A data
+"To add dynamic subject, use jinja tags like||||||<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>","Para adicionar assunto dinâmico, use tags jinja como||||||<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>"
+"To add dynamic values from the document, use jinja tags like||||||<div>|||<pre><code>{ ""id"": ""{{ doc.name }}"" }</code>|||</pre>|||</div>","Para adicionar valores dinâmicos do documento, use tags jinja como||||||<div>|||<pre><code>{ ""id"": ""{{ doc.name }}"" }</code>|||</pre>|||</div>"
+To allow more reports update limit in System Settings.,"Para permitir mais relatórios, limite de atualização nas configurações do sistema."
+"To begin the date range at the start of the chosen period. For example, if 'Year' is selected as the period, the report will start from January 1st of the current year.","Para iniciar o intervalo de datas no início do período escolhido. Por exemplo, se 'Ano' for selecionado como período, o relatório começará a partir de 1º de janeiro do ano atual."
+"To configure Auto Repeat, enable ""Allow Auto Repeat"" from {0}.","Para configurar a repetição automática, habilite ""Permitir repetição automática"" em {0}."
+To enable it follow the instructions in the following link: {0},Para habilitá-lo siga as instruções no seguinte link: {0}
+"To enable server scripts, read the {0}.","Para habilitar scripts de servidor, leia o arquivo {0}."
+"To export this step as JSON, link it in a Onboarding document and save the document.","Para exportar esta etapa como JSON, vincule-a a um documento de integração e salve o documento."
+To generate password click {0},Para gerar senha clique em {0}
+To know more click {0},Para saber mais clique em {0}
+To print output use <code>print(text)</code>,"Para imprimir a saída, use <code>print(text)</code>"
+"To set the role {0} in the user {1}, kindly set the {2} field as {3} in one of the {4} record.","Para definir a função {0} no usuário {1}, defina o campo {2} como {3} em um dos registros {4}."
+"To use Google Calendar, enable {0}.","Para usar o Google Agenda, ative {0}."
+"To use Google Contacts, enable {0}.","Para usar os Contatos do Google, ative {0}."
+"To use Slack Channel, add a <a href=""#List/Slack%20Webhook%20URL/List"">Slack Webhook URL</a>.","Para usar o Slack Channel, adicione um <a href=""#List/Slack%20Webhook%20URL/List"">Slack Webhook URL</a>."
+To version,Para a versão
+ToDo,Pendência
+Toggle Chart,Alternar gráfico
+Toggle Grid View,Alternar visualização em grade
+Token Cache,Cache de tokens
+Token Endpoint Auth Method,Método de autenticação de endpoint de token
+Token Type,Tipo de token
+Token URI,URI do token
+Token is missing,O token está faltando
+Too Many Documents,Muitos documentos
+Too Many Requests,Muitas solicitações
+Too many changes to database in single action.,Muitas alterações no banco de dados em uma única ação.
+Too many queued background jobs ({0}). Please retry after some time.,"Muitos trabalhos em segundo plano na fila ({0}). Por favor, tente novamente depois de algum tempo."
+Too many requests. Please try again later.,"Muitos pedidos. Por favor, tente novamente mais tarde."
+"Too many users signed up recently, so the registration is disabled. Please try back in an hour","Muitos usuários se inscreveram recentemente, então o registro está desativado. Por favor, tente novamente em uma hora"
+Top 10,10 principais
+Top Bar Item,Item da barra superior
+Top Center,Centro superior
+Top Left,Canto superior esquerdo
+Top Right,Canto superior direito
+Total,Total
+Total Images,Total de imagens
+Total Working Time,Tempo total de trabalho
+Total:,Total:
+Totals,Totais
+Totals Row,Linha de totais
+Trace ID,ID de rastreamento
+Traceback,Rastreamento
+Track Steps,Rastrear etapas
+"Track if your email has been opened by the recipient.|||<br>|||Note: If you're sending to multiple recipients, even if 1 recipient reads the email, it'll be considered ""Opened""","Acompanhe se o seu e-mail foi aberto pelo destinatário.|||<br>|||Observação: se você estiver enviando para vários destinatários, mesmo que 1 destinatário leia o e-mail, ele será considerado ""Aberto"""
+Track milestones for any document,Acompanhe marcos de qualquer documento
+Tracking URL generated and copied to clipboard,URL de rastreamento gerado e copiado para a área de transferência
+Transition Properties,Propriedades de transição
+Transition Tasks,Tarefas de Transição
+Translate Data,Traduzir dados
+Translate Link Fields,Traduzir campos de link
+Translate values,Traduzir valores
+Translate {0},Traduzir {0}
+Translation,Tradução
+Translations,Traduções
+"Translations can be viewed by guests, avoid storing private details in translations.","As traduções podem ser visualizadas pelos convidados, evite armazenar detalhes privados nas traduções."
+Translator,Tradutor
+Trash,Lixo
+Tree View,Vista em árvore
+Tree view is not available for {0},A visualização em árvore não está disponível para {0}
+Trigger Primary Action,Acionar ação primária
+Trigger caching,Acionar cache
+"Trigger on valid methods like ""before_insert"", ""after_update"", etc (will depend on the DocType selected)","Acione métodos válidos como ""before_insert"", ""after_update"", etc (dependerá do DocType selecionado)"
+Trim Table,Tabela de corte
+Try Again,Tente novamente
+Try a Naming Series,Experimente uma série de nomenclatura
+Try to avoid repeated words and characters,Tente evitar palavras e caracteres repetidos
+Try to use a longer keyboard pattern with more turns,Tente usar um padrão de teclado mais longo e com mais voltas
+Type something in the search box to search,Digite algo na caixa de pesquisa para pesquisar
+Type title,Digite o título
+Type your reply here...,Digite sua resposta aqui...
+Type:,Tipo:
+UI Tour,Tour da interface
+UID,UID
+UIDNEXT,UIDNEXT
+UIDVALIDITY,UIDVALIDITY
+"URIs for receiving authorization code once the user allows access, as well as failure responses. Typically a REST endpoint exposed by the Client App.|||<br>e.g. http://hostname/api/method/frappe.integrations.oauth2_logins.login_via_facebook","URIs para receber o código de autorização quando o usuário permitir o acesso, bem como respostas de falha. Normalmente, um endpoint REST exposto pelo Aplicativo Cliente.|||<br>ex.: http://hostname/api/method/frappe.integrations.oauth2_logins.login_via_facebook"
+URL,URL
+URL must start with http:// or https://,A URL deve começar com http:// ou https://
+URL of a human-readable page with info that developers might need.,URL de uma página legível com informações que os desenvolvedores podem precisar.
+URL of a web page providing information about the client.,URL de uma página da web que fornece informações sobre o cliente.
+URL of human-readable page with info about the protected resource's terms of service.,URL da página legível com informações sobre os termos de serviço do recurso protegido.
+URL of human-readable page with info on requirements about how the client can use the data.,URL da página legível com informações sobre os requisitos sobre como o cliente pode usar os dados.
+URL of the page,URL da página
+URL that points to a human-readable policy document for the client. Should be shown to end-user before authorizing.,URL que aponta para um documento de política legível para o cliente. Deve ser mostrado ao usuário final antes da autorização.
+URL that points to a human-readable terms of service document for the client. Should be shown to end-user before authorizing.,URL que aponta para um documento de termos de serviço legível para o cliente. Deve ser mostrado ao usuário final antes da autorização.
+URL that references a logo for the client.,URL que faz referência a um logotipo do cliente.
+URL to go to on clicking the slideshow image,URL para acessar ao clicar na imagem da apresentação de slides
+UTM Campaign,Campanha UTM
+UTM Medium,Mídia UTM
+UTM Source,Fonte UTM
+UUID,UUID
+Un-following document {0},Deixando de seguir o documento {0}
+Unable to find DocType {0},Não foi possível encontrar DocType {0}
+Unable to load camera.,Não foi possível carregar a câmera.
+Unable to load: {0},Não foi possível carregar: {0}
+Unable to open attached file. Did you export it as CSV?,Não foi possível abrir o arquivo anexado. Você exportou como CSV?
+Unable to read file format for {0},Não é possível ler o formato do arquivo para {0}
+Unable to save the column width.,Não foi possível salvar a largura da coluna.
+Unable to send mail because of a missing email account. Please setup default Email Account from Settings > Email Account,Não é possível enviar e-mail devido a uma conta de e-mail ausente. Configure a conta de e-mail padrão em Configurações > Conta de e-mail
+Unable to update event,Não foi possível atualizar o evento
+Unable to write file format for {0},Não foi possível gravar o formato de arquivo para {0}
+Uncaught Exception,Exceção não detectada
+Unchanged,Inalterado
+Undo last action,Desfazer a última ação
+Unfollow,Deixar de seguir
+Unique ID assigned by the client developer used to identify the client software to be dynamically registered.|||<br>|||<b>Should remain same</b> across multiple versions or updates of the software.,ID exclusivo atribuído pelo desenvolvedor do cliente usado para identificar o software cliente a ser registrado dinamicamente.|||<br>|||<b>Deve permanecer o mesmo</b> em várias versões ou atualizações do software.
+Unknown Column: {0},Coluna desconhecida: {0}
+Unknown Rounding Method: {},Método de arredondamento desconhecido: {}
+Unknown User,Usuário desconhecido
+Unknown file encoding. Tried to use: {0},Codificação de arquivo desconhecida. Tentei usar: {0}
+Unlock Reference Document,Desbloquear documento de referência
+Unpublish,Cancelar publicação
+Unsafe SQL query,Consulta SQL insegura
+Unsubscribe,Cancelar inscrição
+Unsubscribe Params,Parâmetros de cancelamento de assinatura
+Unsubscribed,Inscrição cancelada
+Unsupported function or operator: {0},Função ou operador não suportado: {0}
+Unsupported {0}: {1},{0} não suportado: {1}
+Untitled Column,Coluna sem título
+Unzip,Descompactar
+Unzipped {0} files,{0} arquivos descompactados
+Unzipping files...,Descompactando arquivos...
+Upcoming Events for Today,Próximos eventos para hoje
+Update Amendment Naming,Atualizar nomenclatura da alteração
+Update Hooks Resolution Order,Atualizar ordem de resolução de ganchos
+Update Order,Atualizar pedido
+Update Password,Atualizar senha
+Update Series Counter,Atualizar contador de séries
+Update Translations,Atualizar traduções
+Update from Frappe Cloud,Atualização do Frappe Cloud
+Update {0} records,Atualizar registros {0}
+Updated,Atualizado
+Updated Successfully,Atualizado com sucesso
+Updated To A New Version \u{1F389},Atualizado para uma nova versão \u{1F389}
+Updated To A New Version u{1F389},Atualizado para uma nova versão u{1F389}
+Updated To A New Version 🎉,Atualizado para uma nova versão 🎉
+Updated successfully,Atualizado com sucesso
+Updating,Atualizando
+Updating Email Queue Statuses. The emails will be picked up in the next scheduled run.,Atualizando status da fila de e-mail. Os e-mails serão coletados na próxima execução agendada.
+Updating counter may lead to document name conflicts if not done properly,A atualização do contador pode levar a conflitos de nomes de documentos se não for feita corretamente
+Updating global settings,Atualizando configurações globais
+Updating naming series options,Atualizando opções de série de nomenclatura
+Updating related fields...,Atualizando campos relacionados...
+Updating {0},Atualizando {0}
+"Updating {0} of {1}, {2}","Atualizando {0} de {1}, {2}"
+Upload Image,Carregar imagem
+Upload file,Carregar arquivo
+Upload {0} files,Carregar arquivos {0}
+Use % for any non empty value.,Use % para qualquer valor não vazio.
+Use First Day of Period,Use o primeiro dia da menstruação
+Use HTML,Usar HTML
+Use Number Format from Currency,Use o formato numérico da moeda
+Use POST,Usar POST
+Use STARTTLS,Usar STARTTLS
+Use a few uncommon words together.,Use algumas palavras incomuns juntas.
+"Use a few words, avoid common phrases.","Use poucas palavras, evite frases comuns."
+Use if the default settings don't seem to detect your data correctly,Use se as configurações padrão não detectarem seus dados corretamente
+Use of sub-query or function is restricted,O uso de subconsulta ou função é restrito
+Use the new Print Format Builder,Use o novo Construtor de Formato de Impressão
+Used OAuth,OAuth usado
+User '{0}' already has the role '{1}',O usuário '{0}' já possui a função '{1}'
+User Changed,Usuário alterado
+User Doctype Permissions,Permissões de tipo de documento do usuário
+User Document Type,Tipo de Documento do usuário
+User Document Types Limit Exceeded,Limite de tipos de documentos do usuário excedido
+User Email,E-mail do usuário
+User Group,Grupo de usuários
+User Group Member,Membro do grupo de usuários
+User Group Members,Membros do grupo de usuários
+User Id,ID do usuário
+User Id Field,Campo de ID do usuário
+User Id Field is mandatory in the user type {0},O campo User ID é obrigatório no tipo de usuário {0}
+User Invitation,Convite do usuário
+User Menu,Menu do usuário
+User Permissions,Permissões do usuário
+User Permissions are used to limit users to specific records.,As permissões de usuário são usadas para limitar usuários a registros específicos.
+User Permissions created successfully,Permissões de usuário criadas com sucesso
+User Role,Função do usuário
+User Role Profile,Perfil de função do usuário
+User Select Document Type,Tipo de Documento selecionado pelo usuário
+User Session Display,Exibição da sessão do usuário
+User Social Login,Login social do usuário
+User Type Module,Módulo de tipo de usuário
+User can login using Email id or Mobile number,O usuário pode fazer login usando ID de e-mail ou número de celular
+User can login using Email id or User Name,O usuário pode fazer login usando ID de e-mail ou nome de usuário
+User does not exist.,O usuário não existe.
+User does not have permission to create the new {0},O usuário não tem permissão para criar o novo {0}
+User is disabled,O usuário está desativado
+User is mandatory for Share,O usuário é obrigatório para compartilhar
+User permission already exists,A permissão do usuário já existe
+User with email address {0} does not exist,O usuário com endereço de e-mail {0} não existe
+User with email: {0} does not exist in the system. Please ask 'System Administrator' to create the user for you.,"Usuário com email: {0} não existe no sistema. Por favor, peça ao 'Administrador do Sistema' para criar o usuário para você."
+User {0} cannot be deleted,O usuário {0} não pode ser excluído
+User {0} cannot be disabled,O usuário {0} não pode ser desativado
+User {0} cannot be renamed,O usuário {0} não pode ser renomeado
+User {0} does not have access to this document,O usuário {0} não tem acesso a este documento
+User {0} does not have doctype access via role permission for document {1},O usuário {0} não tem acesso doctype por meio de permissão de função para o documento {1}
+User {0} does not have the permission to create a Workspace.,O usuário {0} não tem permissão para criar um espaço de trabalho.
+User {0} has requested for data deletion,O usuário {0} solicitou a exclusão de dados
+User {0} has started an impersonation session as you. <br><br><b>Reason provided:</b> {1},O usuário {0} iniciou uma sessão de representação como você. <br><br><b>Motivo fornecido:</b> {1}
+User {0} impersonated as {1},Usuário {0} personificado como {1}
+User {0} is disabled,O usuário {0} está desativado
+User {0} is disabled. Please contact your System Manager.,O usuário {0} está desabilitado. Entre em contato com o gerente do sistema.
+User {0} is not permitted to access this document.,O usuário {0} não tem permissão para acessar este documento.
+Userinfo URI,URI de informações do usuário
+Username {0} already exists,O nome de usuário {0} já existe
+Users are only able to delete attached files if the document is either in draft or if the document is canceled and they are also able to delete the document.,Os usuários só poderão excluir arquivos anexados se o documento estiver em rascunho ou se o documento for cancelado e também poderão excluir o documento.
+Uses system's theme to switch between light and dark mode,Usa o tema do sistema para alternar entre o modo claro e escuro
+Using this console may allow attackers to impersonate you and steal your information. Do not enter or paste code that you do not understand.,O uso deste console pode permitir que invasores se façam passar por você e roubem suas informações. Não insira ou cole código que você não entende.
+Valid Login id required.,É necessário um ID de login válido.
+Valid email and name required,E-mail e nome válidos obrigatórios
+Validate Frappe Mail Settings,Validar configurações de correio Frappe
+Validation Error,Erro de validação
+Value Change,Alteração de valor
+Value Too Long,Valor muito longo
+Value cannot be changed for {0},O valor não pode ser alterado para {0}
+Value cannot be negative for,O valor não pode ser negativo para
+Value cannot be negative for {0}: {1},O valor não pode ser negativo para {0}: {1}
+Value for a check field can be either 0 or 1,O valor de um campo de verificação pode ser 0 ou 1
+Value for field {0} is too long in {1}. Length should be lesser than {2} characters,O valor do campo {0} é muito longo em {1}. O comprimento deve ser menor que {2} caracteres
+Value for {0} cannot be a list,O valor para {0} não pode ser uma lista
+Value from this field will be set as the due date in the ToDo,O valor deste campo será definido como a data de vencimento no ToDo
+Value must be one of {0},O valor deve ser um de {0}
+"Value of ""None"" implies a public client. In such a case Client Secret is not given to the client and token exchange makes use of PKCE.","O valor ""Nenhum"" implica um cliente público. Nesse caso, o segredo do cliente não é fornecido ao cliente e a troca de tokens utiliza PKCE."
+Value to set when this workflow state is applied. Use plain text (e.g. Approved) or an expression if “Evaluate as Expression” is enabled.,"Valor a ser definido quando esse estado de fluxo de trabalho for aplicado. Use texto simples (por exemplo, Aprovado) ou uma expressão se “Avaliar como Expressão” estiver habilitado."
+Value too big,Valor muito grande
+Value {0} missing for {1},Valor {0} ausente para {1}
+Value {0} must be in the valid duration format: d h m s,O valor {0} deve estar no formato de duração válido: d h m s
+Value {0} must in {1} format,O valor {0} deve estar no formato {1}
+Verdana,Verdana
+Verification,Verificação
+Verification Code,Código de verificação
+Verification Link,Link de verificação
+Verification code email not sent. Please contact Administrator.,E-mail com código de verificação não enviado. Entre em contato com o administrador.
+Verification code has been sent to your registered email address.,O código de verificação foi enviado para o seu endereço de e-mail cadastrado.
+Verify,Verificar
+Verify Password,Verifique a senha
+Verifying...,Verificando...
+Version Updated,Versão atualizada
+View,Visualizar
+View All,Ver tudo
+View Audit Trail,Ver trilha de auditoria
+View Docs,Ver documentos
+View File,Ver arquivo
+View Full Log,Ver registro completo
+View List,Ver lista
+View Sidebar,Ver barra lateral
+View Website,Ver site
+View all {0} users,Ver todos os usuários {0}
+View document,Ver documento
+View report in your browser,Visualize o relatório no seu navegador
+View this in your browser,Veja isso no seu navegador
+View your response,Veja sua resposta
+View {0},Ver {0}
+Virtual,Virtual
+Virtual DocType {} requires a static method called {} found {},Virtual DocType {} requer um método estático chamado {} encontrado {}
+Virtual DocType {} requires overriding an instance method called {} found {},Virtual DocType {} requer a substituição de um método de instância chamado {} encontrado {}
+Virtual tables must be virtual fields,As tabelas virtuais devem ser campos virtuais
+Visibility,Visibilidade
+Visible to website/portal users.,Visível para usuários do site/portal.
+Visit Desktop,Ir para o Desk
+Visit Web Page,Ir para a página web
+Visitor ID,ID do visitante
+Want to discuss?,Quer discutir?
+Warehouse,Armazém
+Warning,Aviso
+Warning: DATA LOSS IMMINENT! Proceeding will permanently delete following database columns from doctype {0}:,Aviso: PERDA DE DADOS IMINENTE! O procedimento excluirá permanentemente as seguintes colunas do banco de dados do tipo de documento {0}:
+Warning: Naming is not set,Aviso: a nomenclatura não está definida
+Warning: Unable to find {0} in any table related to {1},Aviso: Não foi possível encontrar {0} em nenhuma tabela relacionada a {1}
+Warning: Updating counter may lead to document name conflicts if not done properly,Aviso: A atualização do contador pode causar conflitos de nomes de documentos se não for feita corretamente
+Warning: Usage of 'format:' is discouraged.,Aviso: O uso de 'format:' é desencorajado.
+Was this article helpful?,Este artigo foi útil?
+Watch Tutorial,Assistir ao tutorial
+We do not allow editing of this document. Simply click the Edit button on the workspace page to make your workspace editable and customize it as you wish,Não permitimos a edição deste documento. Basta clicar no botão Editar na página do espaço de trabalho para tornar seu espaço de trabalho editável e personalizá-lo como desejar
+We have received a request for deletion of {0} data associated with: {1},Recebemos uma solicitação de exclusão de dados de {0} associados a: {1}
+We have received a request from you to download your {0} data associated with: {1},Recebemos uma solicitação sua para baixar seus dados {0} associados a: {1}
+We would like to thank the authors of these packages for their contribution.,Gostaríamos de agradecer aos autores destes pacotes pela sua contribuição.
+We've received your query!,Recebemos sua consulta!
+Weak,Fraco
+Web Form,Formulário Web
+Web Form Field,Campo de formulário da web
+Web Form List Column,Coluna da lista de formulários da Web
+Web Page,Página da Internet
+Web Page Block,Bloqueio de página da web
+Web Page URL,URL da página da Web
+Web Page View,Visualização de página da Web
+Web Template,Modelo da Web
+Web Template Field,Campo de modelo da Web
+Web Template Values,Valores do modelo da Web
+Web Template is not specified,O modelo da Web não foi especificado
+Web View,Visualização da Web
+Webhook,Webhook
+Webhook Data,Dados de webhook
+Webhook Header,Cabeçalho do webhook
+Webhook Headers,Cabeçalhos de webhook
+Webhook Request,Solicitação de webhook
+Webhook Request Log,Registro de solicitação de webhook
+Webhook Secret,Segredo do webhook
+Webhook Security,Segurança de webhook
+Webhook Trigger,Gatilho de webhook
+Webhook URL,URL do webhook
+Website Analytics,Análise do site
+Website Manager,Gerenciador de sites
+Website Meta Tag,Metatag do site
+Website Route Meta,Meta da rota do site
+Website Route Redirect,Redirecionamento de rota do site
+Website Script,Roteiro do site
+Website Search Field,Campo de pesquisa do site
+Website Search Field must be a valid fieldname,O campo de pesquisa do site deve ser um nome de campo válido
+Website Settings,Configurações do site
+Website Sidebar,Barra lateral do site
+Website Sidebar Item,Item da barra lateral do site
+Website Slideshow,Apresentação de slides do site
+Website Slideshow Item,Item de apresentação de slides do site
+Website Theme,Tema do site
+Website Theme Ignore App,Tema do site para ignorar aplicativo
+Website Theme image link,Link da imagem do tema do site
+Websocket,WebSocket
+Wednesday,Quarta-feira
+Week,Semana
+Welcome,Bem-vindo
+Welcome Email Template,Modelo de e-mail de boas-vindas
+Welcome URL,URL de boas-vindas
+Welcome email sent,E-mail de boas-vindas enviado
+Welcome to Frappe!,Bem-vindo ao Frappe!
+Welcome to the {0} workspace,Bem-vindo ao espaço de trabalho {0}
+Welcome to {0},Bem-vindo ao {0}
+"When enabled this will allow guests to upload files to your application, You can enable this if you wish to collect files from user without having them to log in, for example in job applications web form.","Quando ativado, isso permitirá que os convidados carreguem arquivos para o seu aplicativo. Você pode ativar isso se desejar coletar arquivos do usuário sem que eles façam login, por exemplo, no formulário da web de pedidos de emprego."
+"When sending document using email, store the PDF on Communication. Warning: This can increase your storage usage.","Ao enviar documento por e-mail, armazene o PDF em Comunicação. Aviso: isso pode aumentar o uso do armazenamento."
+"When uploading files, force the use of the web-based image capture. If this is unchecked, the default behavior is to use the mobile native camera when use from a mobile is detected.","Ao fazer upload de arquivos, force o uso da captura de imagens baseada na web. Se esta opção estiver desmarcada, o comportamento padrão é usar a câmera nativa do celular quando o uso de um celular for detectado."
+Which view of the associated DocType should this shortcut take you to?,Para qual visualização do DocType associado esse atalho deve levá-lo?
+Width,Largura
+Width is required,A largura é obrigatória
+Width must be a valid number of pixels,A largura precisa ser um número válido de pixels
+Widths can be set in px or %.,As larguras podem ser definidas em px ou%.
+Wildcard Filter,Filtro curinga
+"Will add ""%"" before and after the query","Adicionará ""%"" antes e depois da consulta"
+Will be your login ID,Será o seu ID de login
+Will only be shown if section headings are enabled,Só será mostrado se os títulos das seções estiverem ativados
+Will run scheduled jobs only once a day for inactive sites. Set it to 0 to avoid automatically disabling the scheduler.,Executará trabalhos agendados apenas uma vez por dia para sites inativos. Defina-o como 0 para evitar a desativação automática do agendador.
+With Letter head,Com cabeça de carta
+Worker Information,Informações do trabalhador
+Worker Name,Nome do trabalhador
+Workflow Action,Ação de fluxo de trabalho
+Workflow Action Master,Mestre de ações de fluxo de trabalho
+Workflow Action Permitted Role,Função permitida de ação de fluxo de trabalho
+Workflow Builder,Construtor de fluxo de trabalho
+Workflow Builder ID,ID do criador de fluxo de trabalho
+Workflow Builder allows you to create workflows visually. You can drag and drop states and link them to create transitions. Also you can update their properties from the sidebar.,"O Workflow Builder permite criar fluxos de trabalho visualmente. Você pode arrastar e soltar estados e vinculá-los para criar transições. Além disso, você pode atualizar suas propriedades na barra lateral."
+Workflow Data,Dados de fluxo de trabalho
+Workflow Details,Detalhes do fluxo de trabalho
+Workflow Document State,Estado do documento de fluxo de trabalho
+Workflow Evaluation Error,Erro de avaliação do fluxo de trabalho
+Workflow State,Estado do fluxo de trabalho
+Workflow State Field,Campo de estado do fluxo de trabalho
+Workflow State not set,Estado do fluxo de trabalho não definido
+Workflow State transition not allowed from {0} to {1},Transição de estado do fluxo de trabalho não permitida de {0} para {1}
+Workflow States Don't Exist,Estados de fluxo de trabalho não existem
+Workflow Status,Status do fluxo de trabalho
+Workflow Task,Tarefa de Fluxo de Trabalho
+Workflow Transition,Transição do Fluxo de Trabalho
+Workflow Transition Task,Tarefa de transição de fluxo de trabalho
+Workflow Transition Tasks,Tarefas de transição de fluxo de trabalho
+Workflow state represents the current state of a document.,O estado do fluxo de trabalho representa o estado atual de um documento.
+Workflow updated successfully,Fluxo de trabalho atualizado com sucesso
+Workspace <b>{0}</b> does not exist,A área de trabalho <b>{0}</b> não existe
+Workspace Chart,Gráfico do espaço de trabalho
+Workspace Custom Block,Bloco personalizado do espaço de trabalho
+Workspace Link,Link do espaço de trabalho
+Workspace Manager,Gerenciador de espaço de trabalho
+Workspace Number Card,Cartão de número do espaço de trabalho
+Workspace Quick List,Lista rápida do espaço de trabalho
+Workspace Shortcut,Atalho do espaço de trabalho
+Workspace Sidebar,Barra lateral do espaço de trabalho
+Workspace Sidebar Item,Item da barra lateral do espaço de trabalho
+Workspace added to desktop,Espaço de trabalho adicionado ao desktop
+Workspace {0} created,Espaço de trabalho {0} criado
+Workspaces,Espaços de trabalho
+Would you like to publish this comment? This means it will become visible to website/portal users.,Gostaria de publicar este comentário? Isso significa que ele ficará visível para os usuários do site/portal.
+Would you like to unpublish this comment? This means it will no longer be visible to website/portal users.,Gostaria de cancelar a publicação deste comentário? Isso significa que não estará mais visível para os usuários do site/portal.
+Wrapping up,Concluindo
+Wrong Fetch From value,Valor de busca de errado
+X Axis Field,Campo do Eixo X
+XLSX,XLSX
+XMLHttpRequest Error,Erro XMLHttpRequest
+Y Axis Fields,Campos do eixo Y
+Y Field,Campo Y
+Yahoo Mail,E-mail do Yahoo
+Yandex.Mail,Yandex.Mail
+Yellow,Amarelo
+You,Você
+You Liked,Você gostou
+You added 1 row to {0},Você adicionou 1 linha a {0}
+You added {0} rows to {1},Você adicionou {0} linhas a {1}
+"You are about to open an external link. To confirm, click the link again.","Você está prestes a abrir um link externo. Para confirmar, clique no link novamente."
+You are connected to internet.,Você está conectado à internet.
+You are not allowed to access this resource,Você não tem permissão para acessar este recurso
+You are not allowed to access this {0} record because it is linked to {1} '{2}' in field {3},Você não tem permissão para acessar este registro {0} porque ele está vinculado a {1} '{2}' no campo {3}
+"You are not allowed to access this {0} record because it is linked to {1} '{2}' in row {3}, field {4}","Você não tem permissão para acessar este registro {0} porque ele está vinculado a {1} '{2}' na linha {3}, campo {4}"
+You are not allowed to create columns,Você não tem permissão para criar colunas
+You are not allowed to delete Standard Report,Você não tem permissão para excluir o Relatório padrão
+You are not allowed to delete a standard Notification. You can disable it instead.,Você não tem permissão para excluir uma notificação padrão. Você pode desativá-lo.
+You are not allowed to delete a standard Website Theme,Você não tem permissão para excluir um tema de site padrão
+You are not allowed to edit the report.,Você não tem permissão para editar o relatório.
+You are not allowed to edit this workspace,Você não tem permissão para editar este espaço de trabalho
+You are not allowed to export {} doctype,Você não tem permissão para exportar {} tipo de documento
+You are not allowed to print this report,Você não tem permissão para imprimir este relatório
+You are not allowed to send emails related to this document,Você não tem permissão para enviar e-mails relacionados a este documento
+You are not allowed to update the status of this event.,Você não tem permissão para atualizar o status deste evento.
+You are not allowed to update this Web Form Document,Você não tem permissão para atualizar este documento de formulário da Web
+You are not authorized to undo this email,Você não está autorizado a desfazer este e-mail
+You are not connected to Internet. Retry after sometime.,Você não está conectado à Internet. Tente novamente depois de algum tempo.
+You are not permitted to access this page without login.,Você não tem permissão para acessar esta página sem login.
+You are not permitted to access this page.,Você não tem permissão para acessar esta página.
+You are not permitted to access this resource. Login to access,Você não tem permissão para acessar este recurso. Faça login para acessar
+You are now following this document. You will receive daily updates via email. You can change this in User Settings.,Agora você está acompanhando este documento. Você receberá atualizações diárias por e-mail. Você pode alterar isso nas configurações do usuário.
+"You are only allowed to update order, do not remove or add apps.","Você só tem permissão para atualizar o pedido, não remover ou adicionar aplicativos."
+"You are selecting Sync Option as ALL, It will resync all read as well as unread message from server. This may also cause the duplication of Communication (emails).",Você está selecionando a opção de sincronização como ALL. Ele irá ressincronizar todas as mensagens lidas e não lidas do servidor. Isto também pode causar a duplicação da Comunicação (e-mails).
+You attached {0},Você anexou {0}
+You can add dynamic properties from the document by using Jinja templating.,Você pode adicionar propriedades dinâmicas do documento usando modelos Jinja.
+You can also access wkhtmltopdf variables (valid only in PDF print):,Você também pode acessar variáveis ​​wkhtmltopdf (válidas apenas na impressão de PDF):
+You can also copy-paste following link in your browser,Você também pode copiar e colar o seguinte link em seu navegador
+You can also copy-paste this {0} to your browser,Você também pode copiar e colar este {0} em seu navegador
+You can ask your team to resend the invitation if you'd still like to join.,Você pode pedir à sua equipe para reenviar o convite se ainda quiser participar.
+You can change the retention policy from {0}.,Você pode alterar a política de retenção de {0}.
+You can continue with the onboarding after exploring this page,Você pode continuar com a integração depois de explorar esta página
+You can disable this {0} instead of deleting it.,Você pode desabilitar este {0} em vez de excluí-lo.
+You can increase the limit from System Settings.,Você pode aumentar o limite nas configurações do sistema.
+You can manually remove the lock if you think it's safe: {},Você pode remover o bloqueio manualmente se achar que é seguro: {}
+You can only insert images in Markdown fields,Você só pode inserir imagens em campos Markdown
+You can only print upto {0} documents at a time,Você só pode imprimir até {0} documentos por vez
+You can only set the 3 custom doctypes in the Document Types table.,Você só pode definir os três tipos de documentos personalizados na tabela Tipos de documentos.
+"You can only upload JPG, PNG, GIF, PDF, TXT, CSV or Microsoft documents.","Você só pode fazer upload de documentos JPG, PNG, GIF, PDF, TXT, CSV ou Microsoft."
+You can only upload upto 5000 records in one go. (may be less in some cases),Você só pode fazer upload de até 5.000 registros de uma só vez. (pode ser menor em alguns casos)
+"You can select one from the following,","Você pode selecionar um dos seguintes,"
+You can set a high value here if multiple users will be logging in from the same network.,Você pode definir um valor alto aqui se vários usuários fizerem login na mesma rede.
+You can try changing the filters of your report.,Você pode tentar alterar os filtros do seu relatório.
+You can use Customize Form to set levels on fields.,Você pode usar Personalizar formulário para definir níveis nos campos.
+You can't set 'Options' for field {0},Você não pode definir 'Opções' para o campo {0}
+You can't set 'Translatable' for field {0},Você não pode definir 'Traduzível' para o campo {0}
+You cancelled this document,Você cancelou este documento
+You cancelled this document {1},Você cancelou este documento {1}
+You cannot create a dashboard chart from single DocTypes,Você não pode criar um gráfico de painel a partir de DocTypes únicos
+You cannot share `{0}` on {1} `{2}` as you do not have `{0}` permission on `{1}`,Você não pode compartilhar `{0}` em {1} `{2}` porque você não tem permissão de `{0}` em `{1}`
+You cannot unset 'Read Only' for field {0},Você não pode desmarcar 'Somente leitura' para o campo {0}
+You changed the value of {0},Você alterou o valor de {0}
+You changed the value of {0} {1},Você alterou o valor de {0} {1}
+You changed the values for {0},Você alterou os valores de {0}
+You changed the values for {0} {1},Você alterou os valores de {0} {1}
+You changed {0} to {1},Você alterou {0} para {1}
+You created this document {0},Você criou este documento {0}
+You do not have enough permissions to access this resource. Please contact your manager to get access.,Você não tem permissões suficientes para acessar este recurso. Entre em contato com seu gerente para obter acesso.

@@ -1,0 +1,1000 @@
+Email Unsubscribe,Cancelar inscrição de e-mail
+Email has been marked as spam,O e-mail foi marcado como spam
+Email has been moved to trash,O e-mail foi movido para a lixeira
+Email is mandatory to create User Email,O e-mail é obrigatório para criar E-mail do Usuário
+Email not sent to {0} (unsubscribed / disabled),E-mail não enviado para {0} (descadastrado / desativado)
+Email not verified with {0},E-mail não verificado com {0}
+Email queue is currently suspended. Resume to automatically send other emails.,A fila de e-mails está suspensa no momento. Retome para enviar automaticamente os outros e-mails.
+Email sending undone,Envio de e-mail desfeito
+Email size {0:.2f} MB exceeds the maximum allowed size of {1:.2f} MB,O tamanho do e-mail {0:.2f} MB excede o tamanho máximo permitido de {1:.2f} MB
+Email undo window is over. Cannot undo email.,A janela para desfazer o e-mail terminou. Não é possível desfazer o e-mail.
+Emails,E-mails
+Emails Pulled,E-mails recebidos
+Emails are already being pulled from this account.,Os e-mails já estão sendo recebidos desta conta.
+Emails are muted,Os e-mails estão silenciados
+Emails will be sent with next possible workflow actions,Os e-mails serão enviados com as próximas ações possíveis do fluxo de trabalho
+Embed code copied,Código de incorporação copiado
+Empty alias is not allowed,Alias vazio não é permitido
+Empty column,Coluna vazia
+Empty string arguments are not allowed,Argumentos de string vazia não são permitidos
+Enable Action Confirmation,Habilitar confirmação de ação
+Enable Address Autocompletion,Habilitar autocompletar de endereço
+Enable Allow Auto Repeat for the doctype {0} in Customize Form,Habilite Permitir Repetição Automática para o doctype {0} em Personalizar Formulário
+Enable Dynamic Client Registration,Habilitar registro dinâmico de cliente
+Enable Google API in Google Settings.,Habilite a API do Google em Configurações do Google.
+Enable Google indexing,Habilitar indexação do Google
+Enable Onboarding,Habilitar onboarding
+Enable Prepared Report,Habilitar relatório preparado
+Enable Push Notification Relay,Habilitar relay de notificação push
+Enable Rate Limit,Habilitar limite de taxa
+Enable Report,Habilitar relatório
+Enable Scheduler,Habilitar agendador
+Enable Tracking Page Views,Habilitar rastreamento de visualizações de página
+Enable Two Factor Auth,Habilitar autenticação em dois fatores
+Enable developer mode to create a standard Print Template,Habilite o modo de desenvolvedor para criar um Modelo de Impressão padrão
+Enable developer mode to create a standard Web Template,Habilite o modo de desenvolvedor para criar um Modelo Web padrão
+Enable if on click|||opens modal.,Habilite se ao clicar|||abre modal.
+Enable in-app website tracking,Habilitar rastreamento de site no aplicativo
+Enabled Scheduler,Agendador habilitado
+Enabled email inbox for user {0},Caixa de entrada de e-mail habilitada para o usuário {0}
+Enables Calendar and Gantt views.,Habilita as visualizações Calendário e Gantt.
+"Enabling this will register your site on a central relay server to send push notifications for all installed apps through Firebase Cloud Messaging. This server only stores user tokens and error logs, and no messages are saved.","Ao habilitar isto, seu site será registrado em um servidor relay central para enviar notificações push de todos os aplicativos instalados por meio do Firebase Cloud Messaging. Esse servidor armazena apenas tokens de usuário e logs de erro, e nenhuma mensagem é salva."
+"Enabling this will submit documents in background","Ao habilitar isto, os documentos serão enviados em segundo plano"
+Encrypt Backups,Criptografar backups
+Encryption key is in invalid format!,A chave de criptografia está em formato inválido!
+Encryption key is invalid! Please check site_config.json,A chave de criptografia é inválida! Verifique o site_config.json
+End,Fim
+End Date,Data final
+End Date cannot be before Start Date!,A data final não pode ser anterior à data inicial!
+End Date cannot be today.,A data final não pode ser hoje.
+Ended At,Encerrado em
+Endpoints,Endpoints
+Enqueued By,Enfileirado por
+Enqueued creation of indexes,Criação de índices enfileirada
+Ensure the user and group search paths are correct.,Garanta que os caminhos de pesquisa de usuário e grupo estejam corretos.
+Enter Client Id and Client Secret in Google Settings.,Informe o Client ID e o Client Secret em Configurações do Google.
+Enter Code displayed in OTP App.,Informe o código exibido no aplicativo OTP.
+"Enter Email Recipient(s) in the To, CC, or BCC fields","Informe o(s) destinatário(s) de e-mail nos campos Para, CC ou BCC"
+Enter Form Type,Informe o tipo de formulário
+Enter Value,Informe o valor
+Enter a name for this {0},Informe um nome para este {0}
+"Enter default value fields (keys) and values. If you add multiple values for a field, the first one will be picked. These defaults are also used to set \"match\" permission rules. To see list of fields, go to \"Customize Form\".","Informe os campos de valor padrão (chaves) e valores. Se você adicionar vários valores para um campo, o primeiro será escolhido. Esses padrões também são usados para definir regras de permissão de \"correspondência\". Para ver a lista de campos, vá para \"Personalizar Formulário\"."
+Enter folder name,Informe o nome da pasta
+"Enter list of Options, each on a new line.","Informe a lista de opções, cada uma em uma nova linha."
+"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)","Informe aqui os parâmetros estáticos da URL (ex.: sender=ERPNext, username=ERPNext, password=1234 etc.)"
+Enter url parameter for message,Informe o parâmetro de URL para mensagem
+Enter url parameter for receiver nos,Informe o parâmetro de URL para números do destinatário
+Enter your password,Informe sua senha
+Entity Name,Nome da entidade
+Entity Type,Tipo da entidade
+Error,Erro
+Error Message,Mensagem de erro
+"Error connecting to QZ Tray Application...<br><br> You need to have QZ Tray application installed and running, to use the Raw Print feature.<br><br><a target=\"_blank\" href=\"https://qz.io/download/\">Click here to Download and install QZ Tray</a>.<br> <a target=\"_blank\" href=\"https://erpnext.com/docs/user/manual/en/setting-up/print/raw-printing\">Click here to learn more about Raw Printing</a>.","Erro ao conectar ao aplicativo QZ Tray...<br><br> Você precisa ter o aplicativo QZ Tray instalado e em execução para usar o recurso Raw Print.<br><br><a target=\"_blank\" href=\"https://qz.io/download/\">Clique aqui para baixar e instalar o QZ Tray</a>.<br> <a target=\"_blank\" href=\"https://erpnext.com/docs/user/manual/en/setting-up/print/raw-printing\">Clique aqui para saber mais sobre Raw Printing</a>."
+Error connecting via IMAP/POP3: {e},Erro ao conectar via IMAP/POP3: {e}
+Error connecting via SMTP: {e},Erro ao conectar via SMTP: {e}
+Error has occurred in {0},Ocorreu um erro em {0}
+Error in Client Script,Erro no Script do Cliente
+Error in Client Script.,Erro no Script do Cliente.
+Error in Header/Footer Script,Erro no Script de Cabeçalho/Rodapé
+Error in Notification,Erro na notificação
+Error in print format on line {0}: {1},Erro no formato de impressão na linha {0}: {1}
+Error in {0}.get_list: {1},Erro em {0}.get_list: {1}
+Error parsing nested filters: {0}. {1},Erro ao processar filtros aninhados: {0}. {1}
+Error validating "Ignore User Permissions",Erro ao validar "Ignorar Permissões do Usuário"
+Error while connecting to email account {0},Erro ao conectar com a conta de e-mail {0}
+Error while evaluating Notification {0}. Please fix your template.,Erro ao avaliar a Notificação {0}. Corrija seu modelo.
+Error {0}: {1},Erro {0}: {1}
+Error: Data missing in table {0},Erro: dados ausentes na tabela {0}
+Error: Value missing for {0}: {1},Erro: valor ausente para {0}: {1}
+Error: {0} Row #{1}: Value missing for: {2},Erro: {0} Linha #{1}: valor ausente para: {2}
+Evaluate as Expression,Avaliar como expressão
+Event Frequency,Frequência do evento
+Event Notifications,Notificações de evento
+Event Participants,Participantes do evento
+Event Synced with Google Calendar.,Evento sincronizado com Google Calendar.
+Event Type,Tipo de evento
+Events in Today's Calendar,Eventos no calendário de hoje
+Everyone,Todos
+"Ex: \"colors\": [\"#d1d8dd\", \"#ff5858\"]","Ex.: \"colors\": [\"#d1d8dd\", \"#ff5858\"]"
+Exact Copies,Cópias exatas
+Example: "/desk",Exemplo: "/desk"
+Example: Setting this to 24:00 will log out a user if they are not active for 24:00 hours.,Exemplo: definir isto como 24:00 fará logout do usuário se ele não estiver ativo por 24:00 horas.
+Example: {{ subject }},Exemplo: {{ subject }}
+Excel,Excel
+Excellent,Excelente
+Execute,Executar
+Execute Console script,Executar script do Console
+Executing Code,Executando código
+Executing...,Executando...
+Execution Time: {0} sec,Tempo de execução: {0} s
+Executive,Executivo
+Existing Role,Perfil existente
+Expand All,Expandir tudo
+"Expected 'and' or 'or' operator, found: {0}","Operador 'and' ou 'or' esperado, encontrado: {0}"
+Experimental,Experimental
+Expire Notification On,Expirar notificação em
+Expires On,Expira em
+Export 1 record,Exportar 1 registro
+Export Custom Permissions,Exportar permissões personalizadas
+Export Customizations,Exportar personalizações
+Export Data,Exportar dados
+Export Errored Rows,Exportar linhas com erro
+Export Import Log,Exportar log de importação
+Export Report: {0},Exportar relatório: {0}
+Export all matching rows?,Exportar todas as linhas correspondentes?
+Export all {0} rows?,Exportar todas as {0} linhas?
+Export as zip,Exportar como zip
+Export in Background,Exportar em segundo plano
+Export not allowed. You need {0} role to export.,Exportação não permitida. Você precisa do perfil {0} para exportar.
+Export only customizations assigned to the selected module.<br><span class='text-muted'><strong>Note:</strong> You must set the <em>Module (for export)</em> field on Custom Field and Property Setter records before applying this filter.</span><p class='alert alert-warning'> <strong>Warning:</strong> Customizations from other modules will be excluded.</p>,Exporte apenas as personalizações atribuídas ao módulo selecionado.<br><span class='text-muted'><strong>Nota:</strong> Você deve definir o campo <em>Módulo (para exportação)</em> nos registros de Campo Personalizado e Property Setter antes de aplicar este filtro.</span><p class='alert alert-warning'> <strong>Aviso:</strong> Personalizações de outros módulos serão excluídas.</p>
+Export the data without any header notes and column descriptions,Exportar os dados sem notas de cabeçalho e descrições de coluna
+Export without main header,Exportar sem cabeçalho principal
+Export {0} records,Exportar {0} registros
+"Exported permissions will be force-synced on every migrate overriding any other customization.","As permissões exportadas serão sincronizadas forçadamente em cada migração, sobrescrevendo qualquer outra personalização."
+Expression,Expressão
+Expression (old style),Expressão (estilo antigo)
+External,Externo
+External Link,Link externo
+Extra Parameters,Parâmetros extras
+FAILURE,FALHA
+Facebook,Facebook
+Fail,Falha
+Failed Transactions,Transações com falha
+Failed to aquire lock: {}. Lock may be held by another process.,Falha ao adquirir lock: {}. O lock pode estar em uso por outro processo.
+Failed to change password.,Falha ao alterar a senha.
+Failed to complete setup,Falha ao concluir a configuração
+Failed to compute request body: {},Falha ao calcular o corpo da requisição: {}
+Failed to connect to server,Falha ao conectar ao servidor
+"Failed to decode token, please provide a valid base64-encoded token.","Falha ao decodificar o token, informe um token válido codificado em base64."
+Failed to decrypt key {0},Falha ao descriptografar a chave {0}
+Failed to delete communication,Falha ao excluir a comunicação
+Failed to delete {0} documents: {1},Falha ao excluir documentos {0}: {1}
+Failed to enable scheduler: {0},Falha ao habilitar o agendador: {0}
+Failed to evaluate conditions: {},Falha ao avaliar condições: {}
+Failed to export python type hints,Falha ao exportar type hints de Python
+Failed to generate names from the series,Falha ao gerar nomes a partir da série
+Failed to generate preview of series,Falha ao gerar pré-visualização da série
+Failed to get method for command {0} with {1},Falha ao obter método para o comando {0} com {1}
+Failed to get method {0} with {1},Falha ao obter método {0} com {1}
+"Failed to import virtual doctype {}, is controller file present?","Falha ao importar doctype virtual {}; o arquivo controlador está presente?"
+Failed to optimize image: {0},Falha ao otimizar imagem: {0}
+Failed to render message: {},Falha ao renderizar mensagem: {}
+Failed to render subject: {},Falha ao renderizar assunto: {}
+Failed to request login to Frappe Cloud,Falha ao solicitar login no Frappe Cloud
+Failed to retrieve the list of IMAP folders from the server. Please ensure the mailbox is accessible and the account has permission to list folders.,Falha ao obter a lista de pastas IMAP do servidor. Verifique se a caixa de correio está acessível e se a conta tem permissão para listar pastas.
+Failed to send email with subject:,Falha ao enviar e-mail com assunto:
+Failed to send notification email,Falha ao enviar e-mail de notificação
+Failed to update global settings,Falha ao atualizar configurações globais
+Failed while calling API {0},Falha ao chamar a API {0}
+Failing Scheduled Jobs (last 7 days),Tarefas agendadas com falha (últimos 7 dias)
+Failure,Falha
+Failure Rate,Taxa de falha
+FavIcon,Favicon
+Fax,Fax
+Feedback,Feedback
+Fetch Images,Buscar imagens
+Fetch attached images from document,Buscar imagens anexadas do documento
+Fetch on Save if Empty,Buscar ao salvar se estiver vazio
+Fetching default Global Search documents.,Buscando documentos padrão da Busca Global.
+Fetching fields from {0}...,Buscando campos de {0}...
+Field "route" is mandatory for Web Views,O campo "route" é obrigatório para visualizações web
+Field "title" is mandatory if "Website Search Field" is set.,O campo "title" é obrigatório se "Website Search Field" estiver definido.
+Field "value" is mandatory. Please specify value to be updated,O campo "value" é obrigatório. Informe o valor a ser atualizado
+Field <code>{0}</code> not found in {1},Campo <code>{0}</code> não encontrado em {1}
+Field Missing,Campo ausente
+Field Name,Nome do campo
+Field Orientation (Left-Right),Orientação do campo (esquerda-direita)
+Field Orientation (Top-Down),Orientação do campo (cima-baixo)
+Field Template,Modelo de campo
+Field Type,Tipo de campo
+Field is required,O campo é obrigatório
+Field not found,Campo não encontrado
+Field not permitted in query,Campo não permitido na consulta
+"Field that represents the Workflow State of the transaction (if field is not present, a new hidden Custom Field will be created)","Campo que representa o Estado do Fluxo de Trabalho da transação (se o campo não existir, um novo Campo Personalizado oculto será criado)"
+Field type cannot be changed for {0},O tipo do campo não pode ser alterado para {0}
+Field {0} does not exist on {1},O campo {0} não existe em {1}
+Field {0} is referring to non-existing doctype {1}.,O campo {0} está referenciando o doctype inexistente {1}.
+Field {0} must be a virtual field to support virtual doctype.,O campo {0} deve ser um campo virtual para suportar doctype virtual.
+Field {0} not found.,Campo {0} não encontrado.
+Field {0} on document {1} is neither a Mobile number field nor a Customer or User link,O campo {0} no documento {1} não é um campo de número de celular nem um link para Cliente ou Usuário
+Fieldname '{0}' conflicting with a {1} of the name {2} in {3},Fieldname '{0}' em conflito com um {1} de nome {2} em {3}
+Fieldname called {0} must exist to enable autonaming,Um fieldname chamado {0} deve existir para habilitar nomeação automática
+Fieldname is limited to 64 characters ({0}),O fieldname é limitado a 64 caracteres ({0})
+Fieldname not set for Custom Field,Fieldname não definido para Campo Personalizado
+Fieldname which will be the DocType for this link field.,Fieldname que será o DocType para este campo de link.
+Fieldname {0} appears multiple times,Fieldname {0} aparece várias vezes
+Fieldname {0} cannot have special characters like {1},Fieldname {0} não pode ter caracteres especiais como {1}
+Fieldname {0} conflicting with meta object,Fieldname {0} em conflito com objeto meta
+Fieldname {0} is restricted,Fieldname {0} é restrito
+Fields Multicheck,Multicheck de campos
+Fields `file_name` or `file_url` must be set for File,Os campos `file_name` ou `file_url` devem ser definidos para Arquivo
+Fields must be a list or tuple when as_list is enabled,Os campos devem ser uma lista ou tupla quando as_list estiver habilitado
+"Fields must be a string, list, tuple, pypika Field, or pypika Function","Os campos devem ser string, lista, tupla, pypika Field ou pypika Function"
+"Fields separated by comma (,) will be included in the \"Search By\" list of Search dialog box","Os campos separados por vírgula (,) serão incluídos na lista \"Search By\" da caixa de diálogo de busca"
+Fieldtype,Fieldtype
+Fieldtype cannot be changed from {0} to {1},Fieldtype não pode ser alterado de {0} para {1}
+Fieldtype cannot be changed from {0} to {1} in row {2},Fieldtype não pode ser alterado de {0} para {1} na linha {2}
+File,Arquivo
+File "{0}" was skipped because of invalid file type,O arquivo "{0}" foi ignorado devido a tipo de arquivo inválido
+File "{0}" was skipped because only {1} uploads are allowed,O arquivo "{0}" foi ignorado porque apenas uploads {1} são permitidos
+File "{0}" was skipped because only {1} uploads are allowed for DocType "{2}",O arquivo "{0}" foi ignorado porque apenas uploads {1} são permitidos para o DocType "{2}"
+File "{0}" was skipped because size exceeds {1} MB,O arquivo "{0}" foi ignorado porque o tamanho excede {1} MB
+File '{0}' not found,Arquivo '{0}' não encontrado
+File Type,Tipo de arquivo
+File backup is ready,O backup do arquivo está pronto
+File name cannot have {0},O nome do arquivo não pode conter {0}
+File not attached,Arquivo não anexado
+File size exceeded the maximum allowed size of {0} MB,O tamanho do arquivo excedeu o tamanho máximo permitido de {0} MB
+File too big,Arquivo muito grande
+File type of {0} is not allowed,O tipo de arquivo de {0} não é permitido
+File upload failed.,Falha no upload do arquivo.
+File {0} does not exist,O arquivo {0} não existe
+Files,Arquivos
+Filter Area,Área de filtros
+Filter List,Lista de filtros
+Filter Name,Nome do filtro
+Filter condition missing after operator: {0},Condição de filtro ausente após o operador: {0}
+Filter fields have invalid backtick notation: {0},Campos de filtro possuem notação com crase inválida: {0}
+Filter...,Filtro...
+Filtered By,Filtrado por
+Filtered Records,Registros filtrados
+Filtered by "{0}",Filtrado por "{0}"
+Filtered by: {0}.,Filtrado por: {0}.
+Filters Editor,Editor de filtros
+Filters saved,Filtros salvos
+"Filters will be accessible via <code>filters</code>. <br><br>Send output as <code>result = [result]</code>, or for old style <code>data = [columns], [result]</code>","Os filtros estarão acessíveis via <code>filters</code>. <br><br>Envie a saída como <code>result = [result]</code>, ou no estilo antigo <code>data = [columns], [result]</code>"
+Filters:,Filtros:
+Find '{0}' in ...,Encontrar '{0}' em ...
+Find {0} in {1},Encontrar {0} em {1}
+Finished At,Concluído em
+First,Primeiro
+First Day of the Week,Primeiro dia da semana
+First data column must be blank.,A primeira coluna de dados deve estar em branco.
+First set the name and save the record.,Primeiro defina o nome e salve o registro.
+Fit,Ajustar
+Float,Float
+Fold can not be at the end of the form,Dobra não pode estar no final do formulário
+Fold must come before a Section Break,A dobra deve vir antes de uma Quebra de Seção
+Folder Name,Nome da pasta
+Folder name should not include '/' (slash),O nome da pasta não deve incluir '/' (barra)
+Folder {0} is not empty,A pasta {0} não está vazia
+Folio,Folio
+Follow,Seguir
+Followed by,Seguido por
+Following Report Filters have missing values:,Os seguintes filtros de relatório possuem valores ausentes:
+Following document {0},Seguindo documento {0}
+Following documents are linked with {0},Os seguintes documentos estão vinculados com {0}
+Following fields are missing:,Os seguintes campos estão ausentes:
+Following fields have invalid values:,Os seguintes campos possuem valores inválidos:
+Following fields have missing values,Os seguintes campos possuem valores ausentes
+Following fields have missing values:,Os seguintes campos possuem valores ausentes:
+Font,Fonte
+Footer "Powered By",Rodapé "Powered By"
+Footer Based On,Rodapé baseado em
+Footer Details,Detalhes do rodapé
+Footer HTML set from attachment {0},HTML do rodapé definido a partir do anexo {0}
+Footer Image,Imagem do rodapé
+Footer Script,Script do rodapé
+Footer might not be visible as {0} option is disabled</div>,O rodapé pode não estar visível porque a opção {0} está desabilitada</div>
+For DocType,Para DocType
+For DocType Link / DocType Action,Para Link de DocType / Ação de DocType
+For Document,Para Documento
+For Document Type,Para Tipo de Documento
+For Example: {} Open,Por exemplo: {} Aberto
+For User,Para Usuário
+"For a dynamic subject, use Jinja tags like this: <code>{{ doc.name }} Delivered</code>","Para um assunto dinâmico use tags Jinja assim: <code>{{ doc.name }} Delivered</code>"
+"For comparison, use >5, <10 or =324.|||For ranges, use 5:10 (for values between 5 & 10).","Para comparação use >5, <10 ou =324.|||Para intervalos use 5:10 (para valores entre 5 e 10)."
+"For comparison, use >5, <10 or =324. For ranges, use 5:10 (for values between 5 & 10).","Para comparação use >5, <10 ou =324. Para intervalos use 5:10 (para valores entre 5 e 10)."
+"For comparison, use >5, <10 or =324.||||For ranges, use 5:10 (for values between 5 & 10).","Para comparação use >5, <10 ou =324.||||Para intervalos use 5:10 (para valores entre 5 e 10)."
+For example:,Por exemplo:
+"For example: If you want to include the document ID, use {0}","Por exemplo: se quiser incluir o ID do documento use {0}"
+For help see <a href="https://frappeframework.com/docs/user/en/guides/portal-development/web-forms" target="_blank">Client Script API and Examples</a>,Para ajuda veja <a href="https://frappeframework.com/docs/user/en/guides/portal-development/web-forms" target="_blank">API e exemplos de Script do Cliente</a>
+"For more information, {0}.","Para mais informações, {0}."
+"For multiple addresses, enter the address on different line. e.g. test@test.com ⏎ test1@test.com","Para vários endereços informe cada endereço em uma linha diferente. Ex.: test@test.com ⏎ test1@test.com"
+"For updating, you can update only selective columns.","Para atualizar você pode atualizar apenas colunas selecionadas."
+For {0} at level {1} in {2} in row {3},Para {0} no nível {1} em {2} na linha {3}
+Force Re-route to Default View,Forçar redirecionamento para visualização padrão
+Force Stop job,Forçar parada da tarefa
+Force Web Capture Mode for Uploads,Forçar modo de captura web para uploads
+Form,Formulário
+Form Builder,Construtor de formulário
+Form Dict,Dict do formulário
+Form Tour,Tour do formulário
+Form Tour Step,Etapa do tour do formulário
+Format,Formato
+Fortnightly,Quinzenal
+Forward,Encaminhar
+Forward Query Parameters,Encaminhar parâmetros da consulta
+Forward To Email Address,Encaminhar para endereço de e-mail
+Frappe,Frappe
+Frappe Blog,Blog do Frappe
+Frappe Forum,Fórum do Frappe
+Frappe Framework,Frappe Framework
+Frappe Mail,Frappe Mail
+Frappe Mail OAuth Error,Erro OAuth do Frappe Mail
+Frappe Mail Site,Site do Frappe Mail
+Frappe page builder using components,Construtor de páginas do Frappe com componentes
+Free,Grátis
+Friday,Sexta-feira
+From,De
+From Attach Field,Do campo de anexo
+From Date,Data inicial
+From Document Type,Do Tipo de Documento
+From Field,Do campo
+From User,Do Usuário
+From version,Da versão
+Full Page,Página inteira
+Function,Função
+Function Based On,Função baseada em
+Function {0} is not whitelisted.,A função {0} não está na whitelist.
+"Function {0} requires arguments but none were provided","A função {0} exige argumentos, mas nenhum foi fornecido"
+Further sub-groups can only be created under records marked as 'Group',Subgrupos adicionais só podem ser criados sob registros marcados como 'Group'
+Fw: {0},Enc: {0}
+GET,GET
+GNU Affero General Public License,GNU Affero General Public License
+GNU General Public License,GNU General Public License
+Gantt,Gantt
+Gantt View,Visualização Gantt
+Genderqueer,Gênero não binário
+General,Geral
+Generate New Report,Gerar novo relatório
+Generate Random Password,Gerar senha aleatória
+Generate Separate Documents For Each Assignee,Gerar documentos separados para cada responsável
+Generate Tracking URL,Gerar URL de rastreamento
+Geo,Geo
+Geoapify,Geoapify
+Geolocation Settings,Configurações de geolocalização
+Get Alerts for Today,Obter alertas de hoje
+Get Backup Encryption Key,Obter chave de criptografia de backup
+Get Fields,Obter campos
+Get Header and Footer wkhtmltopdf variables,Obter variáveis de cabeçalho e rodapé do wkhtmltopdf
+Get Items,Obter itens
+Get OpenID Configuration,Obter configuração OpenID
+Get PDF,Obter PDF
+Get a preview of generated names with a series.,Obter pré-visualização dos nomes gerados com uma série.
+Getting Started,Primeiros passos
+Git Branch,Branch Git
+GitHub,GitHub
+Github flavoured markdown syntax,Sintaxe Markdown estilo GitHub
+Global Search DocType,DocType da Busca Global
+Global Search Document Types Reset.,Tipos de Documento da Busca Global redefinidos.
+Global Shortcuts,Atalhos globais
+Go Back,Voltar
+Go to Login Required field,Ir para o campo Login Obrigatório
+Go to Notification Settings List,Ir para a lista de Configurações de Notificação
+Go to Workflow,Ir para Fluxo de Trabalho
+Go to Workspace,Ir para Área de Trabalho
+Go to next record,Ir para o próximo registro
+Go to previous record,Ir para o registro anterior
+Go to the document,Ir para o documento
+Go to this URL after completing the form,Ir para esta URL após concluir o formulário
+Go to {0},Ir para {0}
+Go to {0} List,Ir para a lista de {0}
+Go to {0} Page,Ir para a página de {0}
+Goal,Meta
+Google,Google
+Google Analytics anonymise IP,Anonimizar IP no Google Analytics
+Google Calendar,Google Calendar
+"Google Calendar - Could not create Calendar for {0}, error code {1}.","Google Calendar - Não foi possível criar o calendário para {0}, código de erro {1}."
+"Google Calendar - Could not delete Event {0} from Google Calendar, error code {1}.","Google Calendar - Não foi possível excluir o Evento {0} do Google Calendar, código de erro {1}."
+"Google Calendar - Could not fetch event from Google Calendar, error code {0}.","Google Calendar - Não foi possível buscar o evento do Google Calendar, código de erro {0}."
+"Google Calendar - Could not insert contact in Google Contacts {0}, error code {1}.","Google Calendar - Não foi possível inserir contato no Google Contacts {0}, código de erro {1}."
+"Google Calendar - Could not insert event in Google Calendar {0}, error code {1}.","Google Calendar - Não foi possível inserir evento no Google Calendar {0}, código de erro {1}."
+"Google Calendar - Could not update Event {0} in Google Calendar, error code {1}.","Google Calendar - Não foi possível atualizar o Evento {0} no Google Calendar, código de erro {1}."
+Google Calendar has been configured.,Google Calendar foi configurado.
+"Google Contacts - Could not sync contacts from Google Contacts {0}, error code {1}.","Google Contacts - Não foi possível sincronizar contatos do Google Contacts {0}, código de erro {1}."
+"Google Contacts - Could not update contact in Google Contacts {0}, error code {1}.","Google Contacts - Não foi possível atualizar contato no Google Contacts {0}, código de erro {1}."
+Google Contacts Id,ID do Google Contacts
+Google Drive,Google Drive
+Google Drive Picker,Seletor do Google Drive
+Google Drive Picker Enabled,Seletor do Google Drive habilitado
+Google Meet Link,Link do Google Meet
+Google Sheets URL is invalid or not publicly accessible.,A URL do Google Sheets é inválida ou não está acessível publicamente.
+Google Sheets URL must end with "gid={number}". Copy and paste the URL from the browser address bar and try again.,A URL do Google Sheets deve terminar com "gid={number}". Copie e cole a URL da barra de endereços do navegador e tente novamente.
+Grant Type,Tipo de concessão
+Graph,Gráfico
+Gray,Cinza
+Greater Than,Maior que
+Greater Than Or Equal To,Maior ou igual a
+Green,Verde
+Grid Empty State,Estado vazio da grade
+Grid Page Length,Tamanho da página da grade
+Grid Shortcuts,Atalhos da grade
+Group,Grupo
+Group By,Agrupar por
+Group By field is required to create a dashboard chart,O campo Agrupar por é obrigatório para criar um gráfico de painel
+Group By must be a string,Agrupar por deve ser uma string
+Group Object Class,Classe de objeto de grupo
+Grouped by <span style='font-weight:600;'>{0}</b>,Agrupado por <span style='font-weight:600;'>{0}</b>
+HEAD,CABEÇALHO
+HERE,AQUI
+HTML,HTML
+HTML Message,Mensagem HTML
+HTML with jinja support,HTML com suporte a Jinja
+Half Day,Meio dia
+Half Yearly,Semestral
+Half-yearly,Semestral
+Has  Attachment,Tem anexo
+Has Attachments,Tem anexos
+Has Domain,Tem domínio
+Has Next Condition,Tem próxima condição
+Has Role,Tem perfil
+Has Setup Wizard,Tem assistente de configuração
+Has Web View,Tem visualização web
+Have an account? Login,Já tem uma conta? Faça login
+Header HTML set from attachment {0},HTML do cabeçalho definido a partir do anexo {0}
+Header Icon,Ícone do cabeçalho
+Header Script,Script do cabeçalho
+Header and Breadcrumbs,Cabeçalho e breadcrumbs
+"Header, Robots","Cabeçalho, Robots"
+Header/Footer scripts can be used to add dynamic behaviours.,Scripts de cabeçalho/rodapé podem ser usados para adicionar comportamentos dinâmicos.
+Headers must be a dictionary,Cabeçalhos devem ser um dicionário
+Heading,Cabeçalho
+Hello,Olá
+Help Article,Artigo de ajuda
+Help Articles,Artigos de ajuda
+Help Category,Categoria de ajuda
+Help Dropdown,Menu suspenso de ajuda
+"Help: To link to another record in the system, use \"/desk/note/[Note Name]\" as the Link URL. (don't use \"http://\")","Ajuda: Para vincular a outro registro no sistema, use \"/desk/note/[Note Name]\" como URL do link. (não use \"http://\")"
+Helpful,Útil
+Helvetica,Helvetica
+Helvetica Neue,Helvetica Neue
+Here's your tracking URL,Aqui está sua URL de rastreamento
+Hi {0},Olá {0}
+Hidden,Oculto
+Hidden Fields,Campos ocultos
+Hidden columns include: <br> {0},As colunas ocultas incluem: <br> {0}
+Hide Buttons,Ocultar botões
+Hide Custom DocTypes and Reports,Ocultar DocTypes e Relatórios personalizados
+Hide Descendants,Ocultar descendentes
+Hide Empty Read-Only Fields,Ocultar campos vazios somente leitura
+Hide Error,Ocultar erro
+Hide Label,Ocultar rótulo
+Hide Login,Ocultar login
+Hide Preview,Ocultar pré-visualização
+"Hide Previous, Next and Close button on highlight dialog.","Ocultar os botões Anterior, Próximo e Fechar no diálogo de destaque."
+"Hide Sidebar, Menu, and Comments","Ocultar barra lateral, menu e comentários"
+Hide Standard Menu,Ocultar menu padrão
+Hide Weekends,Ocultar fins de semana
+Hide descendant records of <b>For Value</b>.,Ocultar registros descendentes de <b>For Value</b>.
+Hide details,Ocultar detalhes
+Hide footer,Ocultar rodapé
+Hide footer in auto email reports,Ocultar rodapé em relatórios automáticos por e-mail
+Hide footer signup,Ocultar cadastro no rodapé
+Hide navbar,Ocultar barra de navegação
+High,Alta
+Home/Test Folder 1,Home/Test Folder 1
+Home/Test Folder 1/Test Folder 3,Home/Test Folder 1/Test Folder 3
+Home/Test Folder 2,Home/Test Folder 2
+Hourly Maintenance,Manutenção por hora
+Hours,Horas
+Human-readable name intended for display to the end user.,Nome legível destinado à exibição para o usuário final.
+ID (name),ID (nome)
+ID (name) of the entity whose property is to be set,ID (nome) da entidade cuja propriedade será definida
+"IDs must contain only alphanumeric characters, not contain spaces, and should be unique.","IDs devem conter apenas caracteres alfanuméricos, não conter espaços e devem ser únicos."
+IMAP Details,Detalhes do IMAP
+IMAP Folder,Pasta IMAP
+IMAP Folder Not Found,Pasta IMAP não encontrada
+IMAP Folder Validation Failed,Falha na validação da pasta IMAP
+IMAP Folder name cannot be empty.,O nome da pasta IMAP não pode ficar vazio.
+Icon Image,Imagem do ícone
+Icon Style,Estilo do ícone
+Icon Type,Tipo de ícone
+Icon is not correctly configured please check the workspace sidebar to it,O ícone não está configurado corretamente; verifique na barra lateral da área de trabalho.
+Idx,Índice
+"If Apply Strict User Permission is checked and User Permission is defined for a DocType for a User, then all the documents where value of the link is blank, will not be shown to that User","Se Aplicar Permissão de Usuário Estrita estiver marcado e uma Permissão de Usuário estiver definida para um DocType para um Usuário, então todos os documentos em que o valor do link estiver em branco não serão mostrados para esse Usuário"
+"If Checked workflow status will not override status in list view","Se marcado, o status do fluxo de trabalho não substituirá o status na visualização de lista"
+If Owner,Se proprietário
+"If a Role does not have access at Level 0, then higher levels are meaningless.","Se um Perfil não tiver acesso no Nível 0, então níveis superiores não têm efeito."
+"If checked, a confirmation will be required before performing workflow actions.","Se marcado, será necessária uma confirmação antes de executar ações de fluxo de trabalho."
+"If checked, negative numeric values of Currency, Quantity or Count would be shown as positive","Se marcado, valores numéricos negativos de Moeda, Quantidade ou Contagem serão exibidos como positivos"
+"If checked, users will not see the Confirm Access dialog.","Se marcado, os usuários não verão o diálogo Confirmar Acesso."
+"If enabled,  user can login from any IP Address using Two Factor Auth, this can also be set for all users in System Settings","Se habilitado, o usuário pode fazer login de qualquer endereço IP usando autenticação de dois fatores; isso também pode ser definido para todos os usuários em Configurações do Sistema"
+"If enabled, all responses on the web form will be submitted anonymously","Se habilitado, todas as respostas no formulário web serão enviadas anonimamente"
+"If enabled, all users can login from any IP Address using Two Factor Auth. This can also be set only for specific user(s) in User Page","Se habilitado, todos os usuários podem fazer login de qualquer endereço IP usando autenticação de dois fatores. Isso também pode ser definido apenas para usuário(s) específico(s) na página de Usuário"
+"If enabled, only System Managers can upload public files. Other users can't see the checkbox <i>Is Private</i> in the upload dialog.","Se habilitado, apenas Gestores do Sistema podem fazer upload de arquivos públicos. Outros usuários não conseguem ver a opção <i>Is Private</i> no diálogo de upload."
+"If enabled, the password strength will be enforced based on the Minimum Password Score value. A value of 1 being very weak and 4 being very strong.","Se habilitado, a força da senha será aplicada com base no valor de Pontuação Mínima de Senha. Um valor de 1 é muito fraco e 4 é muito forte."
+"If enabled, users who login from Restricted IP Address, won't be prompted for Two Factor Auth","Se habilitado, usuários que fizerem login de endereço IP restrito não serão solicitados para autenticação de dois fatores"
+"If set, only user with these roles can access this chart. If not set, DocType or Report permissions will be used.","Se definido, apenas usuários com estes perfis podem acessar este gráfico. Se não definido, permissões de DocType ou Relatório serão usadas."
+"If the user enables the mask property for the phone number field, the value will be displayed in a masked format (e.g., 811XXXXXXX).","Se o usuário habilitar a propriedade de máscara para o campo de número de telefone, o valor será exibido em formato mascarado (ex.: 811XXXXXXX)."
+"If the user has access to Employee and Report is enabled, they can view Employee-based reports.","Se o usuário tiver acesso a Funcionário e Relatório estiver habilitado, ele poderá visualizar relatórios baseados em Funcionário."
+"If these instructions where not helpful, please add in your suggestions on GitHub Issues.","Se estas instruções não foram úteis, adicione suas sugestões no GitHub Issues."
+"If this was a mistake or you need access again, please reach out to your team.","Se isso foi um engano ou você precisar de acesso novamente, entre em contato com sua equipe."
+"If unchecked, the value will always be re-fetched on save.","Se desmarcado, o valor sempre será buscado novamente ao salvar."
+"If you are updating, please select \"Overwrite\" else existing rows will not be deleted.","Se estiver atualizando, selecione \"Overwrite\", caso contrário as linhas existentes não serão excluídas."
+"If you are uploading new records, \"Naming Series\" becomes mandatory, if present.","Se estiver enviando novos registros, \"Naming Series\" se torna obrigatório, se presente."
+"If you are uploading new records, leave the \"name\" (ID) column blank.","Se estiver enviando novos registros, deixe a coluna \"name\" (ID) em branco."
+"If you have any questions, reach out to your system administrator.","Se tiver alguma dúvida, entre em contato com o administrador do sistema."
+"If you have recently restored the site, you may need to copy the site_config.json containing the original encryption key.","Se você restaurou o site recentemente, pode ser necessário copiar o site_config.json que contém a chave de criptografia original."
+"If you set this, this Item will come in a drop-down under the selected parent.","Se você definir isto, este Item aparecerá em uma lista suspensa sob o item pai selecionado."
+"If you think this is unauthorized, please change the Administrator password.","Se você acredita que isso não é autorizado, altere a senha do Administrador."
+"If your CSV uses a different delimiter, add that character here, ensuring no spaces or additional characters are included.","Se seu CSV usa um delimitador diferente, adicione esse caractere aqui, garantindo que não haja espaços ou caracteres adicionais."
+"If your data is in HTML, please copy paste the exact HTML code with the tags.","Se seus dados estiverem em HTML, copie e cole o código HTML exato com as tags."
+Ignore User Permissions,Ignorar Permissões de Usuário
+Illegal Document Status for {0},Status de documento inválido para {0}
+Illegal SQL Query,Consulta SQL inválida
+Illegal template,Modelo inválido
+Image Height (px),Altura da imagem (px)
+Image View,Visualização da imagem
+Image Width (px),Largura da imagem (px)
+Image field must be a valid fieldname,O campo de imagem deve ser um fieldname válido
+Image field must be of type Attach Image,O campo de imagem deve ser do tipo Anexar Imagem
+Image link '{0}' is not valid,Link de imagem '{0}' não é válido
+Image optimized,Imagem otimizada
+Image: Corrupted Data Stream,Imagem: fluxo de dados corrompido
+Images,Imagens
+Impersonated by {0},Personificado por {0}
+Impersonating {0},Personificando {0}
+Global Search Settings,Configurações da Busca Global
+Implement `clear_old_logs` method to enable auto error clearing.,Implemente o método `clear_old_logs` para habilitar limpeza automática de erros.
+Import Email From,Importar e-mail de
+Import Log,Log de importação
+Import Progress,Progresso da importação
+Import Subscribers,Importar assinantes
+Import Type,Tipo de importação
+Import Zip,Importar ZIP
+"Import template should be of type .csv, .xlsx or .xls","O modelo de importação deve ser do tipo .csv, .xlsx ou .xls"
+Import template should contain a Header and atleast one row.,O modelo de importação deve conter um cabeçalho e pelo menos uma linha.
+"Import timed out, please re-try.","A importação expirou, tente novamente."
+Importing {0} is not allowed.,Não é permitido importar {0}.
+Importing {0} of {1},Importando {0} de {1}
+"Importing {0} of {1}, {2}","Importando {0} de {1}, {2}"
+In Grid View,Na visualização em grade
+In List Filter,No filtro de lista
+In List View,Na visualização de lista
+In Minutes,Em minutos
+In Read Only Mode,Em modo somente leitura
+Inbox,Caixa de entrada
+Inbox User,Usuário da caixa de entrada
+Inbox View,Visualização da caixa de entrada
+Include Disabled,Incluir desativados
+Include Name Field,Incluir campo Nome
+Include Theme from Apps,Incluir tema dos aplicativos
+Include Web View Link in Email,Incluir link da visualização web no e-mail
+Include filters,Incluir filtros
+Include hidden columns,Incluir colunas ocultas
+Include indentation,Incluir indentação
+"Include symbols, numbers and capital letters in the password","Incluir símbolos, números e letras maiúsculas na senha"
+Incoming Settings,Configurações de entrada
+Incoming email account not correct,Conta de e-mail de entrada incorreta
+Incomplete Virtual Doctype Implementation,Implementação incompleta de Doctype Virtual
+Incomplete login details,Detalhes de login incompletos
+Incorrect Configuration,Configuração incorreta
+Incorrect URL,URL incorreta
+Incorrect User or Password,Usuário ou senha incorretos
+Incorrect Verification code,Código de verificação incorreto
+Incorrect value in row {0}:,Valor incorreto na linha {0}:
+Incorrect value:,Valor incorreto:
+Indent,Recuo
+Index,Índice
+Index Web Pages for Search,Indexar páginas web para busca
+Index created successfully on column {0} of doctype {1},Índice criado com sucesso na coluna {0} do doctype {1}
+Indexing authorization code,Código de autorização de indexação
+Indexing refresh token,Token de atualização de indexação
+Indicator Color,Cor do indicador
+Indicator color,Cor do indicador
+Info:,Informação:
+InnoDB,InnoDB
+Input existing role name if you would like to extend it with access of another role.,Informe um perfil existente se quiser estendê-lo com o acesso de outro perfil.
+Insert,Inserir
+Insert After,Inserir após
+Insert After cannot be set as {0},Inserir após não pode ser definido como {0}
+"Insert After field '{0}' mentioned in Custom Field '{1}', with label '{2}', does not exist","O campo Insert After '{0}' mencionado no Campo Personalizado '{1}', com rótulo '{2}', não existe"
+Insert Column Before {0},Inserir coluna antes de {0}
+Insert Image in Markdown,Inserir imagem em Markdown
+Instagram,Instagram
+Install {0} from Marketplace,Instalar {0} do Marketplace
+Installed Application,Aplicativo instalado
+Installed Applications,Aplicativos instalados
+Installed Apps,Apps instalados
+Instructions,Instruções
+Instructions Emailed,Instruções enviadas por e-mail
+Insufficient Permission Level for {0},Nível de permissão insuficiente para {0}
+Insufficient Permission for {0},Permissão insuficiente para {0}
+Insufficient Permissions for deleting Report,Permissões insuficientes para excluir Relatório
+Insufficient Permissions for editing Report,Permissões insuficientes para editar Relatório
+Insufficient attachment limit,Limite de anexos insuficiente
+Integration Request,Solicitação de integração
+Integrations can use this field to set email delivery status,Integrações podem usar este campo para definir o status de entrega de e-mail
+Inter,Inter
+Intermediate,Intermediário
+Internal Server Error,Erro interno do servidor
+Internal record of document shares,Registro interno de compartilhamentos de documentos
+Interval,Intervalo
+Intro Video URL,URL do vídeo de introdução
+Introduction,Introdução
+Introspection URI,URI de introspecção
+Invalid,Inválido
+Invalid "depends_on" expression,Expressão "depends_on" inválida
+Invalid "depends_on" expression set in filter {0},Expressão "depends_on" inválida definida no filtro {0}
+Invalid "mandatory_depends_on" expression,Expressão "mandatory_depends_on" inválida
+Invalid Action,Ação inválida
+Invalid CSV Format,Formato CSV inválido
+Invalid Code. Please try again.,Código inválido. Tente novamente.
+Invalid Condition: {},Condição inválida: {}
+Invalid Credentials,Credenciais inválidas
+Invalid Credentials for Email Account: {0},Credenciais inválidas para a Conta de E-mail: {0}
+Invalid Date,Data inválida
+Invalid DocType,DocType inválido
+Invalid DocType: {0},DocType inválido: {0}
+Invalid Doctype,Doctype inválido
+Invalid Fieldname,Fieldname inválido
+Invalid File URL,URL de arquivo inválida
+Invalid Filter,Filtro inválido
+Invalid Filter Format for field {0} of type {1}. Try using filter icon on the field to set it correctly,Formato de filtro inválido para o campo {0} do tipo {1}. Tente usar o ícone de filtro no campo para defini-lo corretamente
+Invalid Filter Value,Valor de filtro inválido
+Invalid Home Page,Página inicial inválida
+Invalid Login Token,Token de login inválido
+"Invalid Mail Server. Please rectify and try again.","Servidor de e-mail inválido. Corrija e tente novamente."
+Invalid Naming Series: {},Série de nomenclatura inválida: {}
+Invalid Operation,Operação inválida
+Invalid Option,Opção inválida
+Invalid Outgoing Mail Server or Port: {0},Servidor ou porta de e-mail de saída inválido: {0}
+Invalid Output Format,Formato de saída inválido
+Invalid Override,Sobrescrita inválida
+Invalid Parameters.,Parâmetros inválidos.
+Invalid Password,Senha inválida
+Invalid Phone Number,Número de telefone inválido
+Invalid Search Field {0},Campo de busca inválido {0}
+Invalid Table Fieldname,Fieldname de tabela inválido
+Invalid Transition,Transição inválida
+Invalid URL,URL inválida
+"Invalid User Name or Support Password. Please rectify and try again.","Nome de usuário ou senha de suporte inválidos. Corrija e tente novamente."
+Invalid Values,Valores inválidos
+Invalid Webhook Secret,Segredo de webhook inválido
+Invalid aggregate function,Função de agregação inválida
+"Invalid alias format: {0}. Alias must be a simple identifier.","Formato de alias inválido: {0}. O alias deve ser um identificador simples."
+Invalid app,App inválido
+"Invalid argument format: {0}. Only quoted string literals or simple field names are allowed.","Formato de argumento inválido: {0}. Apenas literais de string entre aspas ou nomes de campo simples são permitidos."
+"Invalid argument type: {0}. Only strings, numbers, dicts, and None are allowed.","Tipo de argumento inválido: {0}. Apenas strings, números, dicts e None são permitidos."
+"Invalid characters in fieldname: {0}. Only letters, numbers, and underscores are allowed.","Caracteres inválidos no fieldname: {0}. Apenas letras, números e sublinhados são permitidos."
+Invalid column,Coluna inválida
+Invalid condition type in nested filters: {0},Tipo de condição inválido em filtros aninhados: {0}
+Invalid direction in Order By: {0}. Must be 'ASC' or 'DESC'.,Direção inválida em Order By: {0}. Deve ser 'ASC' ou 'DESC'.
+Invalid docstatus,Docstatus inválido
+Invalid expression in Workflow Update Value: {0},Expressão inválida em Workflow Update Value: {0}
+Invalid expression set in filter {0},Expressão inválida definida no filtro {0}
+Invalid expression set in filter {0} ({1}),Expressão inválida definida no filtro {0} ({1})
+"Invalid field format for SELECT: {0}. Field names must be simple, backticked, table-qualified, aliased, or '*'.","Formato de campo inválido para SELECT: {0}. Os nomes de campo devem ser simples, entre crases, qualificados por tabela, com alias ou '*'."
+"Invalid field format in {0}: {1}. Use 'field', 'link_field.field', or 'child_table.field'.","Formato de campo inválido em {0}: {1}. Use 'field', 'link_field.field' ou 'child_table.field'."
+Invalid field name {0},Nome de campo inválido {0}
+Invalid field type: {0},Tipo de campo inválido: {0}
+Invalid fieldname '{0}' in autoname,Fieldname inválido '{0}' no autoname
+Invalid file path: {0},Caminho de arquivo inválido: {0}
+Invalid filter condition: {0}. Expected a list or tuple.,Condição de filtro inválida: {0}. Era esperada uma lista ou tupla.
+Invalid filter field format: {0}. Use 'fieldname' or 'link_fieldname.target_fieldname'.,Formato de campo de filtro inválido: {0}. Use 'fieldname' ou 'link_fieldname.target_fieldname'.
+Invalid filter: {0},Filtro inválido: {0}
+"Invalid function argument type: {0}. Only strings, numbers, lists, and None are allowed.","Tipo de argumento de função inválido: {0}. Apenas strings, números, listas e None são permitidos."
+Invalid input,Entrada inválida
+Invalid json added in the custom options: {0},JSON inválido adicionado nas opções personalizadas: {0}
+Invalid key,Chave inválida
+Invalid name type (integer) for varchar name column,Tipo de nome inválido (inteiro) para coluna de nome varchar
+Invalid naming series {}: dot (.) missing,Série de nomenclatura inválida {}: ponto (.) ausente
+Invalid naming series {}: dot (.) missing before the numeric placeholders. Kindly use a format like <b>ABCD.#####</b>.,Série de nomenclatura inválida {}: ponto (.) ausente antes dos placeholders numéricos. Use um formato como <b>ABCD.#####</b>.
+Invalid nested expression: dictionary must represent a function or operator,Expressão aninhada inválida: o dicionário deve representar uma função ou operador
+Invalid or corrupted content for import,Conteúdo inválido ou corrompido para importação
+Invalid redirect regex in row #{}: {},Regex de redirecionamento inválida na linha #{}: {}
+Invalid request arguments,Argumentos de requisição inválidos
+Invalid request body,Corpo da requisição inválido
+Invalid role,Perfil inválido
+Invalid simple filter format: {0},Formato de filtro simples inválido: {0}
+Invalid start for filter condition: {0}. Expected a list or tuple.,Início inválido para condição de filtro: {0}. Era esperada uma lista ou tupla.
+Invalid template file for import,Arquivo de modelo inválido para importação
+Invalid token state! Check if the token has been created by the OAuth user.,Estado de token inválido! Verifique se o token foi criado pelo usuário OAuth.
+Invalid username or password,Usuário ou senha inválidos
+Invalid value specified for UUID: {},Valor inválido especificado para UUID: {}
+Invalid values for fields:,Valores inválidos para os campos:
+Invalid wkhtmltopdf version,Versão inválida do wkhtmltopdf
+Invalid {0} condition,Condição {0} inválida
+Invalid {0} dictionary format,Formato de dicionário {0} inválido
+Invitation already accepted,Convite já aceito
+Invitation already exists,Convite já existe
+Invitation cannot be cancelled,O convite não pode ser cancelado
+Invitation is cancelled,O convite está cancelado
+Invitation is expired,O convite expirou
+Invitation not found,Convite não encontrado
+Invitation to join {0} cancelled,Convite para participar de {0} cancelado
+Invitation to join {0} expired,Convite para participar de {0} expirado
+Invite as User,Convidar como Usuário
+Is Active,Está ativo
+Is Calendar and Gantt,É Calendário e Gantt
+Is Child Table,É tabela filha
+Is Dynamic URL?,É URL dinâmica?
+Is Global,É global
+Is Hidden,Está oculto
+Is Home Folder,É pasta inicial
+Is Primary Address,É endereço principal
+Is Published Field must be a valid fieldname,O campo Is Published deve ser um fieldname válido
+Is Query Report,É relatório de consulta
+Is Remote Request?,É requisição remota?
+Is Setup Complete?,A configuração está concluída?
+Is Single,É único
+Is Spam,É spam
+Is Submittable,É enviável
+Is System Generated,É gerado pelo sistema
+Is Table Field,É campo de tabela
+Is Virtual,É virtual
+Is standard,É padrão
+It is risky to delete this file: {0}. Please contact your System Manager.,É arriscado excluir este arquivo: {0}. Entre em contato com seu Gestor do Sistema.
+It is too late to undo this email. It is already being sent.,É tarde demais para desfazer este e-mail. Ele já está sendo enviado.
+Item Label,Rótulo do item
+Item Type,Tipo de item
+Item cannot be added to its own descendants,O item não pode ser adicionado aos próprios descendentes
+JS,JS
+JS Message,Mensagem JS
+JSON,JSON
+Jane Doe,Jane Doe
+JavaScript,JavaScript
+JavaScript Format: frappe.query_reports['REPORTNAME'] = {},Formato JavaScript: frappe.query_reports['REPORTNAME'] = {}
+Javascript,Javascript
+Javascript is disabled on your browser,O Javascript está desativado no seu navegador
+Jinja,Jinja
+Job ID,ID da tarefa
+Job Id,Id da tarefa
+Job Info,Informações da tarefa
+Job Name,Nome da tarefa
+Job Status,Status da tarefa
+Job Stopped Successfully,Tarefa interrompida com sucesso
+Job is in {0} state and can't be cancelled,A tarefa está no estado {0} e não pode ser cancelada
+Job is not running.,A tarefa não está em execução.
+Job stopped successfully,Tarefa interrompida com sucesso
+Join video conference with {0},Entrar na videoconferência com {0}
+K,K
+Kanban,Kanban
+Kanban Board,Quadro Kanban
+Kanban Board Column,Coluna do quadro Kanban
+Kanban Board Name,Nome do quadro Kanban
+Kanban Settings,Configurações do Kanban
+Keep Closed,Manter fechado
+Keep track of all update feeds,Acompanhar todos os feeds de atualização
+Keyboard Shortcuts,Atalhos de teclado
+Keycloak,Keycloak
+Knowledge Base,Base de conhecimento
+Knowledge Base Contributor,Colaborador da Base de Conhecimento
+Knowledge Base Editor,Editor da Base de Conhecimento
+LDAP Auth,Autenticação LDAP
+LDAP Custom Settings,Configurações personalizadas de LDAP
+LDAP Email Field,Campo de e-mail LDAP
+LDAP Group Mapping,Mapeamento de grupos LDAP
+LDAP Group Member attribute,Atributo de membro de grupo LDAP
+LDAP Not Installed,LDAP não instalado
+"LDAP Search String must be enclosed in '()' and needs to contian the user placeholder {0}, eg sAMAccountName={0}","A string de pesquisa LDAP deve estar entre '()' e precisa conter o placeholder de usuário {0}, ex.: sAMAccountName={0}"
+LDAP Search and Paths,Pesquisa e caminhos LDAP
+LDAP Server Settings,Configurações do servidor LDAP
+LDAP Server Url,URL do servidor LDAP
+LDAP is not enabled.,LDAP não está habilitado.
+LDAP search path for Groups,Caminho de pesquisa LDAP para Grupos
+LDAP search path for Users,Caminho de pesquisa LDAP para Usuários
+LDAP settings incorrect. validation response was: {0},Configurações LDAP incorretas. A resposta de validação foi: {0}
+Label is mandatory,Rótulo é obrigatório
+Landscape,Paisagem
+Last,Último
+Last 14 Days,Últimos 14 dias
+Last 30 Days,Últimos 30 dias
+Last 7 Days,Últimos 7 dias
+Last 90 Days,Últimos 90 dias
+Last Edited by {0},Última edição por {0}
+Last Heartbeat,Último heartbeat
+Last Modified Date,Data da última modificação
+Last Modified On,Última modificação em
+Last Received At,Último recebimento em
+Last Reset Password Key Generated On,Última chave de redefinição de senha gerada em
+Last Run,Última execução
+Last Updated By,Última atualização por
+Last synced {0},Última sincronização {0}
+Layout,Layout
+Layout Reset,Redefinir layout
+"Layout will be reset to standard layout, are you sure you want to do this?","O layout será redefinido para o layout padrão, tem certeza que deseja fazer isso?"
+Learn more,Saiba mais
+Leave this conversation,Sair desta conversa
+Ledger,Razão
+Left Bottom,Esquerda inferior
+Left Center,Centro esquerdo
+Left this conversation,Saiu desta conversa
+Legal,Legal
+Length,Comprimento
+Length of passed data array is greater than value of maximum allowed label points!,O comprimento do array de dados enviado é maior que o valor máximo permitido de pontos de rótulo!
+Length of {0} should be between 1 and 1000,O comprimento de {0} deve estar entre 1 e 1000
+Less,Menor
+Less Than,Menor que
+Less Than Or Equal To,Menor ou igual a
+Let us continue with the onboarding,Vamos continuar com o onboarding
+Let's Get Started,Vamos começar
+Let's avoid repeated words and characters,Vamos evitar palavras e caracteres repetidos
+Let's set up your account,Vamos configurar sua conta
+Let's take you back to onboarding,Vamos levar você de volta ao onboarding
+Letter Head Scripts,Scripts do cabeçalho
+Letter Head cannot be both disabled and default,O cabeçalho não pode estar desativado e padrão ao mesmo tempo
+Level,Nível
+"Level 0 is for document level permissions, higher levels for field level permissions.","O nível 0 é para permissões em nível de documento; níveis superiores são para permissões em nível de campo."
+License,Licença
+License Type,Tipo de licença
+Light Blue,Azul claro
+Light Theme,Tema claro
+Liked,Curtido
+Liked By,Curtido por
+Liked by me,Curtido por mim
+Liked by {0} people,Curtido por {0} pessoas
+Likes,Curtidas
+Limit must be a non-negative integer,O limite deve ser um inteiro não negativo
+Link,Link
+Link Count,Contagem de links
+Link Details,Detalhes do link
+Link DocType,DocType do link
+Link Document Type,Tipo de Documento do link
+Link Expired,Link expirado
+Link Field Results Limit,Limite de resultados do campo Link
+Link Filters,Filtros de link
+Link To in Row,Link para na linha
+Link Type,Tipo de link
+Link Type in Row,Tipo de link na linha
+Link for About Us Page is "/about".,O link para a página Sobre Nós é "/about".
+"Link that is the website home page. Standard Links (home, login, products, blog, about, contact)","Link que é a página inicial do site. Links padrão (home, login, products, blog, about, contact)"
+Linked with {0},Vinculado com {0}
+LinkedIn,LinkedIn
+Links,Links
+List / Search Settings,Configurações de Lista / Busca
+List Columns,Listar colunas
+List Filter,Filtro de lista
+"List as [{\"label\": _(\"Jobs\"), \"route\":\"jobs\"}]","Liste como [{\"label\": _(\"Jobs\"), \"route\":\"jobs\"}]"
+List of patches executed,Lista de patches executados
+List setting message,Mensagem de configuração de lista
+Lists,Listas
+Load More Communications,Carregar mais comunicações
+Load more,Carregar mais
+Loading,Carregando
+Loading Filters...,Carregando filtros...
+Loading import file...,Carregando arquivo de importação...
+Loading versions...,Carregando versões...
+Loading...,Carregando...
+Log API Requests,Registrar requisições de API
+Log Data,Dados de log
+Log DocType,DocType de log
+Log In To {0},Entrar em {0}
+Log Index,Índice de log
+Log Setting User,Usuário de configuração de log
+Log in to access this page.,Faça login para acessar esta página.
+Log out,Sair
+Logged Out,Desconectado
+"Login Failed please try again","Falha no login, tente novamente"
+Login Id is required,ID de login é obrigatório
+Login Methods,Métodos de login
+Login Page,Página de login
+Login To {0},Entrar em {0}
+Login Verification Code from {},Código de verificação de login de {}
+Login and view in Browser,Fazer login e visualizar no navegador
+Login is required to see web form list view. Enable {0} to see list settings,É necessário fazer login para ver a visualização de lista do formulário web. Habilite {0} para ver as configurações da lista
+Login link sent to your email,Link de login enviado para seu e-mail
+Login not allowed at this time,Login não permitido neste momento
+Login required,Login obrigatório
+"Login session expired, refresh page to retry","Sessão de login expirada, atualize a página para tentar novamente"
+Login to comment,Faça login para comentar
+Login to start a new discussion,Faça login para iniciar uma nova discussão
+Login to view,Faça login para visualizar
+Login to {0},Entrar em {0}
+Login token required,Token de login obrigatório
+Login with Frappe Cloud,Entrar com Frappe Cloud
+Login with LDAP,Entrar com LDAP
+Login with email link,Entrar com link por e-mail
+Login with email link expiry (in minutes),Expiração do link de login por e-mail (em minutos)
+Login with username and password is not allowed.,Login com usuário e senha não é permitido.
+Login with {0},Entrar com {0}
+Logo URI,URI do logo
+Logo URL,URL do logo
+Logout All Sessions,Encerrar todas as sessões
+Logs To Clear,Logs a limpar
+Logs to Clear,Logs a limpar
+Looks like you didn't change the value,Parece que você não alterou o valor
+Looks like you haven\u2019t received any notifications.,Parece que você ainda não recebeu nenhuma notificação.
+Looks like you haven’t added any third party apps.,Parece que você não adicionou nenhum app de terceiros.
+Low,Baixo
+MIT License,Licença MIT
+Maintenance Manager,Gerente de manutenção
+Maintenance User,Usuário de manutenção
+Major,Maior
+Make "name" searchable in Global Search,Tornar "name" pesquisável na Busca Global
+Make Attachment Public (by default),Tornar anexo público (por padrão)
+Make Attachments Public by Default,Tornar anexos públicos por padrão
+Make sure to configure a Social Login Key before disabling to prevent lockout,Certifique-se de configurar uma chave de Login Social antes de desabilitar para evitar bloqueio de acesso
+Make use of longer keyboard patterns,Use padrões de teclado mais longos
+Makes the page public,Torna a página pública
+Manage 3rd party apps,Gerenciar apps de terceiros
+Manage Billing,Gerenciar faturamento
+Mandatory Depends On (JS),Depende obrigatoriamente de (JS)
+Mandatory Information missing:,Informação obrigatória ausente:
+Mandatory field: set role for,Campo obrigatório: definir perfil para
+Mandatory field: {0},Campo obrigatório: {0}
+"Mandatory fields required in table {0}, Row {1}","Campos obrigatórios requeridos na tabela {0}, linha {1}"
+Mandatory fields required in {0},Campos obrigatórios requeridos em {0}
+Mandatory fields required:,Campos obrigatórios requeridos:
+Mandatory:,Obrigatório:
+Map,Mapa
+Map Columns,Mapear colunas
+Map View,Visualização de mapa
+Map columns from {0} to fields in {1},Mapear colunas de {0} para campos em {1}
+Mapping column {0} to field {1},Mapeando coluna {0} para campo {1}
+MariaDB Variables,Variáveis do MariaDB
+Mark as Read,Marcar como lido
+Mark as Spam,Marcar como spam
+Mark as Unread,Marcar como não lido
+Markdown,Markdown
+Marked As Spam,Marcado como spam
+Marketing Manager,Gerente de marketing
+Mask,Máscara
+Master,Mestre
+Max 500 records at a time,Máximo de 500 registros por vez
+Max File Size (MB),Tamanho máximo de arquivo (MB)
+Max Height,Altura máxima
+Max Report Rows,Máximo de linhas no relatório
+Max attachment size,Tamanho máximo de anexo
+Max auto email report per user,Máximo de relatórios automáticos por e-mail por usuário
+Max signups allowed per hour,Máximo de cadastros permitidos por hora
+Max width for type Currency is 100px in row {0},A largura máxima para o tipo Moeda é 100px na linha {0}
+Maximum Attachment Limit of {0} has been reached for {1} {2}.,O limite máximo de anexos de {0} foi atingido para {1} {2}.
+Maximum attachment limit of {0} has been reached.,O limite máximo de anexos de {0} foi atingido.
+Maximum {0} rows allowed,Máximo de {0} linhas permitidas
+Maybe,Talvez
+Me,Eu
+Meaning of Different Permission Types,Significado dos diferentes tipos de permissão
+Medium,Médio
+Meeting,Reunião
+Meets Condition?,Atende à condição?
+Memory Usage in MB,Uso de memória em MB
+Menu,Menu
+Merging is only possible between Group-to-Group or Leaf Node-to-Leaf Node,A mesclagem só é possível entre Grupo-para-Grupo ou Nó Folha-para-Nó Folha
+Message Sent,Mensagem enviada
+Message Type,Tipo de mensagem
+Message clipped,Mensagem cortada
+Message from server: {0},Mensagem do servidor: {0}
+Message not setup,Mensagem não configurada
+Message to be displayed on successful completion,Mensagem a ser exibida após conclusão com sucesso
+Message-id,ID da mensagem
+Messages,Mensagens
+Meta,Meta
+Meta Description,Meta descrição
+Meta Image,Meta imagem
+Meta Tags,Meta tags
+Meta Title,Meta título
+Meta description,Meta descrição
+Meta image,Meta imagem
+Meta title,Meta título
+Meta title for SEO,Meta título para SEO
+Metadata,Metadados
+Method Not Allowed,Método não permitido
+Method is required to create a number card,O método é obrigatório para criar um cartão numérico
+Mid Center,Centro médio
+Milestone Tracker,Rastreador de marcos
+Minimum Password Score,Pontuação mínima de senha
+Minor,Menor
+Minutes,Minutos
+Minutes After,Minutos depois
+Minutes Before,Minutos antes
+Minutes Offset,Deslocamento em minutos
+Misconfigured,Configurado incorretamente
+Missing DocType,DocType ausente
+Missing Field,Campo ausente
+Missing Fields,Campos ausentes
+Missing Filters Required,Filtros obrigatórios ausentes
+Missing Permission,Permissão ausente
+Missing Value,Valor ausente
+Missing Values Required,Valores obrigatórios ausentes
+Mobile,Celular
+Modal Trigger,Disparador de modal
+Module (for export),Módulo (para exportação)
+Module HTML,HTML do módulo
+Module Onboarding,Onboarding do módulo
+Module Profile Name,Nome do perfil do módulo
+Module onboarding progress reset,Progresso de onboarding do módulo redefinido
+Module to Export,Módulo para exportar
+Module {} not found,Módulo {} não encontrado
+Monday,Segunda-feira
+Monospace,Monoespaçada
+Month,Mês
+More,Mais
+More Info,Mais informações
+More Options,Mais opções
+More articles on {0},Mais artigos em {0}
+Most probably your password is too long.,Muito provavelmente sua senha é longa demais.
+Move To,Mover para
+Move To Trash,Mover para a lixeira
+Move current and all subsequent sections to a new tab,Mover a seção atual e todas as seções seguintes para uma nova aba

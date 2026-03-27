@@ -1,0 +1,1000 @@
+Most probably your password is too long.,Muito provavelmente sua senha é longa demais.
+Move To,Mover para
+Move To Trash,Mover para a lixeira
+Move current and all subsequent sections to a new tab,Mover a seção atual e todas as seções seguintes para uma nova aba
+Move cursor to above row,Mover cursor para a linha acima
+Move cursor to below row,Mover cursor para a linha abaixo
+Move cursor to next column,Mover cursor para a próxima coluna
+Move cursor to previous column,Mover cursor para a coluna anterior
+Move sections to new tab,Mover seções para nova aba
+Move the current field and the following fields to a new column,Mover o campo atual e os campos seguintes para uma nova coluna
+Move to Row Number,Ir para o número da linha
+Move to next step when clicked inside highlighted area.,Avançar para a próxima etapa ao clicar dentro da área destacada.
+Mozilla doesn't support :has() so you can pass parent selector here as workaround,O Mozilla não oferece suporte a :has(); você pode informar o seletor pai aqui como contorno.
+Mr,Sr.
+Mrs,Sra.
+Ms,Sra.
+Multiple root nodes not allowed.,Não é permitido usar múltiplos nós raiz.
+"Must be enclosed in '()' and include '{0}', which is a placeholder for the user/login name. i.e. (&(objectclass=user)(uid={0}))","Deve estar entre '()' e incluir '{0}', que é um placeholder para o nome de usuário/login. Ex.: (&(objectclass=user)(uid={0}))"
+Must be of type "Attach Image",Deve ser do tipo "Anexar imagem"
+Must have report permission to access this report.,Deve ter permissão de relatório para acessar este relatório.
+Must specify a Query to run,Deve especificar uma consulta para executar
+Mx,Mx
+My Account,Minha conta
+My Filter,Meu filtro
+MyISAM,MyISAM
+NEVER,NUNCA
+"NOTE: If you add states or transitions in the table, it will be reflected in the Workflow Builder but you will have to position them manually. Also Workflow Builder is currently in <b>BETA</b>.","NOTA: Se você adicionar estados ou transições na tabela, isso será refletido no Construtor de Fluxo de Trabalho, mas você terá que posicioná-los manualmente. Além disso, o Construtor de Fluxo de Trabalho está atualmente em <b>BETA</b>."
+NOTE: This box is due for depreciation. Please re-setup LDAP to work with the newer settings,NOTA: Este campo será descontinuado. Reconfigure o LDAP para funcionar com as configurações mais recentes.
+Name (Doc Name),Nome (Nome do documento)
+"Name already taken, please set a new name",Nome já em uso; defina um novo nome
+Name cannot contain special characters like {0},O nome não pode conter caracteres especiais como {0}
+"Name of the Document Type (DocType) you want this field to be linked to. e.g. Customer",Nome do Tipo de Documento (DocType) ao qual você deseja vincular este campo. Ex.: Cliente
+Name of the new Print Format,Nome do novo formato de impressão
+Name of {0} cannot be {1},O nome de {0} não pode ser {1}
+Names and surnames by themselves are easy to guess.,Nomes e sobrenomes sozinhos são fáceis de adivinhar.
+"Naming Options:|||<ol><li><b>field:[fieldname]</b> - By Field</li><li><b>naming_series:</b> - By Naming Series (field called naming_series must be present)</li><li><b>Prompt</b> - Prompt user for a name</li><li><b>[series]</b> - Series by prefix (separated by a dot); for example PRE.#####</li>|||<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Replace all braced words (fieldnames, date words (DD, MM, YY), series) with their value. Outside braces, any characters can be used.</li></ol>","Opções de nomenclatura:|||<ol><li><b>field:[fieldname]</b> - Por campo</li><li><b>naming_series:</b> - Por série de nomenclatura (o campo naming_series deve estar presente)</li><li><b>Prompt</b> - Solicitar ao usuário um nome</li><li><b>[series]</b> - Série por prefixo (separada por ponto); por exemplo PRE.#####</li>|||<li><b>format:EXAMPLE-{MM}morewords{fieldname1}-{fieldname2}-{#####}</b> - Substitui todas as palavras entre chaves (nomes de campos, palavras de data (DD, MM, YY), série) por seus valores. Fora das chaves, qualquer caractere pode ser usado.</li></ol>"
+Naming Rule,Regra de nomenclatura
+Naming Series,Série de nomenclatura
+Naming Series mandatory,Série de nomenclatura obrigatória
+Navbar,Barra de navegação
+Navbar Item,Item da barra de navegação
+Navbar Settings,Configurações da barra de navegação
+Navbar Template,Modelo da barra de navegação
+Navbar Template Values,Valores do modelo da barra de navegação
+Navigate list down,Navegar para baixo na lista
+Navigate list up,Navegar para cima na lista
+Navigate to main content,Ir para o conteúdo principal
+Need Help?,Precisa de ajuda?
+Need Workspace Manager role to edit private workspace of other users,É necessário ter o perfil Gerenciador de Área de Trabalho para editar a área de trabalho privada de outros usuários
+Negative Value,Valor negativo
+Nested filters must be provided as a list or tuple.,Filtros aninhados devem ser fornecidos como lista ou tupla.
+Nested set error. Please contact the Administrator.,Erro de conjunto aninhado. Entre em contato com o Administrador.
+Network Printer Settings,Configurações da impressora de rede
+Never,Nunca
+New Activity,Nova atividade
+New Address,Novo endereço
+New Chart,Novo gráfico
+New Contact,Novo contato
+New Custom Block,Novo bloco personalizado
+New Custom Print Format,Novo formato de impressão personalizado
+New Document Form,Novo formulário de documento
+New Document Shared {0},Novo documento compartilhado {0}
+New Email Account,Nova conta de e-mail
+New Event,Novo evento
+New Folder,Nova pasta
+New Kanban Board,Novo quadro Kanban
+New Links,Novos links
+New Mention on {0},Nova menção em {0}
+New Message from Website Contact Page,Nova mensagem da página de contato do site
+New Notification,Nova notificação
+New Number Card,Novo cartão numérico
+New Onboarding,Novo processo de integração
+New Print Format Name,Novo nome do formato de impressão
+New Quick List,Nova lista rápida
+New Report name,Novo nome do relatório
+New Role,Novo perfil
+New Shortcut,Novo atalho
+New Workflow Name,Novo nome do fluxo de trabalho
+New Workspace,Nova área de trabalho
+"New line separated list of allowed public client URLs (eg <code>https://frappe.io</code>), or <code>*</code> to accept all.|||<br>|||Public clients are restricted by default.","Nova lista de URLs de clientes públicos permitidas separadas por linha (ex.: <code>https://frappe.io</code>) ou <code>*</code> para aceitar todas.|||<br>|||Clientes públicos são restritos por padrão."
+New line separated list of scope values.,Nova lista de valores de escopo separada por linha.
+"New lines separated list of strings representing ways to contact people responsible for this client, typically email addresses.","Nova lista de textos separada por linhas representando formas de contato com os responsáveis por este cliente, normalmente endereços de e-mail."
+New password cannot be same as old password,A nova senha não pode ser igual a senha antiga
+New updates are available,Novas atualizações estão disponíveis
+New users will have to be manually registered by system managers.,Novos usuários terão que ser registrados manualmente pelos gestores do sistema.
+New {0} Created,Novo(a) {0} criado(a)
+New {0} {1} added to Dashboard {2},Novo(a) {0} {1} adicionado(a) ao Painel {2}
+New {0} {1} created,Novo(a) {0} {1} criado(a)
+New {0}: {1},Novo(a) {0}: {1}
+New {} releases for the following apps are available,Novas versões {} para os seguintes aplicativos estão disponíveis
+Newly created user {0} has no roles enabled.,O usuário {0} recém-criado não tem perfis habilitados.
+Newsletter Manager,Gerenciador de boletins
+Next,Próximo
+Next 14 Days,Próximos 14 dias
+Next 30 Days,Próximos 30 dias
+Next 7 Days,Próximos 7 dias
+Next Action Email Template,Modelo de e-mail da próxima ação
+Next Actions,Próximas ações
+Next Actions HTML,HTML das próximas ações
+Next Execution,Próxima execução
+Next Form Tour,Próximo tour do formulário
+Next Scheduled Date,Próxima data agendada
+Next State,Próximo estado
+Next Step Condition,Condição da próxima etapa
+Next Sync Token,Próximo token de sincronização
+Next actions,Próximas ações
+Next on Click,Próximo ao clicar
+No Active Sessions,Nenhuma sessão ativa
+No Data,Nenhum dado
+No Data...,Sem dados...
+No Email Account,Nenhuma conta de e-mail
+No Email Accounts Assigned,Nenhuma conta de e-mail atribuída
+No Email field found in {0},Nenhum campo de e-mail encontrado em {0}
+No Emails,Nenhum e-mail
+No Entry for the User {0} found within LDAP!,Nenhuma entrada para o usuário {0} encontrada no LDAP!
+No Filters Set,Nenhum filtro definido
+No Google Calendar Event to sync.,Nenhum evento do Google Agenda para sincronizar.
+No IMAP folders were found on the server. Please verify the email account settings and ensure the mailbox contains folders.,Nenhuma pasta IMAP foi encontrada no servidor. Verifique as configurações da conta de e-mail e confirme que a caixa postal contém pastas.
+No LDAP User found for email: {0},Nenhum usuário LDAP encontrado para o e-mail: {0}
+No Label,Sem rótulo
+No Letterhead,Nenhum cabeçalho
+No Name Specified for {0},Nenhum nome informado para {0}
+No Permissions Specified,Nenhuma permissão especificada
+No Permissions set for this criteria.,Nenhuma permissão definida para este critério.
+No Permitted Charts,Nenhum gráfico permitido
+No Permitted Charts on this Dashboard,Nenhum gráfico permitido neste painel
+No Preview,Sem visualização
+No Preview Available,Visualização indisponível
+No Printer is Available.,Nenhuma impressora está disponível.
+No RQ Workers connected. Try restarting the bench.,Nenhum worker RQ conectado. Tente reiniciar o bench.
+No Results,Sem resultados
+No Results found,Nenhum resultado encontrado
+No Roles Specified,Nenhum perfil especificado
+No Select Field Found,Nenhum campo Select encontrado
+No Suggestions,Nenhuma sugestão
+No Tags,Nenhuma tag
+No address added yet.,Nenhum endereço adicionado ainda.
+No alerts for today,Nenhum alerta para hoje
+No automatic optimization suggestions available.,Nenhuma sugestão automática de otimização disponível.
+No changes in document,Nenhuma alteração no documento
+No changes made,Nenhuma alteração feita
+No changes made because old and new name are the same.,Nenhuma alteração foi feita porque o nome antigo e o novo são iguais.
+No changes to sync,Nenhuma alteração para sincronizar
+No changes to update,Nenhuma alteração para atualizar
+No contacts added yet.,Nenhum contato adicionado ainda.
+No contacts linked to document,Nenhum contato vinculado ao documento
+No currency fields in {0},Nenhum campo de moeda em {0}
+No data to export,Nenhum dado para exportar
+No default Address Template found. Please create a new one from Setup > Printing and Branding > Address Template.,Nenhum modelo de endereço padrão encontrado. Crie um novo em Configuração > Impressão e Identidade Visual > Modelo de Endereço.
+No documents found tagged with {0},Nenhum documento encontrado com a tag {0}
+No email account associated with the User. Please add an account under User > Email Inbox.,Nenhuma conta de e-mail associada ao Usuário. Adicione uma conta em Usuário > Caixa de Entrada de E-mail.
+No email addresses to invite,Nenhum endereço de e-mail para convidar
+No failed logs,Nenhum log com falha
+No fields found that can be used as a Kanban Column. Use the Customize Form to add a Custom Field of type "Select".,Nenhum campo encontrado que possa ser usado como coluna do Kanban. Use o Personalizar Formulário para adicionar um Campo Personalizado do tipo "Select".
+No file attached,Nenhum arquivo anexado
+No filters found,Nenhum filtro encontrado
+No filters selected,Nenhum filtro selecionado
+No matching entries in the current results,Nenhuma entrada correspondente nos resultados atuais
+No matching records. Search something new,Nenhum registro correspondente. Pesquise algo novo
+No more items to display,Não há mais itens para exibir
+"No need for symbols, digits, or uppercase letters.","Não há necessidade de símbolos, dígitos ou letras maiúsculas."
+No new Google Contacts synced.,Nenhum novo contato do Google sincronizado.
+No of Columns,Nº de colunas
+No of Requested SMS,Nº de SMS solicitados
+No of Rows (Max 500),Nº de linhas (máx. 500)
+No of Sent SMS,Nº de SMS enviados
+No permission for {0},Sem permissão para {0}
+No permission to '{0}' {1},Sem permissão para '{0}' {1}
+No permission to read {0},Sem permissão para ler {0}
+No permission to {0} {1} {2},Sem permissão para {0} {1} {2}
+No records deleted,Nenhum registro excluído
+No records present in {0},Nenhum registro presente em {0}
+No records tagged.,Nenhum registro com tag.
+No records will be exported,Nenhum registro será exportado
+No rows selected,Nenhuma linha selecionada
+No subject,Sem assunto
+No template found at path: {0},Nenhum modelo encontrado no caminho: {0}
+No user has the role <strong>{0}</strong>,Nenhum usuário possui o perfil <strong>{0}</strong>
+No values to show,Nenhum valor para mostrar
+No {0},Sem {0}
+No {0} found,Nenhum {0} encontrado
+No {0} mail,Nenhum e-mail de {0}
+No.,Nº.
+Nomatim,Nomatim
+None: End of Workflow,Nenhum: fim do fluxo de trabalho
+Normalized Copies,Cópias normalizadas
+Normalized Query,Consulta normalizada
+Not Allowed,Não permitido
+Not Allowed: Disabled User,Não permitido: usuário desativado
+Not Ancestors Of,Não ancestrais de
+Not Descendants Of,Não descendentes de
+Not Found,Não encontrado
+Not Helpful,Não útil
+Not Linked to any record,Não vinculado a nenhum registro
+Not Nullable,Não permite nulo
+Not Permitted,Não permitido
+Not Permitted to read {0},Não permitido ler {0}
+Not Published,Não publicado
+Not Seen,Não visto
+Not Sent,Não enviado
+Not Set,Não definido
+Not a valid Comma Separated Value (CSV File),Não é um arquivo CSV válido (valores separados por vírgula)
+Not a valid User Image.,Não é uma imagem de usuário válida.
+Not a valid Workflow Action,Não é uma ação de fluxo de trabalho válida
+Not a valid user,Não é um usuário válido
+Not active,Não ativo
+Not allowed for {0}: {1},Não permitido para {0}: {1}
+"Not allowed to attach {0} document, please enable Allow Print For {0} in Print Settings","Não é permitido anexar o documento {0}; habilite Permitir Impressão para {0} nas Configurações de Impressão"
+Not allowed to create custom Virtual DocType.,Não é permitido criar DocType Virtual personalizado.
+Not allowed to print cancelled documents,Não é permitido imprimir documentos cancelados
+Not allowed to print draft documents,Não é permitido imprimir documentos em rascunho
+Not allowed via controller permission check,Não permitido pela verificação de permissão do controlador
+Not found,Não encontrado
+Not in Developer Mode,Não está no Modo de Desenvolvedor
+Not in Developer Mode! Set in site_config.json or make 'Custom' DocType.,Não está no Modo de Desenvolvedor! Defina em site_config.json ou torne o DocType "Custom".
+Not permitted,Não permitido
+Not permitted to view {0},Não permitido visualizar {0}
+Not permitted. {0}.,Não permitido. {0}.
+Note,Nota
+Note Seen By,Nota vista por
+Note:,Nota:
+Note: Changing the Page Name will break previous URL to this page.,Nota: Alterar o Nome da Página quebrará a URL anterior desta página.
+Note: Etc timezones have their signs reversed.,Nota: Fusos horários Etc têm os sinais invertidos.
+Note: Your request for account deletion will be fulfilled within {0} hours.,Nota: Sua solicitação de exclusão de conta será atendida em até {0} horas.
+Notes:,Notas:
+Nothing left to redo,Nada a refazer
+Nothing left to undo,Nada a desfazer
+Nothing to show,Nada para mostrar
+Nothing to update,Nada para atualizar
+Notification Log,Log de notificações
+Notification Recipient,Destinatário da notificação
+Notification Subscribed Document,Documento inscrito para notificação
+Notification sent to,Notificação enviada para
+Notification: customer {0} has no Mobile number set,Notificação: o cliente {0} não tem número de celular definido
+Notification: document {0} has no {1} number set (field: {2}),Notificação: o documento {0} não tem número de {1} definido (campo: {2})
+Notification: user {0} has no Mobile number set,Notificação: o usuário {0} não tem número de celular definido
+Notifications Disabled,Notificações desativadas
+Notify Users On Every Login,Notificar usuários em cada login
+Notify by Email,Notificar por e-mail
+Notify by email,Notificar por e-mail
+Notify users with a popup when they log in,Notificar usuários com um popup quando fizerem login
+Now,Agora
+Number Card,Cartão numérico
+Number Card Link,Vínculo do cartão numérico
+Number Card Name,Nome do cartão numérico
+Number Cards,Cartões numéricos
+Number of Queries,Número de consultas
+Number of attachment fields are more than {}, limit updated to {}.,O número de campos de anexo é maior que {}; limite atualizado para {}.
+Number of backups must be greater than zero.,O número de backups deve ser maior que zero.
+Number of columns for a field in a Grid (Total Columns in a grid should be less than 11),Número de colunas para um campo em um Grid (o total de colunas em um grid deve ser menor que 11)
+Number of columns for a field in a List View or a Grid (Total Columns should be less than 11),Número de colunas para um campo em uma Visualização de Lista ou em um Grid (o total de colunas deve ser menor que 11)
+Number of days after which the document Web View link shared on email will be expired,Número de dias após os quais o link de Visualização Web do documento compartilhado por e-mail expirará
+OAuth,OAuth
+OAuth Authorization Code,Código de autorização OAuth
+OAuth Bearer Token,Token Bearer OAuth
+OAuth Client ID,ID do cliente OAuth
+OAuth Client Role,Perfil do cliente OAuth
+OAuth Error,Erro de OAuth
+OAuth Provider Settings,Configurações do provedor OAuth
+OAuth Scope,Escopo OAuth
+OAuth Settings,Configurações de OAuth
+OAuth has been enabled but not authorised. Please use "Authorise API Access" button to do the same.,OAuth foi habilitado, mas não autorizado. Use o botão "Autorizar acesso à API" para isso.
+OPTIONS,OPTIONS
+OR,OU
+OTP SMS Template,Modelo de SMS OTP
+OTP SMS Template must contain <code>{0}</code> placeholder to insert the OTP.,O modelo de SMS OTP deve conter o placeholder <code>{0}</code> para inserir o OTP.
+OTP Secret Reset - {0},Segredo OTP redefinido - {0}
+OTP Secret has been reset. Re-registration will be required on next login.,O segredo OTP foi redefinido. Será necessário registrar novamente no próximo login.
+OTP placeholder should be defined as <code>{{ otp }}</code> ,O placeholder OTP deve ser definido como <code>{{ otp }}</code>
+OTP setup using OTP App was not completed. Please contact Administrator.,A configuração de OTP usando o aplicativo OTP não foi concluída. Entre em contato com o Administrador.
+Office 365,Office 365
+Official Documentation,Documentação oficial
+Offset X,Deslocamento X
+Offset Y,Deslocamento Y
+Offset must be a non-negative integer,O deslocamento deve ser um inteiro não negativo
+Old Password,Senha antiga
+Old and new fieldnames are same.,Os nomes de campo antigo e novo são iguais.
+Older backups will be automatically deleted,Backups mais antigos serão excluídos automaticamente
+Oldest Unscheduled Job,Tarefa não agendada mais antiga
+On Hold,Em espera
+On Payment Authorization,Na autorização de pagamento
+On Payment Charge Processed,No processamento da cobrança de pagamento
+On Payment Failed,Na falha de pagamento
+On Payment Mandate Acquisition Processed,No processamento da aquisição do mandato de pagamento
+On Payment Mandate Charge Processed,No processamento da cobrança do mandato de pagamento
+On Payment Paid,No pagamento concluído
+"On checking this option, URL will be treated like a jinja template string","Ao marcar esta opção, a URL será tratada como uma string de template Jinja"
+On or After,Em ou após
+On or Before,Em ou antes
+"On {0}, {1} wrote:","Em {0}, {1} escreveu:"
+Onboard,Integrar
+Onboarding Name,Nome da integração
+Onboarding Permission,Permissão de integração
+Onboarding Status,Status da integração
+Onboarding Step,Etapa da integração
+Onboarding Step Map,Mapa de etapas da integração
+Onboarding complete,Integração concluída
+Once submitted, submittable documents cannot be changed. They can only be Cancelled and Amended.,Depois de enviados, documentos enviáveis não podem ser alterados. Eles só podem ser Cancelados e Alterados.
+Once you have set this, the users will only be able access documents (eg. Blog Post) where the link exists (eg. Blogger).,Depois de definir isto, os usuários só poderão acessar documentos (ex.: Post de Blog) onde o vínculo existir (ex.: Blogger).
+One Last Step,Um último passo
+One Time Password (OTP) Registration Code from {},Código de registro de One Time Password (OTP) de {}
+One of,Um de
+Only 200 inserts allowed in one request,Apenas 200 inserções são permitidas em uma requisição
+Only Administrator can delete Email Queue,Apenas o Administrador pode excluir a fila de e-mail
+Only Administrator can edit,Apenas o Administrador pode editar
+Only Administrator can save a standard report. Please rename and save.,Apenas o Administrador pode salvar um relatório padrão. Renomeie e salve.
+Only Administrator is allowed to use Recorder,Apenas o Administrador tem permissão para usar o Gravador
+Only Custom Modules can be renamed.,Apenas módulos personalizados podem ser renomeados.
+Only Options allowed for Data field are:,As únicas opções permitidas para o campo Data são:
+Only System Managers can make this file public.,Apenas Gestores do Sistema podem tornar este arquivo público.
+Only Workspace Manager can edit public workspaces,Apenas o Gerenciador de Área de Trabalho pode editar áreas de trabalho públicas
+Only allow System Managers to upload public files,Permitir apenas que Gestores do Sistema façam upload de arquivos públicos
+Only allowed to export customizations in developer mode,Só é permitido exportar personalizações no modo de desenvolvedor
+Only draft documents can be discarded,Apenas documentos em rascunho podem ser descartados
+Only for,Apenas para
+Only mandatory fields are necessary for new records. You can delete non-mandatory columns if you wish.,Apenas campos obrigatórios são necessários para novos registros. Você pode excluir colunas não obrigatórias se desejar.
+Only reports of type Report Builder can be deleted,Apenas relatórios do tipo Construtor de Relatórios podem ser excluídos
+Only reports of type Report Builder can be edited,Apenas relatórios do tipo Construtor de Relatórios podem ser editados
+Only standard DocTypes are allowed to be customized from Customize Form.,Apenas DocTypes padrão podem ser personalizados pelo Personalizar Formulário.
+Only the Administrator can delete a standard DocType.,Apenas o Administrador pode excluir um DocType padrão.
+Only the assignee can complete this to-do.,Apenas o responsável pode concluir este afazer.
+Only {0} emailed reports are allowed per user.,Apenas {0} relatórios enviados por e-mail são permitidos por usuário.
+Oops! Something went wrong.,Ops! Algo deu errado.
+Open Awesomebar,Abrir Awesomebar
+Open Communication,Abrir comunicação
+Open Document,Abrir documento
+Open Help,Abrir ajuda
+Open Link,Abrir link
+Open Settings,Abrir configurações
+Open Source Applications for the Web,Aplicações de código aberto para a Web
+Open Translation,Abrir tradução
+Open a dialog with mandatory fields to create a new record quickly. There must be at least one mandatory field to show in dialog.,Abra um diálogo com campos obrigatórios para criar um novo registro rapidamente. Deve haver pelo menos um campo obrigatório para exibir no diálogo.
+Open console,Abrir console
+Open in a new tab,Abrir em nova aba
+Open list item,Abrir item da lista
+Open reference document,Abrir documento de referência
+Open your authentication app on your mobile phone.,Abra seu aplicativo de autenticação no celular.
+Open {0},Abrir {0}
+OpenID Configuration,Configuração do OpenID
+OpenID Configuration fetched successfully!,Configuração do OpenID obtida com sucesso!
+OpenLDAP,OpenLDAP
+Operation,Operação
+Operator must be one of {0},O operador deve ser um entre {0}
+Operator {0} requires exactly 2 arguments (left and right operands),O operador {0} requer exatamente 2 argumentos (operandos esquerdo e direito)
+Optimize,Otimizar
+Optimizing image...,Otimizando imagem...
+Option 1,Opção 1
+Option 2,Opção 2
+Option 3,Opção 3
+Option {0} for field {1} is not a child table,A opção {0} para o campo {1} não é uma tabela filha
+Optional: Always send to these ids. Each Email Address on a new row,Opcional: sempre enviar para estes IDs. Cada endereço de e-mail em uma nova linha
+Options,Opções
+Options 'Dynamic Link' type of field must point to another Link Field with options as 'DocType',As opções do campo do tipo "Dynamic Link" devem apontar para outro campo Link com opções como "DocType"
+Options for Rating field can range from 3 to 10,As opções para o campo Classificação podem variar de 3 a 10
+Options for select. Each option on a new line.,Opções para Select. Cada opção em uma nova linha.
+Options for {0} must be set before setting the default value.,As opções de {0} devem ser definidas antes de definir o valor padrão.
+Options is required for field {0} of type {1},Opções são obrigatórias para o campo {0} do tipo {1}
+Options not set for link field {0},Opções não definidas para o campo link {0}
+Orange,Laranja
+Order By must be a string,Order By deve ser uma string
+Orientation,Orientação
+Original,Original
+Outgoing (SMTP) Settings,Configurações de saída (SMTP)
+Outgoing Settings,Configurações de saída
+Outgoing email account not correct,Conta de e-mail de saída incorreta
+Outlook.com,Outlook.com
+Overview,Visão geral
+PATCH,PATCH
+PDF Generation in Progress,Geração de PDF em andamento
+PDF Generator,Gerador de PDF
+PDF Page Height (in mm),Altura da página PDF (em mm)
+PDF Page Width (in mm),Largura da página PDF (em mm)
+PDF generation failed,Falha na geração de PDF
+PDF generation failed because of broken image links,Falha na geração de PDF devido a links de imagem quebrados
+PDF generation may not work as expected.,A geração de PDF pode não funcionar como esperado.
+PDF printing via "Raw Print" is not supported.,A impressão de PDF via "Raw Print" não é suportada.
+PID,PID
+POP3 OAuth authentication failed for Email Account {0},Falha na autenticação OAuth POP3 para a conta de e-mail {0}
+POST,POST
+PUT,PUT
+Package,Pacote
+Package Import,Importação de pacote
+Package Name,Nome do pacote
+Package Release,Lançamento do pacote
+Page Break,Quebra de página
+Page Builder,Construtor de páginas
+Page Height (in mm),Altura da página (em mm)
+Page Margins,Margens da página
+Page Route,Rota da página
+Page Shortcuts,Atalhos da página
+Page Size,Tamanho da página
+Page Title,Título da página
+Page Width (in mm),Largura da página (em mm)
+Page has expired!,A página expirou!
+Page height and width cannot be zero,A altura e a largura da página não podem ser zero
+Page not found,Página não encontrada
+Page to show on the website|||,Página para mostrar no site|||
+Page {0} of {1},Página {0} de {1}
+Parameter,Parâmetro
+Parent,Pai
+Parent DocType,DocType pai
+Parent Document Type,Tipo de Documento pai
+Parent Document Type is required to create a number card,O Tipo de Documento pai é obrigatório para criar um cartão numérico
+Parent Element Selector,Seletor do elemento pai
+Parent Field,Campo pai
+Parent Field (Tree),Campo pai (árvore)
+Parent Field must be a valid fieldname,O campo pai deve ser um nome de campo válido
+Parent Icon,Ícone pai
+Parent Missing,Pai ausente
+Parent Page,Página pai
+Parent Table,Tabela pai
+Parent document type is required to create a dashboard chart,O tipo de documento pai é obrigatório para criar um gráfico de painel
+Parent is the name of the document to which the data will get added to.,Pai é o nome do documento ao qual os dados serão adicionados.
+Parent-to-child or child-to-different-child grouping is not allowed.,Não é permitido agrupamento de pai para filho ou de filho para filho diferente.
+Parentfield not specified in {0}: {1},Parentfield não especificado em {0}: {1}
+"Parenttype, Parent and Parentfield are required to insert a child record","Parenttype, Parent e Parentfield são obrigatórios para inserir um registro filho"
+Partial,Parcial
+Partial Success,Sucesso parcial
+Partially Sent,Enviado parcialmente
+Participants,Participantes
+Password Reset,Redefinição de senha
+Password cannot be filtered,A senha não pode ser filtrada
+Password changed successfully.,Senha alterada com sucesso.
+Password is required or select Awaiting Password,A senha é obrigatória ou selecione Aguardando Senha
+Password is valid. 👍,A senha é válida. 👍
+Password missing in Email Account,Senha ausente na Conta de E-mail
+Password not found for {0} {1} {2},Senha não encontrada para {0} {1} {2}
+Password requirements not met,Os requisitos de senha não foram atendidos
+Password reset instructions have been sent to {}'s email,As instruções de redefinição de senha foram enviadas para o e-mail de {}
+Password size exceeded the maximum allowed size,Tamanho da senha excedeu o máximo permitido
+Password size exceeded the maximum allowed size.,O tamanho da senha excedeu o máximo permitido.
+Passwords do not match!,As senhas não coincidem!
+Paste,Colar
+Patch type {} not found in patches.txt,Tipo de patch {} não encontrado em patches.txt
+Path,Caminho
+Path to CA Certs File,Caminho para o arquivo de certificados CA
+Path {0} is not within module {1},O caminho {0} não está dentro do módulo {1}
+Path {0} it not a valid path,O caminho {0} não é um caminho válido
+Payload Count,Quantidade de payloads
+Peak Memory Usage,Uso máximo de memória
+Pending Emails,E-mails pendentes
+Pending Verification,Verificação pendente
+Percent,Percentual
+Period,Período
+Permanently Cancel {0}?,Cancelar {0} permanentemente?
+Permanently Discard {0}?,Descartar {0} permanentemente?
+Permanently Submit {0}?,Enviar {0} permanentemente?
+Permanently delete {0}?,Excluir {0} permanentemente?
+Permission,Permissão
+Permission Error,Erro de permissão
+Permission Level,Nível de permissão
+Permission Levels,Níveis de permissão
+Permission Query,Consulta de permissão
+Permission Type,Tipo de permissão
+Permission Type '{0}' is reserved. Please choose another name.,O tipo de permissão '{0}' é reservado. Escolha outro nome.
+Permissions Error,Erro de permissões
+Permissions are automatically applied to Standard Reports and searches.,As permissões são aplicadas automaticamente a relatórios padrão e pesquisas.
+"Permissions are set on Roles and Document Types (called DocTypes) by setting rights like Read, Write, Create, Delete, Submit, Cancel, Amend, Report, Import, Export, Print, Email and Set User Permissions.","As permissões são definidas em Perfis e Tipos de Documento (DocTypes) configurando direitos como Ler, Escrever, Criar, Excluir, Enviar, Cancelar, Alterar, Relatório, Importar, Exportar, Imprimir, E-mail e Definir Permissões de Usuário."
+Permissions at higher levels are Field Level permissions. All Fields have a Permission Level set against them and the rules defined at that permissions apply to the field. This is useful in case you want to hide or make certain field read-only for certain Roles.,As permissões em níveis mais altos são permissões de nível de campo. Todos os campos têm um nível de permissão definido e as regras desse nível se aplicam ao campo. Isso é útil quando você deseja ocultar ou tornar determinado campo somente leitura para certos Perfis.
+"Permissions at level 0 are Document Level permissions, i.e. they are primary for access to the document.","As permissões no nível 0 são permissões de nível de documento, ou seja, são primárias para acesso ao documento."
+Permissions get applied on Users based on what Roles they are assigned.,As permissões são aplicadas aos Usuários com base nos Perfis atribuídos.
+Permitted Documents For User,Documentos permitidos para o usuário
+Permitted Roles,Perfis permitidos
+Personal Data Deletion Request,Solicitação de exclusão de dados pessoais
+Personal Data Deletion Step,Etapa de exclusão de dados pessoais
+Personal Data Download Request,Solicitação de download de dados pessoais
+Phone No.,Nº de telefone
+Phone Number {0} set in field {1} is not valid.,O número de telefone {0} definido no campo {1} não é válido.
+Pick Columns,Escolher colunas
+Pincode,CEP
+Pink,Rosa
+Placeholder,Placeholder
+Places,Casas
+Plain Text,Texto simples
+Please Authorize OAuth for Email Account {0},Autorize OAuth para a Conta de E-mail {0}
+Please Authorize OAuth for Email Account {},Autorize OAuth para a Conta de E-mail {}
+Please Duplicate this Website Theme to customize.,Duplique este tema de site para personalizar.
+Please Install the ldap3 library via pip to use ldap functionality.,Instale a biblioteca ldap3 via pip para usar a funcionalidade LDAP.
+Please Set Chart,Defina o gráfico
+Please Update SMS Settings,Atualize as Configurações de SMS
+Please add a subject to your email,Adicione um assunto ao seu e-mail
+Please add a valid comment.,Adicione um comentário válido.
+Please ask your administrator to verify your sign-up,Peça ao seu administrador para verificar seu cadastro
+Please attach a file first.,Anexe um arquivo primeiro.
+Please attach an image file to set HTML for Footer.,Anexe um arquivo de imagem para definir o HTML do rodapé.
+Please attach an image file to set HTML for Letter Head.,Anexe um arquivo de imagem para definir o HTML do cabeçalho.
+Please attach the package,Anexe o pacote
+Please check the filter values set for Dashboard Chart: {},Verifique os valores de filtro definidos para o Gráfico do Painel: {}
+Please check the value of "Fetch From" set for field {0},Verifique o valor de "Fetch From" definido para o campo {0}
+Please check your email for verification,Verifique seu e-mail para confirmação
+Please check your email login credentials.,Verifique suas credenciais de login de e-mail.
+Please check your registered email address for instructions on how to proceed. Do not close this window as you will have to return to it.,Verifique seu endereço de e-mail cadastrado para instruções de como prosseguir. Não feche esta janela, pois você terá que voltar para ela.
+Please click Edit on the Workspace for best results,Clique em Editar na Área de Trabalho para melhores resultados
+"Please click on 'Export Errored Rows', fix the errors and import again.","Clique em 'Export Errored Rows', corrija os erros e importe novamente."
+Please click on the following link and follow the instructions on the page. {0},Clique no link a seguir e siga as instruções da página. {0}
+Please click on the following link to set your new password,Clique no link a seguir para definir sua nova senha
+Please confirm your action to {0} this document.,Confirme sua ação de {0} este documento.
+Please contact your system manager to install correct version.,Entre em contato com seu gestor do sistema para instalar a versão correta.
+Please create Card first,Crie o Cartão primeiro
+Please create chart first,Crie o gráfico primeiro
+Please delete the field from {0} or add the required doctype.,Exclua o campo de {0} ou adicione o doctype obrigatório.
+Please do not change the template headings.,Não altere os cabeçalhos do modelo.
+Please duplicate this to make changes,Duplique isto para fazer alterações
+Please enable atleast one Social Login Key or LDAP or Login With Email Link before disabling username/password based login.,Ative pelo menos uma chave de Login Social, LDAP ou Login por Link de E-mail antes de desativar o login por usuário/senha.
+Please enable pop-ups,Ative pop-ups
+Please enable pop-ups in your browser,Ative pop-ups no seu navegador
+Please enable {} before continuing.,Ative {} antes de continuar.
+Please ensure that your profile has an email address,Verifique se seu perfil possui um endereço de e-mail
+Please enter Access Token URL,Informe a URL do Access Token
+Please enter Authorize URL,Informe a URL de autorização
+Please enter Base URL,Informe a URL base
+Please enter Client ID before social login is enabled,Informe o ID do cliente antes de ativar o login social
+Please enter Client Secret before social login is enabled,Informe o segredo do cliente antes de ativar o login social
+Please enter OpenID Configuration URL,Informe a URL de configuração OpenID
+Please enter Redirect URL,Informe a URL de redirecionamento
+Please enter a valid email address.,Informe um endereço de e-mail válido.
+"Please enter both your email and message so that we can get back to you. Thanks!","Informe seu e-mail e sua mensagem para que possamos retornar. Obrigado!"
+Please enter the password for: <b>{0}</b>,Informe a senha para: <b>{0}</b>
+Please enter valid mobile nos,Informe números de celular válidos
+Please enter your new password.,Informe sua nova senha.
+Please enter your old password.,Informe sua senha antiga.
+Please find attached {0}: {1},Segue anexo {0}: {1}
+Please login to post a comment.,Faça login para publicar um comentário.
+Please make sure the Reference Communication Docs are not circularly linked.,Certifique-se de que os Documentos de Comunicação de Referência não estejam vinculados circularmente.
+Please refresh to get the latest document.,Atualize para obter o documento mais recente.
+Please remove the printer mapping in Printer Settings and try again.,Remova o mapeamento de impressora nas Configurações de Impressora e tente novamente.
+Please save before attaching.,Salve antes de anexar.
+Please save the document before assignment,Salve o documento antes de atribuir
+Please save the document before removing assignment,Salve o documento antes de remover a atribuição
+Please save the form before previewing the message,Salve o formulário antes de visualizar a mensagem
+Please save the report first,Salve o relatório primeiro
+Please save to edit the template.,Salve para editar o modelo.
+Please select DocType first,Selecione o DocType primeiro
+Please select Entity Type first,Selecione o Tipo de Entidade primeiro
+Please select Minimum Password Score,Selecione a Pontuação Mínima de Senha
+Please select X and Y fields,Selecione os campos X e Y
+Please select a DocType in options before setting filters,Selecione um DocType em opções antes de definir filtros
+Please select a country code for field {1}.,Selecione um código de país para o campo {1}.
+Please select a file first.,Selecione um arquivo primeiro.
+Please select a file or url,Selecione um arquivo ou URL
+Please select a valid csv file with data,Selecione um arquivo CSV válido com dados
+Please select a valid date filter,Selecione um filtro de data válido
+Please select applicable Doctypes,Selecione os Doctypes aplicáveis
+Please select atleast 1 column from {0} to sort/group,Selecione pelo menos 1 coluna de {0} para ordenar/agrupar
+Please select prefix first,Selecione o prefixo primeiro
+Please select the Document Type.,Selecione o Tipo de Documento.
+Please select the LDAP Directory being used,Selecione o diretório LDAP em uso
+Please select {0},Selecione {0}
+Please set Email Address,Defina o Endereço de E-mail
+Please set a printer mapping for this print format in the Printer Settings,Defina um mapeamento de impressora para este formato de impressão nas Configurações de Impressora
+Please set filters,Defina filtros
+Please set filters value in Report Filter table.,Defina os valores dos filtros na tabela de Filtros de Relatório.
+Please set the document name,Defina o nome do documento
+Please set the following documents in this Dashboard as standard first.,Defina primeiro os seguintes documentos deste Painel como padrão.
+Please set the series to be used.,Defina a série a ser utilizada.
+"Please setup SMS before setting it as an authentication method, via SMS Settings","Configure o SMS antes de defini-lo como método de autenticação, em Configurações de SMS"
+Please setup a message first,Configure uma mensagem primeiro
+Please setup default outgoing Email Account from Settings > Email Account,Configure a Conta de E-mail de saída padrão em Configurações > Conta de E-mail
+Please specify,Especifique
+Please specify a valid parent DocType for {0},Especifique um DocType pai válido para {0}
+Please specify at least 10 minutes due to the trigger cadence of the scheduler,Especifique pelo menos 10 minutos devido à cadência de disparo do agendador
+Please specify the field from which to attach files,Especifique o campo de onde anexar arquivos
+Please specify the minutes offset,Especifique o deslocamento em minutos
+Please specify which date field must be checked,Especifique qual campo de data deve ser verificado
+Please specify which datetime field must be checked,Especifique qual campo de data e hora deve ser verificado
+Please specify which value field must be checked,Especifique qual campo de valor deve ser verificado
+Please try again,Tente novamente
+Please update {} before continuing.,Atualize {} antes de continuar.
+Please use a valid LDAP search filter,Use um filtro de pesquisa LDAP válido
+Please use following links to download file backup.,Use os links a seguir para baixar o backup do arquivo.
+Please visit https://frappecloud.com/docs/sites/migrate-an-existing-site#encryption-key for more information.,Visite https://frappecloud.com/docs/sites/migrate-an-existing-site#encryption-key para mais informações.
+Policy URI,URI da política
+Polling,Consulta periódica
+Popover Element,Elemento do popover
+Popover or Modal Description,Descrição do popover ou modal
+Portal,Portal
+Portal Menu,Menu do portal
+Portal Menu Item,Item do menu do portal
+Portal Settings,Configurações do portal
+Portrait,Retrato
+Post,Publicar
+"Post it here, our mentors will help you out.","Publique aqui, nossos mentores vão ajudar você."
+Postal,Postal
+Postal Code,Código postal
+Posting Timestamp,Data/hora de lançamento
+Precision ({0}) for {1} cannot be greater than its length ({2}).,A precisão ({0}) de {1} não pode ser maior que seu tamanho ({2}).
+Precision should be between 1 and 6,A precisão deve estar entre 1 e 6
+"Predictable substitutions like '@' instead of 'a' don't help very much.","Substituições previsíveis como '@' no lugar de 'a' não ajudam muito."
+Prepared Report,Relatório preparado
+Prepared Report Analytics,Análises de relatório preparado
+Prepared Report User,Usuário do relatório preparado
+Prepared report render failed,Falha ao renderizar o relatório preparado
+Preparing Report,Preparando relatório
+Prepend the template to the email message,Adicionar o modelo no início da mensagem de e-mail
+Press Alt Key to trigger additional shortcuts in Menu and Sidebar,Pressione Alt para acionar atalhos adicionais no Menu e na Barra Lateral
+Press Enter to save,Pressione Enter para salvar
+Preview,Visualizar
+Preview Mode,Modo de visualização
+Preview of generated names,Pré-visualização dos nomes gerados
+Preview on {0},Pré-visualização em {0}
+Preview type,Tipo de visualização
+Preview:,Pré-visualização:
+Previous,Anterior
+Previous Submission,Envio anterior
+Primary Address,Endereço principal
+Primary Contact,Contato principal
+Primary Email,E-mail principal
+Primary Mobile,Celular principal
+Primary Phone,Telefone principal
+Primary key of doctype {0} can not be changed as there are existing values.,A chave primária do doctype {0} não pode ser alterada pois existem valores já cadastrados.
+Print Documents,Imprimir documentos
+Print Format Builder Beta,Construtor de Formato de Impressão Beta
+Print Format Error,Erro de formato de impressão
+Print Format Field Template,Modelo de campo do formato de impressão
+Print Format not found,Formato de impressão não encontrado
+Print Format {0} is disabled,O formato de impressão {0} está desativado
+Print Language,Idioma de impressão
+Print Sent to the printer!,Impressão enviada para a impressora!
+Print Style,Estilo de impressão
+Print document,Imprimir documento
+Printer
+Printer Mapping
+Printer Settings
+Printer mapping not set.
+Printing failed
+Private Files Backup:
+ProTip: Add <code>Reference: {{ reference_doctype }} {{ reference_name }}</code> to send document reference
+Proceed
+Proceed Anyway
+Processing
+Processing...
+Prof
+Progress
+Project
+Property Setter overrides a standard DocType or Field property
+Property Type
+Protect Attached Files
+Protected File
+Provide a list of allowed file extensions for file uploads. Each line should contain one allowed file type. If unset, all file extensions are allowed. Example: <br>CSV<br>JPG<br>PNG
+Public Files Backup:
+Publish
+Published
+Publishing Dates
+Pull Emails
+Pull from Google Contacts
+Pulling emails...
+Purchase Manager
+Purchase Master Manager
+Purchase User
+Purple
+Push Notification Settings
+Put on Hold
+Python
+QR Code
+QR Code for Login Verification
+QZ Tray Connection Active!
+Quarter Day
+Query / Script
+Query Parameters
+Query Report
+Query analysis complete. Check suggested indexes.
+Query must be of SELECT or read-only WITH type.
+Queue Overloaded
+Queue in Background (BETA)
+Queue should be one of {0}
+Queue(s)
+Queued At
+Queued By
+Queued for Submission. You can track the progress over {0}.
+Queued for backup. You will receive an email with the download link
+Queues
+Queuing {0} for Submission
+Quick Help for Setting Permissions
+Quick List Filter
+Quick Lists
+Quoting must be between 0 and 3
+Random
+Range
+Rate Limiting
+Rate limit for email link login
+Rating
+Raw Commands
+Raw Email
+Raw HTML can be used only with Email Templates having 'Use HTML' checked. Proceeding with plain text email.
+Raw HTML emails are rendered as complete Jinja templates. Otherwise, emails are wrapped in the standard.html email template, which inserts brand_logo, header and footer.
+Raw Printing
+Raw Printing Setting
+Raw Printing Settings
+Re-Run in Console
+Re:
+Re: {0}
+Read Only
+Read Only Depends On (JS)
+Read Only Mode
+Read mode
+Read the documentation to know more
+Readme
+Reason
+Rebuild
+Rebuild Tree
+Rebuilding of tree is not supported for {}
+Received
+Received an invalid token type.
+Recent years are easy to guess.
+Recents
+Recipient Account Field
+Recorder Query
+Recorder Suggested Index
+Records for following doctypes will be filtered
+Recursive Fetch From
+Red
+Redirect HTTP Status
+Redirect To Path
+Redirect URI
+Redirect URI Bound To Auth Code
+Redirect URIs
+Redirect to this URL after successful confirmation.
+Redirects
+Redis cache server not running. Please contact Administrator / Tech support
+Redo last action
+Ref DocType
+Referance Doctype and Dashboard Name both can't be used at the same time.
+Reference
+Reference Date
+Reference Datetime
+Reference Doc
+Reference DocType
+Reference DocType and Reference Name are required
+Reference Document
+Reference Document Name
+Reference Document Type
+Reference Name
+Reference Type
+Reference: {0} {1}
+Referrer
+Refresh
+Refresh All
+Refresh List
+Refresh Print Preview
+Refresh Token
+Refreshing...
+Registered but disabled
+Rejected
+Relay Server URL missing
+Relay Settings
+Release Notes
+Relink
+Relink Communication
+Reload File
+Reload Report
+Remind At
+Remind Me In
+Reminder cannot be created in past.
+Reminder set at {0}
+Remove
+Remove Failed Jobs
+Remove Field
+Remove Filter
+Remove Section
+Remove all customizations?
+Remove all fields in the column
+Remove column
+Remove field
+Remove last column
+Remove page break
+Remove section
+Remove tab
+Removed
+Rename Fieldname
+Rename {0}
+Renamed files and replaced code in controllers, please check!
+Render labels to the left and values to the right in this section
+Reopen
+Repeat
+Repeat Header and Footer
+Repeat on Days
+Repeats like "aaa" are easy to guess
+Repeats like "abcabcabc" are only slightly harder to guess than "abc"
+Repeats {0}
+Replicate
+Replicating...
+Replication completed.
+Replied
+Reply All
+Reply To Address
+Reply To email is required
+Reply-To Addresses
+Report Builder
+Report Column
+Report Document Error
+Report Filter
+Report Manager
+Report Name
+Report Name, Report Field and Fucntion are required to create a number card
+Report Ref DocType
+Report Reference Doctype
+Report Type
+Report bug
+Report cannot be set for Single types
+Report has no data, please modify the filters or change the Report Name
+Report has no numeric fields, please change the Report Name
+Report initiated, click to view status
+Report limit reached
+Report timed out.
+Report updated successfully
+Report was not saved (there were errors)
+Report with more than 10 columns looks better in Landscape mode.
+Report {0}
+Report {0} deleted
+Report {0} is disabled
+Report {0} saved
+Report:
+Reports
+Reports & Masters
+Reports already in Queue
+Represents a User in the system.
+Represents the states allowed in one document and role assigned to change the state.
+Request Body
+Request Description
+Request Headers
+Request ID
+Request Limit
+Request Method
+Request Timed Out
+Request Timeout
+Requested Numbers
+Requires any valid fdn path. i.e. ou=groups,dc=example,dc=com
+Requires any valid fdn path. i.e. ou=users,dc=example,dc=com
+Res: {0}
+Reset
+Reset All
+Reset All Customizations
+Reset Changes
+Reset Chart
+Reset Dashboard Customizations
+Reset LDAP Password
+Reset Layout
+Reset OTP Secret
+Reset Password Link Expiry Duration
+Reset Password Template
+Reset Permissions for {0}?
+Reset To Default
+Reset sorting
+Reset to defaults
+Reset your password
+Resource
+Resource Documentation
+Resource Name
+Resource Policy URI
+Resource TOS URI
+Response Headers
+Response Type
+Rest of the day
+Restore Original Permissions
+Restore to default settings?
+Restoring Deleted Document
+Restrict Removal
+Restrictions
+Result
+Resume Sending
+Retry
+Retry Sending
+Return to the Verification screen and enter the code displayed by your authentication app
+Reverting length to {0} for '{1}' in '{2}'. Setting the length as {3} will cause truncation of data.
+Revocation URI
+Revoke
+Rich Text
+Right Bottom
+Right Center
+Robots.txt
+Role 'All' will be given to all system + website users.
+Role 'Desk User' will be given to all system users.
+Role Permission for Page and Report
+Role Permissions
+Role Profile
+Role Replication
+Role has been set as per the user type {0}
+Roles Html
+Roles can be set for users from their User page.
+Root {0} cannot be deleted
+Rounding Method
+Route
+Route Options
+Row
+Row #
+Row # {0}: Non administrator user can not set the role {1} to the custom doctype
+Row #{0}:
+Row #{}: Fieldname is required
+Row Format
+Row Indexes
+Row Number
+Row Values Changed
+Row {0}
+Row {0}: Not allowed to disable Mandatory for standard fields
+Row {0}: Not allowed to enable Allow on Submit for standard fields
+Rows Added
+Rows Threshold for Grid Search
+Rule for this doctype, role, permlevel and if-owner combination already exists.
+Rules defining transition of state in the workflow.
+Rules for how states are transitions, like next state and which role is allowed to change state etc.
+Runtime in Minutes
+Runtime in Seconds
+SMS
+SMS Gateway URL
+SMS Log
+SMS Parameter
+SMS Settings
+SMS sent successfully
+SMS was not sent. Please contact Administrator.
+SMTP Server is required
+SQL
+SQL Conditions. Example: status="Open"
+SQL Explain
+SQL Output
+SQL Queries
+SQL functions are not allowed as strings in SELECT: {0}. Use dict syntax like {{'COUNT': '*'}} instead.
+SUCCESS
+SUCCESS,FAILURE
+SUCCESS,FAILURE,DELAY
+SWATCHES
+Sales Manager
+Sales Master Manager
+Sales User
+Sales without complexity, lock-in and per-user costs. Try it for free!
+Salesforce
+Same Field is entered more than once
+Saturday
+Save Anyway
+Save As
+Save Customizations
+Save Report
+Save filters
+Save on Completion
+Save the document.
+Saved
+Saving
+Saving Changes...
+Saving Customization...
+Saving Sidebar
+Saving this will export this document as well as the steps linked here as json.
+Saving...
+Scan
+Scan QRCode
+Scan the QR Code and enter the resulting code displayed.
+Schedule
+Scheduled
+Scheduled Against
+Scheduled execution for script {0} has updated
+Scheduled to send
+Scheduler Event
+Scheduler Inactive
+Scheduler can not be re-enabled when maintenance mode is active.
+Scheduler is inactive. Cannot import data.
+Scheduler: Active
+Scheduler: Inactive
+Scope
+Scopes
+Scopes Supported
+Script
+Script Manager
+Script Report
+Script Type
+Script to attach to all web pages.
+Scripting
+Scripting / Style
+Scripts
+Search Results
+Search by filename or extension
+Search field {0} is not valid
+Search fields
+Search fieldtypes...
+Search for anything
+Search for countries...
+Search for icons...
+Search for {0}
+Search properties...
+Search results for
+Search the docs (Press / to focus)
+Search...
+Searching ...
+Seconds
+Section Heading
+Section ID
+Section Title
+Section must have at least one column
+Security Alert: Your account is being impersonated
+See all Activity
+See on Website
+See previous responses
+See the document at {0}
+Seen
+Select
+Select Child Table
+Select Column
+Select Columns
+Select Country
+Select Currency
+Select Dashboard
+Select DocType
+Select Doctype
