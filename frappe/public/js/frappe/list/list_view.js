@@ -643,7 +643,19 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		return !frappe.is_mobile() && !this.list_view_settings?.disable_scrolling;
 	}
 
+	get_status_column_fieldname() {
+		return "status_indicator";
+	}
+
+	is_special_resizable_column(fieldname) {
+		return fieldname === this.get_status_column_fieldname();
+	}
+
 	get_resizable_column_fieldname(col) {
+		if (col?.type === "Status") {
+			return this.get_status_column_fieldname();
+		}
+
 		if (!["Subject", "Field"].includes(col?.type)) {
 			return null;
 		}
@@ -753,6 +765,10 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		const user_settings_width = this._get_user_settings_column_width(fieldname);
 		if (user_settings_width) {
 			return user_settings_width;
+		}
+
+		if (this.is_special_resizable_column(fieldname)) {
+			return this._get_global_settings_column_width(fieldname);
 		}
 
 		const property_setter_width = this._get_property_setter_column_width(fieldname);
@@ -899,7 +915,12 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 
 	_save_global_column_width_for_system_manager(fieldname, width) {
 		const normalized_width = this.normalize_column_width(width);
-		if (!this._is_system_manager() || !fieldname || !normalized_width) {
+		if (
+			!this._is_system_manager() ||
+			!fieldname ||
+			!normalized_width ||
+			this.is_special_resizable_column(fieldname)
+		) {
 			return Promise.resolve(normalized_width);
 		}
 
@@ -1121,6 +1142,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		let $columns = this.columns
 			.map((col) => {
 				const fieldname = this.get_resizable_column_fieldname(col);
+				const sortable_fieldname = col?.type === "Field" ? col?.df?.fieldname : null;
 				const is_resizable = this.is_column_resizable(col);
 				let classes = [
 					"list-row-col ellipsis",
@@ -1144,7 +1166,9 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 				} else {
 					const label = __(col.df?.label || col.type, null, col.df?.parent);
 					const title = __("Click to sort by {0}", [label]);
-					const attrs = fieldname ? `data-sort-by="${fieldname}" title="${title}"` : "";
+					const attrs = sortable_fieldname
+						? `data-sort-by="${sortable_fieldname}" title="${title}"`
+						: "";
 					html = `<span ${attrs}>${label}</span>`;
 				}
 
@@ -1272,8 +1296,12 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	get_column_html(col, doc, show_in_mobile) {
 		if (col.type === "Status" || col.df?.options == "Workflow State") {
 			let show_workflow_state = col.df?.options == "Workflow State";
+			const fieldname = this.get_resizable_column_fieldname(col);
+			const fieldname_attr = fieldname
+				? ` data-fieldname="${frappe.utils.escape_html(fieldname)}"`
+				: "";
 			return `
-				<div class="list-row-col hidden-xs ellipsis">
+				<div class="list-row-col hidden-xs ellipsis"${fieldname_attr}>
 					${this.get_indicator_html(doc, show_workflow_state)}
 				</div>
 			`;

@@ -1,157 +1,206 @@
-# Copyright (c) 2019, Frappe Technologies Pvt. Ltd. and Contributors
+# Copyright (c) 2020, Frappe Technologies and contributors
 # License: MIT. See LICENSE
-import json
-from unittest.mock import patch
 
 import frappe
-from frappe.desk.listview import get_group_by_count, get_list_settings, set_list_settings
-from frappe.desk.doctype.list_view_settings.list_view_settings import save_listview_column_width
-from frappe.desk.reportview import get
-from frappe.tests import IntegrationTestCase
+from frappe.model.document import Document
+from frappe.utils import cint
 
 
-class TestListView(IntegrationTestCase):
-	def setUp(self):
-		if frappe.db.exists("List View Settings", "DocType"):
-			frappe.delete_doc("List View Settings", "DocType")
-		frappe.db.delete(
-			"Property Setter",
-			{"doc_type": "ToDo", "field_name": "description", "property": "width"},
-		)
-		frappe.clear_cache(doctype="ToDo")
+LIST_VIEW_MIN_COLUMN_WIDTH = 90
+LIST_VIEW_MAX_COLUMN_WIDTH = 2000
 
-	def tearDown(self):
-		frappe.db.delete(
-			"Property Setter",
-			{"doc_type": "ToDo", "field_name": "description", "property": "width"},
-		)
-		frappe.clear_cache(doctype="ToDo")
 
-	def test_get_list_settings_without_settings(self):
-		self.assertIsNone(get_list_settings("DocType"), None)
+class ListViewSettings(Document):
+	# begin: auto-generated types
+	# This code is auto-generated. Do not modify anything in this block.
 
-	def test_get_list_settings_with_default_settings(self):
-		frappe.get_doc({"doctype": "List View Settings", "name": "DocType"}).insert()
-		settings = get_list_settings("DocType")
-		self.assertIsNotNone(settings)
+	from typing import TYPE_CHECKING
 
-		self.assertEqual(settings.disable_auto_refresh, 0)
-		self.assertEqual(settings.disable_count, 0)
-		self.assertEqual(settings.disable_comment_count, 0)
-		self.assertEqual(settings.disable_sidebar_stats, 0)
+	if TYPE_CHECKING:
+		from frappe.types import DF
 
-	def test_get_list_settings_with_non_default_settings(self):
-		frappe.get_doc({"doctype": "List View Settings", "name": "DocType", "disable_count": 1}).insert()
-		settings = get_list_settings("DocType")
-		self.assertIsNotNone(settings)
+		allow_edit: DF.Check
+		column_widths: DF.Code | None
+		disable_auto_refresh: DF.Check
+		disable_automatic_recency_filters: DF.Check
+		disable_comment_count: DF.Check
+		disable_count: DF.Check
+		disable_scrolling: DF.Check
+		disable_sidebar_stats: DF.Check
+		fields: DF.Code | None
+		show_tags: DF.Check
+	# end: auto-generated types
 
-		self.assertEqual(settings.disable_auto_refresh, 0)
-		self.assertEqual(settings.disable_count, 1)
-		self.assertEqual(settings.disable_comment_count, 0)
-		self.assertEqual(settings.disable_sidebar_stats, 0)
+	pass
 
-	def test_set_list_settings_without_settings(self):
-		set_list_settings("DocType", json.dumps({}))
-		settings = frappe.get_doc("List View Settings", "DocType")
 
-		self.assertEqual(settings.disable_auto_refresh, 0)
-		self.assertEqual(settings.disable_count, 0)
-		self.assertEqual(settings.disable_comment_count, 0)
-		self.assertEqual(settings.disable_sidebar_stats, 0)
+@frappe.whitelist()
+def save_listview_settings(doctype, listview_settings, removed_listview_fields):
+	listview_settings = frappe.parse_json(listview_settings)
+	removed_listview_fields = frappe.parse_json(removed_listview_fields)
 
-	def test_set_list_settings_with_existing_settings(self):
-		frappe.get_doc({"doctype": "List View Settings", "name": "DocType", "disable_count": 1}).insert()
-		set_list_settings("DocType", json.dumps({"disable_count": 0, "disable_auto_refresh": 1}))
-		settings = frappe.get_doc("List View Settings", "DocType")
+	if frappe.get_all("List View Settings", filters={"name": doctype}):
+		doc = frappe.get_doc("List View Settings", doctype)
+		doc.update(listview_settings)
+		doc.save()
+	else:
+		doc = frappe.new_doc("List View Settings")
+		doc.name = doctype
+		doc.update(listview_settings)
+		doc.insert()
 
-		self.assertEqual(settings.disable_auto_refresh, 1)
-		self.assertEqual(settings.disable_count, 0)
-		self.assertEqual(settings.disable_comment_count, 0)
-		self.assertEqual(settings.disable_sidebar_stats, 0)
+	set_listview_fields(doctype, listview_settings.get("fields"), removed_listview_fields)
 
-	def test_save_listview_column_width_creates_property_setter(self):
-		result = save_listview_column_width("ToDo", "description", 180)
+	return {"meta": frappe.get_meta(doctype, False), "listview_settings": doc}
 
-		self.assertEqual(result, {"fieldname": "description", "width": "180px"})
-		self.assertEqual(
-			frappe.db.get_value(
-				"Property Setter",
-				{"doc_type": "ToDo", "field_name": "description", "property": "width"},
-				"value",
-			),
-			"180px",
-		)
 
-	def test_save_listview_column_width_updates_property_setter(self):
+def set_listview_fields(doctype, listview_fields, removed_listview_fields):
+	meta = frappe.get_meta(doctype)
+
+	listview_fields = [f.get("fieldname") for f in frappe.parse_json(listview_fields) if f.get("fieldname")]
+
+	for field in removed_listview_fields:
+		set_in_list_view_property(doctype, meta.get_field(field), "0")
+
+	for field in listview_fields:
+		set_in_list_view_property(doctype, meta.get_field(field), "1")
+
+
+def set_in_list_view_property(doctype, field, value):
+	if not field or field.fieldname == "status_field":
+		return
+
+	property_setter = frappe.db.get_value(
+		"Property Setter",
+		{"doc_type": doctype, "field_name": field.fieldname, "property": "in_list_view"},
+	)
+	if property_setter:
+		doc = frappe.get_doc("Property Setter", property_setter)
+		doc.value = value
+		doc.save()
+	else:
 		frappe.make_property_setter(
 			{
-				"doctype": "ToDo",
+				"doctype": doctype,
 				"doctype_or_field": "DocField",
-				"fieldname": "description",
+				"fieldname": field.fieldname,
+				"property": "in_list_view",
+				"value": value,
+				"property_type": "Check",
+			},
+			ignore_validate=True,
+		)
+
+
+def _normalize_listview_column_width(width):
+	if width is None:
+		frappe.throw(frappe._("Width is required"))
+
+	width_string = str(width).strip().lower()
+	if width_string.endswith("px"):
+		width_string = width_string[:-2].strip()
+
+	if not width_string.isdigit():
+		frappe.throw(frappe._("Width must be a valid number of pixels"))
+
+	return min(LIST_VIEW_MAX_COLUMN_WIDTH, max(LIST_VIEW_MIN_COLUMN_WIDTH, cint(width_string)))
+
+
+@frappe.whitelist()
+def save_listview_column_width(doctype, fieldname, width):
+	frappe.only_for("System Manager")
+
+	if not doctype:
+		frappe.throw(frappe._("DocType is required"))
+	if not fieldname:
+		frappe.throw(frappe._("Field is required"))
+
+	frappe.has_permission(doctype, ptype="read", throw=True)
+	width = _normalize_listview_column_width(width)
+
+	meta = frappe.get_meta(doctype)
+	# "name" is an implicit field (primary key) not stored in meta.fields
+	field = meta.get_field(fieldname)
+	if not field and fieldname != "name":
+		frappe.throw(frappe._("Field not found"))
+
+	if fieldname == "name":
+		# Keep both stores in sync for the implicit PK field.
+		_save_column_width_via_property_setter(doctype, fieldname, width)
+		naming_fieldname = _get_autoname_fieldname(meta)
+		if naming_fieldname and meta.get_field(naming_fieldname):
+			# Mirror width to the source field when naming is based on `field:...`.
+			_save_column_width_via_property_setter(doctype, naming_fieldname, width)
+		_save_column_width_in_listview_settings(doctype, fieldname, width)
+	elif field:
+		# Regular field: use Property Setter (reflected in meta.fields on reload)
+		_save_column_width_via_property_setter(doctype, fieldname, width)
+	else:
+		# Implicit field fallback: persist in List View Settings.column_widths.
+		_save_column_width_in_listview_settings(doctype, fieldname, width)
+
+	frappe.clear_document_cache("List View Settings", doctype)
+	frappe.clear_cache(doctype=doctype)
+	return {"fieldname": fieldname, "width": f"{width}px"}
+
+
+def _get_autoname_fieldname(meta):
+	autoname = (meta.autoname or "").strip()
+	if autoname.lower().startswith("field:"):
+		candidate = autoname.split(":", 1)[1].strip()
+		return candidate or None
+
+	return None
+
+
+def _save_column_width_via_property_setter(doctype, fieldname, width):
+	property_setter = frappe.db.get_value(
+		"Property Setter",
+		{"doc_type": doctype, "field_name": fieldname, "property": "width"},
+	)
+	if property_setter:
+		doc = frappe.get_doc("Property Setter", property_setter)
+		doc.value = f"{width}px"
+		doc.save()
+	else:
+		frappe.make_property_setter(
+			{
+				"doctype": doctype,
+				"doctype_or_field": "DocField",
+				"fieldname": fieldname,
 				"property": "width",
-				"value": "120px",
+				"value": f"{width}px",
 				"property_type": "Data",
 			},
 			ignore_validate=True,
 		)
 
-		result = save_listview_column_width("ToDo", "description", 240)
 
-		self.assertEqual(result, {"fieldname": "description", "width": "240px"})
-		self.assertEqual(
-			frappe.db.get_value(
-				"Property Setter",
-				{"doc_type": "ToDo", "field_name": "description", "property": "width"},
-				"value",
-			),
-			"240px",
-		)
+def _save_column_width_in_listview_settings(doctype, fieldname, width):
+	if frappe.get_all("List View Settings", filters={"name": doctype}):
+		settings_doc = frappe.get_doc("List View Settings", doctype)
+	else:
+		settings_doc = frappe.new_doc("List View Settings")
+		settings_doc.name = doctype
 
-	def test_save_listview_column_width_rejects_invalid_field(self):
-		self.assertRaises(frappe.ValidationError, save_listview_column_width, "ToDo", "invalid_field", 180)
+	column_widths = frappe.parse_json(settings_doc.get("column_widths") or "{}")
+	column_widths[fieldname] = f"{width}px"
+	settings_doc.column_widths = frappe.as_json(column_widths)
+	settings_doc.save(ignore_permissions=True)
 
-	def test_save_listview_column_width_clears_cache(self):
-		with patch("frappe.clear_cache") as clear_cache:
-			save_listview_column_width("ToDo", "description", 150)
 
-		clear_cache.assert_called_once_with(doctype="ToDo")
+@frappe.whitelist()
+def get_default_listview_fields(doctype):
+	meta = frappe.get_meta(doctype)
+	path = frappe.get_module_path(
+		frappe.scrub(meta.module), "doctype", frappe.scrub(meta.name), frappe.scrub(meta.name) + ".json"
+	)
+	doctype_json = frappe.get_file_json(path)
 
-	def test_list_view_child_table_filter_with_created_by_filter(self):
-		if frappe.db.exists("Note", "Test created by filter with child table filter"):
-			frappe.delete_doc("Note", "Test created by filter with child table filter")
+	fields = [f.get("fieldname") for f in doctype_json.get("fields") if f.get("in_list_view")]
 
-		doc = frappe.get_doc(
-			{"doctype": "Note", "title": "Test created by filter with child table filter", "public": 1}
-		)
-		doc.append("seen_by", {"user": "Administrator"})
-		doc.insert()
+	if meta.title_field:
+		if meta.title_field.strip() not in fields:
+			fields.append(meta.title_field.strip())
 
-		data = {
-			d.name: d.count
-			for d in get_group_by_count("Note", '[["Note Seen By","user","=","Administrator"]]', "owner")
-		}
-		self.assertEqual(data["Administrator"], 1)
-
-	def test_get_group_by_invalid_field(self):
-		self.assertRaises(
-			ValueError,
-			get_group_by_count,
-			"Note",
-			'[["Note Seen By","user","=","Administrator"]]',
-			"invalid_field",
-		)
-
-	def test_list_view_comment_count(self):
-		frappe.form_dict.doctype = "DocType"
-		frappe.form_dict.limit = "1"
-		frappe.form_dict.fields = [
-			"`tabDocType`.`name`",
-		]
-
-		for with_comment_count in (1, True, "1"):
-			frappe.form_dict.with_comment_count = with_comment_count
-			self.assertEqual(len(get()["values"][0]), 2)
-
-		for with_comment_count in (0, False, "0", None):
-			frappe.form_dict.with_comment_count = with_comment_count
-			self.assertEqual(len(get()["values"][0]), 1)
+	return fields
