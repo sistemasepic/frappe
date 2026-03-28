@@ -20,6 +20,7 @@ class ListViewSettings(Document):
 		from frappe.types import DF
 
 		allow_edit: DF.Check
+		column_widths: DF.Code | None
 		disable_auto_refresh: DF.Check
 		disable_automatic_recency_filters: DF.Check
 		disable_comment_count: DF.Check
@@ -28,7 +29,6 @@ class ListViewSettings(Document):
 		disable_sidebar_stats: DF.Check
 		fields: DF.Code | None
 		show_tags: DF.Check
-		column_widths: DF.Code | None
 	# end: auto-generated types
 
 	pass

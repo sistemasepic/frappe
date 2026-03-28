@@ -679,22 +679,6 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		return normalized_width;
 	}
 
-	set_persisted_column_width(fieldname, width) {
-		const normalized_width = this.normalize_column_width(width);
-		const df = frappe.meta.get_docfield(this.doctype, fieldname);
-		const value = normalized_width ? `${normalized_width}px` : null;
-
-		if (df) {
-			df.width = value;
-		}
-
-		this.columns.forEach((col) => {
-			if (this.get_resizable_column_fieldname(col) === fieldname && col.df) {
-				col.df.width = value;
-			}
-		});
-	}
-
 	get_column_width(fieldname) {
 		if (!fieldname) {
 			return null;
@@ -766,18 +750,17 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			return null;
 		}
 
-		const meta_width = frappe.meta.get_docfield(this.doctype, fieldname)?.width;
-		const settings_width = this._get_settings_column_width(fieldname);
-
-		if (fieldname === "name") {
-			const naming_fieldname = this._get_autoname_fieldname();
-			const naming_field_width = naming_fieldname
-				? frappe.meta.get_docfield(this.doctype, naming_fieldname)?.width
-				: null;
-			return this.normalize_column_width(settings_width || meta_width || naming_field_width);
+		const user_settings_width = this._get_user_settings_column_width(fieldname);
+		if (user_settings_width) {
+			return user_settings_width;
 		}
 
-		return this.normalize_column_width(meta_width || settings_width);
+		const property_setter_width = this._get_property_setter_column_width(fieldname);
+		if (property_setter_width) {
+			return property_setter_width;
+		}
+
+		return this._get_global_settings_column_width(fieldname);
 	}
 
 	_get_autoname_fieldname() {
@@ -790,15 +773,155 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		return fieldname || null;
 	}
 
-	_get_settings_column_width(fieldname) {
+	_get_property_setter_column_width(fieldname) {
+		if (!fieldname) {
+			return null;
+		}
+
+		const meta_width = frappe.meta.get_docfield(this.doctype, fieldname)?.width;
+		if (fieldname !== "name") {
+			return this.normalize_column_width(meta_width);
+		}
+
+		const naming_fieldname = this._get_autoname_fieldname();
+		const naming_field_width = naming_fieldname
+			? frappe.meta.get_docfield(this.doctype, naming_fieldname)?.width
+			: null;
+
+		return this.normalize_column_width(meta_width || naming_field_width);
+	}
+
+	_get_global_settings_column_width(fieldname) {
+		if (!fieldname) {
+			return null;
+		}
+
 		try {
-			const column_widths = frappe.parse_json(
-				this.list_view_settings?.column_widths || "{}"
-			);
-			return column_widths[fieldname] || null;
+			const column_widths = frappe.parse_json(this.list_view_settings?.column_widths || "{}") || {};
+			if (fieldname === "name") {
+				const naming_fieldname = this._get_autoname_fieldname();
+				const naming_field_width = naming_fieldname ? column_widths[naming_fieldname] : null;
+				return this.normalize_column_width(column_widths.name || naming_field_width);
+			}
+
+			return this.normalize_column_width(column_widths[fieldname]);
 		} catch (e) {
 			return null;
 		}
+	}
+
+	_get_user_settings_column_widths() {
+		const view_user_settings = this.view_user_settings || {};
+		const raw_column_widths = view_user_settings.column_widths;
+
+		if (!raw_column_widths) {
+			return {};
+		}
+
+		if ($.isPlainObject(raw_column_widths)) {
+			return { ...raw_column_widths };
+		}
+
+		if (typeof raw_column_widths === "string") {
+			try {
+				const parsed_column_widths = frappe.parse_json(raw_column_widths);
+				return $.isPlainObject(parsed_column_widths) ? parsed_column_widths : {};
+			} catch (e) {
+				return {};
+			}
+		}
+
+		return {};
+	}
+
+	_get_user_settings_column_width(fieldname) {
+		if (!fieldname) {
+			return null;
+		}
+
+		const column_widths = this._get_user_settings_column_widths();
+		if (fieldname === "name") {
+			const naming_fieldname = this._get_autoname_fieldname();
+			const naming_field_width = naming_fieldname ? column_widths[naming_fieldname] : null;
+			return this.normalize_column_width(column_widths.name || naming_field_width);
+		}
+
+		return this.normalize_column_width(column_widths[fieldname]);
+	}
+
+	_set_user_settings_column_width(fieldname, width) {
+		if (!fieldname) {
+			return {};
+		}
+
+		const normalized_width = this.normalize_column_width(width);
+		if (!normalized_width) {
+			return this._get_user_settings_column_widths();
+		}
+
+		this.user_settings = this.user_settings || {};
+		const current_view_settings = this.user_settings[this.view_name] || {};
+		const current_widths = this._get_user_settings_column_widths();
+
+		current_widths[fieldname] = `${normalized_width}px`;
+		this.user_settings[this.view_name] = {
+			...current_view_settings,
+			column_widths: current_widths,
+		};
+
+		return current_widths;
+	}
+
+	_restore_user_settings_column_width(fieldname, previous_width) {
+		if (!fieldname) {
+			return;
+		}
+
+		this.user_settings = this.user_settings || {};
+		const current_view_settings = this.user_settings[this.view_name] || {};
+		const current_widths = this._get_user_settings_column_widths();
+
+		if (previous_width) {
+			current_widths[fieldname] = `${previous_width}px`;
+		} else {
+			delete current_widths[fieldname];
+		}
+
+		this.user_settings[this.view_name] = {
+			...current_view_settings,
+			column_widths: current_widths,
+		};
+	}
+
+	_is_system_manager() {
+		return Array.isArray(frappe.user_roles) && frappe.user_roles.includes("System Manager");
+	}
+
+	_save_global_column_width_for_system_manager(fieldname, width) {
+		const normalized_width = this.normalize_column_width(width);
+		if (!this._is_system_manager() || !fieldname || !normalized_width) {
+			return Promise.resolve(normalized_width);
+		}
+
+		return frappe
+			.call({
+				method: "frappe.desk.doctype.list_view_settings.list_view_settings.save_listview_column_width",
+				args: {
+					doctype: this.doctype,
+					fieldname,
+					width: normalized_width,
+				},
+			})
+			.then((r) => this.normalize_column_width(r.message?.width) || normalized_width)
+			.catch(() => {
+				frappe.show_alert({
+					message: __(
+						"Personal column width saved. Unable to update the global default width."
+					),
+					indicator: "orange",
+				});
+				return normalized_width;
+			});
 	}
 
 	save_column_width(fieldname, width, previous_width = null) {
@@ -807,21 +930,23 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			return;
 		}
 
-		frappe.call({
-			method: "frappe.desk.doctype.list_view_settings.list_view_settings.save_listview_column_width",
-			args: {
-				doctype: this.doctype,
-				fieldname,
-				width: normalized_width,
-			},
-			callback: (r) => {
-				const saved_width = this.normalize_column_width(r.message?.width) || normalized_width;
-				this.set_column_width_override(fieldname, saved_width);
-				this._set_settings_column_width(fieldname, saved_width);
-				this.set_persisted_column_width(fieldname, saved_width);
+		const previous_user_width = this._get_user_settings_column_width(fieldname);
+		if (previous_user_width === normalized_width) {
+			this.set_column_width_override(fieldname, normalized_width);
+			return;
+		}
+
+		const column_widths = this._set_user_settings_column_width(fieldname, normalized_width);
+
+		this.save_view_user_settings({ column_widths })
+			.then(() => this._save_global_column_width_for_system_manager(fieldname, normalized_width))
+			.then((saved_width) => {
+				const effective_width = this.normalize_column_width(saved_width) || normalized_width;
+				this.set_column_width_override(fieldname, effective_width);
 				this.apply_persisted_column_widths();
-			},
-			error: () => {
+			})
+			.catch(() => {
+				this._restore_user_settings_column_width(fieldname, previous_user_width);
 				if (previous_width) {
 					this.set_column_width_override(fieldname, previous_width);
 				} else {
@@ -833,30 +958,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 					message: __("Unable to save the column width."),
 					indicator: "red",
 				});
-			},
-		});
-	}
-
-	_set_settings_column_width(fieldname, width) {
-		if (!fieldname) {
-			return;
-		}
-
-		const normalized_width = this.normalize_column_width(width);
-		if (!normalized_width) {
-			return;
-		}
-
-		let column_widths = {};
-		try {
-			column_widths = frappe.parse_json(this.list_view_settings?.column_widths || "{}") || {};
-		} catch (e) {
-			column_widths = {};
-		}
-
-		column_widths[fieldname] = `${normalized_width}px`;
-		this.list_view_settings = this.list_view_settings || {};
-		this.list_view_settings.column_widths = JSON.stringify(column_widths);
+			});
 	}
 
 	setup_column_resizer() {
@@ -882,9 +984,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			const start_x = event.pageX;
 			const start_width =
 				this.get_column_width(fieldname) || this.normalize_column_width($column.outerWidth());
-			const previous_width = this.normalize_column_width(
-				frappe.meta.get_docfield(this.doctype, fieldname)?.width
-			);
+			const previous_width = this._get_persisted_column_width(fieldname);
 			let latest_width = start_width;
 
 			$column.addClass("resizing");

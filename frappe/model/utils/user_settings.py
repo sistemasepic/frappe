@@ -2,6 +2,7 @@
 # such as page_limit, filters, last_view
 
 import json
+import uuid
 
 import frappe
 from frappe import safe_decode
@@ -48,24 +49,57 @@ def sync_user_settings():
 	for key, data in frappe.cache.hgetall("_user_settings").items():
 		key = safe_decode(key)
 		doctype, user = key.split("::")  # WTF?
-		frappe.db.multisql(
-			{
-				"mariadb": """INSERT INTO `__UserSettings`(`user`, `doctype`, `data`)
-				VALUES (%s, %s, %s)
-				ON DUPLICATE key UPDATE `data`=%s""",
-				"*": """INSERT INTO `__UserSettings` (`user`, `doctype`, `data`)
-				VALUES (%s, %s, %s)
-				ON CONFLICT (`user`, `doctype`) DO UPDATE SET `data`=%s""",
-			},
-			(user, doctype, data, data),
-			as_dict=1,
-		)
+		_upsert_user_settings_row(user, doctype, data)
+
+
+def _upsert_user_settings_row(user, doctype, data):
+	max_attempts = 3
+	for attempt in range(1, max_attempts + 1):
+		savepoint_name = f"user_settings_upsert_{uuid.uuid4().hex[:8]}"
+		frappe.db.savepoint(savepoint_name)
+		try:
+			frappe.db.multisql(
+				{
+					"mariadb": """INSERT INTO `__UserSettings`(`user`, `doctype`, `data`)
+					VALUES (%s, %s, %s)
+					ON DUPLICATE key UPDATE `data`=%s""",
+					"*": """INSERT INTO `__UserSettings` (`user`, `doctype`, `data`)
+					VALUES (%s, %s, %s)
+					ON CONFLICT (`user`, `doctype`) DO UPDATE SET `data`=%s""",
+				},
+				(user, doctype, data, data),
+				as_dict=1,
+			)
+			frappe.db.release_savepoint(savepoint_name)
+			return
+		except Exception as exc:
+			frappe.db.rollback(save_point=savepoint_name)
+			if attempt < max_attempts and _is_retryable_serialization_error(exc):
+				continue
+			raise
+
+
+def _is_retryable_serialization_error(exc):
+	message = str(exc).lower()
+	pg_code = getattr(exc, "pgcode", None)
+	return pg_code == "40001" or "serialization" in message or "concorrente" in message
 
 
 @frappe.whitelist()
 def save(doctype, user_settings):
 	user_settings = json.loads(user_settings or "{}")
 	update_user_settings(doctype, user_settings)
+
+	# Persist immediately so user preferences survive cache eviction/restarts.
+	persisted_settings = get_user_settings(doctype, for_update=True)
+	try:
+		_upsert_user_settings_row(frappe.session.user, doctype, persisted_settings)
+	except Exception:
+		# Keep request successful: settings are already in cache and can be synced later.
+		frappe.logger("user_settings").warning(
+			"Failed to persist user settings to __UserSettings",
+			exc_info=True,
+		)
 	return user_settings
 
 

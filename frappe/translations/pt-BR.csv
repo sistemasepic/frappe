@@ -1492,7 +1492,6 @@ Enter Code displayed in OTP App.,Informe o código exibido no aplicativo OTP.
 "Enter Email Recipient(s) in the To, CC, or BCC fields,""Informe o(s) destinat�rio(s) de e-mail nos campos Para, CC ou BCC"""
 Enter folder name,Informe o nome da pasta
 Enter Form Type,Informe o tipo de formulário
-Enter Form Type,Informe o tipo de formul�rio
 "Enter list of Options, each on a new line.,""Informe a lista de opções, cada uma em uma nova linha."""
 "Enter list of Options, each on a new line.,""Informe a lista de op��es, cada uma em uma nova linha."""
 "Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.),""Informe aqui os parâmetros estáticos da URL (ex.: sender=ERPNext, username=ERPNext, password=1234 etc.)"""
@@ -1504,7 +1503,6 @@ Enter url parameter for receiver nos,Informe o par�metro de URL para n�meros
 Enter Value,Informe o valor
 Enter your password,Informe sua senha
 Entity Name,Nome da entidade
-Entity Type,Tipo da entidade
 Entity Type,Tipo de entidade
 Equals,Igual
 Error {0}: {1},Erro {0}: {1}
@@ -3088,6 +3086,7 @@ Not In,Não está em
 Not Like,Não contém
 Not Linked to any record,Não vinculado a nenhum registro
 Not Nullable,Não permite nulo
+Not permitted,Não permitido
 Not Permitted to read {0},Não permitido ler {0}
 Not permitted to view {0},Não permitido visualizar {0}
 Not Permitted,Não permitido
@@ -5128,7 +5127,7 @@ User {0} cannot be deleted,O usuário {0} não pode ser excluído
 User {0} cannot be disabled,O usuário {0} não pode ser desativado
 User {0} cannot be renamed,O usuário {0} não pode ser renomeado
 User {0} does not have access to this document,O usuário {0} não tem acesso a este documento
-User {0} does not have doctype access via role permission for document {1},O usuário {0} não tem acesso doctype por meio de permissão de função para o documento {1}
+User {0} does not have doctype access via role permission for document {1},O usuário {0} não tem permissão para acessar {1}
 User {0} does not have the permission to create a Workspace.,O usuário {0} não tem permissão para criar um espaço de trabalho.
 User {0} has requested for data deletion,O usuário {0} solicitou a exclusão de dados
 User {0} has started an impersonation session as you. <br><br><b>Reason provided:</b> {1},O usuário {0} iniciou uma sessão de representação como você. <br><br><b>Motivo fornecido:</b> {1}
