@@ -4783,6 +4783,7 @@ These settings are required if 'Custom' LDAP Directory is used,Essas configuraç
 These values will be automatically updated in transactions and also will be useful to restrict permissions for this user on transactions containing these values.,Esses valores serão atualizados automaticamente em transações e também serão úteis para restringir as permissões para este usuário em operações que contenham esses valores.
 Third Party Apps,Aplicativos de terceiros
 Third Party Authentication,Autenticação de Terceiros
+This is a standard sidebar and cannot be edited,Esta é uma barra lateral padrão e não pode ser editada.
 This action is irreversible. Do you wish to continue?,Esta ação é irreversível. Você deseja continuar?
 This action is only allowed for {},Esta ação só é permitida para {}
 This cannot be undone,Isso não pode ser desfeito
