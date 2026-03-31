@@ -965,6 +965,7 @@ Data Import Log,Log de importação de dados
 Data Import Template,Modelo de importação de dados
 Data Import,Importação de Dados
 Data Too Long,Dados muito longos
+Date,Calendário
 Data,Dados
 Database Engine,Engine do banco de dados
 Database Processes,Processos do banco de dados
@@ -978,7 +979,6 @@ Date {0} must be in format: {1},A data {0} deve estar no formato: {1}
 Date and Number Format,Data e Formato de número
 Date Format,Formato de Data
 Date Range,Intervalo de datas
-Date,Data
 Dates are often easy to guess.,Datas costumam ser fáceis de adivinhar.
 Datetime,Data e Hora
 Day of Week,Dia da Semana
@@ -1355,14 +1355,10 @@ Email ID,ID de e-mail
 Email IDs,IDs de e-mail
 Email Inbox,Caixa de Entrada
 email inbox,Caixa de entrada de e-mail
-Email is mandatory to create User Email,O e-mail � obrigat�rio para criar E-mail do Usu�rio
 Email is mandatory to create User Email,O e-mail é obrigatório para criar E-mail do Usuário
 Email not sent to {0} (unsubscribed / disabled),E-mail não enviado para {0} (descadastrado / desativado)
-Email not sent to {0} (unsubscribed / disabled),E-mail n�o enviado para {0} (descadastrado / desativado)
 Email not verified with {0},E-mail não verificado com {0}
-Email not verified with {0},E-mail n�o verificado com {0}
 Email Queue flushing aborted due to too many failures.,Limpeza da fila de e-mail abortada devido a muitas falhas.
-Email queue is currently suspended. Resume to automatically send other emails.,A fila de e-mails est� suspensa no momento. Retome para enviar automaticamente os outros e-mails.
 Email queue is currently suspended. Resume to automatically send other emails.,A fila de e-mails está suspensa no momento. Retome para enviar automaticamente os outros e-mails.
 Email Queue Recipient,Destinatário da fila de e-mail
 Email Queue records,Registros da fila de Emails
@@ -1377,53 +1373,36 @@ Email Sent,E-mail enviado
 Email Settings,Configurações de e-mail
 Email Signature,Assinatura de E-mail
 Email size {0:.2f} MB exceeds the maximum allowed size of {1:.2f} MB,O tamanho do e-mail {0:.2f} MB excede o tamanho máximo permitido de {1:.2f} MB
-Email size {0:.2f} MB exceeds the maximum allowed size of {1:.2f} MB,O tamanho do e-mail {0:.2f} MB excede o tamanho m�ximo permitido de {1:.2f} MB
 Email Status,Status do e-mail
 Email Sync Option,Opção de sincronização de e-mail
 Email Template,Modelo de E-mail
 Email Threads on Assigned Document,Conversas de e-mail em documentos atribuídos
 Email To,E-mail para
 Email undo window is over. Cannot undo email.,A janela para desfazer o e-mail terminou. Não é possível desfazer o e-mail.
-Email undo window is over. Cannot undo email.,A janela para desfazer o e-mail terminou. N�o � poss�vel desfazer o e-mail.
 Email Unsubscribe,Cancelar inscrição de e-mail
-Email Unsubscribe,Cancelar inscri��o de e-mail
 Email,E-mail
-Emails are already being pulled from this account.,Os e-mails j� est�o sendo recebidos desta conta.
 Emails are already being pulled from this account.,Os e-mails já estão sendo recebidos desta conta.
 Emails are muted,Os e-mails estão silenciados
-Emails are muted,Os e-mails est�o silenciados
 Emails Pulled,E-mails recebidos
 Emails will be sent with next possible workflow actions,Os e-mails serão enviados com as próximas ações possíveis do fluxo de trabalho
-Emails will be sent with next possible workflow actions,Os e-mails ser�o enviados com as pr�ximas a��es poss�veis do fluxo de trabalho
 Emails,E-mails
-Embed code copied,C�digo de incorpora��o copiado
 Embed code copied,Código de incorporação copiado
 Empty alias is not allowed,Alias vazio não é permitido
-Empty alias is not allowed,Alias vazio n�o � permitido
 Empty column,Coluna vazia
 Empty string arguments are not allowed,Argumentos de string vazia não são permitidos
-Empty string arguments are not allowed,Argumentos de string vazia n�o s�o permitidos
 empty,vazio
 Enable Action Confirmation,Habilitar confirmação de ação
-Enable Action Confirmation,Habilitar confirma��o de a��o
 Enable Address Autocompletion,Habilitar autocompletar de endereço
-Enable Address Autocompletion,Habilitar autocompletar de endere�o
 Enable Allow Auto Repeat for the doctype {0} in Customize Form,Habilite Permitir Repetição Automática para o doctype {0} em Personalizar Formulário
-Enable Allow Auto Repeat for the doctype {0} in Customize Form,Habilite Permitir Repeti��o Autom�tica para o doctype {0} em Personalizar Formul�rio
 Enable Auto Reply,Ativar resposta automática
 Enable Automatic Linking in Documents,Ativar Vinculação Automática em Documentos
 Enable Comments,Ativação de comentários
 Enable developer mode to create a standard Print Template,Habilite o modo de desenvolvedor para criar um Modelo de Impressão padrão
-Enable developer mode to create a standard Print Template,Habilite o modo de desenvolvedor para criar um Modelo de Impress�o padr�o
 Enable developer mode to create a standard Web Template,Habilite o modo de desenvolvedor para criar um Modelo Web padrão
-Enable developer mode to create a standard Web Template,Habilite o modo de desenvolvedor para criar um Modelo Web padr�o
 Enable Dynamic Client Registration,Habilitar registro dinâmico de cliente
-Enable Dynamic Client Registration,Habilitar registro din�mico de cliente
 Enable Email Notifications,Habilitar notificações por e-mail
 Enable Google API in Google Settings.,Habilite a API do Google em Configurações do Google.
-Enable Google API in Google Settings.,Habilite a API do Google em Configura��es do Google.
 Enable Google indexing,Habilitar indexação do Google
-Enable Google indexing,Habilitar indexa��o do Google
 Enable if on click|||opens modal.,Habilite se ao clicar|||abre modal.
 Enable in-app website tracking,Habilitar rastreamento de site no aplicativo
 Enable Incoming,Habilitar Recebimento (Entrada)
@@ -1431,44 +1410,31 @@ Enable Onboarding,Habilitar onboarding
 Enable Outgoing,Habilitar Envio (Saída)
 Enable Password Policy,Ativar política de senha
 Enable Prepared Report,Habilitar relatório preparado
-Enable Prepared Report,Habilitar relat�rio preparado
 Enable Print Server,Ativar servidor de impressão
 Enable Push Notification Relay,Habilitar relay de notificação push
-Enable Push Notification Relay,Habilitar relay de notifica��o push
 Enable Rate Limit,Habilitar limite de taxa
 Enable Raw Printing,Ativar impressão bruta
 Enable Report,Habilitar relatório
-Enable Report,Habilitar relat�rio
 Enable Scheduled Jobs,Ativar Tarefas Agendadas
 Enable Scheduler,Habilitar agendador
 Enable Security,Ativar segurança
 Enable Social Login,Ativar Login Social
 Enable System Notification,Habilitar notificação do sistema
 Enable Tracking Page Views,Habilitar rastreamento de visualizações de página
-Enable Tracking Page Views,Habilitar rastreamento de visualiza��es de p�gina
 Enable Two Factor Auth,Habilitar autenticação em dois fatores
-Enable Two Factor Auth,Habilitar autentica��o em dois fatores
 Enable,Permitir
 Enabled email inbox for user {0},Caixa de entrada de e-mail habilitada para o usuário {0}
-Enabled email inbox for user {0},Caixa de entrada de e-mail habilitada para o usu�rio {0}
 Enabled Scheduler,Agendador habilitado
 Enabled,Ativado
 Enables Calendar and Gantt views.,Habilita as visualizações Calendário e Gantt.
-Enables Calendar and Gantt views.,Habilita as visualiza��es Calend�rio e Gantt.
 "Enabling auto reply on an incoming email account will send automated replies to all the synchronized emails. Do you wish to continue?,""Ativar a resposta automática em uma conta de e-mail de entrada enviará respostas automáticas para todos os e-mails sincronizados. Deseja continuar?"""
-"Enabling this will register your site on a central relay server to send push notifications for all installed apps through Firebase Cloud Messaging. This server only stores user tokens and error logs, and no messages are saved.,""Ao habilitar isto, seu site ser� registrado em um servidor relay central para enviar notifica��es push de todos os aplicativos instalados por meio do Firebase Cloud Messaging. Esse servidor armazena apenas tokens de usu�rio e logs de erro, e nenhuma mensagem � salva."""
 "Enabling this will register your site on a central relay server to send push notifications for all installed apps through Firebase Cloud Messaging. This server only stores user tokens and error logs, and no messages are saved.,""Ao habilitar isto, seu site será registrado em um servidor relay central para enviar notificações push de todos os aplicativos instalados por meio do Firebase Cloud Messaging. Esse servidor armazena apenas tokens de usuário e logs de erro, e nenhuma mensagem é salva."""
 "Enabling this will submit documents in background,""Ao habilitar isto, os documentos serão enviados em segundo plano"""
-"Enabling this will submit documents in background,""Ao habilitar isto, os documentos ser�o enviados em segundo plano"""
 Encrypt Backups,Criptografar backups
-Encryption key is in invalid format!,A chave de criptografia est� em formato inv�lido!
 Encryption key is in invalid format!,A chave de criptografia está em formato inválido!
-Encryption key is invalid! Please check site_config.json,A chave de criptografia � inv�lida! Verifique o site_config.json
 Encryption key is invalid! Please check site_config.json,A chave de criptografia é inválida! Verifique o site_config.json
 End Date cannot be before Start Date!,A data final não pode ser anterior à data inicial!
-End Date cannot be before Start Date!,A data final n�o pode ser anterior � data inicial!
 End Date cannot be today.,A data final não pode ser hoje.
-End Date cannot be today.,A data final n�o pode ser hoje.
 End Date Field,Campo de data final
 End Date,Data final
 End,Fim
@@ -1478,35 +1444,24 @@ Ends on,Termina em
 Energy Point,Ponto de energia
 Enqueued By,Enfileirado por
 Enqueued creation of indexes,Criação de índices enfileirada
-Enqueued creation of indexes,Cria��o de �ndices enfileirada
 Ensure the user and group search paths are correct.,Garanta que os caminhos de pesquisa de usuário e grupo estejam corretos.
-Ensure the user and group search paths are correct.,Garanta que os caminhos de pesquisa de usu�rio e grupo estejam corretos.
 Enter a name for this {0},Informe um nome para este {0}
 Enter Client Id and Client Secret in Google Settings.,Informe o Client ID e o Client Secret em Configurações do Google.
-Enter Client Id and Client Secret in Google Settings.,Informe o Client ID e o Client Secret em Configura��es do Google.
-Enter Code displayed in OTP App.,Informe o c�digo exibido no aplicativo OTP.
 Enter Code displayed in OTP App.,Informe o código exibido no aplicativo OTP.
-"Enter default value fields (keys) and values. If you add multiple values for a field, the first one will be picked. These defaults are also used to set \match\"" permission rules. To see list of fields, go to \""Customize Form\""."",""Informe os campos de valor padr�o (chaves) e valores. Se voc� adicionar v�rios valores para um campo, o primeiro ser� escolhido. Esses padr�es tamb�m s�o usados para definir regras de permiss�o de \""correspond�ncia\"". Para ver a lista de campos, v� para \""Personalizar Formul�rio\""."""
 "Enter default value fields (keys) and values. If you add multiple values for a field, the first one will be picked. These defaults are also used to set \match\"" permission rules. To see list of fields, go to \""Customize Form\""."",""Informe os campos de valor padrão (chaves) e valores. Se você adicionar vários valores para um campo, o primeiro será escolhido. Esses padrões também são usados para definir regras de permissão de \""correspondência\"". Para ver a lista de campos, vá para \""Personalizar Formulário\""."""
 "Enter Email Recipient(s) in the To, CC, or BCC fields,""Informe o(s) destinatário(s) de e-mail nos campos Para, CC ou BCC"""
-"Enter Email Recipient(s) in the To, CC, or BCC fields,""Informe o(s) destinat�rio(s) de e-mail nos campos Para, CC ou BCC"""
 Enter folder name,Informe o nome da pasta
 Enter Form Type,Informe o tipo de formulário
 "Enter list of Options, each on a new line.,""Informe a lista de opções, cada uma em uma nova linha."""
-"Enter list of Options, each on a new line.,""Informe a lista de op��es, cada uma em uma nova linha."""
 "Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.),""Informe aqui os parâmetros estáticos da URL (ex.: sender=ERPNext, username=ERPNext, password=1234 etc.)"""
-"Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.),""Informe aqui os par�metros est�ticos da URL (ex.: sender=ERPNext, username=ERPNext, password=1234 etc.)"""
 Enter url parameter for message,Informe o parâmetro de URL para mensagem
-Enter url parameter for message,Informe o par�metro de URL para mensagem
 Enter url parameter for receiver nos,Informe o parâmetro de URL para números do destinatário
-Enter url parameter for receiver nos,Informe o par�metro de URL para n�meros do destinat�rio
 Enter Value,Informe o valor
 Enter your password,Informe sua senha
 Entity Name,Nome da entidade
 Entity Type,Tipo de entidade
 Equals,Igual
 Error {0}: {1},Erro {0}: {1}
-"Error connecting to QZ Tray Application...<br><br> You need to have QZ Tray application installed and running, to use the Raw Print feature.<br><br><a target=\_blank\"" href=\""https://qz.io/download/\"">Click here to Download and install QZ Tray</a>.<br> <a target=\""_blank\"" href=\""https://erpnext.com/docs/user/manual/en/setting-up/print/raw-printing\"">Click here to learn more about Raw Printing</a>."",""Erro ao conectar ao aplicativo QZ Tray...<br><br> Voc� precisa ter o aplicativo QZ Tray instalado e em execu��o para usar o recurso Raw Print.<br><br><a target=\""_blank\"" href=\""https://qz.io/download/\"">Clique aqui para baixar e instalar o QZ Tray</a>.<br> <a target=\""_blank\"" href=\""https://erpnext.com/docs/user/manual/en/setting-up/print/raw-printing\"">Clique aqui para saber mais sobre Raw Printing</a>."""
 "Error connecting to QZ Tray Application...<br><br> You need to have QZ Tray application installed and running, to use the Raw Print feature.<br><br><a target=\_blank\"" href=\""https://qz.io/download/\"">Click here to Download and install QZ Tray</a>.<br> <a target=\""_blank\"" href=\""https://erpnext.com/docs/user/manual/en/setting-up/print/raw-printing\"">Click here to learn more about Raw Printing</a>."",""Erro ao conectar ao aplicativo QZ Tray...<br><br> Você precisa ter o aplicativo QZ Tray instalado e em execução para usar o recurso Raw Print.<br><br><a target=\""_blank\"" href=\""https://qz.io/download/\"">Clique aqui para baixar e instalar o QZ Tray</a>.<br> <a target=\""_blank\"" href=\""https://erpnext.com/docs/user/manual/en/setting-up/print/raw-printing\"">Clique aqui para saber mais sobre Raw Printing</a>."""
 Error connecting via IMAP/POP3: {e},Erro ao conectar via IMAP/POP3: {e}
 Error connecting via SMTP: {e},Erro ao conectar via SMTP: {e}
@@ -1514,20 +1469,15 @@ Error has occurred in {0},Ocorreu um erro em {0}
 Error in {0}.get_list: {1},Erro em {0}.get_list: {1}
 Error in Client Script,Erro no Script do Cliente
 Error in Client Script.,Erro no Script do Cliente.
-Error in Header/Footer Script,Erro no Script de Cabe�alho/Rodap�
 Error in Header/Footer Script,Erro no Script de Cabeçalho/Rodapé
 Error in Notification,Erro na notificação
-Error in Notification,Erro na notifica��o
 Error in print format on line {0}: {1},Erro no formato de impressão na linha {0}: {1}
-Error in print format on line {0}: {1},Erro no formato de impress�o na linha {0}: {1}
 Error Log,Log de Erros
 Error Message,Mensagem de erro
 Error parsing nested filters: {0}. {1},Erro ao processar filtros aninhados: {0}. {1}
-"Error validating ""Ignore User Permissions"",Erro ao validar ""Ignorar Permiss�es do Usu�rio"""
 "Error validating ""Ignore User Permissions"",Erro ao validar ""Ignorar Permissões do Usuário"""
 Error while connecting to email account {0},Erro ao conectar com a conta de e-mail {0}
 Error while evaluating Notification {0}. Please fix your template.,Erro ao avaliar a Notificação {0}. Corrija seu modelo.
-Error while evaluating Notification {0}. Please fix your template.,Erro ao avaliar a Notifica��o {0}. Corrija seu modelo.
 Error,Erro
 Error: {0} Row #{1}: Value missing for: {2},Erro: {0} Linha #{1}: valor ausente para: {2}
 Error: Data missing in table {0},Erro: dados ausentes na tabela {0}
@@ -1535,41 +1485,33 @@ Error: Value missing for {0}: {1},Erro: valor ausente para {0}: {1}
 Errors,Erros
 ESC,ESC
 Evaluate as Expression,Avaliar como expressão
-Evaluate as Expression,Avaliar como express�o
 Event Category,Categoria do Evento
 Event Frequency,Frequência do evento
-Event Frequency,Frequ�ncia do evento
 Event Notifications,Notificações de evento
-Event Notifications,Notifica��es de evento
 Event Participants,Participantes do evento
 Event Reminders,Lembretes de eventos
 Event Synced with Google Calendar.,Evento sincronizado com Google Calendar.
 Event Type,Tipo de evento
 Event,Evento
 Events in Today's Calendar,Eventos no calendário de hoje
-Events in Today's Calendar,Eventos no calend�rio de hoje
 Events,Eventos
 Everyone,Todos
 "Ex: \colors\"": [\""#d1d8dd\"", \""#ff5858\""]"",""Ex.: \""colors\"": [\""#d1d8dd\"", \""#ff5858\""]"""
 Exact Copies,Cópias exatas
-Exact Copies,C�pias exatas
 Example,Exemplo
 "Example: ""/desk"",Exemplo: ""/desk"""
 Example: #Tree/Account,Exemplo: # árvore / conta
 Example: {{ subject }},Exemplo: {{ subject }}
 Example: 00001,Exemplo: 00001
-Example: Setting this to 24:00 will log out a user if they are not active for 24:00 hours.,Exemplo: definir isto como 24:00 far� logout do usu�rio se ele n�o estiver ativo por 24:00 horas.
 Example: Setting this to 24:00 will log out a user if they are not active for 24:00 hours.,Exemplo: definir isto como 24:00 fará logout do usuário se ele não estiver ativo por 24:00 horas.
 Excel,Excel
 Excellent,Excelente
 Exception,Exceção
 Execute Console script,Executar script do Console
 Execute,Executar
-Executing Code,Executando c�digo
 Executing Code,Executando código
 Executing...,Executando...
 Execution Time: {0} sec,Tempo de execução: {0} s
-Execution Time: {0} sec,Tempo de execu��o: {0} s
 Executive,Executivo
 Existing Role,Perfil existente
 Expand All,Expandir tudo
@@ -1579,7 +1521,6 @@ Experimental,Experimental
 Expert,Especialista
 Expiration time,Data de validade
 Expire Notification On,Expirar notificação em
-Expire Notification On,Expirar notifica��o em
 Expired,Expirado
 Expires In,Expira em
 Expires On,Expira em
@@ -1589,40 +1530,28 @@ Export 1 record,Exportar 1 registro
 Export all {0} rows?,Exportar todas as {0} linhas?
 Export all matching rows?,Exportar todas as linhas correspondentes?
 Export as zip,Exportar como zip
-Export Custom Permissions,Exportar permiss�es personalizadas
 Export Custom Permissions,Exportar permissões personalizadas
 Export Customizations,Exportar personalizações
-Export Customizations,Exportar personaliza��es
 Export Data,Exportar dados
 Export Errored Rows,Exportar linhas com erro
 Export From,Exportar de
 Export Import Log,Exportar log de importação
-Export Import Log,Exportar log de importa��o
 Export in Background,Exportar em segundo plano
 Export not allowed. You need {0} role to export.,Exportação não permitida. Você precisa do perfil {0} para exportar.
-Export not allowed. You need {0} role to export.,Exporta��o n�o permitida. Voc� precisa do perfil {0} para exportar.
-Export only customizations assigned to the selected module.<br><span class='text-muted'><strong>Note:</strong> You must set the <em>Module (for export)</em> field on Custom Field and Property Setter records before applying this filter.</span><p class='alert alert-warning'> <strong>Warning:</strong> Customizations from other modules will be excluded.</p>,Exporte apenas as personaliza��es atribu�das ao m�dulo selecionado.<br><span class='text-muted'><strong>Nota:</strong> Voc� deve definir o campo <em>M�dulo (para exporta��o)</em> nos registros de Campo Personalizado e Property Setter antes de aplicar este filtro.</span><p class='alert alert-warning'> <strong>Aviso:</strong> Personaliza��es de outros m�dulos ser�o exclu�das.</p>
 Export only customizations assigned to the selected module.<br><span class='text-muted'><strong>Note:</strong> You must set the <em>Module (for export)</em> field on Custom Field and Property Setter records before applying this filter.</span><p class='alert alert-warning'> <strong>Warning:</strong> Customizations from other modules will be excluded.</p>,Exporte apenas as personalizações atribuídas ao módulo selecionado.<br><span class='text-muted'><strong>Nota:</strong> Você deve definir o campo <em>Módulo (para exportação)</em> nos registros de Campo Personalizado e Property Setter antes de aplicar este filtro.</span><p class='alert alert-warning'> <strong>Aviso:</strong> Personalizações de outros módulos serão excluídas.</p>
 Export Report: {0},Exportar relatório: {0}
-Export Report: {0},Exportar relat�rio: {0}
-Export the data without any header notes and column descriptions,Exportar os dados sem notas de cabe�alho e descri��es de coluna
 Export the data without any header notes and column descriptions,Exportar os dados sem notas de cabeçalho e descrições de coluna
 Export Type,Tipo de exportação
-Export without main header,Exportar sem cabe�alho principal
 Export without main header,Exportar sem cabeçalho principal
 Export,Exportar
-"Exported permissions will be force-synced on every migrate overriding any other customization.,""As permiss�es exportadas ser�o sincronizadas for�adamente em cada migra��o, sobrescrevendo qualquer outra personaliza��o."""
 "Exported permissions will be force-synced on every migrate overriding any other customization.,""As permissões exportadas serão sincronizadas forçadamente em cada migração, sobrescrevendo qualquer outra personalização."""
 Expose Recipients,Mostrar Destinatários
 Expression (old style),Expressão (estilo antigo)
-Expression (old style),Express�o (estilo antigo)
 Expression,Expressão
-Expression,Express�o
 "Expression,Optional,""""""""Expressão, Opcional"""""""","""""""
 External Link,Link externo
 External,Externo
 Extra Parameters,Parâmetros extras
-Extra Parameters,Par�metros extras
 Facebook,Facebook
 Fail,Falha
 Failed Emails,E-mails com falha
@@ -1633,12 +1562,9 @@ Failed Logins (Last 30 days),Logins com falha (últimos 30 dias)
 Failed to aquire lock: {}. Lock may be held by another process.,Falha ao adquirir lock: {}. O lock pode estar em uso por outro processo.
 Failed to change password.,Falha ao alterar a senha.
 Failed to complete setup,Falha ao concluir a configuração
-Failed to complete setup,Falha ao concluir a configura��o
 Failed to compute request body: {},Falha ao calcular o corpo da requisição: {}
-Failed to compute request body: {},Falha ao calcular o corpo da requisi��o: {}
 Failed to connect to server,Falha ao conectar ao servidor
 "Failed to decode token, please provide a valid base64-encoded token.,""Falha ao decodificar o token, informe um token válido codificado em base64."""
-"Failed to decode token, please provide a valid base64-encoded token.,""Falha ao decodificar o token, informe um token v�lido codificado em base64."""
 Failed to decrypt key {0},Falha ao descriptografar a chave {0}
 Failed to delete {0} documents: {1},Falha ao excluir documentos {0}: {1}
 Failed to delete communication,Falha ao excluir a comunicação
@@ -1659,7 +1585,6 @@ Failed to send email with subject:,Falha ao enviar e-mail com assunto:
 Failed to send notification email,Falha ao enviar e-mail de notificação
 Failed to update global settings,Falha ao atualizar configurações globais
 Failed Transactions,Transações com falha
-Failed Transactions,Transa��es com falha
 Failed while calling API {0},Falha ao chamar a API {0}
 Failed,Falhou
 Failing Scheduled Jobs (last 7 days),Tarefas agendadas com falha (últimos 7 dias)
@@ -3079,6 +3004,7 @@ Not Ancestors Of,Não ancestrais de
 Not Descendants Of,Não descendentes de
 Not Equals,Diferente
 Not Found,Não encontrado
+Not found,Não encontrado
 Not Helpful,Não útil
 "Not in Developer Mode! Set in site_config.json or make 'Custom' DocType.,Não está no Modo de Desenvolvedor! Defina em site_config.json ou torne o DocType ""Custom""."
 Not in Developer Mode,Não está no Modo de Desenvolvedor
