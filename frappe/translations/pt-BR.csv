@@ -619,7 +619,7 @@ Check this if the Update Value is a formula or expression (e.g. doc.amount * 2).
 Check this if you don't want users to sign up for an account on your site. Users won't get desk access unless you explicitly provide it.,Marque isto se você não quiser que usuários se cadastrem no seu site. Os usuários não terão acesso ao desk a menos que você conceda explicitamente.
 Check this if you want to force the user to select a series before saving. There will be no default if you check this.,Marque esta opção se você deseja forçar o usuário a selecionar uma série antes de salvar. Não haverá nenhum padrão se você marcar isso.
 "Check to display the full numeric value (e.g., 1,234,567 instead of 1.2M).,""Marque para exibir o valor numérico completo (ex.: 1,234,567 em vez de 1.2M)."""
-Check,Verifica
+Check,Caixa de seleção
 Checking one moment,Verificando um momento
 Checking this will enable tracking page views for blogs, web pages, etc.,Marcar isto habilitará o rastreamento de visualizações de página para blogs, páginas web etc.
 Checking this will hide custom doctypes and reports cards in Links section,Marcar isto ocultará os cartões de doctypes e relatórios personalizados na seção Links
@@ -2009,7 +2009,7 @@ HTML,HTML
 hub,hub
 Human-readable name intended for display to the end user.,Nome legível destinado à exibição para o usuário final.
 Icon Image,Imagem do ícone
-"Icon is not correctly configured please check the workspace sidebar to it,O ícone não está configurado corretamente; verifique na barra lateral da área de trabalho."
+Icon is not correctly configured please check the workspace sidebar to it,"O ícone não está configurado corretamente. Verifique na barra lateral da área de trabalho."
 Icon Style,Estilo do ícone
 Icon Type,Tipo de ícone
 Icon will appear on the button,O ícone aparecerá no botão
@@ -3244,7 +3244,11 @@ Page Title,Título da página
 Page to show on the website|||,Página para mostrar no site|||
 Page Width (in mm),Largura da página (em mm)
 Page,Página
+Page undefined not found,Página indefinida não encontrada
 Parameter,Parâmetro
+Parameters ERP360,Parâmetros do Sistema
+Partner,Parceiro
+Partners,Parceiros
 Parent DocType,DocType pai
 Parent document type is required to create a dashboard chart,O tipo de documento pai é obrigatório para criar um gráfico de painel
 Parent Document Type is required to create a number card,O Tipo de Documento pai é obrigatório para criar um cartão numérico
@@ -3752,8 +3756,8 @@ Removed,Removido
 Rename {0},Renomear {0}
 Rename Fieldname,Renomear Nome do Campo
 Rename,Renomear
-Renamed files and replaced code in controllers, please check!
-renamed from {0} to {1},renomeado de {0} para {1}
+"Renamed files and replaced code in controllers, please check!","Arquivos renomeados e código substituído nos controladores, por favor verifique!"
+"renamed from {0} to {1}","renomeado de {0} para {1}"
 Render labels to the left and values to the right in this section,Renderizar rótulos à esquerda e valores à direita nesta seção
 Reopen,Reabrir
 Repeat Header and Footer,Repetir Cabeçalho e Rodapé
@@ -3964,7 +3968,7 @@ Saved,Salvo
 Saving Changes...,Salvando Alterações...
 Saving Customization...,Salvando Personalização...
 Saving Sidebar,Salvando Barra Lateral
-Saving this will export this document as well as the steps linked here as json.,Ao salvar, este documento e as etapas vinculadas aqui serão exportados como json.
+Saving this will export this document as well as the steps linked here as json.,"Ao salvar, este documento e as etapas vinculadas aqui serão exportados como json."
 Saving,Salvando
 Saving...,Salvando...
 Scan QRCode,Escanear Código QR
