@@ -256,6 +256,7 @@ class Engine:
 		self.is_postgres = db_type == "postgres"
 		self.is_sqlite = db_type == "sqlite"
 		self._autoincrement_name_cache = {}  # Cache per-request: doctype → bool
+		self._column_type_cache = {}  # Cache per-request: (doctype, column) → db type
 		self.user = user or frappe.session.user
 		self.parent_doctype = parent_doctype
 		self.reference_doctype = reference_doctype
@@ -1944,6 +1945,17 @@ class Engine:
 		if doctype in self._autoincrement_name_cache:
 			return self._autoincrement_name_cache[doctype]
 
+		# Internal/system tables are not regular DocTypes with retrievable meta.
+		# Avoid frappe.get_meta(...) to prevent noisy "DocType not found" messages.
+		if not doctype or doctype.startswith("__") or doctype in CORE_DOCTYPES:
+			self._autoincrement_name_cache[doctype] = False
+			return False
+
+		# Defensive: skip meta lookup when DocType record does not exist.
+		if not frappe.db.exists("DocType", doctype):
+			self._autoincrement_name_cache[doctype] = False
+			return False
+
 		is_autoincrement = False
 		try:
 			meta = frappe.get_meta(doctype)
@@ -2034,6 +2046,78 @@ class Engine:
 		if plain != "name":
 			return None
 		return fallback_doctype
+
+	def _get_column_type_cached(self, doctype: str, column: str) -> str | None:
+		"""Return db column type with per-request cache.
+
+		Returns lowercase db type name (for example: "bigint", "character varying")
+		or None when unavailable.
+		"""
+		if not doctype or not column:
+			return None
+
+		cache_key = (doctype, column)
+		if cache_key in self._column_type_cache:
+			return self._column_type_cache[cache_key]
+
+		column_type = None
+		try:
+			column_type = frappe.db.get_column_type(doctype, column)
+			if column_type:
+				column_type = str(column_type).lower()
+		except Exception:
+			pass
+
+		self._column_type_cache[cache_key] = column_type
+		return column_type
+
+	def _normalize_join_terms_for_type_compat(
+		self,
+		left_term,
+		right_term,
+		*,
+		left_doctype: str,
+		right_doctype: str,
+		right_field: str,
+	):
+		"""Normalize JOIN terms to avoid postgres type mismatch on equality.
+
+		This is used for Link joins: target.name == source.link_field.
+		When legacy schemas still have varchar link columns while target.name is bigint,
+		cast only the numeric side to varchar.
+		"""
+		if not self.is_postgres:
+			return left_term, right_term
+
+		left_type = self._get_column_type_cached(left_doctype, "name")
+		right_type = self._get_column_type_cached(right_doctype, right_field)
+
+		if not left_type or not right_type or left_type == right_type:
+			return left_term, right_term
+
+		numeric_types = {
+			"bigint",
+			"integer",
+			"smallint",
+			"numeric",
+			"decimal",
+			"real",
+			"double precision",
+		}
+		textual_types = {"character varying", "varchar", "text", "uuid"}
+
+		left_is_numeric = left_type in numeric_types
+		right_is_numeric = right_type in numeric_types
+		left_is_text = left_type in textual_types
+		right_is_text = right_type in textual_types
+
+		if left_is_numeric and right_is_text:
+			return functions.Cast(left_term, "varchar"), right_term
+
+		if right_is_numeric and left_is_text:
+			return left_term, functions.Cast(right_term, "varchar")
+
+		return left_term, right_term
 
 
 class DynamicTableField:
@@ -2193,7 +2277,21 @@ class LinkTableField(DynamicTableField):
 		table = frappe.qb.DocType(self.doctype)
 		main_table = frappe.qb.DocType(self.parent_doctype)
 		if not query.is_joined(table):
-			query = query.left_join(table).on(table.name == getattr(main_table, self.link_fieldname))
+			join_left = table.name
+			join_right = getattr(main_table, self.link_fieldname)
+
+			# Defensive compatibility for legacy schema states where link column and
+			# linked doctype name use different db types (for example bigint vs varchar).
+			if engine:
+				join_left, join_right = engine._normalize_join_terms_for_type_compat(
+					join_left,
+					join_right,
+					left_doctype=self.doctype,
+					right_doctype=self.parent_doctype,
+					right_field=self.link_fieldname,
+				)
+
+			query = query.left_join(table).on(join_left == join_right)
 			if engine and engine.apply_permissions:
 				if condition := engine.get_permission_conditions(self.doctype, table):
 					query = query.where(condition)

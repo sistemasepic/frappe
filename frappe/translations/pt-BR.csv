@@ -536,6 +536,7 @@ Camera,Câmera
 Cancel,Cancelar
 canceled,Cancelado
 Cancelled,Cancelado
+Can only change to/from Autoincrement naming rule when there is no data in the doctype,Só é possível alterar para/de a regra de nomenclatura de auto incremento quando não há dados no DocType.
 Cannot {0} {1}.,Não é possível {0} {1}.
 Cannot access file path {0},Não é possível acessar o caminho do arquivo {0}
 Cannot cancel {0}.,Não é possível cancelar {0}.

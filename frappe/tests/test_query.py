@@ -1,4 +1,5 @@
 import itertools
+from unittest.mock import patch
 
 import frappe
 from frappe.core.doctype.doctype.test_doctype import new_doctype
@@ -2017,6 +2018,73 @@ class TestQuery(IntegrationTestCase):
 		# RF-Q06: Non-autoincrement doctype (User) → no CAST
 		user_like_sql = sql_lower(frappe.qb.get_query("User", filters={"name": ["like", "adm%"]}))
 		self.assertNotIn("cast(", user_like_sql, "Non-autoincrement doctype must NOT cast")
+
+	@run_only_if(db_type_is.POSTGRES)
+	def test_link_join_cast_for_legacy_type_mismatch(self):
+		"""JOIN on Link title field must cast when linked name and link column types differ.
+
+		Scenario covered:
+		- linked doctype name column is bigint (autoincrement)
+		- source link column is character varying (legacy schema)
+		Expected:
+		- LEFT JOIN ON uses CAST(linked.name AS varchar) = source.link_field
+		"""
+		target_dt = "test_link_join_target"
+		source_dt = "test_link_join_source"
+
+		for dt in (source_dt, target_dt):
+			if frappe.db.exists("DocType", dt):
+				frappe.delete_doc("DocType", dt, force=True)
+
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", source_dt)
+			and frappe.delete_doc("DocType", source_dt, force=True, ignore_missing=True)
+		)
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", target_dt)
+			and frappe.delete_doc("DocType", target_dt, force=True, ignore_missing=True)
+		)
+
+		new_doctype(
+			target_dt,
+			autoname="autoincrement",
+			fields=[{"fieldname": "country_name", "fieldtype": "Data", "label": "Country Name"}],
+		).insert(ignore_permissions=True)
+
+		new_doctype(
+			source_dt,
+			fields=[
+				{
+					"fieldname": "country",
+					"fieldtype": "Link",
+					"label": "Country",
+					"options": target_dt,
+				}
+			],
+		).insert(ignore_permissions=True)
+
+		real_get_column_type = frappe.db.get_column_type
+
+		def fake_get_column_type(doctype, column):
+			if doctype == target_dt and column == "name":
+				return "bigint"
+			if doctype == source_dt and column == "country":
+				return "character varying"
+			return real_get_column_type(doctype, column)
+
+		with patch.object(frappe.db, "get_column_type", side_effect=fake_get_column_type):
+			sql = (
+				frappe.qb.get_query(
+					source_dt,
+					fields=["name", "country.country_name as country_country_name"],
+				)
+				.get_sql()
+				.lower()
+			)
+
+		self.assertIn("left join", sql)
+		self.assertIn("cast(", sql)
+		self.assertIn("as varchar", sql)
 
 	def test_not_equal_condition_on_none(self):
 		self.assertQueryEqual(
