@@ -191,6 +191,7 @@ FUNCTION_MAPPING = {
 	"CONCAT": functions.Concat,
 	"NOW": functions.Now,
 	"NULLIF": functions.NullIf,
+	"COALESCE": functions.Coalesce,
 	"MONTHNAME": MonthName,
 	"QUARTER": Quarter,
 	"MONTH": Month,
@@ -254,6 +255,7 @@ class Engine:
 		self.is_mariadb = db_type == "mariadb"
 		self.is_postgres = db_type == "postgres"
 		self.is_sqlite = db_type == "sqlite"
+		self._autoincrement_name_cache = {}  # Cache per-request: doctype → bool
 		self.user = user or frappe.session.user
 		self.parent_doctype = parent_doctype
 		self.reference_doctype = reference_doctype
@@ -635,6 +637,19 @@ class Engine:
 			operator_fn = OPERATOR_MAP["ilike"]
 		else:
 			operator_fn = OPERATOR_MAP[_operator.casefold()]
+
+		# For PostgreSQL: cast 'name' to varchar when using text operators against an
+		# autoincrement doctype (whose 'name' column is BIGINT), preventing type-mismatch
+		# errors like "operator does not exist: bigint = unknown".
+		_is_text_operator = _operator.casefold() in ("like", "ilike", "not like")
+		_is_text_comparison = _operator.casefold() in ("=", "!=") and isinstance(_value, str)
+		if _is_text_operator or _is_text_comparison:
+			_field = self._cast_name_if_required(
+				_field,
+				field_reference=field if isinstance(field, str) else None,
+				doctype=doctype,
+			)
+
 		if _value is None and isinstance(_field, Field):
 			if operator_fn == builtin_operator.ne:
 				filter_field_name = (
@@ -1881,6 +1896,146 @@ class Engine:
 		return True
 
 
+	# ------------------------------------------------------------------
+	# Autoincrement / cast helpers
+	# ------------------------------------------------------------------
+
+	def _cast_name_if_required(self, term, field_reference=None, doctype=None):
+		"""Return CAST(term AS varchar) when all defensive gates pass.
+
+		Gates (any failure → term returned unchanged):
+		1. Only Postgres
+		2. term must be a pypika Term
+		3. term must not already be a varchar cast (avoids CAST(CAST(...)))
+		4. The field logical name must be 'name'
+		5. The resolved doctype must use autoname='autoincrement'
+		"""
+		# Gate 1: only Postgres
+		if not self.is_postgres:
+			return term
+
+		# Gate 2: only pypika Terms
+		if not isinstance(term, Term):
+			return term
+
+		# Gate 3: avoid double-cast
+		if self._is_varchar_cast_term(term):
+			return term
+
+		# Gate 4 + 5: resolve doctype and check autoincrement
+		target_doctype = self._resolve_name_field_doctype(
+			term, field_reference=field_reference, fallback_doctype=doctype or self.doctype
+		)
+		if not target_doctype:
+			return term
+
+		if not self._is_autoincrement_name_doctype(target_doctype):
+			return term
+
+		return functions.Cast(term, "varchar")
+
+	def _is_autoincrement_name_doctype(self, doctype):
+		"""Return True if *doctype* uses autoname='autoincrement'.
+
+		Results are cached per Engine instance (one per request) to avoid
+		repeated meta lookups within the same query processing cycle.
+		Errors fall back to False (conservative — no cast applied).
+		"""
+		if doctype in self._autoincrement_name_cache:
+			return self._autoincrement_name_cache[doctype]
+
+		is_autoincrement = False
+		try:
+			meta = frappe.get_meta(doctype)
+			if meta and meta.autoname == "autoincrement":
+				is_autoincrement = True
+		except Exception:
+			pass  # Defensive: unknown doctype → don't cast
+
+		self._autoincrement_name_cache[doctype] = is_autoincrement
+		return is_autoincrement
+
+	def _is_varchar_cast_term(self, term):
+		"""Return True if *term* is already a CAST(… AS varchar/VARCHAR) expression."""
+		if isinstance(term, functions.Cast):
+			as_type = getattr(term, "as_type", None)
+			if as_type and str(as_type).lower() in ("varchar", "character varying"):
+				return True
+		return False
+
+	def _resolve_name_field_doctype(self, term, field_reference=None, fallback_doctype=None):
+		"""Return the doctype name when the field being referenced is 'name'.
+
+		Strategy:
+		1. If *field_reference* is provided as a string, parse it first.
+		2. If the pypika term's .name attribute equals 'name', try to extract
+		   the doctype from the term's .table attribute.
+		3. Fall back to *fallback_doctype*.
+		Returns None when the field is definitively not 'name'.
+		"""
+		if field_reference:
+			doctype = self._extract_name_field_doctype_from_ref(field_reference, fallback_doctype)
+			if doctype is not None:
+				return doctype
+			# field_reference was provided but field is not 'name' → bail out
+			return None
+
+		# Inspect pypika term
+		field_name = getattr(term, "name", None)
+		if field_name != "name":
+			return None
+
+		table = getattr(term, "table", None)
+		if table:
+			table_name = getattr(table, "_table_name", None) or getattr(table, "get_table_name", lambda: None)()
+			if isinstance(table_name, str) and table_name.startswith("tab"):
+				return table_name[3:]
+
+		return fallback_doctype
+
+	def _extract_name_field_doctype_from_ref(self, field_reference, fallback_doctype=None):
+		"""Parse a field reference string in any of the supported formats and
+		return the doctype when the field is 'name', otherwise return None.
+
+		Supported formats:
+		  - ``"name"``
+		  - ``"tabCadCidade.name"``
+		  - ``"`tabCadCidade`.name"``
+		  - ``"CadCidade.name"``  (doctype without 'tab' prefix)
+		"""
+		field_ref = (field_reference or "").strip()
+		if not field_ref:
+			return None
+
+		# Backtick-qualified: `tabDocType`.field
+		if "`" in field_ref:
+			try:
+				parts = field_ref.split(".")
+				if len(parts) == 2:
+					table_part = parts[0].strip('`"')
+					field_part = parts[1].strip('`"')
+					if field_part == "name" and table_part.startswith("tab"):
+						return table_part[3:]
+			except Exception:
+				pass
+			return None  # Backtick format but field is not 'name'
+
+		# Dotted: table.field or doctype.field
+		if "." in field_ref and field_ref.count(".") == 1:
+			table_part, field_part = field_ref.split(".")
+			table_part = table_part.strip('`"')
+			field_part = field_part.strip('`"')
+			if field_part != "name":
+				return None
+			return table_part[3:] if table_part.startswith("tab") else table_part
+
+		# Plain field name
+		plain = field_ref.strip('`"')
+		if plain != "name":
+			return None
+		return fallback_doctype
+
+
 class DynamicTableField:
 	def __init__(
 		self,
@@ -2238,6 +2393,22 @@ class SQLFunctionParser:
 			for arg in function_args:
 				parsed_arg = self._parse_and_validate_argument(arg, function_name=function_name)
 				parsed_args.append(parsed_arg)
+
+			# Defensively cast 'name' to varchar for autoincrement doctypes in text functions.
+			# LOCATE: haystack is arg[1]; postgres maps this to STRPOS(haystack, needle).
+			if function_name == "LOCATE" and len(parsed_args) > 1:
+				haystack_ref = function_args[1] if isinstance(function_args[1], str) else None
+				parsed_args[1] = self.engine._cast_name_if_required(
+					parsed_args[1], field_reference=haystack_ref
+				)
+			# IFNULL / COALESCE: cast first arg when the fallback value(s) are textual.
+			elif function_name in ("IFNULL", "COALESCE") and parsed_args:
+				if self._is_textual_null_function(parsed_args):
+					first_arg_ref = function_args[0] if isinstance(function_args[0], str) else None
+					parsed_args[0] = self.engine._cast_name_if_required(
+						parsed_args[0], field_reference=first_arg_ref
+					)
+
 			function_call = func_class(*parsed_args)
 		elif isinstance(function_args, (int | float)):
 			function_call = func_class(function_args)
@@ -2413,3 +2584,13 @@ class SQLFunctionParser:
 	def _check_function_field_permission(self, field_name: str):
 		if self.engine.apply_permissions and self.engine.doctype:
 			self.engine.check_select_field_permission(self.engine.doctype, field_name)
+
+	def _is_textual_null_function(self, parsed_args):
+		"""Return True when IFNULL/COALESCE has at least one textual fallback value.
+
+		IFNULL(name, 0)         → False  (numeric fallback, no cast needed)
+		IFNULL(name, "unknown") → True   (textual fallback, cast required)
+		"""
+		if len(parsed_args) < 2:
+			return False
+		return any(isinstance(arg, str) for arg in parsed_args[1:])

@@ -1965,6 +1965,59 @@ class TestQuery(IntegrationTestCase):
 		self.assertIn("complex_expr", sql)
 		self.assertIn("/", sql)
 
+	@run_only_if(db_type_is.POSTGRES)
+	def test_autoincrement_name_cast_hardening(self):
+		"""Validate that text operations on 'name' of autoincrement doctypes emit CAST.
+
+		RF-Q02: LOCATE → STRPOS(CAST(name AS varchar), ...)
+		RF-Q03: LIKE/NOT LIKE → CAST(name AS varchar) ILIKE ...
+		RF-Q04: IFNULL/COALESCE with textual fallback → CAST first arg
+		RF-Q05: Numeric comparison → no CAST
+		RF-Q06: Non-autoincrement doctype → no CAST
+		"""
+		doctype = "test_autoinc_cast_qb"
+
+		for dt in (doctype,):
+			if frappe.db.exists("DocType", dt):
+				frappe.delete_doc("DocType", dt, force=True)
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", doctype)
+			and frappe.delete_doc("DocType", doctype, force=True, ignore_missing=True)
+		)
+
+		new_doctype(doctype, autoname="autoincrement").insert(ignore_permissions=True)
+		frappe.get_doc({"doctype": doctype}).insert(ignore_permissions=True)
+
+		def sql_lower(q):
+			return q.get_sql().lower()
+
+		# RF-Q02: LOCATE (postgres: STRPOS) must cast the haystack
+		locate_sql = sql_lower(
+			frappe.qb.get_query(
+				doctype,
+				fields=[{"DIV": [1, {"NULLIF": [{"LOCATE": ["'1'", "name"]}, 0]}]}],
+			)
+		)
+		self.assertIn("cast(", locate_sql, "LOCATE haystack should be cast in Postgres")
+		self.assertIn("as varchar", locate_sql)
+
+		# RF-Q03: LIKE → ILIKE with CAST
+		like_sql = sql_lower(frappe.qb.get_query(doctype, filters={"name": ["like", "%1%"]}))
+		self.assertIn("cast(", like_sql, "LIKE should cast name for autoincrement")
+		self.assertIn("as varchar", like_sql)
+
+		# RF-Q03: NOT LIKE → NOT ILIKE with CAST
+		not_like_sql = sql_lower(frappe.qb.get_query(doctype, filters={"name": ["not like", "%9%"]}))
+		self.assertIn("cast(", not_like_sql, "NOT LIKE should cast name for autoincrement")
+
+		# RF-Q05: Numeric equality → no CAST
+		eq_num_sql = sql_lower(frappe.qb.get_query(doctype, filters={"name": 1}))
+		self.assertNotIn("cast(", eq_num_sql, "Numeric comparison must NOT cast name")
+
+		# RF-Q06: Non-autoincrement doctype (User) → no CAST
+		user_like_sql = sql_lower(frappe.qb.get_query("User", filters={"name": ["like", "adm%"]}))
+		self.assertNotIn("cast(", user_like_sql, "Non-autoincrement doctype must NOT cast")
+
 	def test_not_equal_condition_on_none(self):
 		self.assertQueryEqual(
 			frappe.qb.get_query(

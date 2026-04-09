@@ -10,6 +10,7 @@ from frappe.core.doctype.doctype.test_doctype import new_doctype
 from frappe.desk.search import get_names_for_mentions, search_link, search_widget
 from frappe.permissions import add_user_permission
 from frappe.tests import IntegrationTestCase
+from frappe.tests.test_query_builder import db_type_is, run_only_if
 from frappe.tests.utils import whitelist_for_tests
 
 
@@ -177,6 +178,35 @@ class TestSearch(IntegrationTestCase):
 		# Assume that "es" is used at least 10 times, it should now be first
 		frappe.db.set_value("Language", "es", "idx", 10)
 		self.assertEqual("es", search(txt="es")[0]["value"])
+
+	@run_only_if(db_type_is.POSTGRES)
+	def test_search_link_autoincrement_name(self):
+		"""RF-Q01: search_link() on an autoincrement doctype must not raise a type-mismatch
+		error ('strpos(bigint, unknown)') in PostgreSQL."""
+		doctype = "test_search_autoinc"
+
+		if frappe.db.exists("DocType", doctype):
+			frappe.delete_doc("DocType", doctype, force=True)
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", doctype)
+			and frappe.delete_doc("DocType", doctype, force=True, ignore_missing=True)
+		)
+
+		new_doctype(doctype, autoname="autoincrement").insert(ignore_permissions=True)
+		for _ in range(2):
+			frappe.get_doc({"doctype": doctype}).insert(ignore_permissions=True)
+
+		results = search_link(
+			doctype=doctype,
+			txt="1",
+			query=None,
+			filters=None,
+			page_length=10,
+			searchfield="name",
+		)
+
+		self.assertIsInstance(results, list, "search_link must return a list")
+		self.assertTrue(len(results) > 0, "search_link must find autoincrement records")
 
 	def test_search_with_paren(self):
 		search = partial(search_link, doctype="Language", filters=None, page_length=10)

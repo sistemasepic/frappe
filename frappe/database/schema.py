@@ -422,6 +422,21 @@ def get_definition(fieldtype, precision=None, length=None, *, options=None):
 	):
 		d = ("uuid", None)
 
+	elif (
+		fieldtype == "Link"
+		and options
+		and frappe.db.db_type == "postgres"
+		and frappe.db.exists("DocType", options)
+	):
+		# In PostgreSQL, Link fields that point to autoincrement doctypes must be BIGINT
+		# so that JOIN and equality operations work without type mismatch errors.
+		# Other databases keep the standard varchar behaviour unchanged.
+		try:
+			if frappe.get_meta(options).autoname == "autoincrement":
+				d = ("bigint", None)
+		except Exception:
+			pass  # Defensive: if meta is unavailable, fall back to the default type
+
 	if not d:
 		return
 
