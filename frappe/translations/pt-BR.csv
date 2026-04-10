@@ -2062,7 +2062,7 @@ If Owner,Se proprietário
 "If the user has any role checked, then the user becomes a ""System User"". ""System User"" has access to the desktop,""Se o usuário tiver qualquer papel selecionado, ele se torna um """"Usuário do Sistema"""". Um """"Usuário do Sistema"""" tem acesso à área de trabalho."""
 "If these instructions where not helpful, please add in your suggestions on GitHub Issues.,""Se estas instruções não foram úteis, adicione suas sugestões no GitHub Issues."""
 "If this was a mistake or you need access again, please reach out to your team.,""Se isso foi um engano ou você precisar de acesso novamente, entre em contato com sua equipe."""
-"If unchecked, the value will always be re-fetched on save.,""Se desmarcado, o valor sempre será buscado novamente ao salvar."""
+"If unchecked, the value will always be re-fetched on save.","Se desmarcado, o valor sempre será buscado novamente ao salvar."
 If user is the owner,Se o usuário é o proprietário
 "If you are updating, please select \Overwrite\"" else existing rows will not be deleted."",""Se estiver atualizando, selecione \""Overwrite\"", caso contrário as linhas existentes não serão excluídas."""
 "If you are uploading new records, \Naming Series\"" becomes mandatory, if present."",""Se estiver enviando novos registros, \""Naming Series\"" se torna obrigatório, se presente."""
@@ -4629,7 +4629,7 @@ Thank you for your message,Obrigado pela sua mensagem
 Thank you,Obrigado
 Thanks,Obrigado
 The {0} is already on auto repeat {1},O {0} já está em repetição automática {1}
-"The application has been updated to a new version, please refresh this page,""O aplicativo foi atualizado para uma nova versão, atualize esta página"""
+"The application has been updated to a new version, please refresh this page","O aplicativo foi atualizado para uma nova versão, atualize esta página"
 The application name will be used in the Login page.,O nome do aplicativo será usado na página de Login.
 The attachments could not be correctly linked to the new document,Os anexos não puderam ser vinculados corretamente ao novo documento
 The Auto Repeat for this document has been disabled.,A repetição automática deste documento foi desativada.
