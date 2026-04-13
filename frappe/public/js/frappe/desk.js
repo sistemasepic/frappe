@@ -287,6 +287,7 @@ frappe.Application = class Application {
 		} else {
 			this.set_as_guest();
 		}
+		frappe.ui.toolbar.fetch_session_defaults();
 	}
 
 	setup_workspaces() {
