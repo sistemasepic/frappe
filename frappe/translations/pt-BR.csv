@@ -5439,6 +5439,7 @@ DETAIL,DETALHE
 "You changed the values for {0}","Você alterou os valores de {0}"
 "You created this document {0}","Você criou este documento {0}"
 "You created this","Criado por você"
+"You have unsaved changes. Are you sure you want to discard them?","Você tem alterações não salvas. Tem certeza de que deseja descartá-las?"
 "You do not have enough permissions to access this resource. Please contact your manager to get access.","Você não tem permissões suficientes para acessar este recurso. Entre em contato com seu gerente para obter acesso."
 "You do not have enough permissions to complete the action","Você não tem permissões suficientes para concluir esta ação"
 "You do not have import permission for {0}","Você não tem permissão de importação para {0}"

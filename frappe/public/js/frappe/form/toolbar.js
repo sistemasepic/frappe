@@ -827,6 +827,21 @@ frappe.ui.form.Toolbar = class Toolbar {
 			}[status];
 
 			this.page.set_primary_action(__(status), click, icon);
+
+			if (status === "Save" && this.frm.is_new() && !this.frm.meta.issingle) {
+				const goToList = () => frappe.set_route("List", this.frm.doctype, "List");
+
+				this.page.set_secondary_action(__("Discard"), () => {
+					if (this.frm.is_dirty()) {
+						frappe.confirm(
+							__("You have unsaved changes. Are you sure you want to discard them?"),
+							goToList
+						);
+					} else {
+						goToList();
+					}
+				});
+			}
 		}
 
 		this.current_status = status;
