@@ -249,6 +249,14 @@ class Document(BaseDocument):
 			self._fix_numeric_types()
 
 		else:
+			if (
+				not is_doctype
+				and isinstance(self.name, str)
+				and self.meta.autoname == "autoincrement"
+				and self.name.startswith(f"new-{frappe.scrub(self.doctype)}")
+			):
+				raise frappe.DoesNotExistError(doctype=self.doctype)
+
 			if not is_doctype and isinstance(self.name, str | int):
 				for_update = ""
 				if self.flags.for_update and frappe.db.db_type != "sqlite":
