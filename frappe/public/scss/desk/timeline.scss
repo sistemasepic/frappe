@@ -21,6 +21,20 @@ $threshold: 34;
 .new-timeline {
 	position: relative;
 	padding-top: var(--padding-lg);
+	transition: opacity 200ms ease, max-height 300ms ease, padding-top 200ms ease;
+	max-height: 4000px;
+	overflow: hidden;
+
+	&.hidden {
+		opacity: 0;
+		max-height: 0;
+		padding-top: 0;
+		pointer-events: none;
+
+		&:before {
+			opacity: 0;
+		}
+	}
 
 	&:before {
 		content: " ";
@@ -29,6 +43,7 @@ $threshold: 34;
 		position: absolute;
 		border-left: 1px solid var(--dark-border-color);
 		bottom: calc(-1 * var(--timeline-item-bottom-margin) + 25px);
+		transition: opacity 200ms ease;
 	}
 	.timeline-dot {
 		@include timeline-badge(16px);
@@ -180,6 +195,29 @@ $threshold: 34;
 			margin-top: var(--margin-sm);
 			--icon-stroke: var(--text-color);
 		}
+	}
+}
+
+.activities-toggle-button {
+	transition: all 0.2s ease;
+	padding: 0 4px;
+
+	&:hover {
+		background-color: var(--bg-light);
+		color: var(--primary-color);
+	}
+
+	&.active {
+		color: var(--primary-color);
+		background-color: var(--primary-color-10);
+	}
+}
+
+.activities-toggle-label {
+	cursor: pointer;
+
+	&:hover {
+		color: var(--primary-color);
 	}
 }
 

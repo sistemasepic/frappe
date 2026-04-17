@@ -33,6 +33,7 @@ frappe.ui.form.Sidebar = class {
 		this.make_attachments();
 		this.make_shared();
 		this.make_comments_toggle();
+		this.make_activity_toggle();
 
 		this.make_tags();
 
@@ -69,6 +70,7 @@ frappe.ui.form.Sidebar = class {
 			this.refresh_creation_modified();
 			frappe.ui.form.set_user_image(this.frm);
 			this.refresh_comments_count();
+			this.refresh_activity_toggle_state();
 		}
 		this.refresh_like();
 	}
@@ -332,6 +334,84 @@ frappe.ui.form.Sidebar = class {
 		// Sincroniza ícone e estado ARIA com frm.comment_visible (pode ter sido resetado pelo footer)
 		const visible = Boolean(this.frm.comment_visible);
 		this.comments_toggle_btn
+			?.toggleClass("active", visible)
+			.attr("aria-pressed", String(visible))
+			.html(frappe.utils.icon(visible ? "chevron-up" : "chevron-down", "sm"));
+	}
+
+	make_activity_toggle() {
+		this.frm.timeline_visible = false;
+
+		const section = $(
+			`<div class="form-activity-toggle sidebar-section" data-section="activities">
+				<div>
+					<span class="form-sidebar-items">
+						<span class="activities-toggle-label form-sidebar-label">
+							${frappe.utils.icon("history", "sm")}
+							<span class="ellipsis">${__("Activities")}</span>
+						</span>
+						<button
+							class="btn btn-link icon-btn activities-toggle-button"
+							title="${__("Show/Hide Activities")}" 
+							aria-pressed="false"
+							aria-label="${__("Toggle activities visibility")}" >
+							${frappe.utils.icon("chevron-down", "sm")}
+						</button>
+					</span>
+				</div>
+			</div>`
+		).insertAfter(this.sidebar.find(".form-comments-toggle"));
+
+		this.activity_toggle_section = section;
+		this.activity_toggle_btn = section.find(".activities-toggle-button");
+
+		this.activity_toggle_btn.on("click keydown", (e) => {
+			if (e.type === "keydown" && !["Enter", " ", "Spacebar"].includes(e.key)) {
+				return;
+			}
+			e.preventDefault();
+			this.toggle_activity();
+		});
+
+		section.find(".activities-toggle-label").on("click", () => this.toggle_activity());
+		this.refresh_activity_toggle_state();
+	}
+
+	toggle_activity(state = null) {
+		const new_state = state !== null ? state : !Boolean(this.frm.timeline_visible);
+
+		if (typeof new_state !== "boolean") {
+			frappe.logger?.("erp360:activity-toggle")?.error("Invalid activity visibility state", {
+				state,
+				type: typeof new_state,
+			});
+			return;
+		}
+
+		this.frm.timeline_visible = new_state;
+
+		this.activity_toggle_btn
+			?.toggleClass("active", new_state)
+			.attr("aria-pressed", String(new_state))
+			.html(frappe.utils.icon(new_state ? "chevron-up" : "chevron-down", "sm"));
+
+		$(document).trigger("erp360:activity:toggle", [
+			{
+				visible: new_state,
+				doctype: this.frm.doctype,
+				name: this.frm.doc?.name,
+			},
+		]);
+
+		frappe.logger?.("erp360:activity-toggle")?.debug(
+			`Timeline ${new_state ? "shown" : "hidden"} for ${this.frm.doctype}/${this.frm.doc?.name || ""}`
+		);
+	}
+
+	refresh_activity_toggle_state() {
+		const visible = Boolean(this.frm.timeline_visible);
+
+		this.activity_toggle_btn
 			?.toggleClass("active", visible)
 			.attr("aria-pressed", String(visible))
 			.html(frappe.utils.icon(visible ? "chevron-up" : "chevron-down", "sm"));
