@@ -169,6 +169,16 @@
 .comment-box {
 	margin-top: var(--margin-lg);
 	padding: 0;
+	transition: opacity 200ms ease, max-height 300ms ease;
+	max-height: 2000px;
+	overflow: hidden;
+
+	&.hidden {
+		opacity: 0;
+		max-height: 0;
+		pointer-events: none;
+	}
+
 	.comment-input-header {
 		display: flex;
 		justify-content: space-between;
@@ -211,6 +221,35 @@
 	.btn-comment {
 		margin-top: var(--margin-md);
 	}
+}
+
+.comments-toggle-button {
+	transition: all 0.2s ease;
+	padding: 0 4px;
+
+	&:hover {
+		background-color: var(--bg-light);
+		color: var(--primary-color);
+	}
+
+	&.active {
+		color: var(--primary-color);
+		background-color: var(--primary-color-10);
+	}
+}
+
+.comments-toggle-label {
+	cursor: pointer;
+
+	&:hover {
+		color: var(--primary-color);
+	}
+}
+
+.comments-toggle-count {
+	font-size: var(--text-xs);
+	margin-left: 4px;
+	font-weight: 500;
 }
 
 .form-dashboard-wrapper {

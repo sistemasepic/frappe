@@ -7,6 +7,7 @@ frappe.ui.form.Footer = class FormFooter {
 		this.make();
 		this.make_comment_box();
 		this.make_timeline();
+		this.setup_comments_toggle_listener();
 		// render-complete
 		$(this.frm.wrapper).on("render_complete", () => {
 			this.refresh();
@@ -49,6 +50,9 @@ frappe.ui.form.Footer = class FormFooter {
 				}
 			},
 		});
+
+		$(this.frm.comment_box?.wrapper).closest(".comment-box").addClass("hidden");
+		this.frm.comment_visible = false;
 	}
 	make_timeline() {
 		this.frm.timeline = new FormTimeline({
@@ -57,11 +61,19 @@ frappe.ui.form.Footer = class FormFooter {
 		});
 	}
 	refresh() {
+		this.setup_comments_toggle_listener();
+
 		if (this.frm.doc.__islocal) {
 			this.parent.addClass("hide");
 		} else {
 			this.parent.removeClass("hide");
 			this.frm.timeline.refresh();
+
+			if (this._last_docname !== this.frm.doc.name) {
+				this._last_docname = this.frm.doc.name;
+				$(this.frm.comment_box?.wrapper).closest(".comment-box").addClass("hidden");
+				this.frm.comment_visible = false;
+			}
 		}
 		this.refresh_comments_count();
 	}
@@ -69,5 +81,29 @@ frappe.ui.form.Footer = class FormFooter {
 	refresh_comments_count() {
 		let count = (this.frm.get_docinfo()?.comments || []).length;
 		this.wrapper.find(".comment-count")?.html(count ? `(${count})` : "");
+	}
+
+	setup_comments_toggle_listener() {
+		if (this._comment_toggle_handler) {
+			return;
+		}
+
+		this._comment_toggle_handler = (e, data) => {
+			if (!data || data.doctype !== this.frm.doctype || data.name !== this.frm.doc?.name) {
+				return;
+			}
+
+			const comment_box_wrapper = $(this.frm.comment_box?.wrapper).closest(".comment-box");
+			comment_box_wrapper.toggleClass("hidden", !Boolean(data.visible));
+		};
+
+		$(document).on("erp360:comment:toggle", this._comment_toggle_handler);
+	}
+
+	destroy() {
+		if (this._comment_toggle_handler) {
+			$(document).off("erp360:comment:toggle", this._comment_toggle_handler);
+			this._comment_toggle_handler = null;
+		}
 	}
 };

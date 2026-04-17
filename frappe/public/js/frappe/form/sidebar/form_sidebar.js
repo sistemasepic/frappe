@@ -32,6 +32,7 @@ frappe.ui.form.Sidebar = class {
 		this.make_assignments();
 		this.make_attachments();
 		this.make_shared();
+		this.make_comments_toggle();
 
 		this.make_tags();
 
@@ -67,6 +68,7 @@ frappe.ui.form.Sidebar = class {
 			this.refresh_web_view_count();
 			this.refresh_creation_modified();
 			frappe.ui.form.set_user_image(this.frm);
+			this.refresh_comments_count();
 		}
 		this.refresh_like();
 	}
@@ -240,6 +242,99 @@ frappe.ui.form.Sidebar = class {
 			frm: this.frm,
 			parent: this.sidebar.find(".form-shared"),
 		});
+	}
+
+	make_comments_toggle() {
+		// Sempre inicia fechado — esta função é chamada apenas na criação da sidebar (novo doc)
+		this.frm.comment_visible = false;
+
+		const section = $(
+			`<div class="form-comments-toggle sidebar-section" data-section="comments">
+				<div>
+					<span class="form-sidebar-items">
+						<span class="comments-toggle-label form-sidebar-label">
+							${frappe.utils.icon("message-square", "sm")}
+							<span class="ellipsis">${__("Comments")}</span>
+							<span class="comments-toggle-count text-muted"></span>
+						</span>
+						<button
+							class="btn btn-link icon-btn comments-toggle-button"
+							title="${__("Show/Hide Comments")}" 
+							aria-pressed="false"
+							aria-label="${__("Toggle comments visibility")}" >
+							${frappe.utils.icon("chevron-down", "sm")}
+						</button>
+					</span>
+				</div>
+			</div>`
+		).insertAfter(this.sidebar.find(".form-shared"));
+
+		this.comments_toggle_section = section;
+		this.comments_toggle_btn = section.find(".comments-toggle-button");
+
+		this.comments_toggle_btn.on("click keydown", (e) => {
+			if (e.type === "keydown" && !["Enter", " ", "Spacebar"].includes(e.key)) {
+				return;
+			}
+			e.preventDefault();
+			this.toggle_comments();
+		});
+
+		section.find(".comments-toggle-label").on("click", () => this.toggle_comments());
+
+		const visible = Boolean(this.frm.comment_visible);
+		this.comments_toggle_btn
+			.toggleClass("active", visible)
+			.attr("aria-pressed", String(visible))
+			.html(frappe.utils.icon(visible ? "chevron-up" : "chevron-down", "sm"));
+		this.refresh_comments_count();
+	}
+
+	toggle_comments(state = null) {
+		const new_state = state !== null ? state : !Boolean(this.frm.comment_visible);
+
+		if (typeof new_state !== "boolean") {
+			frappe.logger?.("erp360:comments-toggle")?.error("Invalid comment visibility state", {
+				state,
+				type: typeof new_state,
+			});
+			return;
+		}
+
+		this.frm.comment_visible = new_state;
+
+		this.comments_toggle_btn
+			?.toggleClass("active", new_state)
+			.attr("aria-pressed", String(new_state))
+			.html(frappe.utils.icon(new_state ? "chevron-up" : "chevron-down", "sm"));
+
+		$(document).trigger("erp360:comment:toggle", [
+			{
+				visible: new_state,
+				doctype: this.frm.doctype,
+				name: this.frm.doc?.name,
+			},
+		]);
+
+		frappe.logger?.("erp360:comments-toggle")?.debug(
+			`Comment box ${new_state ? "shown" : "hidden"} for ${this.frm.doctype}/${this.frm.doc?.name || ""}`
+		);
+	}
+
+	refresh_comments_count() {
+		if (!this.comments_toggle_section) {
+			return;
+		}
+
+		const count = this.frm.get_docinfo()?.comments?.length ?? 0;
+		this.comments_toggle_section.find(".comments-toggle-count").text(count > 0 ? `(${count})` : "");
+
+		// Sincroniza ícone e estado ARIA com frm.comment_visible (pode ter sido resetado pelo footer)
+		const visible = Boolean(this.frm.comment_visible);
+		this.comments_toggle_btn
+			?.toggleClass("active", visible)
+			.attr("aria-pressed", String(visible))
+			.html(frappe.utils.icon(visible ? "chevron-up" : "chevron-down", "sm"));
 	}
 
 	add_user_action(label, click) {
