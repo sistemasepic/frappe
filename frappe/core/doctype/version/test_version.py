@@ -3,6 +3,7 @@
 import copy
 
 import frappe
+from frappe.core.doctype.doctype.test_doctype import new_doctype
 from frappe.core.doctype.version.version import (
 	_as_string,
 	_generate_html_diff,
@@ -10,6 +11,7 @@ from frappe.core.doctype.version.version import (
 	get_diff,
 )
 from frappe.tests import IntegrationTestCase, UnitTestCase
+from frappe.tests.test_query_builder import db_type_is, run_only_if
 from frappe.tests.utils import make_test_objects
 
 
@@ -169,6 +171,67 @@ class TestVersion(IntegrationTestCase):
 		t.description = "changed"
 		t.save(ignore_version=False)
 		self.assertTrue(get_versions(t))
+
+	@run_only_if(db_type_is.POSTGRES)
+	def test_save_version_handles_empty_autoincrement_link_title_lookup(self):
+		target_doctype = f"Version Link Target {frappe.generate_hash(length=6)}"
+		source_doctype = f"Version Link Source {frappe.generate_hash(length=6)}"
+
+		target_meta = new_doctype(
+			target_doctype,
+			autoname="autoincrement",
+			fields=[
+				{
+					"label": "Partner Name",
+					"fieldname": "partner_name",
+					"fieldtype": "Data",
+				}
+			],
+			show_title_field_in_link=1,
+			title_field="partner_name",
+		).insert(ignore_permissions=True)
+
+		source_meta = new_doctype(
+			source_doctype,
+			track_changes=1,
+			fields=[
+				{
+					"label": "Matrix Partner",
+					"fieldname": "matrix_partner",
+					"fieldtype": "Link",
+					"options": target_doctype,
+				}
+			],
+		).insert(ignore_permissions=True)
+
+		self.addCleanup(lambda: frappe.delete_doc("DocType", source_meta.name, force=True, ignore_missing=True))
+		self.addCleanup(lambda: frappe.delete_doc("DocType", target_meta.name, force=True, ignore_missing=True))
+
+		target_doc = frappe.get_doc(
+			{
+				"doctype": target_doctype,
+				"partner_name": "Matrix Partner Title",
+			}
+		).insert(ignore_permissions=True)
+
+		source_doc = frappe.get_doc({"doctype": source_doctype}).insert(ignore_permissions=True)
+		self.addCleanup(lambda: frappe.delete_doc(source_doctype, source_doc.name, force=True, ignore_missing=True))
+		self.addCleanup(lambda: frappe.delete_doc(target_doctype, target_doc.name, force=True, ignore_missing=True))
+
+		source_doc.matrix_partner = target_doc.name
+		source_doc.save(ignore_version=False)
+
+		version_name = frappe.db.get_value(
+			"Version",
+			{"ref_doctype": source_doctype, "docname": source_doc.name},
+			"name",
+			order_by="creation desc",
+		)
+		self.assertTrue(version_name)
+
+		version = frappe.get_doc("Version", version_name)
+		changed = version.get_data().get("changed", [])
+		self.assertIn(["matrix_partner", "", "Matrix Partner Title"], changed)
 
 
 def get_fieldnames(change_array):

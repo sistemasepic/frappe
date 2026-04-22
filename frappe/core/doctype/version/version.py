@@ -194,19 +194,21 @@ def get_diff(old, new, for_child=False, compare_cancelled=False):
 						if link_meta.show_title_field_in_link and (
 							(title_field := link_meta.get_title_field()) != "name"
 						):
-							old_title_val, new_title_val = "", ""
-							result = frappe.db.get_values(
-								field_meta.options,
-								{"name": ("in", (old_value, new_value))},
-								["name", title_field],
-							)
-							for r in result:
-								if r[0] == old_value:
-									old_title_val = r[1]
-								elif r[0] == new_value:
-									new_title_val = r[1]
-							out.changed.append((df.fieldname, old_title_val, new_title_val))
-							continue
+							lookup_names = _get_version_link_lookup_names(field_meta.options, old_value, new_value)
+							if lookup_names:
+								old_title_val, new_title_val = "", ""
+								result = frappe.db.get_values(
+									field_meta.options,
+									{"name": ("in", tuple(lookup_names))},
+									["name", title_field],
+								)
+								for r in result:
+									if cstr(r[0]) == cstr(old_value):
+										old_title_val = r[1]
+									elif cstr(r[0]) == cstr(new_value):
+										new_title_val = r[1]
+								out.changed.append((df.fieldname, old_title_val, new_title_val))
+								continue
 				out.changed.append((df.fieldname, old_value, new_value))
 
 	# name & docstatus
@@ -256,3 +258,50 @@ def _should_generate_html_diff(old_str: str, new_str: str) -> bool:
 def _as_string(value: str | None) -> str:
 	"""Convert the given value to a string."""
 	return cstr(value) if value is not None else ""
+
+
+def _get_version_link_lookup_names(link_doctype: str, *values) -> list[str | int]:
+	"""Return valid link names for version title lookup.
+
+	Filters out empty values and normalizes autoincrement names to integers for Postgres.
+	"""
+	lookup_names = []
+	is_autoincrement = _is_autoincrement_doctype(link_doctype)
+
+	for value in values:
+		normalized_value = _normalize_version_link_lookup_value(value, is_autoincrement=is_autoincrement)
+		if normalized_value is not None and normalized_value not in lookup_names:
+			lookup_names.append(normalized_value)
+
+	return lookup_names
+
+
+def _normalize_version_link_lookup_value(value, *, is_autoincrement: bool) -> str | int | None:
+	"""Normalize a link value before querying the target doctype by name."""
+	if value is None:
+		return None
+
+	string_value = cstr(value).strip()
+	if not string_value:
+		return None
+
+	if is_autoincrement:
+		try:
+			return int(string_value)
+		except (TypeError, ValueError):
+			return None
+
+	return value
+
+
+def _is_autoincrement_doctype(doctype: str) -> bool:
+	"""Check if the target doctype uses autoincrement naming."""
+	if not doctype:
+		return False
+
+	try:
+		meta = frappe.get_meta(doctype)
+	except Exception:
+		return False
+
+	return meta.autoname == "autoincrement"
