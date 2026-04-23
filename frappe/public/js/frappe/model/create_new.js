@@ -314,6 +314,7 @@ $.extend(frappe.model, {
 		newdoc.modified = "";
 		newdoc.lft = null;
 		newdoc.rgt = null;
+		newdoc.__unedited = true;
 
 		if (from_amend && parent_doc) {
 			newdoc._amended_from = doc.name;

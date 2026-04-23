@@ -198,6 +198,15 @@ $threshold: 34;
 	}
 }
 
+// Separador visual entre toggle de atividades e metadata de edição
+.form-sidebar {
+	.form-activity-toggle.sidebar-section {
+		padding-bottom: var(--padding-md);
+		margin-bottom: var(--padding-md);
+		border-bottom: 1px solid var(--border-color);
+	}
+}
+
 .activities-toggle-button {
 	transition: all 0.2s ease;
 	padding: 0 4px;

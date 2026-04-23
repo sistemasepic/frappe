@@ -828,11 +828,16 @@ frappe.ui.form.Toolbar = class Toolbar {
 
 			this.page.set_primary_action(__(status), click, icon);
 
-			if (status === "Save" && this.frm.is_new() && !this.frm.meta.issingle) {
+			if (
+				status === "Save" &&
+				this.frm.is_new() &&
+				!this.frm.meta.issingle &&
+				this.frm.has_unsaved_user_changes()
+			) {
 				const goToList = () => frappe.set_route("List", this.frm.doctype, "List");
 
 				this.page.set_secondary_action(__("Discard"), () => {
-					if (this.frm.is_dirty()) {
+					if (this.frm.has_unsaved_user_changes()) {
 						frappe.confirm(
 							__("You have unsaved changes. Are you sure you want to discard them?"),
 							goToList
@@ -840,6 +845,10 @@ frappe.ui.form.Toolbar = class Toolbar {
 					} else {
 						goToList();
 					}
+				});
+			} else if ((status === "Save" || status === "Update") && !this.frm.is_new() && this.frm.is_dirty()) {
+				this.page.set_secondary_action(__("Revert Changes"), () => {
+					this.frm.reload_doc();
 				});
 			}
 		}
@@ -863,11 +872,16 @@ frappe.ui.form.Toolbar = class Toolbar {
 	show_title_as_dirty() {
 		if (this.frm.save_disabled && !this.frm.set_dirty) return;
 
-		if (this.frm.is_dirty()) {
+		if (this.frm.has_unsaved_user_changes()) {
 			this.page.set_indicator(__("Not Saved"), "orange");
+		} else if (this.frm.is_new()) {
+			this.page.clear_indicator();
 		}
 
-		$(this.frm.wrapper).attr("data-state", this.frm.is_dirty() ? "dirty" : "clean");
+		$(this.frm.wrapper).attr(
+			"data-state",
+			this.frm.has_unsaved_user_changes() ? "dirty" : "clean"
+		);
 	}
 
 	show_jump_to_field_dialog() {

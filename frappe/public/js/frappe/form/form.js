@@ -44,6 +44,10 @@ frappe.ui.form.Form = class FrappeForm {
 		this.debounced_reload_doc = frappe.utils.debounce(this.reload_doc.bind(this), 1000);
 
 		this.beforeUnloadListener = (event) => {
+			if (!this.has_unsaved_user_changes()) {
+				return;
+			}
+
 			event.preventDefault();
 			// A String is returned for compatability with older Browsers. Return Value has to be truthy to trigger "Leave Site" Dialog
 			return (event.returnValue =
@@ -585,6 +589,11 @@ frappe.ui.form.Form = class FrappeForm {
 
 			frappe.after_ajax(function () {
 				me.trigger_link_fields();
+				frappe.after_ajax(() => {
+					me.capture_new_doc_state();
+					me.toolbar.show_title_as_dirty();
+					me.toolbar.set_primary_action(true);
+				});
 			});
 
 			frappe.breadcrumbs.add(me.meta.module, me.doctype);
@@ -1502,6 +1511,57 @@ frappe.ui.form.Form = class FrappeForm {
 
 	is_dirty() {
 		return !!this.doc.__unsaved;
+	}
+
+	has_unsaved_user_changes() {
+		if (!this.is_new()) {
+			return this.is_dirty();
+		}
+
+		if (this.doc.__unedited) {
+			return false;
+		}
+
+		if (!this.doc.__pristine_snapshot) {
+			return this.is_dirty();
+		}
+
+		return !frappe.utils.deep_equal(
+			this.get_doc_state_snapshot(),
+			this.doc.__pristine_snapshot
+		);
+	}
+
+	capture_new_doc_state() {
+		if (!this.is_new()) {
+			return;
+		}
+
+		this.doc.__pristine_snapshot = this.get_doc_state_snapshot();
+	}
+
+	get_doc_state_snapshot(doc = this.doc) {
+		const meta = frappe.get_meta(doc.doctype);
+
+		if (!meta?.fields) {
+			return {};
+		}
+
+		return meta.fields.reduce((snapshot, df) => {
+			if (!df.fieldname || frappe.model.layout_fields.includes(df.fieldtype)) {
+				return snapshot;
+			}
+
+			if (df.fieldtype === "Table") {
+				snapshot[df.fieldname] = (doc[df.fieldname] || []).map((child_doc) =>
+					this.get_doc_state_snapshot(child_doc)
+				);
+				return snapshot;
+			}
+
+			snapshot[df.fieldname] = doc[df.fieldname];
+			return snapshot;
+		}, {});
 	}
 
 	is_new() {
