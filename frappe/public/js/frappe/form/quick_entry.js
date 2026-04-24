@@ -192,33 +192,47 @@ frappe.ui.form.QuickEntryForm = class QuickEntryForm extends frappe.ui.Dialog {
 			if (data) {
 				me.dialog.working = true;
 				if (me.skip_insert) {
-					// Skip insert mode - just update the doc and trigger callbacks
 					me.update_doc();
 					me.dialog.animation_speed = "slow";
 					me.dialog.hide();
 					me.handle_after_callbacks();
 				} else {
-					// Normal insert mode
 					me.insert().then(() => {
-						let messagetxt = __("{1} saved", [__(me.doctype), me.doc.name.bold()]);
+						let messagetxt = __("{1} saved", [
+							__(me.doctype),
+							frappe.utils.escape_html(cstr(me.doc.name)).bold(),
+						]);
 						me.dialog.animation_speed = "slow";
-						me.dialog.hide();
-						if (frappe.route_hooks.after_save) {
-							let route_callback = frappe.route_hooks.after_save;
-							delete frappe.route_hooks.after_save;
 
-							route_callback(me);
-						}
-
-						setTimeout(function () {
-							frappe.show_alert(
-								{
+						if (frappe._from_link) {
+							setTimeout(() => {
+								me.dialog.hide();
+								if (frappe.route_hooks.after_save) {
+									let route_callback = frappe.route_hooks.after_save;
+									delete frappe.route_hooks.after_save;
+									route_callback(me);
+								}
+								setTimeout(function () {
+									frappe.show_alert({
+										message: messagetxt,
+										indicator: "green",
+									}, 3);
+								}, 500);
+							}, 150);
+						} else {
+							me.dialog.hide();
+							if (frappe.route_hooks.after_save) {
+								let route_callback = frappe.route_hooks.after_save;
+								delete frappe.route_hooks.after_save;
+								route_callback(me);
+							}
+							setTimeout(function () {
+								frappe.show_alert({
 									message: messagetxt,
 									indicator: "green",
-								},
-								3
-							);
-						}, 500);
+								}, 3);
+							}, 500);
+						}
 					});
 				}
 			}
@@ -259,6 +273,7 @@ frappe.ui.form.QuickEntryForm = class QuickEntryForm extends frappe.ui.Dialog {
 						]);
 					} else {
 						me.process_after_insert(r);
+						resolve();
 					}
 				},
 				error: function () {
@@ -268,7 +283,6 @@ frappe.ui.form.QuickEntryForm = class QuickEntryForm extends frappe.ui.Dialog {
 				},
 				always: function () {
 					me.dialog.working = false;
-					resolve(me.dialog.doc);
 				},
 			});
 		});
