@@ -108,10 +108,11 @@ def build_response(response_type=None):
 def as_csv():
 	response = Response()
 	response.mimetype = "text/csv"
+	response.charset = "utf-8"
 	filename = f"{frappe.response['doctype']}.csv"
 	filename = filename.encode("utf-8").decode("unicode-escape", "ignore")
 	response.headers.add("Content-Disposition", "attachment", filename=filename)
-	response.data = frappe.response["result"]
+	response.data = "\ufeff" + frappe.response["result"]
 	return response
 
 

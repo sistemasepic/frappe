@@ -178,7 +178,7 @@ class Exporter:
 			order_by=order_by,
 			as_list=0,
 		)
-		parent_names = [p.name for p in parent_data]
+		parent_names = [str(p.name) for p in parent_data]
 
 		child_data = {}
 		for key in self.exportable_fields:
