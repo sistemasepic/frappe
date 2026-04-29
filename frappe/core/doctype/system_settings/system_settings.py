@@ -35,9 +35,7 @@ class SystemSettings(Document):
 		country: DF.Link | None
 		currency: DF.Link | None
 		currency_precision: DF.Literal["", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-		date_format: DF.Literal[
-			"yyyy-mm-dd", "dd-mm-yyyy", "dd/mm/yyyy", "dd.mm.yyyy", "mm/dd/yyyy", "mm-dd-yyyy"
-		]
+		date_format: DF.Literal["yyyy-mm-dd", "dd-mm-yyyy", "dd/mm/yyyy", "dd.mm.yyyy", "mm/dd/yyyy", "mm-dd-yyyy"]
 		default_app: DF.Literal[None]
 		delete_background_exported_reports_after: DF.Int
 		deny_multiple_sessions: DF.Check
@@ -49,6 +47,7 @@ class SystemSettings(Document):
 		disable_user_pass_login: DF.Check
 		document_share_key_expiry: DF.Int
 		dormant_days: DF.Int
+		duplica_cpfcnpj: DF.Literal["N\u00e3o", "Apenas para Produtor Rural"]
 		email_footer_address: DF.SmallText | None
 		email_retry_limit: DF.Int
 		enable_onboarding: DF.Check
@@ -57,9 +56,7 @@ class SystemSettings(Document):
 		enable_telemetry: DF.Check
 		enable_two_factor_auth: DF.Check
 		encrypt_backup: DF.Check
-		first_day_of_the_week: DF.Literal[
-			"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-		]
+		first_day_of_the_week: DF.Literal["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 		float_precision: DF.Literal["", "2", "3", "4", "5", "6", "7", "8", "9"]
 		force_user_to_reset_password: DF.Int
 		force_web_capture_mode_for_uploads: DF.Check
@@ -77,22 +74,13 @@ class SystemSettings(Document):
 		max_report_rows: DF.Int
 		max_signups_allowed_per_hour: DF.Int
 		minimum_password_score: DF.Literal["1", "2", "3", "4"]
-		number_format: DF.Literal[
-			"#,###.##",
-			"#.###,##",
-			"# ###.##",
-			"# ###,##",
-			"#'###.##",
-			"#, ###.##",
-			"#,##,###.##",
-			"#,###.###",
-			"#.###",
-			"#,###",
-		]
+		number_format: DF.Literal["#,###.##", "#.###,##", "# ###.##", "# ###,##", "#'###.##", "#, ###.##", "#,##,###.##", "#,###.###", "#.###", "#,###"]
 		only_allow_system_managers_to_upload_public_files: DF.Check
 		otp_issuer_name: DF.Data | None
 		otp_sms_template: DF.SmallText | None
+		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
 		password_reset_limit: DF.Int
+		pesquisa_cep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
 		rate_limit_email_link_login: DF.Int
 		reset_password_link_expiry_duration: DF.Duration | None
 		reset_password_template: DF.Link | None
@@ -107,6 +95,7 @@ class SystemSettings(Document):
 		time_zone: DF.Literal[None]
 		two_factor_method: DF.Literal["OTP App", "SMS", "Email"]
 		use_number_format_from_currency: DF.Check
+		validar_ie: DF.Literal["N\u00e3o", "Sim"]
 		welcome_email_template: DF.Link | None
 	# end: auto-generated types
 
