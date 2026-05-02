@@ -479,14 +479,43 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 				if (!window.Cypress && !this.$input.is(":focus")) {
 					return;
 				}
+
+				let applied_filters_from_backend = null;
+				if (r.message && !Array.isArray(r.message) && r.message.results) {
+					applied_filters_from_backend = r.message.applied_filters || null;
+					r.message = r.message.results;
+				}
+
+				r.message = r.message || [];
 				r.message = this.merge_duplicates(r.message);
 
 				// show filter description in awesomplete
-				let filter_string = this.df.filter_description
-					? this.df.filter_description
-					: filters
-					? await this.get_filter_description(filters)
-					: null;
+				let filter_string = null;
+				if (this.df.filter_description) {
+					// 1. Explicit static field description
+					filter_string = this.df.filter_description;
+				} else if (applied_filters_from_backend?.length) {
+					// 2. Effective filters provided by backend
+					try {
+						filter_string = await this.get_filter_description(applied_filters_from_backend);
+					} catch (e) {
+						filter_string = null;
+					}
+				} else {
+					// 3. Local fallback from link_filters metadata
+					try {
+						let link_filters =
+							typeof this.df.link_filters === "string"
+								? JSON.parse(this.df.link_filters)
+								: this.df.link_filters;
+						let parsed_filters = link_filters ? this.parse_filters(link_filters) : null;
+						if (parsed_filters?.length) {
+							filter_string = await this.get_filter_description(parsed_filters);
+						}
+					} catch (e) {
+						filter_string = null;
+					}
+				}
 				if (filter_string) {
 					r.message.push({
 						html: `<span class="text-muted" style="line-height: 1.5">${filter_string}</span>`,
@@ -596,6 +625,7 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 
 		// add doctype if missing: [doctype, fieldname, operator, value]
 		filter_array = filter_array.map((f) => (f.length === 3 ? [doctype, ...f] : f));
+		const has_multiple_filters = filter_array.length > 1;
 
 		function formatValueForDisplay(docfield, val) {
 			// Check boolean fields -> show Yes/No (localized)
@@ -657,14 +687,22 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 					if (fieldtype === "Check") {
 						if (fieldname === "enabled") {
 							return value == 1
-								? __("is enabled") // ["enabled", "=", 1]
-								: __("is disabled"); // ["enabled", "=", 0]
+								? has_multiple_filters
+									? __("record is enabled")
+									: __("is enabled") // ["enabled", "=", 1]
+								: has_multiple_filters
+									? __("record is disabled")
+									: __("is disabled"); // ["enabled", "=", 0]
 						}
 
 						if (fieldname === "disabled") {
 							return value == 1
-								? __("is disabled") // ["disabled", "=", 1]
-								: __("is enabled"); // ["disabled", "=", 0]
+								? has_multiple_filters
+									? __("record is disabled")
+									: __("is disabled") // ["disabled", "=", 1]
+								: has_multiple_filters
+									? __("record is enabled")
+									: __("is enabled"); // ["disabled", "=", 0]
 						}
 
 						return value == 1
@@ -676,14 +714,22 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 					if (fieldtype === "Check") {
 						if (fieldname === "enabled") {
 							return value == 1
-								? __("is disabled") // ["enabled", "!=", 1]
-								: __("is enabled"); // ["enabled", "!=", 0]
+								? has_multiple_filters
+									? __("record is disabled")
+									: __("is disabled") // ["enabled", "!=", 1]
+								: has_multiple_filters
+									? __("record is enabled")
+									: __("is enabled"); // ["enabled", "!=", 0]
 						}
 
 						if (fieldname === "disabled") {
 							return value == 1
-								? __("is enabled") // ["disabled", "!=", 1]
-								: __("is disabled"); // ["disabled", "!=", 0]
+								? has_multiple_filters
+									? __("record is enabled")
+									: __("is enabled") // ["disabled", "!=", 1]
+								: has_multiple_filters
+									? __("record is disabled")
+									: __("is disabled"); // ["disabled", "!=", 0]
 						}
 
 						return value == 1
@@ -850,8 +896,12 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 	}
 
 	apply_link_field_filters() {
-		let link_filters = JSON.parse(this.df.link_filters);
+		let link_filters =
+			typeof this.df.link_filters === "string"
+				? JSON.parse(this.df.link_filters)
+				: this.df.link_filters;
 		let filters = this.parse_filters(link_filters);
+		if (!filters.length) return;
 		// take filters from the link field and add to the query
 		this.get_query = function () {
 			return {
@@ -861,9 +911,23 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 	}
 
 	parse_filters(link_filters) {
-		let filters = {};
-		link_filters.forEach((filter) => {
-			let [_, fieldname, operator, value] = filter;
+		let filters = [];
+		(link_filters || []).forEach((filter) => {
+			if (!Array.isArray(filter)) return;
+
+			let doctype = this.df.options;
+			let fieldname, operator, value;
+
+			if (filter.length >= 4) {
+				[doctype, fieldname, operator, value] = filter;
+			} else if (filter.length === 3) {
+				[fieldname, operator, value] = filter;
+			} else {
+				return;
+			}
+
+			if (!fieldname || !operator) return;
+
 			if (value?.startsWith?.("eval:")) {
 				// get the value to calculate
 				value = value.split("eval:")[1];
@@ -874,7 +938,8 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 				};
 				value = frappe.utils.eval(value, context);
 			}
-			filters[fieldname] = [operator, value];
+
+			filters.push([doctype || this.df.options, fieldname, operator, value]);
 		});
 		return filters;
 	}

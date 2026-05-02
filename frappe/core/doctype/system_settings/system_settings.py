@@ -47,7 +47,6 @@ class SystemSettings(Document):
 		disable_user_pass_login: DF.Check
 		document_share_key_expiry: DF.Int
 		dormant_days: DF.Int
-		duplica_cpfcnpj: DF.Literal["N\u00e3o", "Apenas para Produtor Rural"]
 		email_footer_address: DF.SmallText | None
 		email_retry_limit: DF.Int
 		enable_onboarding: DF.Check
@@ -78,9 +77,7 @@ class SystemSettings(Document):
 		only_allow_system_managers_to_upload_public_files: DF.Check
 		otp_issuer_name: DF.Data | None
 		otp_sms_template: DF.SmallText | None
-		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
 		password_reset_limit: DF.Int
-		pesquisa_cep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
 		rate_limit_email_link_login: DF.Int
 		reset_password_link_expiry_duration: DF.Duration | None
 		reset_password_template: DF.Link | None
@@ -95,7 +92,6 @@ class SystemSettings(Document):
 		time_zone: DF.Literal[None]
 		two_factor_method: DF.Literal["OTP App", "SMS", "Email"]
 		use_number_format_from_currency: DF.Check
-		validar_ie: DF.Literal["N\u00e3o", "Sim"]
 		welcome_email_template: DF.Link | None
 	# end: auto-generated types
 

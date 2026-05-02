@@ -142,11 +142,16 @@ function make_filter_area(frm, doctype) {
 }
 
 function add_existing_filter(frm, df) {
-	if (df.link_filters) {
-		let filters = JSON.parse(df.link_filters);
+	if (!df.link_filters) return;
+
+	try {
+		let filters =
+			typeof df.link_filters === "string" ? JSON.parse(df.link_filters) : df.link_filters;
 		if (filters) {
 			frm.filter_group.add_filters_to_filter_group(filters);
 		}
+	} catch (error) {
+		// Ignore malformed link_filters and keep dialog usable.
 	}
 }
 
