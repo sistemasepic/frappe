@@ -87,6 +87,13 @@ class PostgresTable(DBTable):
 				using_clause = f"USING {col.fieldname}::timestamp without time zone"
 			elif col.fieldtype == "Check":
 				using_clause = f"USING {col.fieldname}::smallint"
+			elif col.fieldtype == "Int":
+				# Drop any existing DEFAULT first: PostgreSQL cannot auto-convert a text
+				# default (e.g. '' set when the column was varchar) to bigint.
+				# The SET DEFAULT clause later in the same statement will restore it if needed.
+				query.append(f"ALTER COLUMN `{col.fieldname}` DROP DEFAULT")
+				# Cast safely: empty strings (from previous varchar columns) become NULL
+				using_clause = f"USING NULLIF(TRIM({col.fieldname}::text), '')::bigint"
 
 			query.append(
 				"ALTER COLUMN `{}` TYPE {} {}".format(

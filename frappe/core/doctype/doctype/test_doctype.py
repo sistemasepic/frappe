@@ -123,6 +123,61 @@ class TestDocType(IntegrationTestCase):
 		doc1.delete()
 		doc2.delete()
 
+	def test_int_unique_field_validation_postgres_compatible(self):
+		"""Regression: Int field with unique=1 must not raise InvalidTextRepresentation on PostgreSQL.
+
+		Covers:
+		  - NULL values are ignored (not treated as duplicates)
+		  - 0 is treated as a valid integer value
+		  - real duplicates are still blocked at the database level
+		  - saving the DocType itself does not raise a SQL casting error
+		"""
+		doctype_name = "Test Int Unique"
+		if frappe.db.exists("DocType", doctype_name):
+			frappe.delete_doc("DocType", doctype_name)
+
+		dt = new_doctype(
+			doctype_name,
+			fields=[
+				{
+					"label": "SKU Code",
+					"fieldname": "sku_code",
+					"fieldtype": "Int",
+					"unique": 1,
+				}
+			],
+		)
+		dt.insert()
+
+		# Saving the DocType again (e.g. after changing image_field) must not raise
+		# InvalidTextRepresentation when the Int+unique field has no data yet.
+		dt.reload()
+		dt.save()
+
+		# Insert a record with a real integer value — must succeed
+		rec1 = frappe.new_doc(doctype_name)
+		rec1.sku_code = 42
+		rec1.name = "int-unique-1"
+		rec1.insert()
+
+		# Insert a record with value 0 — must be treated as valid, not as empty
+		rec0 = frappe.new_doc(doctype_name)
+		rec0.sku_code = 0
+		rec0.name = "int-unique-0"
+		rec0.insert()
+
+		# Duplicate integer must be rejected at the DB level
+		rec_dup = frappe.new_doc(doctype_name)
+		rec_dup.sku_code = 42
+		rec_dup.name = "int-unique-dup"
+		self.assertRaises(frappe.UniqueValidationError, rec_dup.insert)
+		frappe.db.rollback()
+
+		# Clean up
+		rec0.delete()
+		rec1.delete()
+		frappe.delete_doc("DocType", doctype_name)
+
 	def test_validate_search_fields(self):
 		doc = new_doctype("Test Search Fields")
 		doc.search_fields = "some_fieldname"
