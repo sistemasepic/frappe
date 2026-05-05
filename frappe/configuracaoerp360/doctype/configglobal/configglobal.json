@@ -57,7 +57,7 @@
   },
   {
    "default": "Mai\u00fascula",
-   "description": "Aplic\u00e1vel ao componente de Dados (Data)",
+   "description": "Aplic\u00e1vel ao componente de Dados",
    "fieldname": "padroniza_entradadados",
    "fieldtype": "Select",
    "label": "Padronizar Entrada de Texto",
@@ -69,6 +69,7 @@
    "label": "Apar\u00eancia"
   },
   {
+   "default": "#0A4EE4",
    "fieldname": "cor_primaria_interface",
    "fieldtype": "Color",
    "label": "Cor Prim\u00e1ria da Interface"
@@ -78,7 +79,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-05-04 09:37:33.301322",
+ "modified": "2026-05-04 15:18:46.130903",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",

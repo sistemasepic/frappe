@@ -229,7 +229,7 @@ def search_widget(
 			meta_filters = normalize_filter_list(link_df.link_filters)
 			if meta_filters:
 				if isinstance(filters, dict):
-					for _, fieldname, operator, value in meta_filters:
+					for _doctype, fieldname, operator, value in meta_filters:
 						filters.setdefault(fieldname, [operator, value])
 				elif isinstance(filters, list):
 					existing_fieldnames = {f[1] for f in normalize_filter_list(filters)}

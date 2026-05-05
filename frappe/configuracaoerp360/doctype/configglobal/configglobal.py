@@ -1,7 +1,7 @@
 # Copyright (c) 2026, Frappe Technologies and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
@@ -21,4 +21,7 @@ class ConfigGlobal(Document):
 		validar_ie: DF.Literal["N\u00e3o", "Sim"]
 	# end: auto-generated types
 
-	pass
+	def on_update(self):
+		# Invalida o cache de bootinfo de todos os usuários para que a nova
+		# cor primária seja refletida no próximo carregamento do Desk.
+		frappe.cache.delete_key("bootinfo")
