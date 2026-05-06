@@ -248,6 +248,9 @@ class User(Document):
 		if self.language == "Loading...":
 			self.language = None
 
+		if self.default_app and self.default_app not in frappe.get_installed_apps():
+			self.default_app = ""
+
 		if (self.name not in ["Administrator", "Guest"]) and (not self.get_social_login_userid("frappe")):
 			self.set_social_login_userid("frappe", frappe.generate_hash(length=39))
 
@@ -1035,7 +1038,10 @@ def has_email_account(email: str):
 
 
 @frappe.whitelist(allow_guest=False)
-def get_email_awaiting(user):
+def get_email_awaiting(user: str):
+	if user != frappe.session.user:
+		frappe.has_permission("User", "read", doc=user, throw=True)
+
 	return frappe.get_all(
 		"User Email",
 		fields=["email_account", "email_id"],

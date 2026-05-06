@@ -55,7 +55,7 @@ from .utils.jinja import (
 	render_template,
 )
 
-__version__ = "16.16.0"
+__version__ = "16.17.4"
 __title__ = "Frappe Framework"
 
 if TYPE_CHECKING:  # pragma: no cover
@@ -1592,6 +1592,7 @@ from frappe.utils.error import log_error
 from frappe.utils.formatters import format_value
 from frappe.utils.print_utils import get_print, attach_print
 from frappe.email import sendmail
+from frappe.concurrency_limiter import concurrent_limit
 
 # for backwards compatibility
 format = format_value
