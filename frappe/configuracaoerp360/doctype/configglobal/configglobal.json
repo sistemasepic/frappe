@@ -13,7 +13,8 @@
   "padronizar_entrada_de_dados_section",
   "padroniza_entradadados",
   "apar\u00eancia_section",
-  "cor_primaria_interface"
+  "cor_primaria_interface",
+  "pxmargensform"
  ],
  "fields": [
   {
@@ -73,13 +74,20 @@
    "fieldname": "cor_primaria_interface",
    "fieldtype": "Color",
    "label": "Cor Prim\u00e1ria da Interface"
+  },
+  {
+   "default": "55",
+   "fieldname": "pxmargensform",
+   "fieldtype": "Int",
+   "label": "Margens Laterais do Formul\u00e1rio (px)",
+   "non_negative": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-05-04 15:18:46.130903",
+ "modified": "2026-05-09 10:33:49.456540",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",

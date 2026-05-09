@@ -159,8 +159,14 @@
 		padding-bottom: 0px;
 		.sidebar-image {
 			height: auto;
-			object-fit: cover;
+			// Preserve image aspect ratio without distortion
+			// Using 'contain' instead of 'cover' ensures images are displayed
+			// with their original proportions, preventing visual compression
+			// in the sidebar. Fallback 'fill' for legacy browsers.
+			object-fit: contain;
+			object-position: center;
 			cursor: pointer;
+			background-color: var(--bg-light);
 		}
 
 		.standard-image {

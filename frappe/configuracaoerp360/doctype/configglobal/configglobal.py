@@ -18,10 +18,11 @@ class ConfigGlobal(Document):
 		duplica_cpfcnpj: DF.Literal["N\u00e3o", "Apenas para Produtor Rural"]
 		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
 		pesquisa_cep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
+		pxmargensform: DF.Int
 		validar_ie: DF.Literal["N\u00e3o", "Sim"]
 	# end: auto-generated types
 
 	def on_update(self):
-		# Invalida o cache de bootinfo de todos os usuários para que a nova
-		# cor primária seja refletida no próximo carregamento do Desk.
+		# Invalida o cache de bootinfo de todos os usuários para refletir
+		# atualizações de aparência no próximo carregamento do Desk.
 		frappe.cache.delete_key("bootinfo")
