@@ -15,10 +15,16 @@ context("Grid Configuration", () => {
 		cy.get('[type="checkbox"][data-unit="right"]').check();
 		cy.wait(100);
 		cy.findByRole("button", { name: "Add" }).wait(100).click();
-		cy.get('[data-fieldname="parent_label"]').invoke("attr", "value", "1");
-		cy.get('.form-control.column-width[data-fieldname="parent_label"]').trigger("change");
+		cy.get('.form-control.column-width[data-fieldname="parent_label"]')
+			.clear()
+			.type("180")
+			.trigger("change");
 		cy.findByRole("button", { name: "Update" }).click();
 		cy.wait(200);
 		cy.get('[title="Align Right"').should("be.visible");
+		cy.get("@table")
+			.find('.grid-heading-row .grid-static-col[data-fieldname="parent_label"]')
+			.invoke("attr", "style")
+			.should("contain", "180px");
 	});
 });

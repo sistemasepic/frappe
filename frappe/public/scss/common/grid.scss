@@ -70,11 +70,22 @@
 		left: 0;
 		z-index: 1;
 	}
+	.row-check {
+		flex: 0 0 31px;
+		width: 31px;
+		min-width: 31px;
+		max-width: 31px;
+	}
 	.row-index {
+		flex: 0 0 40px;
+		width: 40px;
+		min-width: 40px;
+		max-width: 40px;
 		left: 31px;
 	}
 	.grid-static-col {
 		padding: 6px 8px !important;
+		position: relative;
 		&.grid-data-column {
 			flex: 1;
 			max-width: none;
@@ -85,6 +96,17 @@
 				color: var(--red-400);
 			}
 		}
+	}
+
+	.grid-right-static-col {
+		position: sticky;
+		margin-left: auto;
+		right: 0;
+		z-index: 3;
+		min-width: 34px;
+		max-width: 34px;
+		width: 34px;
+		padding: 6px 4px !important;
 	}
 }
 
@@ -189,7 +211,10 @@
 .row-check {
 	// height: 38px;
 	text-align: center;
-	flex-grow: 0;
+	flex: 0 0 31px;
+	width: 31px;
+	min-width: 31px;
+	max-width: 31px;
 
 	input {
 		margin-right: 0 !important;
@@ -239,13 +264,19 @@
 
 .row-index {
 	text-align: center;
-	flex-grow: 0;
+	flex: 0 0 40px;
+	width: 40px;
+	min-width: 40px;
+	max-width: 40px;
 }
 
 .grid-row > .row {
 	.col:last-child {
 		border-right: none;
-		min-width: 0;
+		flex: 0 0 34px;
+		width: 34px;
+		min-width: 34px;
+		max-width: 34px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -259,6 +290,23 @@
 	.sticky-grid-col {
 		position: sticky;
 		z-index: 1;
+	}
+}
+
+.grid-col-resize-handle {
+	position: absolute;
+	top: 0;
+	right: -3px;
+	width: 8px;
+	height: 100%;
+	cursor: col-resize;
+	z-index: 5;
+	background: transparent;
+	touch-action: none;
+
+	&:hover,
+	&:focus-visible {
+		background: color-mix(in srgb, var(--gray-400) 35%, transparent);
 	}
 }
 
@@ -805,8 +853,10 @@
 		.grid-row > .row .col:last-child,
 		.grid-row > .dialog-assignment-row .col:first-child,
 		.grid-row > .dialog-assignment-row .col:last-child {
-			max-width: 30px;
-			min-width: 30px;
+			flex: 0 0 34px;
+			max-width: 34px;
+			min-width: 34px;
+			width: 34px;
 			position: sticky;
 			right: 0;
 			z-index: 1;
@@ -819,7 +869,7 @@
 		}
 		.grid-heading-row .grid-row .data-row.row,
 		.grid-body .rows .grid-row .data-row.row {
-			justify-content: space-between;
+			justify-content: flex-start;
 		}
 	}
 	scrollbar-width: auto;
@@ -909,3 +959,42 @@
 		padding-right: 0 !important;
 	}
 }
+
+// --- PATCH: Força largura e alinhamento fixos para colunas especiais (Nº. e config) ---
+.grid-heading-row .row-index,
+.grid-body .row-index,
+.grid-heading-row .data-row .row-index,
+.grid-body .data-row .row-index,
+.form-grid .row-index {
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+  flex: 0 0 40px !important;
+  left: 31px !important;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.grid-heading-row .grid-right-static-col,
+.grid-body .grid-right-static-col,
+.form-grid .grid-right-static-col {
+	margin-left: auto !important;
+  width: 34px !important;
+  min-width: 34px !important;
+  max-width: 34px !important;
+  flex: 0 0 34px !important;
+	left: auto !important;
+  right: 0 !important;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+// Garante alinhamento flex e previne espaçamento extra em estados especiais
+.grid-heading-row .data-row,
+.grid-body .data-row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start !important;
+  align-items: stretch;
+}
+// --- FIM PATCH ---

@@ -4,6 +4,32 @@
 import GridRow from "./grid_row";
 import GridPagination from "./grid_pagination";
 
+const GRID_COL_WIDTH_MIN_PX = 60;
+const GRID_COL_WIDTH_MAX_PX = 1200;
+const GRID_STATIC_LEFT_OFFSET_PX = 71;
+const GRID_STATIC_RIGHT_OFFSET_PX = 34;
+
+const LEGACY_COLSIZE_WIDTH_MAP = {
+	1: 60,
+	2: 100,
+	3: 140,
+	4: 200,
+	5: 250,
+	6: 300,
+	7: 350,
+	8: 400,
+	9: 450,
+	10: 500,
+	11: 550,
+	12: 600,
+};
+
+function normalize_width_px(value, min = GRID_COL_WIDTH_MIN_PX, max = GRID_COL_WIDTH_MAX_PX) {
+	const n = Number.parseInt(value, 10);
+	if (!Number.isFinite(n)) return null;
+	return Math.min(max, Math.max(min, n));
+}
+
 frappe.ui.form.get_open_grid_form = function () {
 	return $(".grid-row-open").data("grid_row");
 };
@@ -24,8 +50,13 @@ export default class Grid {
 		this.fieldinfo = {};
 		this.doctype = this.df.options;
 
-		this.sticky_row_sum = 71;
+		this.sticky_row_sum = GRID_STATIC_LEFT_OFFSET_PX;
 		this.sticky_rows = [];
+		this._col_widths_px_override = {};
+		this.debounced_save_col_width_px = frappe.utils.debounce(
+			(fieldname, px) => this._save_col_width_px(fieldname, px),
+			400
+		);
 
 		if (this.doctype) {
 			this.meta = frappe.get_meta(this.doctype);
@@ -60,6 +91,146 @@ export default class Grid {
 		} else {
 			return false;
 		}
+	}
+
+	get_grid_col_widths_px() {
+		if (!this.frm || !this.frm.doctype || !this.df?.fieldname) return {};
+		const user_settings = frappe.model.user_settings[this.frm.doctype] || {};
+		const px_ns = user_settings.GridViewColumnWidthsPx || {};
+		return px_ns[this.df.fieldname] || {};
+	}
+
+	normalize_col_width_px(value) {
+		return normalize_width_px(value);
+	}
+
+	get_legacy_col_width_px(colsize) {
+		return LEGACY_COLSIZE_WIDTH_MAP[colsize] || LEGACY_COLSIZE_WIDTH_MAP[2];
+	}
+
+	get_legacy_columns_from_px(width_px) {
+		const px = this.normalize_col_width_px(width_px);
+		if (!px) return 2;
+
+		let nearest_columns = 2;
+		let nearest_diff = Number.POSITIVE_INFINITY;
+
+		for (const [columns, legacy_px] of Object.entries(LEGACY_COLSIZE_WIDTH_MAP)) {
+			const diff = Math.abs(legacy_px - px);
+			if (diff < nearest_diff) {
+				nearest_diff = diff;
+				nearest_columns = cint(columns);
+			}
+		}
+
+		return nearest_columns;
+	}
+
+	get_effective_col_width_px(fieldname, colsize) {
+		const session_px = this.normalize_col_width_px(this._col_widths_px_override?.[fieldname]);
+		if (session_px) return session_px;
+
+		const px_settings = this.get_grid_col_widths_px();
+		const saved_px = this.normalize_col_width_px(px_settings?.[fieldname]);
+		if (saved_px) return saved_px;
+
+		return this.get_legacy_col_width_px(colsize);
+	}
+
+	set_col_width_px_override(fieldname, px) {
+		const normalized = this.normalize_col_width_px(px);
+		if (!normalized) return null;
+		this._col_widths_px_override[fieldname] = normalized;
+		return normalized;
+	}
+
+	save_col_width_px(fieldname, px, { flush = false } = {}) {
+		const normalized = this.set_col_width_px_override(fieldname, px);
+		if (!normalized) return;
+		this.debounced_save_col_width_px(fieldname, normalized);
+		if (flush) {
+			this.debounced_save_col_width_px.flush?.();
+		}
+	}
+
+	_save_col_width_px(fieldname, px) {
+		if (!this.frm || !this.frm.doctype || !this.df?.fieldname) return;
+
+		const normalized = this.normalize_col_width_px(px);
+		if (!normalized) return;
+
+		const doctype_settings = frappe.model.user_settings[this.frm.doctype] || {};
+		const px_ns = $.extend(true, {}, doctype_settings.GridViewColumnWidthsPx || {});
+		const table_px = $.extend(true, {}, px_ns[this.df.fieldname] || {});
+		table_px[fieldname] = normalized;
+		px_ns[this.df.fieldname] = table_px;
+
+		frappe.model.user_settings
+			.save(this.frm.doctype, "GridViewColumnWidthsPx", px_ns)
+			.then((r) => {
+				frappe.model.user_settings[this.frm.doctype] = r.message || r;
+			})
+			.catch(() => {
+				// mantém override de sessão como fallback em falha de persistência
+			});
+	}
+
+	reset_grid_col_widths_px() {
+		if (!this.frm || !this.frm.doctype || !this.df?.fieldname) return Promise.resolve();
+
+		const doctype_settings = frappe.model.user_settings[this.frm.doctype] || {};
+		const px_ns = $.extend(true, {}, doctype_settings.GridViewColumnWidthsPx || {});
+		delete px_ns[this.df.fieldname];
+		this._col_widths_px_override = {};
+
+		return frappe.model.user_settings
+			.save(this.frm.doctype, "GridViewColumnWidthsPx", px_ns)
+			.then((r) => {
+				frappe.model.user_settings[this.frm.doctype] = r.message || r;
+			});
+	}
+
+	_recalculate_sticky_offsets() {
+		this.sticky_row_sum = this.get_static_left_offset_px();
+		this.sticky_rows = {};
+
+		if (!this.visible_columns || !this.visible_columns.length) return;
+
+		this.visible_columns.forEach(([df, colsize]) => {
+			if (!df?.sticky) return;
+
+			this.sticky_rows[df.fieldname] = this.sticky_row_sum;
+			this.sticky_row_sum += this.get_effective_col_width_px(df.fieldname, colsize);
+		});
+	}
+
+	get_static_left_offset_px() {
+		if (!this.wrapper?.length) return GRID_STATIC_LEFT_OFFSET_PX;
+
+		const heading = this.wrapper.find(".grid-heading-row .grid-row:first");
+		if (!heading?.length) return GRID_STATIC_LEFT_OFFSET_PX;
+
+		const row_check_el = heading.find(".row-check:first").get(0);
+		const row_index_el = heading.find(".row-index:first").get(0);
+		const row_check_width = Math.ceil(row_check_el?.getBoundingClientRect()?.width || 31);
+		const row_index_width = Math.ceil(row_index_el?.getBoundingClientRect()?.width || 40);
+		const left_offset = row_check_width + row_index_width;
+
+		return left_offset >= 60 ? left_offset : GRID_STATIC_LEFT_OFFSET_PX;
+	}
+
+	get_static_right_offset_px() {
+		if (!this.wrapper?.length) return GRID_STATIC_RIGHT_OFFSET_PX;
+
+		const heading = this.wrapper.find(".grid-heading-row .grid-row:first");
+		if (!heading?.length) return GRID_STATIC_RIGHT_OFFSET_PX;
+
+		const right_col_el = heading.find(".grid-right-static-col:first").get(0);
+		const right_col_width = Math.ceil(
+			right_col_el?.getBoundingClientRect()?.width || GRID_STATIC_RIGHT_OFFSET_PX
+		);
+
+		return right_col_width >= 20 ? right_col_width : GRID_STATIC_RIGHT_OFFSET_PX;
 	}
 
 	make() {

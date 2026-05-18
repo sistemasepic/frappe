@@ -6,6 +6,10 @@ const DEPENDENCY_PROPERTIES = [
 	{ expr: "read_only_depends_on", prop: "read_only", negate: false },
 ];
 
+const GRID_ROW_CHECK_WIDTH_PX = 31;
+const GRID_ROW_INDEX_WIDTH_PX = 40;
+const GRID_RIGHT_STATIC_COL_WIDTH_PX = 34;
+
 export default class GridRow {
 	constructor(opts) {
 		this.on_grid_fields_dict = {};
@@ -308,6 +312,7 @@ export default class GridRow {
 		this.setup_columns();
 		this.add_open_form_button();
 		this.add_column_configure_button();
+		this.apply_special_column_layout();
 		this.refresh_check();
 
 		if (this.frm && this.doc) {
@@ -315,6 +320,43 @@ export default class GridRow {
 		}
 
 		return true;
+	}
+
+	apply_special_column_layout() {
+		this.row.find(".row-check").css({
+			flex: `0 0 ${GRID_ROW_CHECK_WIDTH_PX}px`,
+			width: `${GRID_ROW_CHECK_WIDTH_PX}px`,
+			minWidth: `${GRID_ROW_CHECK_WIDTH_PX}px`,
+			maxWidth: `${GRID_ROW_CHECK_WIDTH_PX}px`,
+			left: 0,
+			position: "sticky",
+			zIndex: 2,
+		});
+
+		this.row.find(".row-index").css({
+			flex: `0 0 ${GRID_ROW_INDEX_WIDTH_PX}px`,
+			width: `${GRID_ROW_INDEX_WIDTH_PX}px`,
+			minWidth: `${GRID_ROW_INDEX_WIDTH_PX}px`,
+			maxWidth: `${GRID_ROW_INDEX_WIDTH_PX}px`,
+			left: `${GRID_ROW_CHECK_WIDTH_PX}px`,
+			position: "sticky",
+			zIndex: 2,
+			textAlign: "center",
+		});
+
+		this.row.find(".grid-right-static-col").css({
+			flex: `0 0 ${GRID_RIGHT_STATIC_COL_WIDTH_PX}px`,
+			width: `${GRID_RIGHT_STATIC_COL_WIDTH_PX}px`,
+			minWidth: `${GRID_RIGHT_STATIC_COL_WIDTH_PX}px`,
+			maxWidth: `${GRID_RIGHT_STATIC_COL_WIDTH_PX}px`,
+			marginLeft: "auto",
+			left: "auto",
+			right: 0,
+			position: "sticky",
+			zIndex: this.header_row ? 4 : 3,
+			paddingLeft: "4px",
+			paddingRight: "4px",
+		});
 	}
 
 	make_editable() {
@@ -330,7 +372,7 @@ export default class GridRow {
 		if (this.doc && !this.grid.df.in_place_edit) {
 			// remove row
 			if (!this.open_form_button) {
-				this.open_form_button = $('<div class="col"></div>').appendTo(this.row);
+				this.open_form_button = $('<div class="col grid-static-col grid-right-static-col"></div>').appendTo(this.row);
 				this.open_form_button.on("click", function (e) {
 					me.toggle_view();
 					return false;
@@ -372,7 +414,7 @@ export default class GridRow {
 		if (this.grid.df.in_place_edit && !this.frm) return;
 		if (this.configure_columns && this.frm) {
 			this.configure_columns_button = $(`
-				<div class="col grid-static-col pointer">
+				<div class="col grid-static-col grid-right-static-col pointer">
 					<a>${frappe.utils.icon("settings", "sm", "", "filter: opacity(0.5)")}</a>
 				</div>
 			`)
@@ -382,7 +424,7 @@ export default class GridRow {
 				});
 		} else if (this.configure_columns && !this.frm) {
 			this.configure_columns_button = $(`
-				<div class="col grid-static-col"></div>
+				<div class="col grid-static-col grid-right-static-col"></div>
 			`).appendTo(this.row);
 		}
 	}
@@ -426,9 +468,11 @@ export default class GridRow {
 	setup_columns_for_dialog() {
 		this.selected_columns_for_grid = [];
 		this.grid.visible_columns.forEach((row) => {
+			const width_px = this.grid.get_effective_col_width_px(row[0].fieldname, row[1]);
 			this.selected_columns_for_grid.push({
 				fieldname: row[0].fieldname,
 				columns: row[0].columns || row[0].colsize,
+				width_px,
 				sticky: row[0].sticky,
 			});
 		});
@@ -445,7 +489,7 @@ export default class GridRow {
 						${__("Fieldname").bold()}
 					</div>
 					<div class='col-3'>
-						${__("Column Width").bold()}
+						${__("Column Width (px)").bold()}
 					</div>
 					<div class='col-2'>
 						${__("Sticky").bold()}
@@ -506,6 +550,10 @@ export default class GridRow {
 						this.selected_columns_for_grid.push({
 							fieldname: selected_column,
 							columns: docfield.columns || docfield.colsize,
+							width_px: this.grid.get_effective_col_width_px(
+								selected_column,
+								docfield.columns || docfield.colsize
+							),
 							sticky: docfield.sticky,
 						});
 					}
@@ -575,6 +623,9 @@ export default class GridRow {
 		if (this.selected_columns_for_grid) {
 			this.selected_columns_for_grid.forEach((d) => {
 				let docfield = frappe.meta.get_docfield(this.grid.doctype, d.fieldname);
+				const width_px =
+					this.grid.normalize_col_width_px(d.width_px) ||
+					this.grid.get_effective_col_width_px(d.fieldname, d.columns || docfield.columns);
 
 				fields += `
 					<div class='control-input flex align-center form-control fields_order sortable-handle sortable'
@@ -590,10 +641,10 @@ export default class GridRow {
 							<div class='col-5' style='padding-top: 5px;'>
 								${__(docfield.label, null, docfield.parent)}
 							</div>
-							<div class='col-3' style='padding-top: 2px; margin-top:-2px;' title='${__("Columns")}'>
+							<div class='col-3' style='padding-top: 2px; margin-top:-2px;' title='${__("Width in pixels")}' >
 								<input class='form-control column-width my-1 input-xs text-right'
 								style='height: 24px; max-width: 80px; background: var(--bg-color);'
-									value='${cint(d.columns) || docfield.columns}'
+									value='${width_px || 100}'
 									data-fieldname='${docfield.fieldname}' style='background-color: var(--modal-bg); display: inline'>
 							</div>
 							<div class='col-2 sticky-col-container' title='${__("Sticky")}' >
@@ -635,9 +686,14 @@ export default class GridRow {
 
 		let columns = $(this.fields_html_wrapper).find(".fields_order") || [];
 		columns.each((idx) => {
+			const fieldname = $(columns[idx]).attr("data-fieldname");
+			const width_px = this.grid.normalize_col_width_px(
+				$(columns[idx]).find(".column-width").attr("value")
+			);
 			this.selected_columns_for_grid.push({
-				fieldname: $(columns[idx]).attr("data-fieldname"),
-				columns: cint($(columns[idx]).find(".column-width").attr("value")),
+				fieldname,
+				columns: this.grid.get_legacy_columns_from_px(width_px),
+				width_px,
 				sticky: $(columns[idx]).find(".sticky-column").is(":checked") ? 1 : 0,
 			});
 		});
@@ -655,15 +711,19 @@ export default class GridRow {
 		$(this.fields_html_wrapper)
 			.find(".column-width")
 			.change((event) => {
-				if (cint(event.target.value) === 0) {
+				const normalized = this.grid.normalize_col_width_px(event.target.value);
+				if (!normalized) {
 					event.target.value = cint(event.target.defaultValue);
-					frappe.throw(__("Column width cannot be zero."));
+					frappe.throw(__("Column width must be a valid number."));
 				}
+
+				event.target.value = normalized;
 
 				this.selected_columns_for_grid.forEach((row) => {
 					if (row.fieldname === event.target.dataset.fieldname) {
-						row.columns = cint(event.target.value);
-						event.target.defaultValue = cint(event.target.value);
+						row.width_px = normalized;
+						row.columns = this.grid.get_legacy_columns_from_px(normalized);
+						event.target.defaultValue = normalized;
 					}
 				});
 			});
@@ -705,19 +765,61 @@ export default class GridRow {
 			return;
 		}
 
-		let value = {};
-		value[this.grid.doctype] = this.selected_columns_for_grid;
-		frappe.model.user_settings.save(this.frm.doctype, "GridView", value).then((r) => {
-			frappe.model.user_settings[this.frm.doctype] = r.message || r;
-			this.grid.reset_grid();
+		const doctype_settings = frappe.model.user_settings[this.frm.doctype] || {};
+		const existing_gridview = doctype_settings.GridView || {};
+		let value = { ...existing_gridview };
+		const selected_for_gridview = this.selected_columns_for_grid.map((row) => ({
+			fieldname: row.fieldname,
+			columns: row.columns,
+			sticky: row.sticky,
+		}));
+		value[this.grid.doctype] = selected_for_gridview;
+
+		const width_px_map = {};
+		this.selected_columns_for_grid.forEach((row) => {
+			const normalized = this.grid.normalize_col_width_px(row.width_px);
+			if (normalized) {
+				width_px_map[row.fieldname] = normalized;
+			}
 		});
+
+		frappe.model.user_settings
+			.save(this.frm.doctype, "GridView", value)
+			.then((r) => {
+				frappe.model.user_settings[this.frm.doctype] = r.message || r;
+				const doctype_settings = frappe.model.user_settings[this.frm.doctype] || {};
+				const px_namespace = $.extend(
+					true,
+					{},
+					doctype_settings.GridViewColumnWidthsPx || {}
+				);
+				px_namespace[this.grid.df.fieldname] = width_px_map;
+				return frappe.model.user_settings.save(
+					this.frm.doctype,
+					"GridViewColumnWidthsPx",
+					px_namespace
+				);
+			})
+			.then((r) => {
+				frappe.model.user_settings[this.frm.doctype] = r.message || r;
+				this.grid.reset_grid();
+			});
 	}
 
 	reset_user_settings_for_grid() {
-		frappe.model.user_settings.save(this.frm.doctype, "GridView", null).then((r) => {
-			frappe.model.user_settings[this.frm.doctype] = r.message || r;
-			this.grid.reset_grid();
-		});
+		const doctype_settings = frappe.model.user_settings[this.frm.doctype] || {};
+		const existing_gridview = { ...(doctype_settings.GridView || {}) };
+		delete existing_gridview[this.grid.doctype];
+
+		frappe.model.user_settings
+			.save(this.frm.doctype, "GridView", existing_gridview)
+			.then((r) => {
+				frappe.model.user_settings[this.frm.doctype] = r.message || r;
+				return this.grid.reset_grid_col_widths_px();
+			})
+			.finally(() => {
+				this.grid.reset_grid();
+			});
 	}
 
 	setup_columns() {
@@ -725,12 +827,13 @@ export default class GridRow {
 		this.search_columns = {};
 
 		this.grid.setup_visible_columns();
+		this.grid._recalculate_sticky_offsets();
 		let fields =
 			this.grid.user_defined_columns && this.grid.user_defined_columns.length > 0
 				? this.grid.user_defined_columns
 				: this.docfields;
 
-		let total_colsize = 0;
+		let total_columns_width_px = 0;
 
 		this.grid.visible_columns.forEach((col, ci) => {
 			// to get update df for the row
@@ -739,8 +842,9 @@ export default class GridRow {
 			this.set_dependant_property(df);
 
 			let colsize = col[1];
+			let width_px = this.grid.get_effective_col_width_px(df.fieldname, colsize);
 
-			total_colsize += colsize;
+			total_columns_width_px += width_px;
 			let txt = this.doc
 				? frappe.format(this.doc[df.fieldname], df, null, this.doc)
 				: __(df.label, null, df.parent);
@@ -750,11 +854,19 @@ export default class GridRow {
 			}
 			let column;
 			if (!this.columns[df.fieldname] && !this.show_search) {
-				column = this.make_column(df, colsize, txt, ci);
+				column = this.make_column(df, colsize, width_px, txt, ci);
 			} else if (!this.columns[df.fieldname] && this.show_search) {
-				column = this.make_search_column(df, colsize);
+				column = this.make_search_column(df, colsize, width_px);
 			} else {
 				column = this.columns[df.fieldname];
+				column.css({
+					flex: `0 0 ${width_px}px`,
+					width: `${width_px}px`,
+					maxWidth: `${width_px}px`,
+				});
+				if (df.sticky && this.grid.sticky_rows[df.fieldname] !== undefined) {
+					column.css("left", `${this.grid.sticky_rows[df.fieldname]}px`);
+				}
 				this.refresh_field(df.fieldname, txt);
 			}
 
@@ -771,25 +883,74 @@ export default class GridRow {
 			}
 		});
 
-		let current_grid = this.grid.wrapper.find(".form-grid-container");
-		if (total_colsize > 10) {
-			current_grid.addClass("column-limit-reached");
-		} else if (current_grid.hasClass("column-limit-reached")) {
-			if (Number($(current_grid).children(".form-grid").css("left")) != 0) {
-				$(current_grid).children(".form-grid").css("left", 0);
-				$(current_grid).children().find(".grid-scroll-bar").css({
-					width: "auto",
-					"margin-left": "0px",
-				});
-				$(current_grid).children().find(".grid-scroll-bar-rows").css("width", "auto");
-			}
-			current_grid.removeClass("column-limit-reached");
-		}
+		this.apply_real_overflow(total_columns_width_px);
+		this.sync_all_grid_column_dimensions();
 
 		if (this.show_search) {
 			// last empty column
-			$(`<div class="col grid-static-col search"></div>`).appendTo(this.row);
+			$(`<div class="col grid-static-col grid-right-static-col search"></div>`).appendTo(
+				this.row
+			);
 		}
+	}
+
+	sync_all_grid_column_dimensions() {
+		(this.grid.visible_columns || []).forEach(([df, colsize]) => {
+			if (!df?.fieldname) return;
+
+			const width_px = this.grid.get_effective_col_width_px(df.fieldname, colsize);
+			const $all_columns = this.grid.wrapper.find(
+				`.grid-static-col[data-fieldname="${df.fieldname}"]`
+			);
+
+			$all_columns.css({
+				flex: `0 0 ${width_px}px`,
+				width: `${width_px}px`,
+				maxWidth: `${width_px}px`,
+			});
+
+			if (df.sticky && this.grid.sticky_rows[df.fieldname] !== undefined) {
+				$all_columns
+					.addClass("sticky-grid-col")
+					.css("left", `${this.grid.sticky_rows[df.fieldname]}px`);
+			} else {
+				$all_columns.removeClass("sticky-grid-col").css("left", "");
+			}
+		});
+	}
+
+	apply_real_overflow(total_columns_width_px) {
+		let current_grid = this.grid.wrapper.find(".form-grid-container");
+		if (!current_grid?.length) return;
+
+		const grid_left_fixed_width = this.grid.get_static_left_offset_px();
+		const grid_right_fixed_width = this.grid.get_static_right_offset_px();
+		const container_width = Math.floor(current_grid.innerWidth() || 0);
+
+		if (container_width <= 0) {
+			setTimeout(() => this.grid.debounced_refresh(), 50);
+			return;
+		}
+
+		const has_overflow =
+			total_columns_width_px + grid_left_fixed_width + grid_right_fixed_width > container_width;
+		const form_grid = $(current_grid).children(".form-grid");
+		const previous_scroll_left = $(current_grid).scrollLeft();
+
+		current_grid.toggleClass("column-limit-reached", has_overflow);
+
+		if (!has_overflow) {
+			if (Number(form_grid.css("left")) !== 0) {
+				form_grid.css("left", 0);
+			}
+			$(current_grid).children().find(".grid-scroll-bar").css({
+				width: "auto",
+				"margin-left": "0px",
+			});
+			$(current_grid).children().find(".grid-scroll-bar-rows").css("width", "auto");
+		}
+
+		$(current_grid).scrollLeft(previous_scroll_left);
 	}
 
 	set_dependant_property(df) {
@@ -870,7 +1031,7 @@ export default class GridRow {
 		return this.show_search;
 	}
 
-	make_search_column(df, colsize) {
+	make_search_column(df, colsize, width_px) {
 		let title = "";
 		let input_class = "";
 		let is_disabled = "";
@@ -889,7 +1050,20 @@ export default class GridRow {
 
 		let $col = $(
 			'<div class="col grid-static-col col-xs-' + colsize + ' search"></div>'
-		).appendTo(this.row);
+		)
+			.attr("data-fieldname", df.fieldname)
+			.attr("data-fieldtype", df.fieldtype)
+			.data("df", df)
+			.css({
+				flex: `0 0 ${width_px}px`,
+				width: `${width_px}px`,
+				maxWidth: `${width_px}px`,
+			})
+			.appendTo(this.row);
+
+		if (df.sticky && this.grid.sticky_rows[df.fieldname] !== undefined) {
+			$col.addClass("sticky-grid-col").css("left", `${this.grid.sticky_rows[df.fieldname]}px`);
+		}
 
 		let $search_input = $(`
 			<input
@@ -935,21 +1109,7 @@ export default class GridRow {
 		return $col;
 	}
 
-	make_column(df, colsize, txt, ci) {
-		let col_sizes = {
-			1: 60,
-			2: 100,
-			3: 140,
-			4: 200,
-			5: 250,
-			6: 300,
-			7: 350,
-			8: 400,
-			9: 450,
-			10: 500,
-			11: 550,
-			12: 600,
-		};
+	make_column(df, colsize, width_px, txt, ci) {
 		let me = this;
 		var add_class =
 			["Text", "Small Text"].indexOf(df.fieldtype) !== -1
@@ -964,14 +1124,9 @@ export default class GridRow {
 		let add_style = "";
 		if (df.sticky) {
 			add_class += " sticky-grid-col";
-			if (!(df.fieldname in this.grid.sticky_rows)) {
-				this.grid.sticky_rows[df.fieldname] = this.grid.sticky_row_sum;
-				this.grid.sticky_row_sum = Object.keys(this.grid.sticky_rows).length
-					? this.grid.sticky_row_sum + col_sizes[colsize]
-					: this.grid.sticky_row_sum;
-			}
-			add_style += `left: ${this.grid.sticky_rows[df.fieldname] || 71}px;`;
+			add_style += `left: ${this.grid.sticky_rows[df.fieldname] || this.grid.get_static_left_offset_px()}px;`;
 		}
+		add_style += `flex: 0 0 ${width_px}px; width: ${width_px}px; max-width: ${width_px}px;`;
 
 		let grid;
 		let grid_container;
@@ -1104,6 +1259,10 @@ export default class GridRow {
 		$col.df = df;
 		$col.column_index = ci;
 
+		if (this.header_row && !this.show_search && this.frm) {
+			this.add_column_resize_handle($col, df, width_px);
+		}
+
 		this.columns[df.fieldname] = $col;
 		this.columns_list.push($col);
 		if (ci == 0 && this.header_row) {
@@ -1118,6 +1277,68 @@ export default class GridRow {
 			});
 		}
 		return $col;
+	}
+
+	add_column_resize_handle($col, df, initial_width_px) {
+		if (!$col || !df?.fieldname) return;
+
+		const $handle = $('<span class="grid-col-resize-handle" role="separator" tabindex="0"></span>');
+		$col.append($handle);
+
+		let start_x = 0;
+		let start_width = initial_width_px;
+
+		const apply_width = (fieldname, width_px) => {
+			const normalized = this.grid.set_col_width_px_override(fieldname, width_px);
+			if (!normalized) return;
+
+			this.grid._recalculate_sticky_offsets();
+			const $all_columns = this.grid.wrapper.find(`.grid-static-col[data-fieldname="${fieldname}"]`);
+			$all_columns.css({
+				flex: `0 0 ${normalized}px`,
+				width: `${normalized}px`,
+				maxWidth: `${normalized}px`,
+			});
+
+			this.grid.visible_columns?.forEach(([visible_df]) => {
+				if (!visible_df?.sticky || this.grid.sticky_rows[visible_df.fieldname] === undefined) return;
+				this.grid.wrapper
+					.find(`.grid-static-col[data-fieldname="${visible_df.fieldname}"]`)
+					.css("left", `${this.grid.sticky_rows[visible_df.fieldname]}px`);
+			});
+
+			this.apply_real_overflow(this.get_total_visible_columns_width_px());
+		};
+
+		const on_pointer_move = (event) => {
+			const delta = event.clientX - start_x;
+			const new_width = start_width + delta;
+			apply_width(df.fieldname, new_width);
+		};
+
+		const on_pointer_up = () => {
+			document.removeEventListener("pointermove", on_pointer_move);
+			document.removeEventListener("pointerup", on_pointer_up);
+			const latest_width = this.grid.get_effective_col_width_px(df.fieldname, 2);
+			this.grid.save_col_width_px(df.fieldname, latest_width, { flush: true });
+		};
+
+		$handle.on("pointerdown", (event) => {
+			event.preventDefault();
+			event.stopPropagation();
+			start_x = event.clientX;
+			start_width = this.grid.get_effective_col_width_px(df.fieldname, 2);
+			document.addEventListener("pointermove", on_pointer_move);
+			document.addEventListener("pointerup", on_pointer_up);
+		});
+	}
+
+	get_total_visible_columns_width_px() {
+		let total_width = 0;
+		(this.grid.visible_columns || []).forEach(([df, colsize]) => {
+			total_width += this.grid.get_effective_col_width_px(df.fieldname, colsize);
+		});
+		return total_width;
 	}
 
 	activate() {
