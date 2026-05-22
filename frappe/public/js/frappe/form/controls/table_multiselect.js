@@ -1,3 +1,5 @@
+// Função utilitária para normalização de chave (garante comparação consistente entre string/number/null)
+const normalize_key = (v) => (v === undefined || v === null ? "" : String(v));
 frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 	frappe.ui.form.ControlLink
 ) {
@@ -34,34 +36,34 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 			const $target = $(e.currentTarget);
 			const $value = $target.closest(".tb-selected-value");
 
-			const value = decodeURIComponent($value.data().value);
-			const link_field = this.get_link_field();
-			const rows = this._get_rows().filter((row) => {
-				if (row[link_field.fieldname] !== value) return row;
+			       const value = decodeURIComponent($value.data().value);
+			       const link_field = this.get_link_field();
+			       const rows = this._get_rows().filter((row) => {
+				       if (normalize_key(row[link_field.fieldname]) !== normalize_key(value)) return row;
 
-				frappe.run_serially([
-					() => {
-						return this.frm?.script_manager.trigger(
-							`before_${this.df.fieldname}_remove`,
-							this.df.options,
-							row.name
-						);
-					},
-					() => {
-						frappe.model.clear_doc(this.df.options, row.name);
+				       frappe.run_serially([
+					       () => {
+						       return this.frm?.script_manager.trigger(
+							       `before_${this.df.fieldname}_remove`,
+							       this.df.options,
+							       row.name
+						       );
+					       },
+					       () => {
+						       frappe.model.clear_doc(this.df.options, row.name);
 
-						this.frm?.dirty();
-						this.refresh();
+						       this.frm?.dirty();
+						       this.refresh();
 
-						return this.frm?.script_manager.trigger(
-							`${this.df.fieldname}_remove`,
-							this.df.options,
-							row.name
-						);
-					},
-				]);
-			});
-			this._update_rows(rows);
+						       return this.frm?.script_manager.trigger(
+							       `${this.df.fieldname}_remove`,
+							       this.df.options,
+							       row.name
+						       );
+					       },
+				       ]);
+			       });
+			       this._update_rows(rows);
 		});
 		this.$input_area.on("click", ".btn-link-to-form", (e) => {
 			const $target = $(e.currentTarget);
@@ -101,7 +103,7 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 		}
 
 		const link_field = this.get_link_field();
-		value = value?.trim();
+		value = normalize_key(value).trim();
 		if (!value) return rows;
 
 		// clear input to prevent multiple additions
@@ -135,12 +137,12 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 		const link_field = this.get_link_field();
 
 		// validate the last value entered
-		const link_value = last_row[link_field.fieldname];
+		const link_value = normalize_key(last_row[link_field.fieldname]);
 
 		// falsy / duplicate value
 		if (
 			frappe.utils.is_empty(link_value) ||
-			all_rows_except_last.map((row) => row[link_field.fieldname]).includes(link_value)
+			   all_rows_except_last.map((row) => normalize_key(row[link_field.fieldname])).includes(normalize_key(link_value))
 		) {
 			return all_rows_except_last;
 		}
@@ -150,7 +152,7 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 			if (frappe.utils.is_empty(validated_value)) {
 				return all_rows_except_last;
 			}
-			last_row[link_field.fieldname] = validated_value;
+			last_row[link_field.fieldname] = normalize_key(validated_value);
 		}
 
 		return rows;
@@ -212,11 +214,10 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 		let me = this;
 
 		awesomplete.filter = function (item) {
-			if (me._rows_list.includes(item.value)) {
-				return false;
-			}
-
-			return true;
+			       if (me._rows_list.map(normalize_key).includes(normalize_key(item.value))) {
+				       return false;
+			       }
+			       return true;
 		};
 	}
 	get_input_value() {

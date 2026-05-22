@@ -477,8 +477,10 @@ def validate_link_and_fetch(
 
 	# try to match name in search result
 	# if search_result is large, assume valid link (result may not appear in some custom queries)
+	# normalize to string for robust comparison across backends where docname
+	# may be returned as int (autoincrement) while search results return text.
 	if len(search_result) < PAGE_LENGTH_FOR_LINK_VALIDATION and not any(
-		item[0] == name_to_compare for item in search_result
+		str(item[0]) == str(name_to_compare) for item in search_result
 	):
 		return {}  # no permission or filtered out
 
