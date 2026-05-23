@@ -38,62 +38,95 @@ class LinkSearchResponse(TypedDict):
 	applied_filters: NotRequired[list[list]]
 
 
+def _normalize_filter_list(raw_filters, doctype: str) -> list[list]:
+	if isinstance(raw_filters, str):
+		try:
+			raw_filters = json.loads(raw_filters)
+		except ValueError:
+			return []
+
+	if isinstance(raw_filters, dict):
+		if raw_filters and all(cstr(k).isdigit() for k in raw_filters):
+			raw_filters = [raw_filters[k] for k in sorted(raw_filters, key=lambda k: int(cstr(k)))]
+		else:
+			normalized = []
+			for fieldname, condition in raw_filters.items():
+				if isinstance(condition, (list, tuple)) and len(condition) >= 2:
+					normalized.append([doctype, fieldname, condition[0], condition[1]])
+				else:
+					normalized.append([doctype, fieldname, "=", condition])
+			return normalized
+
+	if not isinstance(raw_filters, (list, tuple)):
+		return []
+
+	normalized = []
+	for item in raw_filters:
+		if not isinstance(item, (list, tuple)):
+			continue
+		if len(item) >= 4:
+			item_doctype, fieldname, operator, value = item[0], item[1], item[2], item[3]
+		elif len(item) == 3:
+			item_doctype, fieldname, operator, value = doctype, item[0], item[1], item[2]
+		else:
+			continue
+		if not fieldname or not operator:
+			continue
+		normalized.append([item_doctype or doctype, fieldname, operator, value])
+
+	return normalized
+
+
+def _get_link_df_for_search_filters(
+	reference_doctype: str | None,
+	link_fieldname: str | None,
+	target_doctype: str,
+):
+	if not (reference_doctype and link_fieldname):
+		return None
+
+	try:
+		reference_meta = frappe.get_meta(reference_doctype)
+		link_df = reference_meta.get_field(link_fieldname)
+	except Exception:
+		return None
+
+	if not link_df:
+		return None
+
+	if link_df.fieldtype in ("Link", "Dynamic Link") and link_df.options == target_doctype:
+		return link_df
+
+	if link_df.fieldtype != "Table MultiSelect" or not link_df.options:
+		return None
+
+	try:
+		child_meta = frappe.get_meta(link_df.options)
+	except Exception:
+		return None
+
+	for child_field in child_meta.fields or []:
+		if child_field.fieldtype == "Link" and child_field.options == target_doctype:
+			return child_field
+
+	return None
+
+
 def _resolve_applied_filters(
 	doctype: str,
 	filters: str | dict | list | None,
 	reference_doctype: str | None,
 	link_fieldname: str | None,
 ) -> list[list] | None:
-	def _normalize(raw_filters) -> list[list]:
-		if not raw_filters:
-			return []
-
-		if isinstance(raw_filters, str):
-			try:
-				raw_filters = json.loads(raw_filters)
-			except ValueError:
-				return []
-
-		if isinstance(raw_filters, dict):
-			if raw_filters and all(cstr(k).isdigit() for k in raw_filters):
-				raw_filters = [raw_filters[k] for k in sorted(raw_filters, key=lambda k: int(cstr(k)))]
-			else:
-				normalized = []
-				for fieldname, condition in raw_filters.items():
-					if isinstance(condition, (list, tuple)) and len(condition) >= 2:
-						normalized.append([doctype, fieldname, condition[0], condition[1]])
-					else:
-						normalized.append([doctype, fieldname, "=", condition])
-				return normalized
-
-		if not isinstance(raw_filters, (list, tuple)):
-			return []
-
-		normalized = []
-		for item in raw_filters:
-			if not isinstance(item, (list, tuple)):
-				continue
-			if len(item) >= 4:
-				normalized.append([item[0] or doctype, item[1], item[2], item[3]])
-			elif len(item) == 3:
-				normalized.append([doctype, item[0], item[1], item[2]])
-
-		return normalized
-
-	combined_filters = _normalize(filters)
+	combined_filters = _normalize_filter_list(filters, doctype)
 	existing_fieldnames = {f[1] for f in combined_filters if len(f) >= 2}
 
-	if reference_doctype and link_fieldname:
-		try:
-			link_df = frappe.get_meta(reference_doctype).get_field(link_fieldname)
-		except Exception:
-			link_df = None
-
-		if link_df and link_df.link_filters:
-			for meta_filter in _normalize(link_df.link_filters):
-				if len(meta_filter) >= 2 and meta_filter[1] not in existing_fieldnames:
-					combined_filters.append(meta_filter)
-					existing_fieldnames.add(meta_filter[1])
+	link_df = _get_link_df_for_search_filters(reference_doctype, link_fieldname, doctype)
+	if link_df and link_df.link_filters:
+		for meta_filter in _normalize_filter_list(link_df.link_filters, doctype):
+			if len(meta_filter) >= 2 and meta_filter[1] not in existing_fieldnames:
+				combined_filters.append(meta_filter)
+				existing_fieldnames.add(meta_filter[1])
 
 	return combined_filters or None
 
@@ -128,7 +161,7 @@ def search_link(
 	)
 	autosuggest = build_for_autosuggest(results, doctype=doctype)
 
-	if applied_filters:
+	if applied_filters and reference_doctype and link_fieldname:
 		return {
 			"results": autosuggest,
 			"applied_filters": applied_filters,
@@ -167,45 +200,6 @@ def search_widget(
 
 	start = cint(start)
 
-	def normalize_filter_list(raw_filters) -> list[list]:
-		if isinstance(raw_filters, str):
-			try:
-				raw_filters = json.loads(raw_filters)
-			except ValueError:
-				return []
-
-		if isinstance(raw_filters, dict):
-			# Some clients may send list-style filters as indexed dicts, e.g. {"0": [...]}.
-			if raw_filters and all(cstr(k).isdigit() for k in raw_filters):
-				raw_filters = [raw_filters[k] for k in sorted(raw_filters, key=lambda k: int(cstr(k)))]
-			else:
-				normalized = []
-				for fieldname, condition in raw_filters.items():
-					if isinstance(condition, (list, tuple)) and len(condition) >= 2:
-						normalized.append([doctype, fieldname, condition[0], condition[1]])
-					else:
-						normalized.append([doctype, fieldname, "=", condition])
-				return normalized
-
-		if not isinstance(raw_filters, (list, tuple)):
-			return []
-
-		normalized = []
-		for item in raw_filters:
-			if not isinstance(item, (list, tuple)):
-				continue
-			if len(item) >= 4:
-				item_doctype, fieldname, operator, value = item[0], item[1], item[2], item[3]
-			elif len(item) == 3:
-				item_doctype, fieldname, operator, value = doctype, item[0], item[1], item[2]
-			else:
-				continue
-			if not fieldname or not operator:
-				continue
-			normalized.append([item_doctype or doctype, fieldname, operator, value])
-
-		return normalized
-
 	if isinstance(filters, str):
 		filters = json.loads(filters)
 
@@ -214,32 +208,22 @@ def search_widget(
 		filters = [filters[k] for k in sorted(filters, key=lambda k: int(cstr(k)))]
 
 	# Defensive fallback: always apply Link field metadata filters when available.
-	if reference_doctype and link_fieldname:
-		try:
-			link_df = frappe.get_meta(reference_doctype).get_field(link_fieldname)
-		except Exception:
-			link_df = None
-
-		if (
-			link_df
-			and link_df.fieldtype in ("Link", "Dynamic Link")
-			and link_df.options == doctype
-			and link_df.link_filters
-		):
-			meta_filters = normalize_filter_list(link_df.link_filters)
-			if meta_filters:
-				if isinstance(filters, dict):
-					for _doctype, fieldname, operator, value in meta_filters:
-						filters.setdefault(fieldname, [operator, value])
-				elif isinstance(filters, list):
-					existing_fieldnames = {f[1] for f in normalize_filter_list(filters)}
-					for meta_filter in meta_filters:
-						if meta_filter[1] not in existing_fieldnames:
-							filters.append(meta_filter)
-				elif filters is None:
-					filters = meta_filters
-				else:
-					filters = meta_filters
+	link_df = _get_link_df_for_search_filters(reference_doctype, link_fieldname, doctype)
+	if link_df and link_df.link_filters:
+		meta_filters = _normalize_filter_list(link_df.link_filters, doctype)
+		if meta_filters:
+			if isinstance(filters, dict):
+				for _doctype, fieldname, operator, value in meta_filters:
+					filters.setdefault(fieldname, [operator, value])
+			elif isinstance(filters, list):
+				existing_fieldnames = {f[1] for f in _normalize_filter_list(filters, doctype)}
+				for meta_filter in meta_filters:
+					if meta_filter[1] not in existing_fieldnames:
+						filters.append(meta_filter)
+			elif filters is None:
+				filters = meta_filters
+			else:
+				filters = meta_filters
 
 	if searchfield:
 		sanitize_searchfield(searchfield)

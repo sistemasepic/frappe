@@ -212,6 +212,147 @@ class TestSearch(IntegrationTestCase):
 		result = search(txt="(txt)")
 		self.assertEqual(result, [])
 
+	def test_search_link_applies_child_link_filters_for_table_multiselect(self):
+		linked_doctype = "Test Search TMS Linked"
+		child_doctype = "Test Search TMS Child"
+		parent_doctype = "Test Search TMS Parent"
+
+		for dt in (parent_doctype, child_doctype, linked_doctype):
+			if frappe.db.exists("DocType", dt):
+				frappe.delete_doc("DocType", dt, force=True)
+
+		new_doctype(
+			name=linked_doctype,
+			fields=[{"label": "Category", "fieldname": "category", "fieldtype": "Data"}],
+			search_fields="category",
+		).insert()
+
+		new_doctype(
+			name=child_doctype,
+			istable=1,
+			fields=[
+				{
+					"label": "Linked Doc",
+					"fieldname": "linked_doc",
+					"fieldtype": "Link",
+					"options": linked_doctype,
+					"link_filters": [["category", "=", "Allowed"]],
+				}
+			],
+		).insert()
+
+		new_doctype(
+			name=parent_doctype,
+			fields=[
+				{
+					"label": "Items",
+					"fieldname": "items",
+					"fieldtype": "Table MultiSelect",
+					"options": child_doctype,
+				}
+			],
+		).insert()
+
+		self.addCleanup(lambda: frappe.delete_doc("DocType", parent_doctype, force=True, ignore_missing=True))
+		self.addCleanup(lambda: frappe.delete_doc("DocType", child_doctype, force=True, ignore_missing=True))
+		self.addCleanup(lambda: frappe.delete_doc("DocType", linked_doctype, force=True, ignore_missing=True))
+
+		allowed = frappe.get_doc({"doctype": linked_doctype, "category": "Allowed"}).insert()
+		restricted = frappe.get_doc({"doctype": linked_doctype, "category": "Restricted"}).insert()
+		self.addCleanup(lambda: frappe.delete_doc(linked_doctype, allowed.name, force=True, ignore_missing=True))
+		self.addCleanup(
+			lambda: frappe.delete_doc(linked_doctype, restricted.name, force=True, ignore_missing=True)
+		)
+
+		results = search_link(
+			doctype=linked_doctype,
+			txt="",
+			reference_doctype=parent_doctype,
+			link_fieldname="items",
+		)
+
+		self.assertIsInstance(results, dict)
+		result_values = [row["value"] for row in results["results"]]
+		self.assertIn(allowed.name, result_values)
+		self.assertNotIn(restricted.name, result_values)
+		self.assertTrue(
+			any(
+				flt[1] == "category" and flt[2] == "=" and flt[3] == "Allowed"
+				for flt in results.get("applied_filters", [])
+			)
+		)
+
+	def test_search_link_parent_filters_take_precedence_over_child_link_filters(self):
+		linked_doctype = "Test Search TMS Linked Priority"
+		child_doctype = "Test Search TMS Child Priority"
+		parent_doctype = "Test Search TMS Parent Priority"
+
+		for dt in (parent_doctype, child_doctype, linked_doctype):
+			if frappe.db.exists("DocType", dt):
+				frappe.delete_doc("DocType", dt, force=True)
+
+		new_doctype(
+			name=linked_doctype,
+			fields=[{"label": "Category", "fieldname": "category", "fieldtype": "Data"}],
+			search_fields="category",
+		).insert()
+
+		new_doctype(
+			name=child_doctype,
+			istable=1,
+			fields=[
+				{
+					"label": "Linked Doc",
+					"fieldname": "linked_doc",
+					"fieldtype": "Link",
+					"options": linked_doctype,
+					"link_filters": [["category", "=", "Allowed"]],
+				}
+			],
+		).insert()
+
+		new_doctype(
+			name=parent_doctype,
+			fields=[
+				{
+					"label": "Items",
+					"fieldname": "items",
+					"fieldtype": "Table MultiSelect",
+					"options": child_doctype,
+				}
+			],
+		).insert()
+
+		self.addCleanup(lambda: frappe.delete_doc("DocType", parent_doctype, force=True, ignore_missing=True))
+		self.addCleanup(lambda: frappe.delete_doc("DocType", child_doctype, force=True, ignore_missing=True))
+		self.addCleanup(lambda: frappe.delete_doc("DocType", linked_doctype, force=True, ignore_missing=True))
+
+		allowed = frappe.get_doc({"doctype": linked_doctype, "category": "Allowed"}).insert()
+		restricted = frappe.get_doc({"doctype": linked_doctype, "category": "Restricted"}).insert()
+		self.addCleanup(lambda: frappe.delete_doc(linked_doctype, allowed.name, force=True, ignore_missing=True))
+		self.addCleanup(
+			lambda: frappe.delete_doc(linked_doctype, restricted.name, force=True, ignore_missing=True)
+		)
+
+		results = search_link(
+			doctype=linked_doctype,
+			txt="",
+			filters={"category": ["=", "Restricted"]},
+			reference_doctype=parent_doctype,
+			link_fieldname="items",
+		)
+
+		self.assertIsInstance(results, dict)
+		result_values = [row["value"] for row in results["results"]]
+		self.assertNotIn(allowed.name, result_values)
+		self.assertIn(restricted.name, result_values)
+		self.assertTrue(
+			any(
+				flt[1] == "category" and flt[2] == "=" and flt[3] == "Restricted"
+				for flt in results.get("applied_filters", [])
+			)
+		)
+
 	def test_search_link_with_ignore_user_permissions(self):
 		"""Test that ignore_user_permissions works correctly in search_link
 		when the link field has ignore_user_permissions enabled"""
