@@ -1,8 +1,146 @@
 // Copyright (c) 2026, Frappe Technologies and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("ConfigGlobal", {
-// 	refresh(frm) {
+frappe.ui.form.on("ConfigGlobal", {
+	async sincproderp(frm) {
+		if (!frappe.user.has_role("System Manager")) {
+			frappe.msgprint({
+				title: __("Permissão insuficiente"),
+				message: __("Apenas usuários com perfil System Manager podem sincronizar produtos."),
+				indicator: "red",
+			});
+			return;
+		}
 
-// 	},
-// });
+		const preview = await frappe.call({
+			method: "erp360.sinc_dados_erp.get_produtos_sync_preview",
+			freeze: true,
+			freeze_message: __("Buscando produtos no ERP..."),
+		});
+
+		const data = preview.message || {};
+		const totalNovos = cint(data.total_novos);
+		const totalAtualizar = cint(data.total_atualizar);
+
+		if (!totalNovos && !totalAtualizar) {
+			frappe.msgprint({
+				title: __("Sincronização de Produtos"),
+				message: __("Nenhum produto encontrado no ERP para sincronizar."),
+				indicator: "green",
+			});
+			return;
+		}
+
+		const amostras = (data.novos_samples || []).slice(0, 10);
+		const resumo = [
+			__("Produtos no ERP: {0}", [cint(data.total_erp)]),
+			"<br>",
+			__("Produtos no sistema: {0}", [cint(data.total_sistema)]),
+			"<br><br>",
+			__("Novos a inserir: {0}", [totalNovos]),
+			"<br>",
+			__("Existentes a atualizar: {0}", [totalAtualizar]),
+			"<br><br>",
+			__("Deseja executar a sincronização?"),
+		];
+
+		if (amostras.length) {
+			resumo.push(
+				"<br><br>" + __("Exemplos de novos produtos:") + "<br>- " + amostras.join("<br>- ")
+			);
+		}
+
+		frappe.confirm(
+			resumo.join(""),
+			async () => {
+				const sync = await frappe.call({
+					method: "erp360.sinc_dados_erp.sync_produtos_from_erp",
+					freeze: true,
+					freeze_message: __("Sincronizando produtos..."),
+				});
+
+				const result = sync.message || {};
+				frappe.show_alert(
+					{
+						message: __(
+							"Sincronização concluída. {0} inseridos, {1} atualizados.",
+							[cint(result.inserted), cint(result.updated)]
+						),
+						indicator: "green",
+					},
+					7
+				);
+
+				frm.reload_doc();
+			},
+			() => {}
+		);
+	},
+
+	async sincmarcaerp(frm) {
+		if (!frappe.user.has_role("System Manager")) {
+			frappe.msgprint({
+				title: __("Permissão insuficiente"),
+				message: __("Apenas usuários com perfil System Manager podem sincronizar marcas."),
+				indicator: "red",
+			});
+			return;
+		}
+
+		const preview = await frappe.call({
+			method: "erp360.sinc_dados_erp.get_marcas_sync_preview",
+			freeze: true,
+			freeze_message: __("Buscando marcas no ERP..."),
+		});
+
+		const data = preview.message || {};
+		const totalMissing = cint(data.total_missing);
+
+		if (!totalMissing) {
+			frappe.msgprint({
+				title: __("Sincronização de Marcas"),
+				message: __("Todas as marcas do ERP já estão cadastradas no sistema."),
+				indicator: "green",
+			});
+			return;
+		}
+
+		const amostras = (data.missing_samples || []).slice(0, 10);
+		const resumo = [
+			__("Marcas no ERP: {0}", [cint(data.total_erp)]),
+			"<br>",
+			__("Marcas no sistema: {0}", [cint(data.total_sistema)]),
+			"<br><br>",
+			__("Foram encontradas {0} marcas não cadastradas no sistema. Deseja sincronizar?", [
+				totalMissing,
+			]),
+		];
+
+		if (amostras.length) {
+			resumo.push("<br><br>" + __("Exemplos:") + "<br>- " + amostras.join("<br>- "));
+		}
+
+		frappe.confirm(
+			resumo.join(""),
+			async () => {
+				const sync = await frappe.call({
+					method: "erp360.sinc_dados_erp.sync_marcas_from_erp",
+					freeze: true,
+					freeze_message: __("Sincronizando marcas..."),
+				});
+
+				const inserted = cint((sync.message || {}).inserted);
+				frappe.show_alert(
+					{
+						message: __("Sincronização concluída. {0} marcas inseridas.", [inserted]),
+						indicator: "green",
+					},
+					7
+				);
+
+				frm.reload_doc();
+			},
+			() => {}
+		);
+	},
+});
