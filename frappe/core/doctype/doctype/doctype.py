@@ -376,15 +376,15 @@ class DocType(Document):
 
 					else:
 						update_query = """
-							UPDATE `tab{doctype}`
+							UPDATE `tab{doctype}` as target
 							SET `{fieldname}` = source.`{source_fieldname}`
 							FROM `tab{link_doctype}` as source
-							WHERE `{link_fieldname}` = source.name
+							WHERE `target`.`{link_fieldname}`::text = source.name::text
 						"""
 						if df.not_nullable:
-							update_query += "AND `{fieldname}`=''"
+							update_query += "AND `target`.`{fieldname}`=''"
 						else:
-							update_query += "AND ifnull(`{fieldname}`, '')=''"
+							update_query += "AND COALESCE(`target`.`{fieldname}`::text, '')=''"
 
 					self.flags.update_fields_to_fetch_queries.append(
 						update_query.format(
