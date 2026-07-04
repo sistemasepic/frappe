@@ -2163,6 +2163,123 @@ class TestQuery(IntegrationTestCase):
 		self.assertIn("cast(", sql)
 		self.assertIn("as varchar", sql)
 
+	@run_only_if(db_type_is.POSTGRES)
+	def test_child_table_join_cast_for_legacy_type_mismatch(self):
+		"""JOIN on child table fields must cast when child.parent and parent.name types differ."""
+		parent_dt = "test_child_join_parent"
+		child_dt = "test_child_join_child"
+
+		for dt in (parent_dt, child_dt):
+			if frappe.db.exists("DocType", dt):
+				frappe.delete_doc("DocType", dt, force=True)
+
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", parent_dt)
+			and frappe.delete_doc("DocType", parent_dt, force=True, ignore_missing=True)
+		)
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", child_dt)
+			and frappe.delete_doc("DocType", child_dt, force=True, ignore_missing=True)
+		)
+
+		new_doctype(
+			child_dt,
+			istable=1,
+			fields=[{"fieldname": "qty", "fieldtype": "Int", "label": "Qty"}],
+		).insert(ignore_permissions=True)
+
+		new_doctype(
+			parent_dt,
+			autoname="autoincrement",
+			fields=[
+				{
+					"fieldname": "items",
+					"fieldtype": "Table",
+					"label": "Items",
+					"options": child_dt,
+				}
+			],
+		).insert(ignore_permissions=True)
+
+		real_get_column_type = frappe.db.get_column_type
+
+		def fake_get_column_type(doctype, column):
+			if doctype == child_dt and column == "parent":
+				return "character varying"
+			if doctype == parent_dt and column == "name":
+				return "bigint"
+			return real_get_column_type(doctype, column)
+
+		with patch.object(frappe.db, "get_column_type", side_effect=fake_get_column_type):
+			sql = (
+				frappe.qb.get_query(
+					parent_dt,
+					fields=["name", "items.qty as items_qty"],
+				)
+				.get_sql()
+				.lower()
+			)
+
+		self.assertIn("left join", sql)
+		self.assertIn("cast(", sql)
+		self.assertIn("as varchar", sql)
+
+	@run_only_if(db_type_is.POSTGRES)
+	def test_group_by_name_with_link_fields_in_db_query_compat(self):
+		"""DB query compatibility should avoid postgres GroupingError for list-style grouping."""
+		target_dt = "test_groupby_link_target"
+		source_dt = "test_groupby_link_source"
+
+		for dt in (source_dt, target_dt):
+			if frappe.db.exists("DocType", dt):
+				frappe.delete_doc("DocType", dt, force=True)
+
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", source_dt)
+			and frappe.delete_doc("DocType", source_dt, force=True, ignore_missing=True)
+		)
+		self.addCleanup(
+			lambda: frappe.db.exists("DocType", target_dt)
+			and frappe.delete_doc("DocType", target_dt, force=True, ignore_missing=True)
+		)
+
+		new_doctype(
+			target_dt,
+			fields=[{"fieldname": "country_name", "fieldtype": "Data", "label": "Country Name"}],
+		).insert(ignore_permissions=True)
+
+		new_doctype(
+			source_dt,
+			fields=[
+				{
+					"fieldname": "country",
+					"fieldtype": "Link",
+					"label": "Country",
+					"options": target_dt,
+				}
+			],
+		).insert(ignore_permissions=True)
+
+		target_doc = frappe.get_doc({"doctype": target_dt, "country_name": "Brazil"}).insert(
+			ignore_permissions=True
+		)
+		frappe.get_doc({"doctype": source_dt, "country": target_doc.name}).insert(ignore_permissions=True)
+
+		query = frappe.qb.get_query(
+			source_dt,
+			fields=["name", "country.country_name as country_country_name"],
+			group_by=f"`tab{source_dt}`.`name`",
+			db_query_compat=True,
+		)
+		sql = query.get_sql().lower()
+
+		self.assertIn("group by", sql)
+		self.assertIn('"tabtest_groupby_link_source"."name"', sql)
+		self.assertIn('"tabtest_groupby_link_target"."country_name"', sql)
+
+		# Must execute without postgres grouping errors.
+		query.run()
+
 	def test_not_equal_condition_on_none(self):
 		self.assertQueryEqual(
 			frappe.qb.get_query(

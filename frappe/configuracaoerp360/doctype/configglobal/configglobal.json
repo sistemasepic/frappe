@@ -25,7 +25,7 @@
   {
    "fieldname": "parceiros_section",
    "fieldtype": "Section Break",
-   "label": "Parceiros"
+   "label": "<b>Parceiros</b>"
   },
   {
    "default": "Apenas para Produtor Rural",
@@ -59,7 +59,7 @@
   {
    "fieldname": "padronizar_entrada_de_dados_section",
    "fieldtype": "Section Break",
-   "label": "Padronizar entrada de dados"
+   "label": "<b>Padronizar entrada de dados</b>"
   },
   {
    "default": "Mai\u00fascula",
@@ -72,7 +72,7 @@
   {
    "fieldname": "apar\u00eancia_section",
    "fieldtype": "Section Break",
-   "label": "Apar\u00eancia"
+   "label": "<b>Apar\u00eancia da Interface</b>"
   },
   {
    "default": "#0A4EE4",
@@ -90,7 +90,7 @@
   {
    "fieldname": "sincronizar_dados_com_erp_section",
    "fieldtype": "Section Break",
-   "label": "Sincronizar Dados com ERP"
+   "label": "<b>Sincronizar Dados com ERP</b>"
   },
   {
    "fieldname": "column_break_teio",
@@ -115,7 +115,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-06-02 15:51:43.931137",
+ "modified": "2026-07-01 14:18:30.758127",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",

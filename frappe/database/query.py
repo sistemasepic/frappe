@@ -1207,6 +1207,30 @@ class Engine:
 
 	def apply_group_by(self, group_by: str | None = None):
 		parsed_group_by_fields = self._validate_group_by(group_by)
+
+		# PostgreSQL requires every selected non-aggregate column to be present in GROUP BY.
+		# In db_query compatibility mode, list views may group by only parent name while
+		# also selecting link/child derived columns; extend grouping defensively to avoid
+		# runtime SQL errors without changing selected data.
+		if self.is_postgres and self.db_query_compat:
+			has_aggregate_fields = any(isinstance(field, AggregateFunction) for field in self.fields)
+			if not has_aggregate_fields:
+				existing_sql = {field.get_sql(quote_char='"') for field in parsed_group_by_fields}
+				for field in self.fields:
+					group_field = None
+					if isinstance(field, DynamicTableField):
+						group_field = field.field
+					elif isinstance(field, Field):
+						group_field = field
+
+					if not group_field:
+						continue
+
+					group_field_sql = group_field.get_sql(quote_char='"')
+					if group_field_sql not in existing_sql:
+						parsed_group_by_fields.append(group_field)
+						existing_sql.add(group_field_sql)
+
 		self.query = self.query.groupby(*parsed_group_by_fields)
 
 	def apply_order_by(self, order_by: str | None):
@@ -2084,6 +2108,7 @@ class Engine:
 		right_term,
 		*,
 		left_doctype: str,
+		left_field: str = "name",
 		right_doctype: str,
 		right_field: str,
 	):
@@ -2096,7 +2121,7 @@ class Engine:
 		if not self.is_postgres:
 			return left_term, right_term
 
-		left_type = self._get_column_type_cached(left_doctype, "name")
+		left_type = self._get_column_type_cached(left_doctype, left_field)
 		right_type = self._get_column_type_cached(right_doctype, right_field)
 
 		if not left_type or not right_type or left_type == right_type:
@@ -2252,7 +2277,22 @@ class ChildTableField(DynamicTableField):
 	def apply_join(self, query: QueryBuilder, engine: "Engine" = None) -> QueryBuilder:
 		main_table = frappe.qb.DocType(self.parent_doctype)
 		if not query.is_joined(self.table):
-			join_conditions = (self.table.parent == main_table.name) & (
+			join_left = self.table.parent
+			join_right = main_table.name
+
+			# Defensive compatibility for legacy schema states where child.parent and
+			# parent.name use different db types (for example varchar vs bigint).
+			if engine:
+				join_left, join_right = engine._normalize_join_terms_for_type_compat(
+					join_left,
+					join_right,
+					left_doctype=self.doctype,
+					left_field="parent",
+					right_doctype=self.parent_doctype,
+					right_field="name",
+				)
+
+			join_conditions = (join_left == join_right) & (
 				self.table.parenttype == self.parent_doctype
 			)
 			if self.parent_fieldname:
@@ -2294,6 +2334,7 @@ class LinkTableField(DynamicTableField):
 					join_left,
 					join_right,
 					left_doctype=self.doctype,
+					left_field="name",
 					right_doctype=self.parent_doctype,
 					right_field=self.link_fieldname,
 				)
