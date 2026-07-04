@@ -80,6 +80,10 @@ class MariaDBExceptionUtil:
 		return e.args and e.args[0] == ER.DATA_TOO_LONG
 
 	@staticmethod
+	def is_data_truncated(e: MySQLdb.Error) -> bool:
+		return e.args and e.args[0] == ER.TRUNCATED_WRONG_VALUE
+
+	@staticmethod
 	def is_db_table_size_limit(e: MySQLdb.Error) -> bool:
 		return e.args and e.args[0] == ER.TOO_BIG_ROWSIZE
 
@@ -589,11 +593,8 @@ class MariaDBDatabase(MariaDBConnectionUtil, MariaDBExceptionUtil, Database):
 			self._cursor = original_cursor
 			new_cursor.close()
 
-	def estimate_count(self, doctype: str):
-		"""Get estimated count of total rows in a table."""
+	def _estimate_count(self, table: str) -> int:
 		from frappe.utils.data import cint
-
-		table = get_table_name(doctype)
 
 		# Scope to current database to avoid cross-site estimates
 		count = self.sql(

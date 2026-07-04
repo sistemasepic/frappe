@@ -275,6 +275,7 @@ frappe.ui.form.QuickEntryForm = class QuickEntryForm extends frappe.ui.Dialog {
 						me.process_after_insert(r);
 						resolve();
 					}
+					resolve(me.dialog.doc);
 				},
 				error: function () {
 					if (!me.skip_redirect_on_error) {

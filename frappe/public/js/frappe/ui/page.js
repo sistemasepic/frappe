@@ -171,7 +171,12 @@ frappe.ui.Page = class Page {
 
 		// keyboard shortcuts
 		let menu_btn = this.menu_btn_group.find("button");
-		menu_btn.attr("title", __("Menu")).tooltip({ delay: { show: 600, hide: 100 } });
+		menu_btn
+			.attr("title", __("Menu"))
+			.tooltip({ delay: { show: 600, hide: 100 } })
+			.on("click mousedown", function () {
+				$(this).tooltip("hide");
+			});
 		frappe.ui.keys
 			.get_shortcut_group(this.page_actions[0])
 			.add(menu_btn, menu_btn.find(".menu-btn-group-label"));
@@ -591,7 +596,7 @@ frappe.ui.Page = class Page {
 	btn_disable_enable(btn, response) {
 		if (response && response.then) {
 			btn.prop("disabled", true);
-			response.then(() => {
+			response.finally(() => {
 				btn.prop("disabled", false);
 			});
 		} else if (response && response.always) {

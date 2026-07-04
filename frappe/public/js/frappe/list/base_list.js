@@ -31,6 +31,7 @@ frappe.views.BaseList = class BaseList {
 			this.setup_main_section,
 			this.setup_view,
 			this.setup_view_menu,
+			this.setup_resize_handler,
 		].map((fn) => fn.bind(this));
 
 		this.init_promise = frappe.run_serially(tasks);
@@ -429,17 +430,32 @@ frappe.views.BaseList = class BaseList {
 		});
 	}
 
+	setup_resize_handler() {
+		$(window)
+			.off("resize.list-view")
+			.on(
+				"resize.list-view",
+				frappe.utils.debounce(() => {
+					if (cur_list?.$result?.is(":visible")) {
+						cur_list.set_result_height();
+					}
+				}, 300)
+			);
+	}
+
 	set_result_height() {
 		if (this.view !== "List") return;
 		this.$result[0].style.removeProperty("height");
 		// place it at the footer of the page
 
-		let resultContainerHeight = window.innerHeight - this.$paging_area.get(0).offsetHeight;
-		if (!frappe.is_mobile()) {
-			resultContainerHeight = resultContainerHeight - this.$result.get(0).offsetTop;
-		}
-		this.$result.parent(".result-container").css({
-			height: resultContainerHeight - (frappe.is_mobile() ? 100 : 0) + "px",
+		let $result_container = this.$result.parent(".result-container");
+		let main_rect = $(".main-section").get(0).getBoundingClientRect();
+		let result_top = $result_container.get(0).getBoundingClientRect().top - main_rect.top;
+		let resultContainerHeight = Math.floor(
+			main_rect.height - this.$paging_area.get(0).getBoundingClientRect().height - result_top
+		);
+		$result_container.css({
+			height: resultContainerHeight + "px",
 		});
 
 		this.$result[0].style.height =
@@ -1255,7 +1271,10 @@ class FilterArea {
 			];
 
 			if (input_fieldtypes.includes(df.fieldtype)) {
-				df.match_type = df.condition || "=";
+				const saved_conditions =
+					frappe.get_user_settings(this.list_view.doctype, this.list_view.view_name)
+						.filter_conditions || {};
+				df.match_type = saved_conditions[df.fieldname] || df.condition || "=";
 				this.filter_field_with_match_type(df);
 			}
 		});
@@ -1311,6 +1330,13 @@ class FilterArea {
 
 				field.df.match_type = new_type;
 				$dropdown.find("button").html(getIcon(new_type));
+
+				const saved_conditions =
+					frappe.get_user_settings(this.list_view.doctype, this.list_view.view_name)
+						.filter_conditions || {};
+				this.list_view.save_view_user_settings?.({
+					filter_conditions: { ...saved_conditions, [df.fieldname]: new_type },
+				});
 
 				let value = field.get_value?.();
 				if (new_type === "=" && value) {

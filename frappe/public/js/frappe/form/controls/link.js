@@ -905,7 +905,7 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 		// take filters from the link field and add to the query
 		const query_filters = this.get_query?.()?.filters || {};
 		if (query_filters) {
-			filters = { ...filters, ...query_filters };
+			filters = { ...query_filters, ...filters };
 		}
 
 		this.get_query = function () {
@@ -956,6 +956,11 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 		}
 
 		return this.validate_link_and_fetch(value);
+	}
+	after_set_value() {
+		for (const target_field of Object.keys(this.fetch_map)) {
+			this.frm.refresh_field(target_field);
+		}
 	}
 	validate_link_and_fetch(value) {
 		const args = this.get_search_args(value);
