@@ -1361,6 +1361,7 @@ DETAIL,DETALHE
 "e.g. smtp.gmail.com","ex: smtp.gmail.com"
 "e.g.:","ex.:"
 "Edit {0}","Editar {0}"
+"Edit {0} rows","Editar {0} linhas"
 "Edit row","Editar linha"
 "Edit Address in Form","Editar endereço no formulário"
 "Edit Auto Email Report Settings","Editar configurações do relatório automático por e-mail"

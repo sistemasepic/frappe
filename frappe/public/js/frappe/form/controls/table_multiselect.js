@@ -26,8 +26,13 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 			const value = decodeURIComponent($value.data().value);
 			const link_field = this.get_link_field();
 			const current_rows = this._get_rows() || [];
-			const rows = current_rows.filter((row) => row[link_field.fieldname] !== value);
-			const removed_row = current_rows.find((row) => row[link_field.fieldname] === value);
+			const normalized_value = normalize_key(value);
+			const rows = current_rows.filter(
+				(row) => normalize_key(row[link_field.fieldname]) !== normalized_value
+			);
+			const removed_row = current_rows.find(
+				(row) => normalize_key(row[link_field.fieldname]) === normalized_value
+			);
 
 			if (!this.frm) {
 				this._update_rows(rows);
@@ -73,6 +78,20 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 			if (e.keyCode == frappe.ui.keyCode.BACKSPACE && e.target.value === "") {
 				const rows = this._get_rows().slice(0, -1);
 				this.parse_validate_and_set_in_model(rows);
+			}
+		});
+
+		this.$input_area.on("click", (e) => {
+			if ($(e.target).closest(".tb-selected-value, .btn-remove, .btn-link-to-form").length) {
+				return;
+			}
+
+			if (!this.$input.is(":focus")) {
+				this.$input.trigger("focus");
+			}
+
+			if (!this.get_label_value()) {
+				this.on_input();
 			}
 		});
 	}
@@ -209,10 +228,11 @@ frappe.ui.form.ControlTableMultiSelect = class ControlTableMultiSelect extends (
 		let me = this;
 
 		awesomplete.filter = function (item) {
-			       if (me._rows_list.map(normalize_key).includes(normalize_key(item.value))) {
-				       return false;
-			       }
-			       return true;
+			const selected_values = Array.isArray(me._rows_list) ? me._rows_list : [];
+			if (selected_values.map(normalize_key).includes(normalize_key(item.value))) {
+				return false;
+			}
+			return true;
 		};
 	}
 	get_input_value() {
