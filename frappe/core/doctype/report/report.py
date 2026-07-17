@@ -8,7 +8,7 @@ import frappe
 from frappe import _, scrub
 from frappe.core.doctype.custom_role.custom_role import get_custom_allowed_roles
 from frappe.core.doctype.page.page import delete_custom_role
-from frappe.desk.query_report import run
+from frappe.desk.query_report import _run
 from frappe.desk.reportview import append_totals_row
 from frappe.model.document import Document
 from frappe.modules import make_boilerplate
@@ -25,6 +25,7 @@ class Report(Document):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
+		from frappe.core.doctype.doctype_to_sync.doctype_to_sync import DoctypeToSync
 		from frappe.core.doctype.has_role.has_role import HasRole
 		from frappe.core.doctype.report_column.report_column import ReportColumn
 		from frappe.core.doctype.report_filter.report_filter import ReportFilter
@@ -35,6 +36,8 @@ class Report(Document):
 		columns: DF.Table[ReportColumn]
 		disable_prepared_report_automation: DF.Check
 		disabled: DF.Check
+		doctype_to_sync: DF.Table[DoctypeToSync]
+		documentation_url: DF.Data | None
 		filters: DF.Table[ReportFilter]
 		is_standard: DF.Literal["No", "Yes"]
 		javascript: DF.Code | None
@@ -49,6 +52,7 @@ class Report(Document):
 		report_script: DF.Code | None
 		report_type: DF.Literal["Report Builder", "Query Report", "Script Report", "Custom Report"]
 		roles: DF.Table[HasRole]
+		snapshot_report: DF.Check
 		timeout: DF.Int
 	# end: auto-generated types
 
@@ -196,7 +200,10 @@ class Report(Document):
 		# The JOB
 		try:
 			if self.is_standard == "Yes":
-				res = self.execute_module(filters)
+				if self.snapshot_report:
+					res = self.execute_snapshot_report(filters)
+				else:
+					res = self.execute_module(filters)
 			else:
 				res = self.execute_script(filters)
 		finally:
@@ -226,6 +233,13 @@ class Report(Document):
 		else:
 			return self.get_columns(), loc["result"]
 
+	def execute_snapshot_report(self, filters):
+		try:
+			execute_snapshot_report = self.get_module_method("execute_snapshot_report")
+		except AttributeError:
+			return [], []
+		return execute_snapshot_report(frappe._dict(filters))
+
 	def get_data(
 		self,
 		filters=None,
@@ -251,8 +265,8 @@ class Report(Document):
 		self, filters=None, user=None, ignore_prepared_report=False, are_default_filters=True
 	):
 		columns, result = [], []
-		data = run(
-			self.name,
+		data = _run(
+			report_name=self.name,
 			filters=filters,
 			user=user,
 			ignore_prepared_report=ignore_prepared_report,

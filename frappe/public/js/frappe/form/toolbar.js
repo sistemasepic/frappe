@@ -221,7 +221,7 @@ frappe.ui.form.Toolbar = class Toolbar {
 
 	setup_editable_title_click_event(element) {
 		let me = this;
-		element.on("click", () => {
+		element.off("click").on("click", () => {
 			let fields = [];
 			let docname = me.frm.doc.name;
 			let title_field = me.frm.meta.title_field || "";
@@ -671,6 +671,7 @@ frappe.ui.form.Toolbar = class Toolbar {
 	}
 	can_submit() {
 		return (
+			frappe.model.is_submittable(this.frm.doc.doctype) &&
 			this.get_docstatus() === 0 &&
 			!this.frm.doc.__islocal &&
 			!this.frm.doc.__unsaved &&

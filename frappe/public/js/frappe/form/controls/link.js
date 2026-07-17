@@ -509,7 +509,7 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 								? JSON.parse(this.df.link_filters)
 								: this.df.link_filters;
 						let parsed_filters = link_filters ? this.parse_filters(link_filters) : null;
-						if (parsed_filters?.length) {
+						if (parsed_filters && Object.keys(parsed_filters).length) {
 							filter_string = await this.get_filter_description(parsed_filters);
 						}
 					} catch (e) {
@@ -827,11 +827,6 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 			return obj;
 		};
 
-		// apply link field filters
-		if (this.df.link_filters && !!this.df.link_filters.length) {
-			this.apply_link_field_filters();
-		}
-
 		if (this.get_query || this.df.get_query) {
 			var get_query = this.get_query || this.df.get_query;
 			if ($.isPlainObject(get_query)) {
@@ -893,38 +888,34 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 			if (!args.filters) args.filters = {};
 			$.extend(args.filters, this.df.filters);
 		}
+
+		if (this.df.link_filters && !!this.df.link_filters.length) {
+			args.filters = { ...(args.filters || {}), ...this.apply_link_field_filters() };
+		}
 	}
 
 	apply_link_field_filters() {
-		let link_filters =
-			typeof this.df.link_filters === "string"
-				? JSON.parse(this.df.link_filters)
-				: this.df.link_filters;
-		let filters = this.parse_filters(link_filters);
-		if (!filters.length) return;
-		// take filters from the link field and add to the query
-		const query_filters = this.get_query?.()?.filters || {};
-		if (query_filters) {
-			filters = { ...query_filters, ...filters };
+		try {
+			const link_filters =
+				typeof this.df.link_filters === "string"
+					? JSON.parse(this.df.link_filters)
+					: this.df.link_filters;
+			return this.parse_filters(link_filters);
+		} catch (e) {
+			console.error("Invalid link_filters JSON:", this.df.link_filters, e);
+			return {};
 		}
-
-		this.get_query = function () {
-			return {
-				filters,
-			};
-		};
 	}
 
 	parse_filters(link_filters) {
-		let filters = [];
+		let filters = {};
 		(link_filters || []).forEach((filter) => {
 			if (!Array.isArray(filter)) return;
 
-			let doctype = this.df.options;
 			let fieldname, operator, value;
 
 			if (filter.length >= 4) {
-				[doctype, fieldname, operator, value] = filter;
+				[, fieldname, operator, value] = filter;
 			} else if (filter.length === 3) {
 				[fieldname, operator, value] = filter;
 			} else {
@@ -944,7 +935,7 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlDat
 				value = frappe.utils.eval(value, context);
 			}
 
-			filters.push([doctype || this.df.options, fieldname, operator, value]);
+			filters[fieldname] = [operator, value];
 		});
 		return filters;
 	}
