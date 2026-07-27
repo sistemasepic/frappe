@@ -1441,7 +1441,6 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			"list-row-col ellipsis",
 			class_map[col.type],
 			frappe.model.is_numeric_field(df) ? "text-right" : "",
-			fieldname,
 		].join(" ");
 		const fieldname_attr = fieldname ? `data-fieldname="${frappe.utils.escape_html(fieldname)}"` : "";
 
