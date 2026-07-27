@@ -143,4 +143,84 @@ frappe.ui.form.on("ConfigGlobal", {
 			() => {}
 		);
 	},
+
+	async sinccondpagamento(frm) {
+		if (!frappe.user.has_role("System Manager")) {
+			frappe.msgprint({
+				title: __("Permissão insuficiente"),
+				message: __(
+					"Apenas usuários com perfil System Manager podem sincronizar condições de pagamento."
+				),
+				indicator: "red",
+			});
+			return;
+		}
+
+		const preview = await frappe.call({
+			method: "erp360.sinc_dados_erp.get_condicoes_pagamento_sync_preview",
+			freeze: true,
+			freeze_message: __("Buscando condições de pagamento no ERP..."),
+		});
+
+		const data = preview.message || {};
+		const totalNovos = cint(data.total_novos);
+		const totalAtualizar = cint(data.total_atualizar);
+
+		if (!totalNovos && !totalAtualizar) {
+			frappe.msgprint({
+				title: __("Sincronização de Condições de Pagamento"),
+				message: __("Nenhuma condição de pagamento encontrada no ERP para sincronizar."),
+				indicator: "green",
+			});
+			return;
+		}
+
+		const amostras = (data.novos_samples || []).slice(0, 10);
+		const resumo = [
+			__("Condições no ERP: {0}", [cint(data.total_erp)]),
+			"<br>",
+			__("Condições no sistema: {0}", [cint(data.total_sistema)]),
+			"<br><br>",
+			__("Novas a inserir: {0}", [totalNovos]),
+			"<br>",
+			__("Existentes a atualizar: {0}", [totalAtualizar]),
+			"<br><br>",
+			__("Deseja executar a sincronização?"),
+		];
+
+		if (amostras.length) {
+			resumo.push(
+				"<br><br>"
+					+ __("Exemplos de novas condições:")
+					+ "<br>- "
+					+ amostras.join("<br>- ")
+			);
+		}
+
+		frappe.confirm(
+			resumo.join(""),
+			async () => {
+				const sync = await frappe.call({
+					method: "erp360.sinc_dados_erp.sync_condicoes_pagamento_from_erp",
+					freeze: true,
+					freeze_message: __("Sincronizando condições de pagamento..."),
+				});
+
+				const result = sync.message || {};
+				frappe.show_alert(
+					{
+						message: __(
+							"Sincronização concluída. {0} inseridas, {1} atualizadas.",
+							[cint(result.inserted), cint(result.updated)]
+						),
+						indicator: "green",
+					},
+					7
+				);
+
+				frm.reload_doc();
+			},
+			() => {}
+		);
+	},
 });
