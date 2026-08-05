@@ -2344,10 +2344,12 @@ class LinkTableField(DynamicTableField):
 					right_field=self.link_fieldname,
 				)
 
-			query = query.left_join(table).on(join_left == join_right)
+			clause = join_left == join_right
 			if engine and engine.apply_permissions:
 				if condition := engine.get_permission_conditions(self.doctype, table):
-					query = query.where(condition)
+					clause &= condition
+
+			query = query.left_join(table).on(clause)
 
 		return query
 
