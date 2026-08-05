@@ -88,6 +88,11 @@ class DuckDBSync(Document):
 			frappe.delete_doc("DuckDB Sync", x)
 
 
+def cleanup_old_syncs(days=45):
+	"""Backward-compatible scheduler entrypoint for old hook paths."""
+	DuckDBSync.clear_old_logs(days=days)
+
+
 @frappe.whitelist()
 def is_data_sync_pending(docname: str):
 	frappe.has_permission("DuckDB Sync", ptype="write", throw=True)

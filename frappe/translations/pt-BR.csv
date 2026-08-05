@@ -5315,6 +5315,7 @@ DETAIL,DETALHE
 "Visit","Visita"
 "Visitor ID","ID do visitante"
 "vscode","VS Code"
+"What the recipient receives by email when this notification fires. Mirrors Title/Description by default; set these to make the email differ from the in-app text.","O que o destinatário recebe por e-mail quando esta notificação é disparada. Espelha Título/Descrição por padrão; defina-os para fazer o e-mail diferir do texto no aplicativo."
 "Want to discuss?","Quer discutir?"
 "wants to access the following details from your account","deseja acessar os seguintes dados da sua conta"
 "Warehouse","Armazém"
