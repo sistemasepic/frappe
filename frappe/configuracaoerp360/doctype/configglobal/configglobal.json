@@ -19,6 +19,7 @@
   "sincmarcaerp",
   "sincproderp",
   "sinccondpagamento",
+  "sincparcerp",
   "column_break_teio",
   "column_break_fhkz"
  ],
@@ -115,13 +116,18 @@
    "fieldname": "sinccondpagamento",
    "fieldtype": "Button",
    "label": "Importar condi\u00e7\u00e3o de pagamento"
+  },
+  {
+   "fieldname": "sincparcerp",
+   "fieldtype": "Button",
+   "label": "Importar parceiros"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-07-25 09:30:39.856381",
+ "modified": "2026-08-06 16:26:37.743751",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",

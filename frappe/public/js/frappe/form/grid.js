@@ -1005,7 +1005,7 @@ export default class Grid {
 				? $(fieldvalue).attr("data-barcode-value")
 				: fieldvalue;
 
-			if (barcode.toLowerCase().includes(value)) {
+			if (String(barcode).toLowerCase().includes(value)) {
 				return data;
 			}
 		} else if (["Datetime", "Date"].includes(fieldtype) && fieldvalue) {
@@ -1025,7 +1025,13 @@ export default class Grid {
 			if (num.toString().indexOf(value) > -1) {
 				return data;
 			}
-		} else if (fieldvalue && fieldvalue.toLowerCase().includes(value)) {
+		} else if (fieldtype === "Link" && fieldvalue) {
+			let formatted_link_value = frappe.format(fieldvalue, df, { only_value: true }, data);
+
+			if (String(formatted_link_value).toLowerCase().includes(value)) {
+				return data;
+			}
+		} else if (fieldvalue && String(fieldvalue).toLowerCase().includes(value)) {
 			return data;
 		}
 	}

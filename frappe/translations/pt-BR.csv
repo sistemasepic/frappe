@@ -2320,6 +2320,7 @@ DETAIL,DETALHE
 "Invalid Credentials","Credenciais inválidas"
 "Invalid CSV Format","Formato CSV inválido"
 "Invalid Date","Data inválida"
+"Invalid date:","Data inválida:"
 "Invalid direction in Order By: {0}. Must be 'ASC' or 'DESC'.","Direção inválida em Order By: {0}. Deve ser 'ASC' ou 'DESC'."
 "Invalid docstatus","Docstatus inválido"
 "Invalid DocType","DocType inválido"

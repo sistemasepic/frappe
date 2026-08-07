@@ -13,7 +13,7 @@ frappe.ui.form.on("ConfigGlobal", {
 		}
 
 		const preview = await frappe.call({
-			method: "erp360.sinc_dados_erp.get_produtos_sync_preview",
+			method: "erp360.utils.sinc_dados_erp.get_produtos_sync_preview",
 			freeze: true,
 			freeze_message: __("Buscando produtos no ERP..."),
 		});
@@ -54,7 +54,7 @@ frappe.ui.form.on("ConfigGlobal", {
 			resumo.join(""),
 			async () => {
 				const sync = await frappe.call({
-					method: "erp360.sinc_dados_erp.sync_produtos_from_erp",
+					method: "erp360.utils.sinc_dados_erp.sync_produtos_from_erp",
 					freeze: true,
 					freeze_message: __("Sincronizando produtos..."),
 				});
@@ -88,7 +88,7 @@ frappe.ui.form.on("ConfigGlobal", {
 		}
 
 		const preview = await frappe.call({
-			method: "erp360.sinc_dados_erp.get_marcas_sync_preview",
+			method: "erp360.utils.sinc_dados_erp.get_marcas_sync_preview",
 			freeze: true,
 			freeze_message: __("Buscando marcas no ERP..."),
 		});
@@ -124,7 +124,7 @@ frappe.ui.form.on("ConfigGlobal", {
 			resumo.join(""),
 			async () => {
 				const sync = await frappe.call({
-					method: "erp360.sinc_dados_erp.sync_marcas_from_erp",
+					method: "erp360.utils.sinc_dados_erp.sync_marcas_from_erp",
 					freeze: true,
 					freeze_message: __("Sincronizando marcas..."),
 				});
@@ -157,7 +157,7 @@ frappe.ui.form.on("ConfigGlobal", {
 		}
 
 		const preview = await frappe.call({
-			method: "erp360.sinc_dados_erp.get_condicoes_pagamento_sync_preview",
+			method: "erp360.utils.sinc_dados_erp.get_condicoes_pagamento_sync_preview",
 			freeze: true,
 			freeze_message: __("Buscando condições de pagamento no ERP..."),
 		});
@@ -201,7 +201,7 @@ frappe.ui.form.on("ConfigGlobal", {
 			resumo.join(""),
 			async () => {
 				const sync = await frappe.call({
-					method: "erp360.sinc_dados_erp.sync_condicoes_pagamento_from_erp",
+					method: "erp360.utils.sinc_dados_erp.sync_condicoes_pagamento_from_erp",
 					freeze: true,
 					freeze_message: __("Sincronizando condições de pagamento..."),
 				});
@@ -217,6 +217,83 @@ frappe.ui.form.on("ConfigGlobal", {
 					},
 					7
 				);
+
+				frm.reload_doc();
+			},
+			() => {}
+		);
+	},
+
+	async sincparcerp(frm) {
+		if (!frappe.user.has_role("System Manager")) {
+			frappe.msgprint({
+				title: __("Permissão insuficiente"),
+				message: __("Apenas usuários com perfil System Manager podem sincronizar parceiros."),
+				indicator: "red",
+			});
+			return;
+		}
+
+		const preview = await frappe.call({
+			method: "erp360.utils.sinc_dados_erp.get_parceiros_sync_preview",
+			freeze: true,
+			freeze_message: __("Buscando parceiros pendentes no ERP..."),
+		});
+
+		const data = preview.message || {};
+		const totalPendentes = cint(data.total_pendentes);
+
+		if (!totalPendentes) {
+			frappe.msgprint({
+				title: __("Sincronização de Parceiros"),
+				message: __("Nenhum parceiro pendente no ERP para sincronizar."),
+				indicator: "green",
+			});
+			return;
+		}
+
+		const amostras = (data.samples || []).slice(0, 10);
+		const resumo = [
+			__("Parceiros pendentes no ERP: {0}", [totalPendentes]),
+			"<br><br>",
+			__("A sincronização é processada em lote e pode levar alguns minutos."),
+			"<br><br>",
+			__("Deseja executar a sincronização agora?"),
+		];
+
+		if (amostras.length) {
+			resumo.push(
+				"<br><br>" + __("Exemplos de parceiros pendentes:") + "<br>- " + amostras.join("<br>- ")
+			);
+		}
+
+		frappe.confirm(
+			resumo.join(""),
+			async () => {
+				const sync = await frappe.call({
+					method: "erp360.utils.sinc_dados_erp.sync_parceiros_from_erp",
+					args: { batch_size: 500 },
+					freeze: true,
+					freeze_message: __("Sincronizando parceiros..."),
+				});
+
+				const result = sync.message || {};
+				const msg = [
+					__("Sincronização concluída."),
+					__("Processados: {0}", [cint(result.processed)]),
+					__("Inseridos: {0}", [cint(result.inserted)]),
+					__("Atualizados: {0}", [cint(result.updated)]),
+					__("Marcados no ERP externo: {0}", [cint(result.marked_external)]),
+					__("Vínculos de matriz atualizados: {0}", [cint(result.matrix_links_updated)]),
+					__("Vínculos de matriz pendentes: {0}", [cint(result.matrix_links_pending)]),
+					__("Erros: {0}", [cint(result.total_errors)]),
+				];
+
+				frappe.msgprint({
+					title: __("Sincronização de Parceiros"),
+					message: msg.join("<br>"),
+					indicator: cint(result.total_errors) ? "orange" : "green",
+				});
 
 				frm.reload_doc();
 			},
