@@ -263,13 +263,17 @@ def _as_string(value: str | None) -> str:
 def _get_version_link_lookup_names(link_doctype: str, *values) -> list[str | int]:
 	"""Return valid link names for version title lookup.
 
-	Filters out empty values and normalizes autoincrement names to integers for Postgres.
+	Filters out empty values and normalizes link names to integers only when
+	the target doctype really stores `name` as numeric.
 	"""
 	lookup_names = []
-	is_autoincrement = _is_autoincrement_doctype(link_doctype)
+	should_normalize_to_int = _should_normalize_version_link_to_int(link_doctype)
 
 	for value in values:
-		normalized_value = _normalize_version_link_lookup_value(value, is_autoincrement=is_autoincrement)
+		normalized_value = _normalize_version_link_lookup_value(
+			value,
+			is_autoincrement=should_normalize_to_int,
+		)
 		if normalized_value is not None and normalized_value not in lookup_names:
 			lookup_names.append(normalized_value)
 
@@ -305,3 +309,42 @@ def _is_autoincrement_doctype(doctype: str) -> bool:
 		return False
 
 	return meta.autoname == "autoincrement"
+
+
+def _is_numeric_db_type(column_type: str | None) -> bool:
+	if not column_type:
+		return False
+
+	return str(column_type).strip().lower() in {
+		"bigint",
+		"integer",
+		"smallint",
+		"numeric",
+		"decimal",
+		"real",
+		"double precision",
+	}
+
+
+def _should_normalize_version_link_to_int(link_doctype: str) -> bool:
+	"""Return True when version lookup values should be coerced to int.
+
+	For PostgreSQL, this is done only when metadata says autoincrement and the
+	physical `name` column is numeric. This prevents crashes in environments
+	where metadata/schema are temporarily inconsistent.
+	"""
+	if not _is_autoincrement_doctype(link_doctype):
+		return False
+
+	try:
+		if frappe.db.db_type != "postgres":
+			return True
+	except Exception:
+		return False
+
+	try:
+		name_column_type = frappe.db.get_column_type(link_doctype, "name")
+	except Exception:
+		return False
+
+	return _is_numeric_db_type(name_column_type)
