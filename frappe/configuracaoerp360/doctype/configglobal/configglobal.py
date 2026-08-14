@@ -14,6 +14,8 @@ class ConfigGlobal(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+		atualizaleadtimecadprod: DF.Check
+		atualizamultiplocadprod: DF.Check
 		cor_primaria_interface: DF.Color | None
 		duplica_cpfcnpj: DF.Literal["N\u00e3o", "Apenas para Produtor Rural"]
 		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]

@@ -4,12 +4,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "parceiros_section",
-  "duplica_cpfcnpj",
-  "column_break_hfyu",
-  "validar_ie",
-  "column_break_errv",
-  "pesquisa_cep",
+  "abageral",
   "padronizar_entrada_de_dados_section",
   "padroniza_entradadados",
   "apar\u00eancia_section",
@@ -21,13 +16,25 @@
   "sinccondpagamento",
   "sincparcerp",
   "column_break_teio",
-  "column_break_fhkz"
+  "column_break_fhkz",
+  "abafuncionalidades",
+  "parceiros_section",
+  "duplica_cpfcnpj",
+  "column_break_hfyu",
+  "validar_ie",
+  "column_break_errv",
+  "pesquisa_cep",
+  "planejamento_de_compra_section",
+  "atualizamultiplocadprod",
+  "column_break_jxtv",
+  "atualizaleadtimecadprod",
+  "column_break_xazg"
  ],
  "fields": [
   {
    "fieldname": "parceiros_section",
    "fieldtype": "Section Break",
-   "label": "<b>Parceiros</b>"
+   "label": "Parceiros"
   },
   {
    "default": "Apenas para Produtor Rural",
@@ -61,7 +68,7 @@
   {
    "fieldname": "padronizar_entrada_de_dados_section",
    "fieldtype": "Section Break",
-   "label": "<b>Padronizar entrada de dados</b>"
+   "label": "Padronizar entrada de dados"
   },
   {
    "default": "Mai\u00fascula",
@@ -74,7 +81,7 @@
   {
    "fieldname": "apar\u00eancia_section",
    "fieldtype": "Section Break",
-   "label": "<b>Apar\u00eancia da Interface</b>"
+   "label": "Apar\u00eancia da Interface"
   },
   {
    "default": "#0A4EE4",
@@ -92,7 +99,7 @@
   {
    "fieldname": "sincronizar_dados_com_erp_section",
    "fieldtype": "Section Break",
-   "label": "<b>Sincronizar Dados com ERP</b>"
+   "label": "Sincronizar dados com ERP"
   },
   {
    "fieldname": "column_break_teio",
@@ -121,13 +128,48 @@
    "fieldname": "sincparcerp",
    "fieldtype": "Button",
    "label": "Importar parceiros"
+  },
+  {
+   "fieldname": "abageral",
+   "fieldtype": "Tab Break",
+   "label": "Geral"
+  },
+  {
+   "fieldname": "abafuncionalidades",
+   "fieldtype": "Tab Break",
+   "label": "Funcionalidades"
+  },
+  {
+   "fieldname": "planejamento_de_compra_section",
+   "fieldtype": "Section Break",
+   "label": "Planejamento de compra"
+  },
+  {
+   "default": "1",
+   "fieldname": "atualizamultiplocadprod",
+   "fieldtype": "Check",
+   "label": "Atualiza m\u00faltiplo no cadastro do produto"
+  },
+  {
+   "default": "1",
+   "fieldname": "atualizaleadtimecadprod",
+   "fieldtype": "Check",
+   "label": "Atualiza lead time no cadastro do produto"
+  },
+  {
+   "fieldname": "column_break_jxtv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xazg",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-08-06 16:26:37.743751",
+ "modified": "2026-08-13 16:01:25.489113",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",
