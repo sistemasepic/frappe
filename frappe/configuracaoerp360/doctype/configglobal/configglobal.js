@@ -1,7 +1,87 @@
 // Copyright (c) 2026, Frappe Technologies and contributors
 // For license information, please see license.txt
 
+const REGRA_QTD_SUG_MIN_PADRAO = 40;
+const PADROES_DEMANDA_SUGESTAO_COMPRA = [
+	{ fieldname: "Suave", label: __("Suave") },
+	{ fieldname: "Intermitente", label: __("Intermitente") },
+	{ fieldname: "Erratica", label: __("Errática") },
+	{ fieldname: "Irregular", label: __("Irregular") },
+	{ fieldname: "Morta", label: __("Morta") },
+];
+
+function obter_regra_qtd_sug_min(raw_value) {
+	let regra = raw_value;
+	if (typeof regra === "string") {
+		try {
+			regra = JSON.parse(regra);
+		} catch {
+			regra = {};
+		}
+	}
+
+	const valores = {};
+	for (const padrao of PADROES_DEMANDA_SUGESTAO_COMPRA) {
+		const valor = Number.parseInt(regra?.[padrao.fieldname], 10);
+		valores[padrao.fieldname] = Number.isInteger(valor) && valor >= 0 && valor <= 100
+			? valor
+			: REGRA_QTD_SUG_MIN_PADRAO;
+	}
+
+	return valores;
+}
+
+function abrir_dialogo_regra_qtd_sug_min(frm) {
+	const regra_atual = obter_regra_qtd_sug_min(frm.doc.regraqtdsugmin);
+	const dialog = new frappe.ui.Dialog({
+		title: __("Ajustar sugestão de compra"),
+		fields: [
+			{
+				fieldtype: "HTML",
+				fieldname: "orientacao",
+				options: `<div class="text-muted" style="font-size:12px; line-height:1.5;">${__("Defina o percentual máximo de diferença entre a quantidade sugerida e o múltiplo de compra para que o múltiplo seja aceito.")}</div>`,
+			},
+			...PADROES_DEMANDA_SUGESTAO_COMPRA.map((padrao) => ({
+				fieldtype: "Int",
+				fieldname: padrao.fieldname,
+				label: padrao.label,
+				default: regra_atual[padrao.fieldname],
+				reqd: 1,
+				min: 0,
+				max: 100,
+			})),
+		],
+		primary_action_label: __("Salvar"),
+		primary_action: async (values) => {
+			const regra = {};
+			for (const padrao of PADROES_DEMANDA_SUGESTAO_COMPRA) {
+				const valor = Number.parseInt(values?.[padrao.fieldname], 10);
+				if (!Number.isInteger(valor) || valor < 0 || valor > 100) {
+					frappe.msgprint({
+						title: __("Percentual inválido"),
+						message: __("Informe para {0} um percentual inteiro entre 0 e 100.", [padrao.label]),
+						indicator: "red",
+					});
+					return;
+				}
+
+				regra[padrao.fieldname] = valor;
+			}
+
+			await frm.set_value("regraqtdsugmin", regra);
+			await frm.save();
+			dialog.hide();
+		},
+	});
+
+	dialog.show();
+}
+
 frappe.ui.form.on("ConfigGlobal", {
+	btnalterasugcompra(frm) {
+		abrir_dialogo_regra_qtd_sug_min(frm);
+	},
+
 	async sincproderp(frm) {
 		if (!frappe.user.has_role("System Manager")) {
 			frappe.msgprint({

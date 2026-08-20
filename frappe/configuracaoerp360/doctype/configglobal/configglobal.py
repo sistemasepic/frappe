@@ -21,6 +21,7 @@ class ConfigGlobal(Document):
 		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
 		pesquisa_cep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
 		pxmargensform: DF.Int
+		regraqtdsugmin: DF.JSON | None
 		validar_ie: DF.Literal["N\u00e3o", "Sim"]
 	# end: auto-generated types
 

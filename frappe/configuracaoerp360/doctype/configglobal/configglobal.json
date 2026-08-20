@@ -28,7 +28,9 @@
   "atualizamultiplocadprod",
   "column_break_jxtv",
   "atualizaleadtimecadprod",
-  "column_break_xazg"
+  "column_break_xazg",
+  "btnalterasugcompra",
+  "regraqtdsugmin"
  ],
  "fields": [
   {
@@ -163,13 +165,23 @@
   {
    "fieldname": "column_break_xazg",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "btnalterasugcompra",
+   "fieldtype": "Button",
+   "label": "Ajustar sugest\u00e3o de compra"
+  },
+  {
+   "fieldname": "regraqtdsugmin",
+   "fieldtype": "JSON",
+   "label": "Regra sugest\u00e3o m\u00ednima por padr\u00e3o de demanda"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-08-13 16:01:25.489113",
+ "modified": "2026-08-19 15:56:56.299484",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",
