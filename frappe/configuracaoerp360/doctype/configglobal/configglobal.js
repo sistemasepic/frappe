@@ -22,10 +22,16 @@ function obter_regra_qtd_sug_min(raw_value) {
 
 	const valores = {};
 	for (const padrao of PADROES_DEMANDA_SUGESTAO_COMPRA) {
-		const valor = Number.parseInt(regra?.[padrao.fieldname], 10);
-		valores[padrao.fieldname] = Number.isInteger(valor) && valor >= 0 && valor <= 100
-			? valor
-			: REGRA_QTD_SUG_MIN_PADRAO;
+		const item = regra?.[padrao.fieldname];
+		const aninhado = item !== null && typeof item === "object";
+		const valor = Number.parseInt(aninhado ? item.percentual : item, 10);
+		valores[padrao.fieldname] = {
+			percentual:
+				Number.isInteger(valor) && valor >= 0 && valor <= 100
+					? valor
+					: REGRA_QTD_SUG_MIN_PADRAO,
+			validar: aninhado ? (cint(item.validar) ? 1 : 0) : 1,
+		};
 	}
 
 	return valores;
@@ -33,39 +39,84 @@ function obter_regra_qtd_sug_min(raw_value) {
 
 function abrir_dialogo_regra_qtd_sug_min(frm) {
 	const regra_atual = obter_regra_qtd_sug_min(frm.doc.regraqtdsugmin);
+
+	const linhas = PADROES_DEMANDA_SUGESTAO_COMPRA.map((padrao) => {
+		const atual = regra_atual[padrao.fieldname];
+		return `
+			<tr data-padrao="${padrao.fieldname}">
+				<td style="vertical-align: middle;">${padrao.label}</td>
+				<td style="width: 130px;">
+					<div class="input-group input-group-sm">
+						<input type="number" class="form-control regra-percentual"
+							min="0" max="100" step="1" value="${atual.percentual}">
+						<span class="input-group-text">%</span>
+					</div>
+				</td>
+				<td class="text-center" style="width: 90px; vertical-align: middle;">
+					<div class="form-check form-switch d-inline-block mb-0">
+						<input type="checkbox" class="form-check-input regra-validar"
+							${atual.validar ? "checked" : ""}>
+					</div>
+				</td>
+			</tr>`;
+	}).join("");
+
 	const dialog = new frappe.ui.Dialog({
 		title: __("Ajustar sugestão de compra"),
 		fields: [
 			{
 				fieldtype: "HTML",
-				fieldname: "orientacao",
-				options: `<div class="text-muted" style="font-size:12px; line-height:1.5;">${__("Defina o percentual máximo de diferença entre a quantidade sugerida e o múltiplo de compra para que o múltiplo seja aceito.")}</div>`,
+				fieldname: "regra_qtd_sug_min",
+				options: `
+					<div class="text-muted" style="font-size:12px; line-height:1.5; margin-bottom:10px;">
+						${__("Defina o percentual máximo de diferença entre a quantidade sugerida e o múltiplo de compra para que o múltiplo seja aceito.")}<br>
+						${__("Desative 'Validar' para não aplicar a regra ao padrão de demanda.")}
+					</div>
+					<table class="table table-bordered" style="margin-bottom:0;">
+						<thead>
+							<tr class="text-muted" style="font-size:11px; text-transform:uppercase;">
+								<th>${__("Padrão de demanda")}</th>
+								<th class="text-center">${__("Diferença máx.")}</th>
+								<th class="text-center">${__("Validar")}</th>
+							</tr>
+						</thead>
+						<tbody>${linhas}</tbody>
+					</table>`,
 			},
-			...PADROES_DEMANDA_SUGESTAO_COMPRA.map((padrao) => ({
-				fieldtype: "Int",
-				fieldname: padrao.fieldname,
-				label: padrao.label,
-				default: regra_atual[padrao.fieldname],
-				reqd: 1,
-				min: 0,
-				max: 100,
-			})),
 		],
 		primary_action_label: __("Salvar"),
-		primary_action: async (values) => {
+		primary_action: async () => {
 			const regra = {};
-			for (const padrao of PADROES_DEMANDA_SUGESTAO_COMPRA) {
-				const valor = Number.parseInt(values?.[padrao.fieldname], 10);
+			const invalidos = [];
+
+			dialog.$wrapper.find("tbody tr[data-padrao]").each(function () {
+				const linha = $(this);
+				const padrao = String(linha.data("padrao"));
+				const input = linha.find(".regra-percentual");
+				const valor = Number.parseInt(input.val(), 10);
+
 				if (!Number.isInteger(valor) || valor < 0 || valor > 100) {
-					frappe.msgprint({
-						title: __("Percentual inválido"),
-						message: __("Informe para {0} um percentual inteiro entre 0 e 100.", [padrao.label]),
-						indicator: "red",
-					});
+					input.addClass("is-invalid");
+					invalidos.push(padrao);
 					return;
 				}
 
-				regra[padrao.fieldname] = valor;
+				input.removeClass("is-invalid");
+				regra[padrao] = {
+					percentual: valor,
+					validar: linha.find(".regra-validar").is(":checked") ? 1 : 0,
+				};
+			});
+
+			if (invalidos.length) {
+				frappe.msgprint({
+					title: __("Percentual inválido"),
+					message: __("Informe para {0} um percentual inteiro entre 0 e 100.", [
+						invalidos.join(", "),
+					]),
+					indicator: "red",
+				});
+				return;
 			}
 
 			await frm.set_value("regraqtdsugmin", regra);
@@ -73,6 +124,16 @@ function abrir_dialogo_regra_qtd_sug_min(frm) {
 			dialog.hide();
 		},
 	});
+
+	dialog.$wrapper
+		.find(".regra-validar")
+		.on("change", function () {
+			const linha = $(this).closest("tr");
+			const habilitado = $(this).is(":checked");
+			linha.find(".regra-percentual").prop("disabled", !habilitado);
+			linha.toggleClass("text-muted", !habilitado);
+		})
+		.trigger("change");
 
 	dialog.show();
 }
