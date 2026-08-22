@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_bulk_edit": 1,
  "allow_import": 1,
  "allow_rename": 1,
  "creation": "2022-01-10 17:29:51.672911",
@@ -17,6 +18,7 @@
   "column_break0",
   "full_name",
   "username",
+  "codusuerp",
   "column_break_11",
   "language",
   "time_zone",
@@ -604,7 +606,7 @@
    "unique": 1
   },
   {
-   "description": "<a href=\"https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication\" target=\"_blank\">\n  Click here to learn about token-based authentication\n</a>",
+   "description": "<a href=\"https://docs.frappe.io/framework/user/en/api/rest#1-token-based-authentication\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Click here to learn about token-based authentication\n</a>",
    "fieldname": "generate_keys",
    "fieldtype": "Button",
    "label": "Generate Keys",
@@ -857,6 +859,12 @@
    "fieldname": "form_navigation_buttons",
    "fieldtype": "Check",
    "label": "Navigation Buttons"
+  },
+  {
+   "description": "C\u00f3digo do usu\u00e1rio no Spk",
+   "fieldname": "codusuerp",
+   "fieldtype": "Int",
+   "label": "C\u00f3digo interno"
   }
  ],
  "icon": "fa fa-user",
@@ -910,7 +918,7 @@
   }
  ],
  "make_attachments_public": 1,
- "modified": "2026-04-28 21:59:59.160099",
+ "modified": "2026-08-22 10:04:04.755798",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",
