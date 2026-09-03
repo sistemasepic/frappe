@@ -1,6 +1,9 @@
 # Copyright (c) 2020, Frappe Technologies and contributors
 # License: MIT. See LICENSE
 
+from datetime import date, datetime
+from typing import Any
+
 import frappe
 from frappe import _
 from frappe.desk.desk_views import DeskViews
@@ -119,7 +122,11 @@ def has_permission(doc, ptype, user):
 
 
 @frappe.whitelist()
-def get_result(doc, filters, to_date=None):
+def get_result(
+	doc: str | dict[str, Any] | Document,
+	filters: str | list | dict[str, Any],
+	to_date: str | datetime | date | None = None,
+):
 	doc = frappe.parse_json(doc)
 	fields = []
 	sql_function_map = {
@@ -161,7 +168,9 @@ def get_result(doc, filters, to_date=None):
 
 
 @frappe.whitelist()
-def get_percentage_difference(doc, filters, result):
+def get_percentage_difference(
+	doc: str | dict[str, Any], filters: str | list | dict[str, Any], result: float | int | str
+):
 	doc = frappe.parse_json(doc)
 	result = frappe.parse_json(result)
 
@@ -197,7 +206,7 @@ def calculate_previous_result(doc, filters):
 
 
 @frappe.whitelist()
-def create_number_card(args):
+def create_number_card(args: str | dict[str, Any]):
 	args = frappe.parse_json(args)
 	doc = frappe.new_doc("Number Card")
 
@@ -208,7 +217,9 @@ def create_number_card(args):
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs
-def get_cards_for_user(doctype, txt, searchfield, start, page_len, filters):
+def get_cards_for_user(
+	doctype: str, txt: str, searchfield: str, start: int, page_len: int, filters: str | list | dict[str, Any]
+):
 	doctype = "Number Card"
 	meta = frappe.get_meta(doctype)
 	searchfields = meta.get_search_fields()
@@ -237,7 +248,7 @@ def get_cards_for_user(doctype, txt, searchfield, start, page_len, filters):
 
 
 @frappe.whitelist()
-def create_report_number_card(args):
+def create_report_number_card(args: str | dict[str, Any]):
 	card = create_number_card(args)
 	args = frappe.parse_json(args)
 	args.name = card.name
@@ -246,7 +257,7 @@ def create_report_number_card(args):
 
 
 @frappe.whitelist()
-def add_card_to_dashboard(args):
+def add_card_to_dashboard(args: str | dict[str, Any]):
 	args = frappe.parse_json(args)
 
 	dashboard = frappe.get_doc("Dashboard", args.dashboard)

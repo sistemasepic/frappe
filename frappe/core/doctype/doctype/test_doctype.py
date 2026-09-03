@@ -50,7 +50,7 @@ class TestDocType(IntegrationTestCase):
 			doc.delete()
 
 	@skipIf(
-		frappe.conf.db_type == "sqlite",
+		frappe.conf and frappe.conf.db_type == "sqlite",
 		"Not for SQLite for now",
 	)
 	def test_making_sequence_on_change(self):
@@ -124,7 +124,6 @@ class TestDocType(IntegrationTestCase):
 		doc1.delete()
 		doc2.delete()
 
-<<<<<<< HEAD
 	def test_int_unique_field_validation_postgres_compatible(self):
 		"""Regression: Int field with unique=1 must not raise InvalidTextRepresentation on PostgreSQL.
 
@@ -180,7 +179,6 @@ class TestDocType(IntegrationTestCase):
 		rec1.delete()
 		frappe.delete_doc("DocType", doctype_name)
 
-=======
 	def test_change_field_type_with_incompatible_values(self):
 		if frappe.db.exists("DocType", "Test Field Type Change"):
 			frappe.delete_doc("DocType", "Test Field Type Change")
@@ -196,7 +194,6 @@ class TestDocType(IntegrationTestCase):
 		self.assertRaises(frappe.ValidationError, dt.save)
 		frappe.db.rollback()
 
->>>>>>> v16.25.0
 	def test_validate_search_fields(self):
 		doc = new_doctype("Test Search Fields")
 		doc.search_fields = "some_fieldname"
@@ -743,6 +740,20 @@ class TestDocType(IntegrationTestCase):
 					"fieldtype": "Link",
 					"options": "User",
 					"link_filters": '{"name": "Administrator"}',
+				}
+			]
+		)
+
+		self.assertRaises(frappe.ValidationError, doctype.insert)
+
+	def test_attachment_gallery_filters_must_target_file(self):
+		doctype = new_doctype(
+			fields=[
+				{
+					"label": "Attachments",
+					"fieldname": "attachments",
+					"fieldtype": "Attachment Gallery",
+					"link_filters": '[["User", "name", "=", "Administrator"]]',
 				}
 			]
 		)
