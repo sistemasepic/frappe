@@ -19,11 +19,13 @@
   "column_break_fhkz",
   "abafuncionalidades",
   "parceiros_section",
-  "duplica_cpfcnpj",
+  "duplicarcnpjcpf",
   "column_break_hfyu",
-  "validar_ie",
+  "validarie",
+  "validacnpjcpf",
   "column_break_errv",
-  "pesquisa_cep",
+  "pesquisarcep",
+  "validaremail",
   "planejamento_de_compra_section",
   "atualizamultiplocadprod",
   "column_break_jxtv",
@@ -39,22 +41,8 @@
    "label": "Parceiros"
   },
   {
-   "default": "Apenas para Produtor Rural",
-   "fieldname": "duplica_cpfcnpj",
-   "fieldtype": "Select",
-   "label": "Permitir CPF/CNPJ duplicado",
-   "options": "N\u00e3o\nApenas para Produtor Rural"
-  },
-  {
    "fieldname": "column_break_hfyu",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "Sim",
-   "fieldname": "validar_ie",
-   "fieldtype": "Select",
-   "label": "Validar inscri\u00e7\u00e3o estadual",
-   "options": "N\u00e3o\nSim"
   },
   {
    "fieldname": "column_break_errv",
@@ -62,7 +50,7 @@
   },
   {
    "default": "Integrar API ViaCep",
-   "fieldname": "pesquisa_cep",
+   "fieldname": "pesquisarcep",
    "fieldtype": "Select",
    "label": "Pesquisa CEP",
    "options": "N\u00e3o\nIntegrar API ViaCep"
@@ -169,20 +157,46 @@
   {
    "fieldname": "btnalterasugcompra",
    "fieldtype": "Button",
-   "label": "Ajustar sugest\u00e3o de compra"
+   "label": "Ajustar regra sugest\u00e3o de compra"
   },
   {
    "fieldname": "regraqtdsugmin",
    "fieldtype": "JSON",
    "hidden": 1,
    "label": "Regra sugest\u00e3o m\u00ednima por padr\u00e3o de demanda"
+  },
+  {
+   "default": "1",
+   "fieldname": "validacnpjcpf",
+   "fieldtype": "Check",
+   "label": "Validar CNPJ/CPF"
+  },
+  {
+   "default": "Apenas para Produtor Rural",
+   "fieldname": "duplicarcnpjcpf",
+   "fieldtype": "Select",
+   "label": "Permite CPF/CNPJ duplicado",
+   "options": "N\u00e3o\nApenas para Produtor Rural\nSim"
+  },
+  {
+   "default": "Sim",
+   "fieldname": "validarie",
+   "fieldtype": "Select",
+   "label": "Validar inscri\u00e7\u00e3o estadual",
+   "options": "N\u00e3o\nSim"
+  },
+  {
+   "default": "1",
+   "fieldname": "validaremail",
+   "fieldtype": "Check",
+   "label": "Validar e-mail"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-08-21 09:55:17.939936",
+ "modified": "2026-09-04 09:59:03.426613",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",

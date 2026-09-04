@@ -17,12 +17,14 @@ class ConfigGlobal(Document):
 		atualizaleadtimecadprod: DF.Check
 		atualizamultiplocadprod: DF.Check
 		cor_primaria_interface: DF.Color | None
-		duplica_cpfcnpj: DF.Literal["N\u00e3o", "Apenas para Produtor Rural"]
+		duplicarcnpjcpf: DF.Literal["N\u00e3o", "Apenas para Produtor Rural", "Sim"]
 		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
-		pesquisa_cep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
+		pesquisarcep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
 		pxmargensform: DF.Int
 		regraqtdsugmin: DF.JSON | None
-		validar_ie: DF.Literal["N\u00e3o", "Sim"]
+		validacnpjcpf: DF.Check
+		validaremail: DF.Check
+		validarie: DF.Literal["N\u00e3o", "Sim"]
 	# end: auto-generated types
 
 	def on_update(self):
