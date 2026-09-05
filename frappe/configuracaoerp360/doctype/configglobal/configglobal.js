@@ -174,7 +174,7 @@ frappe.ui.form.on("ConfigGlobal", {
 
 		const amostras = (data.novos_samples || []).slice(0, 10);
 		const resumo = [
-			__("Produtos no ERP: {0}", [cint(data.total_erp)]),
+			__("Produtos pendentes no ERP: {0}", [cint(data.total_erp)]),
 			"<br>",
 			__("Produtos no sistema: {0}", [cint(data.total_sistema)]),
 			"<br><br>",
@@ -201,16 +201,21 @@ frappe.ui.form.on("ConfigGlobal", {
 				});
 
 				const result = sync.message || {};
-				frappe.show_alert(
-					{
-						message: __(
-							"Sincronização concluída. {0} inseridos, {1} atualizados.",
-							[cint(result.inserted), cint(result.updated)]
-						),
-						indicator: "green",
-					},
-					7
-				);
+				const msg = [
+					__("Sincronização concluída."),
+					__("Produtos inseridos: {0}", [cint(result.inserted)]),
+					__("Produtos atualizados: {0}", [cint(result.updated)]),
+					__("Registros marcados no ERP externo: {0}", [
+						cint(result.marked_external),
+					]),
+					__("Erros: {0}", [cint(result.total_errors)]),
+				];
+
+				frappe.msgprint({
+					title: __("Sincronização de Produtos"),
+					message: msg.join("<br>"),
+					indicator: cint(result.total_errors) ? "orange" : "green",
+				});
 
 				frm.reload_doc();
 			},
@@ -235,12 +240,13 @@ frappe.ui.form.on("ConfigGlobal", {
 		});
 
 		const data = preview.message || {};
+		const totalPendentes = cint(data.total_erp);
 		const totalMissing = cint(data.total_missing);
 
-		if (!totalMissing) {
+		if (!totalPendentes) {
 			frappe.msgprint({
 				title: __("Sincronização de Marcas"),
-				message: __("Todas as marcas do ERP já estão cadastradas no sistema."),
+				message: __("Nenhuma marca pendente no ERP para sincronizar."),
 				indicator: "green",
 			});
 			return;
@@ -248,13 +254,13 @@ frappe.ui.form.on("ConfigGlobal", {
 
 		const amostras = (data.missing_samples || []).slice(0, 10);
 		const resumo = [
-			__("Marcas no ERP: {0}", [cint(data.total_erp)]),
+			__("Marcas pendentes no ERP: {0}", [totalPendentes]),
 			"<br>",
 			__("Marcas no sistema: {0}", [cint(data.total_sistema)]),
 			"<br><br>",
-			__("Foram encontradas {0} marcas não cadastradas no sistema. Deseja sincronizar?", [
-				totalMissing,
-			]),
+			__("Marcas não cadastradas no sistema: {0}", [totalMissing]),
+			"<br><br>",
+			__("Deseja sincronizar as marcas pendentes?"),
 		];
 
 		if (amostras.length) {
@@ -270,14 +276,22 @@ frappe.ui.form.on("ConfigGlobal", {
 					freeze_message: __("Sincronizando marcas..."),
 				});
 
-				const inserted = cint((sync.message || {}).inserted);
-				frappe.show_alert(
-					{
-						message: __("Sincronização concluída. {0} marcas inseridas.", [inserted]),
-						indicator: "green",
-					},
-					7
-				);
+				const result = sync.message || {};
+				const msg = [
+					__("Sincronização concluída."),
+					__("Marcas inseridas: {0}", [cint(result.inserted)]),
+					__("Marcas já existentes: {0}", [cint(result.already_existing)]),
+					__("Registros marcados no ERP externo: {0}", [
+						cint(result.marked_external),
+					]),
+					__("Erros: {0}", [cint(result.total_errors)]),
+				];
+
+				frappe.msgprint({
+					title: __("Sincronização de Marcas"),
+					message: msg.join("<br>"),
+					indicator: cint(result.total_errors) ? "orange" : "green",
+				});
 
 				frm.reload_doc();
 			},
@@ -318,7 +332,7 @@ frappe.ui.form.on("ConfigGlobal", {
 
 		const amostras = (data.novos_samples || []).slice(0, 10);
 		const resumo = [
-			__("Condições no ERP: {0}", [cint(data.total_erp)]),
+			__("Condições pendentes no ERP: {0}", [cint(data.total_erp)]),
 			"<br>",
 			__("Condições no sistema: {0}", [cint(data.total_sistema)]),
 			"<br><br>",
@@ -348,16 +362,114 @@ frappe.ui.form.on("ConfigGlobal", {
 				});
 
 				const result = sync.message || {};
-				frappe.show_alert(
-					{
-						message: __(
-							"Sincronização concluída. {0} inseridas, {1} atualizadas.",
-							[cint(result.inserted), cint(result.updated)]
-						),
-						indicator: "green",
-					},
-					7
-				);
+				const msg = [
+					__("Sincronização concluída."),
+					__("Condições inseridas: {0}", [cint(result.inserted)]),
+					__("Condições atualizadas: {0}", [cint(result.updated)]),
+					__("Registros marcados no ERP externo: {0}", [
+						cint(result.marked_external),
+					]),
+					__("Erros: {0}", [cint(result.total_errors)]),
+				];
+
+				frappe.msgprint({
+					title: __("Sincronização de Condições de Pagamento"),
+					message: msg.join("<br>"),
+					indicator: cint(result.total_errors) ? "orange" : "green",
+				});
+
+				frm.reload_doc();
+			},
+			() => {}
+		);
+	},
+
+	async sincprodfor(frm) {
+		if (!frappe.user.has_role("System Manager")) {
+			frappe.msgprint({
+				title: __("Permissão insuficiente"),
+				message: __(
+					"Apenas usuários com perfil System Manager podem sincronizar vínculos de produtos e fornecedores."
+				),
+				indicator: "red",
+			});
+			return;
+		}
+
+		const preview = await frappe.call({
+			method: "erp360.utils.sinc_dados_erp.get_produtos_fornecedores_sync_preview",
+			freeze: true,
+			freeze_message: __("Buscando vínculos de produtos e fornecedores no ERP..."),
+		});
+
+		const data = preview.message || {};
+		const totalProdutosPendentes = cint(data.total_produtos_pendentes);
+		const totalPendentes = cint(data.total_pendentes);
+		if (!totalProdutosPendentes) {
+			frappe.msgprint({
+				title: __("Vínculos Produto x Fornecedor"),
+				message: __("Nenhum vínculo pendente no ERP para sincronizar."),
+				indicator: "green",
+			});
+			return;
+		}
+		if (!totalPendentes) {
+			frappe.msgprint({
+				title: __("Vínculos Produto x Fornecedor"),
+				message: __(
+					"Existem produtos pendentes no ERP, mas nenhum possui cadastro ativo correspondente no sistema."
+				),
+				indicator: "orange",
+			});
+			return;
+		}
+
+		const amostras = (data.samples || []).slice(0, 10);
+		const resumo = [
+			__("Produtos pendentes no ERP: {0}", [totalProdutosPendentes]),
+			"<br>",
+			__("Produtos ativos encontrados no sistema: {0}", [
+				cint(data.total_produtos_elegiveis),
+			]),
+			"<br>",
+			__("Vínculos pendentes: {0}", [totalPendentes]),
+			"<br><br>",
+			__("Deseja importar os vínculos agora?"),
+		];
+
+		if (amostras.length) {
+			resumo.push("<br><br>" + __("Exemplos:") + "<br>- " + amostras.join("<br>- "));
+		}
+
+		frappe.confirm(
+			resumo.join(""),
+			async () => {
+				const sync = await frappe.call({
+					method: "erp360.utils.sinc_dados_erp.sync_produtos_fornecedores_from_erp",
+					freeze: true,
+					freeze_message: __("Sincronizando vínculos de produtos e fornecedores..."),
+				});
+
+				const result = sync.message || {};
+				const msg = [
+					__("Sincronização concluída."),
+					__("Produtos pendentes no ERP: {0}", [cint(result.products_pending)]),
+					__("Produtos consultados: {0}", [cint(result.products_queried)]),
+					__("Produtos sem cadastro ativo correspondente: {0}", [
+						cint(result.products_not_eligible),
+					]),
+					__("Vínculos pendentes encontrados: {0}", [cint(result.pending)]),
+					__("Vínculos inseridos: {0}", [cint(result.inserted)]),
+					__("Vínculos já existentes: {0}", [cint(result.already_linked)]),
+					__("Registros marcados no ERP externo: {0}", [cint(result.marked_external)]),
+					__("Erros: {0}", [cint(result.total_errors)]),
+				];
+
+				frappe.msgprint({
+					title: __("Vínculos Produto x Fornecedor"),
+					message: msg.join("<br>"),
+					indicator: cint(result.total_errors) ? "orange" : "green",
+				});
 
 				frm.reload_doc();
 			},

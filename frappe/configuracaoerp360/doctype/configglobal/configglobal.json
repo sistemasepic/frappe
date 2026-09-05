@@ -15,6 +15,7 @@
   "sincproderp",
   "sinccondpagamento",
   "sincparcerp",
+  "sincprodfor",
   "column_break_teio",
   "column_break_fhkz",
   "abafuncionalidades",
@@ -190,13 +191,18 @@
    "fieldname": "validaremail",
    "fieldtype": "Check",
    "label": "Validar e-mail"
+  },
+  {
+   "fieldname": "sincprodfor",
+   "fieldtype": "Button",
+   "label": "Importar v\u00ednculo produto x fornecedor"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-09-04 09:59:03.426613",
+ "modified": "2026-09-05 09:16:23.636660",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",
