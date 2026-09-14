@@ -3923,6 +3923,7 @@ DETAIL,DETALHE
 "Request Timeout","Tempo Limite da Requisição"
 "Request URL","URL do pedido"
 "Requested Numbers","Números Solicitados"
+"MovRequisicao","Requisição"
 "Require Trusted Certificate","Exigir certificado confiável"
 "Requires any valid fdn path. i.e. ou=groups","dc=example,dc=com"
 "Requires any valid fdn path. i.e. ou=users","dc=example,dc=com"
