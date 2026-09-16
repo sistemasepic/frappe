@@ -2197,6 +2197,7 @@ DETAIL,DETALHE
 "Importing {0} is not allowed.","Não é permitido importar {0}."
 "Importing {0} of {1}, {2}","Importando {0} de {1}, {2}"
 "Importing {0} of {1}","Importando {0} de {1}"
+"In {0}, {1} is required in every row.","Em {0}, {1} é obrigatório em todas as linhas."
 "In {0}, {1} is required in rows {2}.","Em {0}, {1} é obrigatório nas linhas {2}."
 "In {0}, {1} is required in row {2}.","Em {0}, {1} é obrigatório na linha {2}."
 "In Days","Em dias"
