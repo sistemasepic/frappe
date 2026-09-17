@@ -1,7 +1,23 @@
 <div class="form-footer">
 	<div class="after-save">
-		<div class="comment-box"></div>
-		<div class="timeline"></div>
+		<button
+			type="button"
+			class="form-activity-accordion"
+			aria-expanded="false"
+		>
+			<span class="form-activity-accordion-title">
+				<span>{%= __("Activity and Comments") %}</span>
+				<span class="form-activity-count hidden">
+					<span class="form-activity-count-icon"></span>
+					<span class="form-activity-count-value"></span>
+				</span>
+			</span>
+			<span class="form-activity-accordion-toggle"></span>
+		</button>
+		<div class="form-activity-content hidden">
+			<div class="comment-box"></div>
+			<div class="timeline"></div>
+		</div>
 	</div>
 	<button class="scroll-to-top btn btn-default icon-btn" onclick="frappe.utils.scroll_page_to_top()">
 		<svg class="icon icon-xs"><use href="#icon-up-line"></use></svg>

@@ -21,20 +21,6 @@ $threshold: 34;
 .new-timeline {
 	position: relative;
 	padding-top: var(--padding-lg);
-	transition: opacity 200ms ease, max-height 300ms ease, padding-top 200ms ease;
-	max-height: 4000px;
-	overflow: hidden;
-
-	&.hidden {
-		opacity: 0;
-		max-height: 0;
-		padding-top: 0;
-		pointer-events: none;
-
-		&:before {
-			opacity: 0;
-		}
-	}
 
 	&:before {
 		content: " ";
@@ -204,36 +190,83 @@ $threshold: 34;
 	}
 }
 
-// Separador visual entre toggle de atividades e metadata de edição
-.form-sidebar {
-	.form-activity-toggle.sidebar-section {
-		padding-bottom: var(--padding-md);
-		margin-bottom: var(--padding-md);
-		border-bottom: 1px solid var(--border-color);
-	}
-}
-
-.activities-toggle-button {
-	transition: all 0.2s ease;
-	padding: 0 4px;
+.form-activity-accordion {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin: 30px 0 15px;
+	padding: 15px 0;
+	color: var(--text-color);
+	background-color: transparent;
+	border: 0;
+	border-radius: var(--border-radius-sm);
+	box-shadow: none;
+	cursor: pointer;
+	text-align: left;
+	transition: background-color 200ms ease, color 200ms ease;
+	user-select: none;
 
 	&:hover {
-		background-color: var(--bg-light);
-		color: var(--primary-color);
+		color: var(--text-color);
+		background-color: var(--btn-ghost-hover-bg);
+
+		.form-activity-accordion-title,
+		.form-activity-accordion-toggle {
+			color: var(--text-color);
+			--icon-stroke: currentColor;
+		}
 	}
 
 	&.active {
-		color: var(--primary-color);
-		background-color: var(--primary-color-10);
+		margin-bottom: 20px;
+	}
+
+	&:focus-visible {
+		outline: 1px solid var(--primary-color);
+		outline-offset: 2px;
 	}
 }
 
-.activities-toggle-label {
-	cursor: pointer;
-
-	&:hover {
-		color: var(--primary-color);
+.form-activity-accordion.active + .form-activity-content {
+	.comment-title {
+		display: none;
 	}
+}
+
+.form-activity-accordion-title,
+.form-activity-accordion-toggle {
+	display: flex;
+	align-items: center;
+	transition: color 200ms ease;
+}
+
+.form-activity-accordion-title {
+	gap: 10px;
+	@include get_textstyle("md", "medium");
+	color: var(--heading-color, var(--text-color));
+}
+
+.form-activity-count {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--margin-xs);
+	min-width: 24px;
+	padding: 2px 8px;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	border: 1px solid var(--border-color);
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: var(--weight-semibold);
+	line-height: 1.2;
+	text-align: center;
+	--icon-stroke: var(--text-muted);
+}
+
+.form-activity-accordion-toggle {
+	color: var(--text-muted);
+	transition: color 200ms ease, transform 200ms ease;
 }
 
 @include media-breakpoint-down(sm) {

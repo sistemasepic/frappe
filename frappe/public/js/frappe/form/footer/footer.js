@@ -7,8 +7,7 @@ frappe.ui.form.Footer = class FormFooter {
 		this.make();
 		this.make_comment_box();
 		this.make_timeline();
-		this.setup_comments_toggle_listener();
-		this.setup_activity_toggle_listener();
+		this.make_activity_accordion();
 		this.setup_scroll_to_top_visibility();
 		// render-complete
 		$(this.frm.wrapper).on("render_complete", () => {
@@ -54,78 +53,82 @@ frappe.ui.form.Footer = class FormFooter {
 				}
 			},
 		});
-
-		$(this.frm.comment_box?.wrapper).closest(".comment-box").addClass("hidden");
-		this.frm.comment_visible = false;
 	}
 	make_timeline() {
 		this.frm.timeline = new FormTimeline({
 			parent: this.wrapper.find(".timeline"),
 			frm: this.frm,
 		});
+	}
+	make_activity_accordion() {
+		this.activity_accordion = this.wrapper.find(".form-activity-accordion");
+		this.activity_content = this.wrapper.find(".form-activity-content");
 
-		$(this.frm.timeline?.timeline_wrapper).addClass("hidden");
-		this.frm.timeline_visible = false;
+		if (!this.activity_accordion.length || !this.activity_content.length) {
+			return;
+		}
+
+		this.activity_accordion
+			.find(".form-activity-count-icon")
+			.html(frappe.utils.icon("es-line-chat-alt", "sm"));
+
+		this._activity_accordion_handler = () => this.toggle_activity_section();
+		this.activity_accordion.on("click", this._activity_accordion_handler);
+		this.toggle_activity_section(false);
+	}
+	toggle_activity_section(state = null) {
+		if (!this.activity_accordion?.length || !this.activity_content?.length) {
+			return;
+		}
+
+		const expanded = state === null ? !Boolean(this.activity_expanded) : state;
+		if (typeof expanded !== "boolean") {
+			return;
+		}
+
+		this.activity_expanded = expanded;
+		this.activity_content.toggleClass("hidden", !expanded);
+		this.activity_accordion
+			.toggleClass("active", expanded)
+			.attr("aria-expanded", String(expanded));
+		this.activity_accordion
+			.find(".form-activity-accordion-toggle")
+			.html(frappe.utils.icon(expanded ? "chevron-up" : "chevron-down", "sm"));
+	}
+	refresh_activity_count() {
+		if (!this.activity_accordion?.length) {
+			return;
+		}
+
+		const docinfo = this.frm.get_docinfo?.() || {};
+		const comments = Array.isArray(docinfo.comments) ? docinfo.comments.length : 0;
+		const communications = Array.isArray(docinfo.communications)
+			? docinfo.communications.length
+			: 0;
+		const count = comments + communications;
+		const badge = this.activity_accordion.find(".form-activity-count");
+
+		badge.find(".form-activity-count-value").text(count || "");
+		badge.toggleClass("hidden", count === 0);
 	}
 	refresh() {
-		this.setup_comments_toggle_listener();
-		this.setup_activity_toggle_listener();
 		this.setup_scroll_to_top_visibility();
 
 		if (this.frm.doc.__islocal) {
 			this.parent.addClass("hide");
 		} else {
 			this.parent.removeClass("hide");
-			this.frm.timeline.refresh();
+			this.frm.timeline?.refresh();
 
-			if (this._last_docname !== this.frm.doc.name) {
-				this._last_docname = this.frm.doc.name;
-				$(this.frm.comment_box?.wrapper).closest(".comment-box").addClass("hidden");
-				this.frm.comment_visible = false;
-				$(this.frm.timeline?.timeline_wrapper).addClass("hidden");
-				this.frm.timeline_visible = false;
+			const docname = this.frm.doc?.name;
+			if (this._last_docname !== docname) {
+				this._last_docname = docname;
+				const comments = this.frm.get_docinfo?.()?.comments;
+				this.toggle_activity_section(Array.isArray(comments) && comments.length > 0);
 			}
 		}
 		this.update_scroll_to_top_visibility();
-		this.refresh_comments_count();
-	}
-
-	refresh_comments_count() {
-		let count = (this.frm.get_docinfo()?.comments || []).length;
-		this.wrapper.find(".comment-count")?.html(count ? `(${count})` : "");
-	}
-
-	setup_comments_toggle_listener() {
-		if (this._comment_toggle_handler) {
-			return;
-		}
-
-		this._comment_toggle_handler = (e, data) => {
-			if (!data || data.doctype !== this.frm.doctype || data.name !== this.frm.doc?.name) {
-				return;
-			}
-
-			const comment_box_wrapper = $(this.frm.comment_box?.wrapper).closest(".comment-box");
-			comment_box_wrapper.toggleClass("hidden", !Boolean(data.visible));
-		};
-
-		$(document).on("erp360:comment:toggle", this._comment_toggle_handler);
-	}
-
-	setup_activity_toggle_listener() {
-		if (this._activity_toggle_handler) {
-			return;
-		}
-
-		this._activity_toggle_handler = (e, data) => {
-			if (!data || data.doctype !== this.frm.doctype || data.name !== this.frm.doc?.name) {
-				return;
-			}
-
-			$(this.frm.timeline?.timeline_wrapper).toggleClass("hidden", !Boolean(data.visible));
-		};
-
-		$(document).on("erp360:activity:toggle", this._activity_toggle_handler);
+		this.refresh_activity_count();
 	}
 
 	get_scroll_container() {
@@ -184,14 +187,9 @@ frappe.ui.form.Footer = class FormFooter {
 	}
 
 	destroy() {
-		if (this._comment_toggle_handler) {
-			$(document).off("erp360:comment:toggle", this._comment_toggle_handler);
-			this._comment_toggle_handler = null;
-		}
-
-		if (this._activity_toggle_handler) {
-			$(document).off("erp360:activity:toggle", this._activity_toggle_handler);
-			this._activity_toggle_handler = null;
+		if (this._activity_accordion_handler) {
+			this.activity_accordion?.off("click", this._activity_accordion_handler);
+			this._activity_accordion_handler = null;
 		}
 
 		if (this._scroll_to_top_visibility_handler) {
