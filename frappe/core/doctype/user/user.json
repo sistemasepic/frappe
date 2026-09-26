@@ -18,13 +18,16 @@
   "column_break0",
   "full_name",
   "username",
-  "codusuerp",
   "column_break_11",
   "language",
   "time_zone",
   "send_welcome_email",
   "unsubscribed",
   "user_image",
+  "liga\u00e7\u00f5es_section",
+  "codusuerp",
+  "column_break_qllq",
+  "codparceiro",
   "roles_permissions_tab",
   "sb1",
   "role_profile_name",
@@ -132,6 +135,7 @@
    "depends_on": "enabled",
    "fieldname": "section_break_3",
    "fieldtype": "Section Break",
+   "hide_border": 1,
    "label": "Basic Info"
   },
   {
@@ -864,7 +868,25 @@
    "description": "C\u00f3digo do usu\u00e1rio no Spk",
    "fieldname": "codusuerp",
    "fieldtype": "Int",
-   "label": "C\u00f3digo interno"
+   "label": "C\u00f3digo interno",
+   "reqd": 1
+  },
+  {
+   "fieldname": "liga\u00e7\u00f5es_section",
+   "fieldtype": "Section Break",
+   "label": "Outros"
+  },
+  {
+   "fieldname": "column_break_qllq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "codparceiro",
+   "fieldtype": "Link",
+   "label": "Parceiro",
+   "link_filters": "[[\"CadParceiro\",\"enabled\",\"=\",1],[\"CadParceiro\",\"funcionario\",\"=\",1]]",
+   "options": "CadParceiro",
+   "reqd": 1
   }
  ],
  "icon": "fa fa-user",
@@ -918,7 +940,7 @@
   }
  ],
  "make_attachments_public": 1,
- "modified": "2026-08-22 10:04:04.755798",
+ "modified": "2026-09-25 13:28:41.682141",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",
@@ -946,6 +968,18 @@
   {
    "role": "Desk User",
    "select": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
   }
  ],
  "quick_entry": 1,

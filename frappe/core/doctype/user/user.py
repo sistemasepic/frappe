@@ -81,6 +81,7 @@ class User(Document):
 		bulk_actions: DF.Check
 		bypass_restrict_ip_check_if_2fa_enabled: DF.Check
 		code_editor_type: DF.Literal["vscode", "vim", "emacs"]
+		codparceiro: DF.Link
 		codusuerp: DF.Int
 		dashboard: DF.Check
 		default_app: DF.Literal[None]
