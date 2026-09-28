@@ -17,6 +17,7 @@ class ConfigGlobal(Document):
 		atualizaleadtimecadprod: DF.Check
 		atualizamultiplocadprod: DF.Check
 		cor_primaria_interface: DF.Color | None
+		dhultconsultapix: DF.Datetime | None
 		duplicarcnpjcpf: DF.Literal["N\u00e3o", "Apenas para Produtor Rural", "Sim"]
 		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
 		pesquisarcep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]

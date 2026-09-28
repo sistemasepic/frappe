@@ -27,6 +27,8 @@
   "column_break_errv",
   "pesquisarcep",
   "validaremail",
+  "consulta_pix_section",
+  "dhultconsultapix",
   "planejamento_de_compra_section",
   "atualizamultiplocadprod",
   "column_break_jxtv",
@@ -196,13 +198,23 @@
    "fieldname": "sincprodfor",
    "fieldtype": "Button",
    "label": "Importar v\u00ednculo produto x fornecedor"
+  },
+  {
+   "fieldname": "consulta_pix_section",
+   "fieldtype": "Section Break",
+   "label": "Consulta Pix"
+  },
+  {
+   "fieldname": "dhultconsultapix",
+   "fieldtype": "Datetime",
+   "label": "Data e hora da \u00faltima consulta"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-09-05 09:16:23.636660",
+ "modified": "2026-09-28 09:52:11.108904",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",
