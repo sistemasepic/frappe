@@ -19,6 +19,7 @@ class ConfigGlobal(Document):
 		cor_primaria_interface: DF.Color | None
 		dhultconsultapix: DF.Datetime | None
 		duplicarcnpjcpf: DF.Literal["N\u00e3o", "Apenas para Produtor Rural", "Sim"]
+		ocultarpixcnpjproprio: DF.Check
 		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
 		pesquisarcep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
 		pxmargensform: DF.Int

@@ -29,6 +29,8 @@
   "validaremail",
   "consulta_pix_section",
   "dhultconsultapix",
+  "column_break_last",
+  "ocultarpixcnpjproprio",
   "planejamento_de_compra_section",
   "atualizamultiplocadprod",
   "column_break_jxtv",
@@ -208,13 +210,25 @@
    "fieldname": "dhultconsultapix",
    "fieldtype": "Datetime",
    "label": "Data e hora da \u00faltima consulta"
+  },
+  {
+   "fieldname": "column_break_last",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Quando ativo, somente usu\u00e1rios com perfil System Manager e Accounts User podem visualizar registros onde o pagador \u00e9 igual a empresa.",
+   "fieldname": "ocultarpixcnpjproprio",
+   "fieldtype": "Check",
+   "label": "Ocultar Pix recebido do pr\u00f3prio CNPJ",
+   "show_description_on_click": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-09-28 09:52:11.108904",
+ "modified": "2026-09-29 14:51:09.599614",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",
