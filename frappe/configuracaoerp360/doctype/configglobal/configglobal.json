@@ -17,6 +17,7 @@
   "sincparcerp",
   "sincprodfor",
   "column_break_teio",
+  "sincmetavenderp",
   "column_break_fhkz",
   "abafuncionalidades",
   "parceiros_section",
@@ -222,13 +223,18 @@
    "fieldtype": "Check",
    "label": "Ocultar Pix recebido do pr\u00f3prio CNPJ",
    "show_description_on_click": 1
+  },
+  {
+   "fieldname": "sincmetavenderp",
+   "fieldtype": "Button",
+   "label": "Importar meta vendedor"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-09-29 14:51:09.599614",
+ "modified": "2026-10-04 20:23:41.315586",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",

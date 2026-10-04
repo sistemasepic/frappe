@@ -477,6 +477,84 @@ frappe.ui.form.on("ConfigGlobal", {
 		);
 	},
 
+	async sincmetavenderp(frm) {
+		if (!frappe.user.has_role("System Manager")) {
+			frappe.msgprint({
+				title: __("Permissão insuficiente"),
+				message: __(
+					"Apenas usuários com perfil System Manager podem sincronizar metas de vendedores."
+				),
+				indicator: "red",
+			});
+			return;
+		}
+
+		const preview = await frappe.call({
+			method: "erp360.utils.sinc_dados_erp.get_metas_vendedores_sync_preview",
+			freeze: true,
+			freeze_message: __("Buscando metas de vendedores no ERP..."),
+		});
+		const data = preview.message;
+		const totalPendentes = cint(data.total_pendentes);
+		if (!totalPendentes) {
+			frappe.msgprint({
+				title: __("Metas de vendedores"),
+				message: __("Nenhuma meta pendente no ERP para sincronizar."),
+				indicator: "green",
+			});
+			return;
+		}
+
+		const resumo = [
+			__("Metas pendentes no ERP: {0}", [totalPendentes]),
+			__("Metas existentes na mesma data de vigor serão atualizadas, sem duplicar."),
+			__("Deseja sincronizar as metas agora?"),
+		];
+		if (data.samples.length) {
+			resumo.push(
+				__("Exemplos:") +
+					"<br>" +
+					data.samples.map((sample) => frappe.utils.escape_html(sample)).join("<br>")
+			);
+		}
+
+		frappe.confirm(resumo.join("<br><br>"), async () => {
+			const sync = await frappe.call({
+				method: "erp360.utils.sinc_dados_erp.sync_metas_vendedores_from_erp",
+				freeze: true,
+				freeze_message: __("Sincronizando metas de vendedores..."),
+			});
+			const result = sync.message;
+			const msg = [
+				cint(result.total_errors)
+					? __("Sincronização concluída com erros.")
+					: __("Sincronização concluída."),
+				__("Metas pendentes: {0}", [cint(result.pending)]),
+				__("Inseridas: {0}", [cint(result.inserted)]),
+				__("Atualizadas: {0}", [cint(result.updated)]),
+				__("Marcadas no ERP externo: {0}", [cint(result.marked_external)]),
+				__("Erros: {0}", [cint(result.total_errors)]),
+			];
+			for (const error of result.error_samples) {
+				msg.push(
+					frappe.utils.escape_html(
+						__("Meta {0}, parceiro {1}: {2}", [
+							error.seqmeta,
+							error.codparcerp,
+							error.erro,
+						])
+					)
+				);
+			}
+			frappe.msgprint({
+				title: __("Metas de vendedores"),
+				message: msg.join("<br>"),
+				indicator: cint(result.total_errors) ? "orange" : "green",
+			});
+			frm.reload_doc();
+		});
+	},
+
 	async sincparcerp(frm) {
 		if (!frappe.user.has_role("System Manager")) {
 			frappe.msgprint({
