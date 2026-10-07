@@ -760,6 +760,57 @@ class TestDocType(IntegrationTestCase):
 
 		self.assertRaises(frappe.ValidationError, doctype.insert)
 
+	def test_link_filters_accept_json_strings_and_decoded_lists(self):
+		for filters in (
+			'[["User", "name", "=", "Administrator"]]',
+			[["User", "name", "=", "Administrator"]],
+		):
+			with self.subTest(filters=filters):
+				doctype = new_doctype(
+					fields=[
+						{
+							"label": "User",
+							"fieldname": "user",
+							"fieldtype": "Link",
+							"options": "User",
+							"link_filters": filters,
+						}
+					]
+				)
+				validate_fields(doctype)
+				self.assertEqual(doctype.fields[0].link_filters, filters)
+
+	def test_decoded_link_filters_reject_invalid_rows(self):
+		for filters in (["not a filter row"], [["User", "name", "="]], [None]):
+			with self.subTest(filters=filters):
+				doctype = new_doctype(
+					fields=[
+						{
+							"label": "User",
+							"fieldname": "user",
+							"fieldtype": "Link",
+							"options": "User",
+							"link_filters": filters,
+						}
+					]
+				)
+				self.assertRaises(frappe.ValidationError, validate_fields, doctype)
+
+	def test_decoded_attachment_gallery_filters_must_target_file(self):
+		doctype = new_doctype(
+			fields=[
+				{
+					"label": "Attachments",
+					"fieldname": "attachments",
+					"fieldtype": "Attachment Gallery",
+					"link_filters": [["User", "name", "=", "Administrator"]],
+				}
+			]
+		)
+		self.assertRaises(frappe.ValidationError, validate_fields, doctype)
+		doctype.fields[0].link_filters = [["File", "is_private", "=", 1]]
+		validate_fields(doctype)
+
 	def test_missing_link_filters_field_is_allowed(self):
 		doctype = new_doctype()
 		doctype.fields[0].__dict__.pop("link_filters", None)
@@ -795,6 +846,29 @@ class TestDocType(IntegrationTestCase):
 				"property_type": "JSON",
 			},
 		)
+		frappe.db.rollback()
+		frappe.clear_cache(doctype="ToDo")
+
+	def test_property_setter_with_valid_link_filters_allows_print_default(self):
+		frappe.make_property_setter(
+			{
+				"doctype": "ToDo",
+				"fieldname": "allocated_to",
+				"property": "link_filters",
+				"value": '[["User", "name", "=", "Administrator"]]',
+				"property_type": "JSON",
+			},
+		)
+		frappe.make_property_setter(
+			{
+				"doctype_or_field": "DocType",
+				"doctype": "ToDo",
+				"property": "default_print_format",
+				"value": "Standard",
+				"property_type": "Data",
+			},
+		)
+		self.assertEqual(frappe.get_meta("ToDo", cached=False).default_print_format, "Standard")
 		frappe.db.rollback()
 		frappe.clear_cache(doctype="ToDo")
 
