@@ -22,6 +22,7 @@ class ConfigGlobal(Document):
 		ocultarpixcnpjproprio: DF.Check
 		padroniza_entradadados: DF.Literal["N\u00e3o alterar", "Mai\u00fascula"]
 		pesquisarcep: DF.Literal["N\u00e3o", "Integrar API ViaCep"]
+		preenchecomprasugestao: DF.Check
 		pxmargensform: DF.Int
 		regraqtdsugmin: DF.JSON | None
 		validacnpjcpf: DF.Check

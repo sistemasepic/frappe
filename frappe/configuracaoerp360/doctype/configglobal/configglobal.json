@@ -34,6 +34,7 @@
   "ocultarpixcnpjproprio",
   "planejamento_de_compra_section",
   "atualizamultiplocadprod",
+  "preenchecomprasugestao",
   "column_break_jxtv",
   "atualizaleadtimecadprod",
   "column_break_xazg",
@@ -228,13 +229,20 @@
    "fieldname": "sincmetavenderp",
    "fieldtype": "Button",
    "label": "Importar meta vendedor"
+  },
+  {
+   "default": "1",
+   "description": "Usa sugest\u00e3o calculada como quantidade de compra",
+   "fieldname": "preenchecomprasugestao",
+   "fieldtype": "Check",
+   "label": "Preencher quantidade de compra automaticamente"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-10-04 20:23:41.315586",
+ "modified": "2026-10-08 16:12:34.220685",
  "modified_by": "Administrator",
  "module": "ConfiguracaoERP360",
  "name": "ConfigGlobal",
