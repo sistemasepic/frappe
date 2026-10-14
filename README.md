@@ -55,6 +55,23 @@ The first application built on Framework was ERPNext, a beast with more than 700
 
 ## Production Setup
 
+### ERP360 fork: upgrade to v16.52.0
+
+The fork retains the ERP360 module and custom User fields. Grid column widths now
+use the upstream `GridView` pixel format, with read compatibility for
+`GridViewColumnWidthsPx` and legacy `width_px`/`columns` settings. The existing
+60-1200 px grid bounds and 90-2000 px list bounds are retained. Resetting grid
+columns also clears the legacy pixel settings.
+
+List resizing retains personal widths and the System Manager global defaults,
+while respecting the new saved-layout permissions and RTL drag direction.
+Cypress grid configuration coverage has moved to
+[Playwright](playwright/tests/grid_configuration.spec.js).
+
+Run the isolated compatibility checks with
+`node --test frappe/tests/test_upgrade_ui_compatibility.js`. Browser tests and
+site migration must also pass on a disposable test site before production deployment.
+
 ### Managed Hosting
 
 You can try [Frappe Cloud](https://frappecloud.com), a simple, user-friendly and sophisticated [open-source](https://github.com/frappe/press) platform to host Frappe applications with peace of mind.
