@@ -1,0 +1,222 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "autoname": "autoincrement",
+ "creation": "2026-05-16 09:27:25.580461",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identifica\u00e7\u00e3o_section",
+  "razaosocial",
+  "nomefantasia",
+  "column_break_deez",
+  "cnpj",
+  "inscestadual",
+  "endere\u00e7o_principal_section",
+  "cep",
+  "codlogradouro",
+  "numend",
+  "column_break_nbhx",
+  "compend",
+  "codbairro",
+  "codcidade",
+  "column_break_xqet",
+  "latitude_longitude",
+  "telefone",
+  "email_section",
+  "emailcompra",
+  "column_break_kvzt",
+  "emailvenda"
+ ],
+ "fields": [
+  {
+   "fieldname": "identifica\u00e7\u00e3o_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Identifica\u00e7\u00e3o"
+  },
+  {
+   "fieldname": "razaosocial",
+   "fieldtype": "Data",
+   "label": "Raz\u00e3o social",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nomefantasia",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nome fantasia",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_deez",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cnpj",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "CNPJ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inscestadual",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Inscri\u00e7\u00e3o estadual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "endere\u00e7o_principal_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Endere\u00e7o Principal"
+  },
+  {
+   "fieldname": "cep",
+   "fieldtype": "Data",
+   "label": "CEP",
+   "length": 9,
+   "reqd": 1
+  },
+  {
+   "fieldname": "codlogradouro",
+   "fieldtype": "Link",
+   "label": "Endere\u00e7o",
+   "options": "CadLogradouro"
+  },
+  {
+   "fieldname": "numend",
+   "fieldtype": "Int",
+   "label": "N\u00famero",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nbhx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "compend",
+   "fieldtype": "Data",
+   "label": "Complemento"
+  },
+  {
+   "fieldname": "codbairro",
+   "fieldtype": "Link",
+   "label": "Bairro",
+   "options": "CadBairro",
+   "reqd": 1
+  },
+  {
+   "fieldname": "codcidade",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cidade",
+   "options": "CadCidade",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xqet",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "latitude_longitude",
+   "fieldtype": "Data",
+   "label": "Latitude e longitude"
+  },
+  {
+   "fieldname": "telefone",
+   "fieldtype": "Data",
+   "label": "Telefone",
+   "length": 15
+  },
+  {
+   "fieldname": "email_section",
+   "fieldtype": "Section Break",
+   "label": "Email"
+  },
+  {
+   "fieldname": "emailcompra",
+   "fieldtype": "Data",
+   "label": "E-mail setor compra",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_kvzt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "emailvenda",
+   "fieldtype": "Data",
+   "label": "E-mail setor venda",
+   "options": "Email"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-15 14:41:53.300899",
+ "modified_by": "Administrator",
+ "module": "ConfiguracaoERP360",
+ "name": "CadEmpresa",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock user",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nomefantasia"
+}

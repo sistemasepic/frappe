@@ -17,6 +17,10 @@ export default class ListSettings {
 		frappe.model.with_doctype("List View Settings", () => {
 			this.make();
 			this.get_listview_fields(meta);
+			this.fields = this.fields.map((field) => ({
+				...field,
+				width: this.listview.get_configured_column_width(field.fieldname) || field.width,
+			}));
 			this.setup_fields();
 			this.setup_remove_fields();
 			this.add_new_fields();
@@ -62,32 +66,54 @@ export default class ListSettings {
 			) {
 				const layout = me.listview.list_filter.get_active_layout();
 				if (layout && me.listview.list_filter.can_edit_layout(layout)) {
-					me.listview.list_filter
+					return me.listview.list_filter
 						.update_layout_columns(layout, me.fields, { debounce: false })
 						.then(async () => {
+							me.listview.column_width_overrides = {};
+							me.listview.column_max_widths = {};
 							// setup_columns is async (may load linked doctype meta for
 							// link-title columns); wait before rendering the header.
 							await me.listview.setup_columns(me.fields);
 							me.listview.render_header(true);
 							me.listview.apply_column_widths?.();
 							me.dialog.hide();
+						})
+						.catch((error) => {
+							console.error(error);
+							frappe.show_alert({
+								message: __("Unable to save the column width."),
+								indicator: "red",
+							});
 						});
-					return;
 				}
+				frappe.show_alert({ message: __("Not permitted"), indicator: "red" });
+				return;
 			}
 
-			frappe.call({
-				method: "frappe.desk.doctype.list_view_settings.list_view_settings.save_listview_settings",
-				args: {
-					doctype: me.doctype,
-					listview_settings: values,
-					removed_listview_fields: me.removed_fields || [],
-				},
-				callback: function (r) {
-					me.listview.refresh_columns(r.message.meta, r.message.listview_settings);
+			return frappe
+				.call({
+					method: "frappe.desk.doctype.list_view_settings.list_view_settings.save_listview_settings",
+					args: {
+						doctype: me.doctype,
+						listview_settings: values,
+						removed_listview_fields: me.removed_fields || [],
+					},
+				})
+				.then(async (r) => {
+					me.listview.list_view_settings = r.message.listview_settings;
+					await me.listview.save_personal_column_widths(me.fields);
+					me.listview.column_width_overrides = {};
+					me.listview.column_max_widths = {};
+					await me.listview.refresh_columns(r.message.meta, r.message.listview_settings);
 					me.dialog.hide();
-				},
-			});
+				})
+				.catch((error) => {
+					console.error(error);
+					frappe.show_alert({
+						message: __("Unable to save the list view settings."),
+						indicator: "red",
+					});
+				});
 		});
 	}
 
@@ -135,10 +161,10 @@ export default class ListSettings {
 		let wrapper = fields_html.$wrapper[0];
 		let fields = ``;
 
-		me.listview.columns = me.listview.columns.filter((col) => col.type !== "Tag");
 		const columnByFieldname = {};
 		me.listview.columns.forEach((col) => {
-			if (col.df?.fieldname) columnByFieldname[col.df.fieldname] = col;
+			const fieldname = me.listview.get_resizable_column_fieldname(col);
+			if (fieldname) columnByFieldname[fieldname] = col;
 		});
 
 		for (let idx in me.fields) {

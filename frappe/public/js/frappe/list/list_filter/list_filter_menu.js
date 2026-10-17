@@ -370,7 +370,7 @@ export const ListFilterMenu = {
 						fieldname: "status_field",
 						label: __("Status"),
 						width:
-							this.list_view.column_max_widths?.status_field ||
+							this.list_view.get_column_width("status_field") ||
 							col.df?.width ||
 							null,
 					};
@@ -380,7 +380,7 @@ export const ListFilterMenu = {
 				return {
 					fieldname,
 					label: col.df?.label || fieldname,
-					width: this.list_view.column_max_widths?.[fieldname] || col.df?.width || null,
+					width: this.list_view.get_column_width(fieldname) || col.df?.width || null,
 				};
 			})
 			.filter(Boolean);

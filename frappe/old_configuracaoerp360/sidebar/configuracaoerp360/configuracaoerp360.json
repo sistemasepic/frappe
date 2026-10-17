@@ -1,0 +1,32 @@
+{
+ "app": "frappe",
+ "creation": "2026-10-15 14:38:46.370465",
+ "docstatus": 0,
+ "doctype": "Sidebar",
+ "header_icon": "hammer",
+ "idx": 0,
+ "items": [
+  {
+   "added": 0,
+   "child": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "label": "ConfigGlobal",
+   "link_to": "ConfigGlobal",
+   "link_type": "DocType",
+   "open_in_new_tab": 1,
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-10-15 14:38:46.370465",
+ "modified_by": "Administrator",
+ "module": "ConfiguracaoERP360",
+ "name": "ConfiguracaoERP360",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "ConfiguracaoERP360"
+}

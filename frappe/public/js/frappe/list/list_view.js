@@ -436,7 +436,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		this.list_view_settings = list_view_settings;
 
 		await this.setup_columns();
-		this.refresh();
+		return this.refresh(true);
 	}
 
 	refresh(refresh_header = false) {
@@ -860,7 +860,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 
 			this.apply_persisted_column_widths();
 		}
-		this.setup_column_resizer();
+		this.setup_column_resize();
 	}
 
 	can_enable_column_resize() {
@@ -918,6 +918,13 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	}
 
 	get_column_width(fieldname) {
+		return (
+			this.get_configured_column_width(fieldname) ||
+			this.normalize_column_width(this.column_max_widths[fieldname])
+		);
+	}
+
+	get_configured_column_width(fieldname) {
 		if (!fieldname) {
 			return null;
 		}
@@ -932,7 +939,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			return persisted_width;
 		}
 
-		return this.normalize_column_width(this.column_max_widths[fieldname]);
+		return null;
 	}
 
 	get_column_selector(fieldname) {
@@ -1005,6 +1012,14 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			return user_settings_width;
 		}
 
+		const configured_field = (JSON.parse(this.list_view_settings?.fields || "[]") || []).find(
+			(field) => field.fieldname === fieldname
+		);
+		const configured_width = this.normalize_column_width(configured_field?.width);
+		if (configured_width) {
+			return configured_width;
+		}
+
 		if (this.is_special_resizable_column(fieldname)) {
 			return (
 				this._get_global_settings_column_width(fieldname) ||
@@ -1064,8 +1079,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		}
 
 		try {
-			const column_widths =
-				frappe.parse_json(this.list_view_settings?.column_widths || "{}") || {};
+			const column_widths = JSON.parse(this.list_view_settings?.column_widths || "{}") || {};
 			if (this.is_special_resizable_column(fieldname)) {
 				return this.normalize_column_width(
 					column_widths[fieldname] || column_widths.status_indicator
@@ -1099,7 +1113,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 
 		if (typeof raw_column_widths === "string") {
 			try {
-				const parsed_column_widths = frappe.parse_json(raw_column_widths);
+				const parsed_column_widths = JSON.parse(raw_column_widths);
 				return $.isPlainObject(parsed_column_widths) ? parsed_column_widths : {};
 			} catch (e) {
 				return {};
@@ -1129,84 +1143,30 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		return this.normalize_column_width(column_widths[fieldname]);
 	}
 
-	_set_user_settings_column_width(fieldname, width) {
-		if (!fieldname) {
-			return {};
-		}
+	save_personal_column_widths(fields) {
+		const save = async () => {
+			this.user_settings = frappe.get_user_settings(this.doctype);
+			const column_widths = this._get_user_settings_column_widths();
+			for (const field of fields) {
+				const width = this.normalize_column_width(field.width);
+				if (width) {
+					column_widths[field.fieldname] = `${width}px`;
+				} else {
+					delete column_widths[field.fieldname];
+				}
+				if (this.is_special_resizable_column(field.fieldname)) {
+					delete column_widths.status_indicator;
+				}
+			}
 
-		const normalized_width = this.normalize_column_width(width);
-		if (!normalized_width) {
-			return this._get_user_settings_column_widths();
-		}
-
-		this.user_settings = this.user_settings || {};
-		const current_view_settings = this.user_settings[this.view_name] || {};
-		const current_widths = this._get_user_settings_column_widths();
-
-		current_widths[fieldname] = `${normalized_width}px`;
-		this.user_settings[this.view_name] = {
-			...current_view_settings,
-			column_widths: current_widths,
+			// Do not mutate the shared settings before save() compares old and new values.
+			await this.save_view_user_settings({ column_widths });
+			this.user_settings = frappe.get_user_settings(this.doctype);
 		};
-
-		return current_widths;
-	}
-
-	_restore_user_settings_column_width(fieldname, previous_width) {
-		if (!fieldname) {
-			return;
-		}
-
-		this.user_settings = this.user_settings || {};
-		const current_view_settings = this.user_settings[this.view_name] || {};
-		const current_widths = this._get_user_settings_column_widths();
-
-		if (previous_width) {
-			current_widths[fieldname] = `${previous_width}px`;
-		} else {
-			delete current_widths[fieldname];
-		}
-
-		this.user_settings[this.view_name] = {
-			...current_view_settings,
-			column_widths: current_widths,
-		};
-	}
-
-	_is_system_manager() {
-		return Array.isArray(frappe.user_roles) && frappe.user_roles.includes("System Manager");
-	}
-
-	_save_global_column_width_for_system_manager(fieldname, width) {
-		const normalized_width = this.normalize_column_width(width);
-		if (
-			!this._is_system_manager() ||
-			!fieldname ||
-			!normalized_width ||
-			this.is_special_resizable_column(fieldname)
-		) {
-			return Promise.resolve(normalized_width);
-		}
-
-		return frappe
-			.call({
-				method: "frappe.desk.doctype.list_view_settings.list_view_settings.save_listview_column_width",
-				args: {
-					doctype: this.doctype,
-					fieldname,
-					width: normalized_width,
-				},
-			})
-			.then((r) => this.normalize_column_width(r.message?.width) || normalized_width)
-			.catch(() => {
-				frappe.show_alert({
-					message: __(
-						"Personal column width saved. Unable to update the global default width."
-					),
-					indicator: "orange",
-				});
-				return normalized_width;
-			});
+		// Read widths inside the queue so consecutive drags do not overwrite each other.
+		const pending = (this._column_width_save || Promise.resolve()).then(save, save);
+		this._column_width_save = pending;
+		return pending;
 	}
 
 	save_column_width(fieldname, width, previous_width = null) {
@@ -1249,26 +1209,12 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 				});
 		}
 
-		const previous_user_width = this._get_user_settings_column_width(fieldname);
-		if (previous_user_width === normalized_width) {
-			this.set_column_width_override(fieldname, normalized_width);
-			return;
-		}
-
-		const column_widths = this._set_user_settings_column_width(fieldname, normalized_width);
-
-		this.save_view_user_settings({ column_widths })
-			.then(() =>
-				this._save_global_column_width_for_system_manager(fieldname, normalized_width)
-			)
-			.then((saved_width) => {
-				const effective_width =
-					this.normalize_column_width(saved_width) || normalized_width;
-				this.set_column_width_override(fieldname, effective_width);
+		return this.save_personal_column_widths([{ fieldname, width: normalized_width }])
+			.then(() => {
 				this.apply_persisted_column_widths();
 			})
-			.catch(() => {
-				this._restore_user_settings_column_width(fieldname, previous_user_width);
+			.catch((error) => {
+				console.error(error);
 				if (previous_width) {
 					this.set_column_width_override(fieldname, previous_width);
 				} else {
@@ -1283,7 +1229,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 			});
 	}
 
-	setup_column_resizer() {
+	setup_column_resize() {
 		this.page.wrapper.off(".list-column-resize");
 		if (!this.can_enable_column_resize()) {
 			return;
@@ -1295,7 +1241,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	bind_column_resize_events() {
 		this.page.wrapper.on(
 			"mousedown.list-column-resize",
-			".list-row-head .resizer",
+			".list-row-head .list-col-resize-handle",
 			(event) => {
 				event.preventDefault();
 				event.stopPropagation();
@@ -1307,15 +1253,13 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 				}
 
 				const start_x = event.pageX;
-				const start_width =
-					this.get_column_width(fieldname) ||
-					this.normalize_column_width($column.outerWidth());
+				const start_width = $column.outerWidth();
 				const previous_width = this._get_persisted_column_width(fieldname);
 				const direction = frappe.utils.is_rtl() ? -1 : 1;
 				let latest_width = start_width;
 
 				$column.addClass("resizing");
-				$(document.body).addClass("column-resize-in-progress");
+				$(document.body).addClass("list-col-resizing");
 				$(document).off(".list-column-resize-drag");
 				$(document).on("mousemove.list-column-resize-drag", (move_event) => {
 					latest_width = this.resize_column(
@@ -1326,7 +1270,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 				$(document).one("mouseup.list-column-resize-drag", () => {
 					$(document).off(".list-column-resize-drag");
 					$column.removeClass("resizing");
-					$(document.body).removeClass("column-resize-in-progress");
+					$(document.body).removeClass("list-col-resizing");
 					this.save_column_width(fieldname, latest_width || start_width, previous_width);
 				});
 			}
@@ -1666,7 +1610,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 
 				return `<div class="${classes}" ${attrs.join(" ")}>
 					${html}
-					${is_resizable ? '<div class="resizer list-col-resize-handle"></div>' : ""}
+					${is_resizable ? '<div class="list-col-resize-handle"></div>' : ""}
 				</div>
 			`;
 			})
@@ -2340,7 +2284,7 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	setup_events() {
 		this.setup_filterable();
 		this.setup_sort_by();
-		this.setup_column_resizer();
+		this.setup_column_resize();
 		this.setup_list_click();
 		this.setup_drag_click();
 		this.setup_tag_visibility();
