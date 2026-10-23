@@ -183,58 +183,49 @@ frappe.ui.form.QuickEntryForm = class QuickEntryForm extends frappe.ui.Dialog {
 
 	register_primary_action() {
 		var me = this;
-		this.set_primary_action(__("Save"), function () {
+		this.set_primary_action(__("Save"), function (values) {
 			if (me.dialog.working) {
 				return;
 			}
-			var data = me.dialog.get_values();
-
-			if (data) {
-				me.dialog.working = true;
-				if (me.skip_insert) {
-					me.update_doc();
+			me.dialog.working = true;
+			if (me.skip_insert) {
+				me.update_doc(values);
+				me.dialog.animation_speed = "slow";
+				me.dialog.hide();
+				me.handle_after_callbacks();
+			} else {
+				me.insert(values).then(() => {
+					let messagetxt = __("{1} saved", [
+						__(me.doctype),
+						frappe.utils.escape_html(cstr(me.doc.name)).bold(),
+					]);
 					me.dialog.animation_speed = "slow";
-					me.dialog.hide();
-					me.handle_after_callbacks();
-				} else {
-					me.insert().then(() => {
-						let messagetxt = __("{1} saved", [
-							__(me.doctype),
-							frappe.utils.escape_html(cstr(me.doc.name)).bold(),
-						]);
-						me.dialog.animation_speed = "slow";
 
-						if (frappe._from_link) {
-							setTimeout(() => {
-								me.dialog.hide();
-								if (frappe.route_hooks.after_save) {
-									let route_callback = frappe.route_hooks.after_save;
-									delete frappe.route_hooks.after_save;
-									route_callback(me);
-								}
-								setTimeout(function () {
-									frappe.show_alert({
-										message: messagetxt,
-										indicator: "green",
-									}, 3);
-								}, 500);
-							}, 150);
-						} else {
-							me.dialog.hide();
-							if (frappe.route_hooks.after_save) {
-								let route_callback = frappe.route_hooks.after_save;
-								delete frappe.route_hooks.after_save;
-								route_callback(me);
-							}
-							setTimeout(function () {
-								frappe.show_alert({
+					const after_save = () => {
+						me.dialog.hide();
+						if (frappe.route_hooks.after_save) {
+							let route_callback = frappe.route_hooks.after_save;
+							delete frappe.route_hooks.after_save;
+							route_callback(me);
+						}
+
+						setTimeout(function () {
+							frappe.show_alert(
+								{
 									message: messagetxt,
 									indicator: "green",
-								}, 3);
-							}, 500);
-						}
-					});
-				}
+								},
+								3
+							);
+						}, 500);
+					};
+
+					if (frappe._from_link) {
+						setTimeout(after_save, 150);
+					} else {
+						after_save();
+					}
+				});
 			}
 		});
 	}
@@ -248,10 +239,10 @@ frappe.ui.form.QuickEntryForm = class QuickEntryForm extends frappe.ui.Dialog {
 		}
 	}
 
-	insert() {
+	insert(values) {
 		let me = this;
 		return new Promise((resolve) => {
-			me.update_doc();
+			me.update_doc(values);
 			frappe.call({
 				method: "frappe.client.save",
 				args: {
@@ -342,9 +333,8 @@ frappe.ui.form.QuickEntryForm = class QuickEntryForm extends frappe.ui.Dialog {
 		}
 	}
 
-	update_doc() {
+	update_doc(data = this.get_values(true)) {
 		var me = this;
-		var data = this.get_values(true);
 		$.each(data, function (key, value) {
 			if (!is_null(value)) {
 				me.dialog.doc[key] = value;
