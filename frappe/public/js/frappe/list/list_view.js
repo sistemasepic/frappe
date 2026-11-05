@@ -871,7 +871,19 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 	}
 
 	can_enable_column_resize() {
-		return !frappe.is_mobile() && !this.list_view_settings?.disable_scrolling;
+		if (frappe.is_mobile() || this.list_view_settings?.disable_scrolling) {
+			return false;
+		}
+
+		if (
+			this.list_filter?.active_layout_name &&
+			this.list_filter.active_layout_name !== "default_layout"
+		) {
+			const layout = this.list_filter.get_active_layout();
+			return Boolean(layout && this.list_filter.can_edit_layout(layout));
+		}
+
+		return true;
 	}
 
 	get_status_column_fieldname() {

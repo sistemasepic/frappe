@@ -300,6 +300,67 @@ test("saved-layout widths stay isolated from personal and legacy defaults", asyn
 	assert.equal(ui.reload().get_configured_column_width("name"), 220);
 });
 
+test("default-layout resize stays personal for ordinary users and System Managers", async () => {
+	for (const roles of [[], ["System Manager"]]) {
+		const ui = load_ui();
+		ui.frappe.user_roles = roles;
+		ui.list.list_filter = {
+			active_layout_name: "default_layout",
+			get_active_layout: () => null,
+			can_edit_layout: () => false,
+		};
+		assert.equal(ui.list.can_enable_column_resize(), true);
+		assert.equal(
+			(ui.list.get_header_html().match(/class="list-col-resize-handle"/g) || []).length,
+			4
+		);
+		await ui.list.save_column_width("status_field", 550);
+		assert.equal(ui.reload().get_configured_column_width("status_field"), 550);
+		assert.equal(ui.calls.length, 1);
+		assert.equal(ui.calls[0].method, "frappe.model.utils.user_settings.save");
+	}
+});
+
+test("saved-layout resize handles and listeners follow layout edit permissions", () => {
+	for (const [layout, can_edit] of [
+		[{}, true],
+		[{}, false],
+		[null, true],
+	]) {
+		const ui = load_ui();
+		let bindings = 0;
+		ui.list.list_filter = {
+			active_layout_name: "saved-layout",
+			get_active_layout: () => layout,
+			can_edit_layout: () => can_edit,
+		};
+		ui.list.page = { wrapper: { off() {} } };
+		ui.list.bind_column_resize_events = () => bindings++;
+		const permitted = Boolean(layout && can_edit);
+		assert.equal(ui.list.can_enable_column_resize(), permitted);
+		assert.equal(
+			(ui.list.get_header_html().match(/class="list-col-resize-handle"/g) || []).length,
+			permitted ? 4 : 0
+		);
+		ui.list.setup_column_resize();
+		assert.equal(bindings, permitted ? 1 : 0);
+	}
+});
+
+test("read-only saved-layout widths cannot be persisted even through a direct save", () => {
+	const ui = load_ui({ List: { column_widths: { name: "220px" } } });
+	ui.list.list_filter = {
+		active_layout_name: "saved-layout",
+		get_active_layout: () => ({}),
+		can_edit_layout: () => false,
+	};
+	ui.list.resize_column("name", 550);
+	ui.list.save_column_width("name", 550);
+	assert.equal(ui.list.column_width_overrides.name, undefined);
+	assert.equal(ui.calls.length, 0);
+	assert.equal(ui.alerts[0].message, "Not permitted");
+});
+
 test("creating layouts captures effective widths instead of stale metadata defaults", () => {
 	const ui = load_ui({ List: { column_widths: { name: "220px", status_field: "180px" } } });
 	ui.list.columns[0].df.width = 900;
@@ -451,7 +512,7 @@ test("dialog saves global fields and synchronizes personal widths before refresh
 		refreshed = true;
 	};
 	dialog.make();
-	await action();
+	await action({});
 	assert.equal(ui.calls.length, 2);
 	assert.equal(ui.calls[0].method.endsWith("save_listview_settings"), true);
 	assert.equal(JSON.parse(ui.calls[0].args.listview_settings.fields)[0].width, 310);
