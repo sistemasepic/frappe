@@ -26,9 +26,8 @@
   "unsubscribed",
   "user_image",
   "liga\u00e7\u00f5es_section",
-  "codusuerp",
-  "column_break_qllq",
   "codparceiro",
+  "column_break_qllq",
   "roles_permissions_tab",
   "sb1",
   "role_profile_name",
@@ -912,13 +911,6 @@
    "label": "Show navigation buttons"
   },
   {
-   "description": "C\u00f3digo do usu\u00e1rio no Spk",
-   "fieldname": "codusuerp",
-   "fieldtype": "Int",
-   "label": "C\u00f3digo interno",
-   "reqd": 1
-  },
-  {
    "fieldname": "liga\u00e7\u00f5es_section",
    "fieldtype": "Section Break",
    "label": "Outros"
@@ -987,7 +979,7 @@
   }
  ],
  "make_attachments_public": 1,
- "modified": "2026-10-01 05:17:48.844566",
+ "modified": "2026-11-10 08:03:08.052229",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",
